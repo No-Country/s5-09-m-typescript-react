@@ -1,3 +1,3 @@
 # s5-09-m-typescript-react
 
-Hola a todos
+Somos el grupo 2
