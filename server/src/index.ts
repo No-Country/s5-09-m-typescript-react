@@ -1,12 +1,15 @@
 import express from 'express'
 import mongoose from 'mongoose'
-
+import { dbTest, dbDev, portDev, porTest } from './config/globals'
 const app = express()
 
-const port = 3001
+const db = process.env.NODE_ENV === 'development' ? dbDev : dbTest
 
-const db =
-    'mongodb+srv://mindfulness:XaFsu5kq8xLet3P@cluster0.j4zvqvm.mongodb.net/test'
+const port = process.env.NODE_ENV === 'development' ? portDev : porTest
+
+app.listen(port, async () => {
+    console.log(`Server listening on port: ${port}`)
+})
 
 const connectDB = async () => {
     try {
@@ -19,7 +22,3 @@ const connectDB = async () => {
 }
 
 connectDB()
-
-app.listen(port, async () => {
-    console.log(`Server listening on port: ${port}`)
-})
