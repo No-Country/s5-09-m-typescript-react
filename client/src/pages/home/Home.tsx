@@ -1,3 +1,5 @@
-export default function Home(){
-    
+import Slider from './components/Slider';
+
+export default function Home() {
+	return <Slider />;
 }

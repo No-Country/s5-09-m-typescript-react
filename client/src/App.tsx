@@ -1,14 +1,11 @@
 import { Typography } from '@mui/material';
 import { useState } from 'react';
+import Home from './pages/home/Home';
 
 function App() {
 	const [count, setCount] = useState(0);
 
-	return (
-		<Typography variant='h1' color={'third.main'}>
-			Hero
-		</Typography>
-	);
+	return <Home />;
 }
 
 export default App;
