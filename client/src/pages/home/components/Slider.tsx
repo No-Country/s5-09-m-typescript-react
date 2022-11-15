@@ -2,7 +2,7 @@ import { Typography } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
 import EastIcon from '@mui/icons-material/East';
 import WestIcon from '@mui/icons-material/West';
-import { Box, width } from '@mui/system';
+import { Box } from '@mui/system';
 
 const itemList = [
 	{
@@ -50,6 +50,7 @@ export default function Slider() {
 				flexDirection: 'column',
 				alignItems: 'center',
 				justifyContent: 'center',
+				margin: '80px 0 0 0',
 			}}
 		>
 			<Typography variant='h1' sx={{ fontSize: 64, fontWeight: 400 }}>
@@ -80,6 +81,7 @@ export default function Slider() {
 									width: 300,
 									height: 430,
 									padding: 20,
+									backgroundColor: '#FFFFFF',
 								}}
 							>
 								<Typography

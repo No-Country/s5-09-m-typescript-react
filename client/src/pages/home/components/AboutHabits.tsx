@@ -53,18 +53,24 @@ export default function AboutHabits() {
 							sx={{
 								borderRadius: '12px',
 								margin: '28px 20px',
-								width: 208,
+								width: 200,
 								height: 245,
 							}}
 						>
 							<CardContent>
-								<img
-									src={item.image}
+								<div
 									style={{
-										width: '184px',
-										height: '161px',
+										width: '100%',
 									}}
-								/>
+								>
+									<img
+										src={item.image}
+										style={{
+											width: '100%',
+											objectFit: 'cover',
+										}}
+									/>
+								</div>
 								<Typography
 									variant='h3'
 									component='div'
@@ -75,7 +81,12 @@ export default function AboutHabits() {
 								<a
 									href={item.url}
 									color='secondary'
-									style={{ fontSize: 16, fontWeight: 400 }}
+									style={{
+										fontSize: 16,
+										fontWeight: 400,
+										margin: '0 0 0 60%',
+										color: '#FC802C',
+									}}
 								>
 									Ver más
 								</a>

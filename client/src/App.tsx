@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material';
 import { useState } from 'react';
+import Footer from './components/Footer';
 import MenuNavegation from './components/MenuNavegation';
 import Home from './pages/home/Home';
 
@@ -10,6 +11,7 @@ function App() {
 		<>
 			<MenuNavegation></MenuNavegation>
 			<Home />
+			<Footer></Footer>
 		</>
 	);
 }
