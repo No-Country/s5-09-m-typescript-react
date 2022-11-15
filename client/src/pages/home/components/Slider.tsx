@@ -50,7 +50,6 @@ export default function Slider() {
 				flexDirection: 'column',
 				alignItems: 'center',
 				justifyContent: 'center',
-				background: '#F4F4F4',
 			}}
 		>
 			<Typography variant='h1' sx={{ fontSize: 64, fontWeight: 400 }}>
@@ -80,7 +79,6 @@ export default function Slider() {
 								style={{
 									width: 300,
 									height: 430,
-									background: '#FFFFFF',
 									padding: 20,
 								}}
 							>
@@ -119,7 +117,6 @@ export default function Slider() {
 								sx={{
 									width: 125,
 									height: 125,
-									backgroundColor: '#FEA060',
 									position: 'absolute',
 									zIndex: -1,
 									bottom: -20,
