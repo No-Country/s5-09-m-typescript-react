@@ -1,13 +1,13 @@
 import { Hero, MyPractices, Slider } from './components';
-import Footer from './components/Footer';
+import AboutHabits from './components/AboutHabits';
 
 export default function Home() {
 	return (
-		<main>
+		<>
 			<Hero />
 			<Slider />
 			<MyPractices />
-      <Footer />
-		</main>
+			<AboutHabits />
+		</>
 	);
 }

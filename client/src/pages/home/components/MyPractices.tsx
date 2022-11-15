@@ -1,6 +1,4 @@
-import { fontFamily, lineHeight } from '@mui/system';
 import { Box, Typography } from '@mui/material';
-import { globalTheme } from '../../../themes';
 
 export default function MyPractices() {
 	return (
@@ -12,7 +10,6 @@ export default function MyPractices() {
 					flexDirection: 'column',
 					alignItems: 'center',
 					fontFamily: 'Lora',
-					backgroundColor: 'secondary',
 				}}
 			>
 				<Typography
