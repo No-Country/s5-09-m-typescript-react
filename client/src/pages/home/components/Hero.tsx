@@ -1,6 +1,6 @@
 import { Grid, Button, Typography, Box } from '@mui/material';
 
-export const Hero = () => {
+export default function Hero() {
 	return (
 		<Grid
 			container
@@ -85,4 +85,4 @@ export const Hero = () => {
 			</Grid>
 		</Grid>
 	);
-};
+}
