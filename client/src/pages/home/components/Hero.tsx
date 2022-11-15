@@ -1,6 +1,5 @@
 import { Grid, Button, Typography, Box } from '@mui/material';
-
-export default function Hero() {
+export const Hero = () => {
 	return (
 		<Grid
 			container
@@ -9,11 +8,12 @@ export default function Hero() {
 			sx={{
 				minHeight: 'calc(100vh - 150px)',
 				backgroundImage:
-					'url(https://res.cloudinary.com/dlxlitkl6/image/upload/v1668433458/ananda%20marga/home/hero_women_img.png)',
+					'url(https://res.cloudinary.com/dlxlitkl6/image/upload/v1668534521/ananda%20marga/home/woman_without_background_img.png)',
 
 				backgroundRepeat: 'no-repeat',
 				backgroundPosition: '50% 100%',
-				backgroundColor: '#EDEEF0',
+				backgroundColor: 'primary.main',
+				backgroundSize: 'contain',
 			}}
 			padding={20}
 		>
@@ -31,7 +31,7 @@ export default function Hero() {
 					component='p'
 					variant='body1'
 					padding={1}
-					sx={{ borderLeft: '3px solid #FC802C' }}
+					sx={{ borderLeft: '3px solid', borderColor: 'secondary.main' }}
 				>
 					¿Necesitas ayuda con tu práctica de atención plena? aquí te ayudamos a
 					cumplir con tus metas diarias, comienza poco a poca agregando cada día
@@ -63,10 +63,11 @@ export default function Hero() {
 					Formas Hábitos
 				</Typography>
 				<Box
+					// bgcolor='third'
 					sx={{
 						alignItems: 'center',
 						backgroundColor: '#4E7D64',
-						color: '#fff',
+						color: 'white',
 						display: 'flex',
 						flexDirection: 'column',
 						height: 200,
@@ -85,4 +86,4 @@ export default function Hero() {
 			</Grid>
 		</Grid>
 	);
-}
+};
