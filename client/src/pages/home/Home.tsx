@@ -1,5 +1,11 @@
+import { Hero } from './components/Hero';
 import Slider from './components/Slider';
 
 export default function Home() {
-	return <Slider />;
+	return (
+		<main>
+			<Hero />
+			<Slider />
+		</main>
+	);
 }
