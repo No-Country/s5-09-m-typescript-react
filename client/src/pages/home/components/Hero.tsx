@@ -1,4 +1,5 @@
 import { Grid, Button, Typography, Box } from '@mui/material';
+
 export const Hero = () => {
 	return (
 		<Grid
@@ -63,10 +64,9 @@ export const Hero = () => {
 					Formas Hábitos
 				</Typography>
 				<Box
-					// bgcolor='third'
+					bgcolor={'third.main'}
 					sx={{
 						alignItems: 'center',
-						backgroundColor: '#4E7D64',
 						color: 'white',
 						display: 'flex',
 						flexDirection: 'column',
