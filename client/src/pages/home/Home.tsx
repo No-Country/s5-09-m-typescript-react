@@ -1,13 +1,13 @@
+import { Hero, MyPractices, Slider } from './components';
 import AboutHabits from './components/AboutHabits';
-import { Hero } from './components/Hero';
-import MyPractices from './components/MyPractices';
-import Slider from './components/Slider';
 
 export default function Home() {
-	return (<div>
-		<Slider />
-		<MyPractices/>
-		<AboutHabits/>
-		
-	</div>)
+	return (
+		<main>
+			<Hero />
+			<Slider />
+			<MyPractices />
+			<AboutHabits/>
+		</main>
+	);
 }
