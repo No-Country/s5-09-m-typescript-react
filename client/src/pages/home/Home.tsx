@@ -1,11 +1,11 @@
-import { Hero } from './components/Hero';
-import Slider from './components/Slider';
+import { Hero, MyPractices, Slider } from './components';
 
 export default function Home() {
 	return (
 		<main>
 			<Hero />
 			<Slider />
+			<MyPractices />
 		</main>
 	);
 }
