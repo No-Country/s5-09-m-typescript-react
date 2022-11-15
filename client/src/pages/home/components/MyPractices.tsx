@@ -13,8 +13,7 @@ export default function MyPractices(){
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            fontFamily: 'Lora',
-            backgroundColor: 'secondary'
+            fontFamily: 'Lora'
         }}>
         
         <Typography variant="h2" color='text.secondary' sx={{textAlign: 'center', fontSize: 64, fontWeight: 600 }}>
