@@ -33,22 +33,27 @@ export default function BoletinInformativo() {
 				<Grid
 					container
 					sx={{
-						height: '100%',
 						width: '100%',
-						padding: '30px',
-						justifyContent: 'center',
+						padding: '15px',
 						alignItems: 'center',
+						marginBottom: '50px',
 					}}
 				>
-					<Grid item xs={12}>
+					<Grid item xs={10}>
 						<Grid item xs={12} margin='0 0 0 0'>
 							<Typography
 								variant='h2'
 								color='third.main'
 								textAlign='left'
 								marginBottom='10px'
+								fontWeight={600}
+								fontSize='48px'
+								fontFamily='crimson'
+								lineHeight='100%'
+								fontStyle='semibold'
+								letterSpacing='1px'
 							>
-								Boletin Informativo
+								Boletín Informativo
 							</Typography>
 						</Grid>
 						<Typography
@@ -57,9 +62,10 @@ export default function BoletinInformativo() {
 							color='text'
 							borderLeft='2px solid #FC802C'
 							paddingLeft='10px'
+							marginLeft='7px'
 						>
-							Suscríbete a nuestro boletín informativo y mantente al tanto de
-							las últimas novedades del yoga y mindfullness.
+							Suscríbete a nuestro boletín informativo y <br></br>mantente al
+							tanto de las últimas novedades <br></br> del yoga y mindfullness.
 						</Typography>
 						<input
 							placeholder='Suscribete'
@@ -67,7 +73,7 @@ export default function BoletinInformativo() {
 								borderRadius: '5px',
 								width: '303px',
 								height: '56px',
-								marginTop: '13px',
+								marginTop: '15px',
 							}}
 						></input>
 						<Button
