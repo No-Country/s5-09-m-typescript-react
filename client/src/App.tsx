@@ -11,10 +11,10 @@ function App() {
 
 	return (
 		<>
-			<MenuNavegation></MenuNavegation>
-			
-			<Contact/>
-			<Footer></Footer>
+		{/* <InputLogin /> */}
+			<MenuNavegation />
+			<Home />
+			<Footer />
 		</>
 	);
 }
