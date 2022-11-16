@@ -19,7 +19,7 @@ La página web contiene las siguientes secciones:
 2. Mis prácticas
 3. Contacto
 4. Nosotros
-5. Login
+5. Iniciar sesión
 6. Términos Legales
 
 ...
@@ -88,8 +88,11 @@ Todos los campos son obligatorios.
 
 A continuación se muestra un botón "Enviar". Cuando el usuario completa correctamente el formulario, aparece un mensaje de confirmación "Su mensaje ha sido enviado.Lo contactaremos a la brevedad. Muchas gracias."
 
+
+4. Nosotros (Definir texto) 
+
 ...
-4. Iniciar sesión
+5. Iniciar sesión
 
 Cuando el usuario hace clic en Iniciar sesión, se le muestra la página con la siguiente información:
 
@@ -116,9 +119,18 @@ Bienvenido: Crea tu cuenta y disfruta de todo lo que tenemos para ti.
 
 Los campos para completar son: nombre completo, correo, contraseña. Todos los campos son obligatorios.
 
-Si el usuario no completa alguno de los campos, aparecerá un mensaje diciendo: Todos los campos son obligatorios.
-Si el usuario ingresa una contraseña que no cumple con la condición le aparece el mensaje: La contraseña debe tener 8 caracteres con al menos una mayúscula y un número.
-Si el usuario ingresa un mail que ya ha sido registrado, le aparecerá el mensaje: El mail ingresado ya ha sido registrado.
+Si el usuario no completa alguno de los campos, aparecerá un mensaje diciendo: "Todos los campos son obligatorios."
+Si el usuario ingresa una contraseña que no cumple con la condición le aparece el mensaje: #La contraseña debe tener 8 caracteres con al menos una mayúscula y un número.#
+Si el usuario ingresa un mail que ya ha sido registrado, le aparecerá el mensaje: "El mail ingresado ya ha sido registrado".
+
+Cuando el usuario entra a su panel se le muestra:
+
+En panel de navegación izquierdo: Se observa foto del usuario (opcional) seguido de Nombre y apellido con el que se ha registrado.
+
+El menú consta de: Perfil, Notificaciones, Favoritos, Progreso, Mi calendario, Panel.
+
+
+
 
 
 
