@@ -6,11 +6,11 @@ import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 
 import { router } from './routes/index'
-import { dbTest, dbDev, portDev, porTest } from './config/globals'
+import { dbTest, dbDev, portDev, portTest } from './config/globals'
 
 const db = process.env.NODE_ENV === 'development' ? dbDev : dbTest
 
-const port = process.env.NODE_ENV === 'development' ? portDev : porTest
+const port = process.env.NODE_ENV === 'development' ? portDev : portTest
 
 //* ----------------Server configuration -----------------
 const app = express()
