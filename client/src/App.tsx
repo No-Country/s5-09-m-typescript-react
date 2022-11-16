@@ -7,7 +7,7 @@ function App() {
 
 	return (
 		<>
-			<InputLogin />
+			{/* <InputLogin /> */}
 			<MenuNavegation />
 			<Home />
 			<Footer />

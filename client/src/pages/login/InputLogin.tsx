@@ -1,5 +1,4 @@
-import { ErrorOutline } from '@mui/icons-material';
-import { Box, Button, Chip, Grid, TextField, Typography } from '@mui/material';
+import { Box, Button, Grid, TextField, Typography } from '@mui/material';
 import { useForm } from 'react-hook-form';
 
 type Inputs = {
@@ -19,7 +18,7 @@ export default function InputLogin() {
 			<form>
 				<Grid container spacing={2}>
 					<Grid item xs={12}>
-						<Typography variant='h4' component='h4'>
+						<Typography variant='h4' component='h4' color='text.secondary'>
 							Iniciar Sesión
 						</Typography>
 					</Grid>
@@ -34,6 +33,7 @@ export default function InputLogin() {
 							type='email'
 							label='Correo'
 							variant='outlined'
+							color='text'
 							fullWidth
 						/>
 					</Grid>
@@ -48,6 +48,7 @@ export default function InputLogin() {
 							label='Contraseña'
 							type='password'
 							variant='outlined'
+							color='text'
 							fullWidth
 						/>
 					</Grid>
