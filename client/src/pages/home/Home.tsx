@@ -1,4 +1,4 @@
-import { Hero, MyPractices, Slider } from './components';
+import { Hero, MyPractices, Slider, Testimonials } from './components';
 import AboutHabits from './components/AboutHabits';
 
 export default function Home() {
@@ -8,6 +8,7 @@ export default function Home() {
 			<Slider />
 			<MyPractices />
 			<AboutHabits />
+			<Testimonials />
 		</>
 	);
 }
