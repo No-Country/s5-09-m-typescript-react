@@ -19,15 +19,9 @@ export default function InputLogin() {
 			<form>
 				<Grid container spacing={2}>
 					<Grid item xs={12}>
-						<Typography variant='h1' component='h1'>
+						<Typography variant='h4' component='h4'>
 							Iniciar Sesión
 						</Typography>
-						<Chip
-							label='Credenciales invalidas (Usuario / Contraseña)'
-							color='error'
-							icon={<ErrorOutline />}
-							className='fadeIn'
-						/>
 					</Grid>
 
 					<Grid item xs={12}>
@@ -39,7 +33,7 @@ export default function InputLogin() {
 							helperText={errors.email?.message}
 							type='email'
 							label='Correo'
-							variant='filled'
+							variant='outlined'
 							fullWidth
 						/>
 					</Grid>
@@ -53,7 +47,7 @@ export default function InputLogin() {
 							helperText={errors.password?.message}
 							label='Contraseña'
 							type='password'
-							variant='filled'
+							variant='outlined'
 							fullWidth
 						/>
 					</Grid>
@@ -62,6 +56,7 @@ export default function InputLogin() {
 						<Button
 							type='submit'
 							color='secondary'
+							variant='contained'
 							className='circular-btn'
 							size='large'
 							fullWidth
