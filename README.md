@@ -7,16 +7,7 @@ Página web de Yoga y Mindfulness
 
 Equipo de trabajo:
 
-Back-End: Yamila Gisele Paez 
-Back-End: Maximiliano Miño 
-Back-End: Ezequiel Astrada 
-Front-End: Federico Di Cillo 
-Front-End: Anderson Cifuentes  
-Front-End: Francisco Garcia Mendez 
-Front-End: Emanuel Palacio 
-Front-End: Joaquin Ramos 
-QA Tester : Romina Bello 
-Design Ui/Ux: Diana Zambrano
+Back-End: Yamila Gisele Paez / Back-End: Maximiliano Miño / Back-End: Ezequiel Astrada / Front-End: Federico Di Cillo / Front-End: Anderson Cifuentes  / Front-End: Francisco Garcia Mendez / Front-End: Emanuel Palacio / Front-End: Joaquin Ramos / QA Tester : Romina Bello / Design Ui/Ux: Diana Zambrano
 
 La propuesta trata sobre un sitio web de yoga. En el mismo, el usuario podrá obtener información sobre esa actividad, registrarse y acceder a una cuenta personal dentro del sitio. En su perfil podrá seleccionar hojas de ruta de acuerdo a sus intereses: ejercicios, meditaciones, alimentación, así como también podrá acceder a un check list para registrar sus avances diariamente y hacer un seguimiento de su progreso.
 
