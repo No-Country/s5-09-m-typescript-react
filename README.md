@@ -31,6 +31,7 @@ La página web contiene las siguientes secciones:
 5. Login
 6. Términos Legales
 
+...
 
 1. Inicio (Home page)
 
@@ -49,40 +50,39 @@ Analiza tus resultados: recibe un reporte semanal en tu correo y evalúa tu prog
 
 Para pasar a la siguiente imagen o retroceder a la anterior se utilizarán flechas adelante - atrás. 
 
-
     1.4 Sección con título "Mis Prácticas". Incluye:
 
-Título: ¿Qué son los 16 hábitos y cómo funcionan? 
+ Título: ¿Qué son los 16 hábitos y cómo funcionan? 
 
  Los 16 hábitos son un sistema de prácticas, que promueven la consolidación de hábitos saludables. El objetivo principal es mejorar el cuerpo físico, fomentar el desarrollo mental
 y lograr la elevación espiritual. Gracias a todo esto podemos equilibrar el cuerpo, la mente y el espíritu, entendiendo la salud como un todo y mejorando nuestra calidad de vida. 
 
-Se mostrará una vista previa de 3 tarjetas referentes a "Uso del agua", "Alimentación", "Lectura". Cada una tendrá un link en "ver más" que redirige al sector de la página donde hay información de la tarjeta seleccionada. 
+  Se mostrará una vista previa de 3 tarjetas referentes a "Uso del agua", "Alimentación", "Lectura". Cada una tendrá un link en "ver más" que redirige al sector de la página donde hay información de la tarjeta seleccionada. 
 
-A continuación hay un botón de "Conoce más" que redirige a la página de "Mis prácticas" donde se profundiza más sobre cada uno de los puntos. 
+  A continuación hay un botón de "Conoce más" que redirige a la página de "Mis prácticas" donde se profundiza más sobre cada uno de los puntos. 
 
 
    1.5  Testimonios: se muestran 2 testimonios de alumnos practicantes de la Filosofía: 
 
-Juan, 35 años. "Practicar el mindfulness a diario me ha ayudado a controlar mi ansiedad y a tomar las situaciones estresantes con mayor tranquilidad." 
+   Juan, 35 años. "Practicar el mindfulness a diario me ha ayudado a controlar mi ansiedad y a tomar las situaciones estresantes con mayor tranquilidad." 
 
-Karen, 43 años. "Poder hacer un seguimiento diario de los hábitos que realizo me ha ayudado a mejorar mi vida de una manera maravillosa." 
+   Karen, 43 años. "Poder hacer un seguimiento diario de los hábitos que realizo me ha ayudado a mejorar mi vida de una manera maravillosa." 
 
 
-   1.6  Boletín informativo
+  1.6  Boletín informativo
 
-Se observa junto a una imagen el siguiente texto: "Suscríbete a nuestro boletín informativo y mantente al tanto de las últimas novedades del yoga y mindfulness." 
+  Se observa junto a una imagen el siguiente texto: "Suscríbete a nuestro boletín informativo y mantente al tanto de las últimas novedades del yoga y mindfulness." 
 
    1.7 Menú del footer
 
 Se muestra el logo, Contacto, Mis Prácticas, Términos Legales: Política de privacidad, Política de cookies, Aviso legal. 
 
-
+...
 2. Mis prácticas
 
 (ver cómo va a verlo el usuario sin estar logueado y luego de loguearse... va a ver algo diferente? aquí va a estar el link del formulario con los 16 hábitos?)
 
-
+...
 3. Contacto
 
 Se muestra el título: "Contáctanos" seguido de: Si tienes alguna duda o sugerencia, puedes dejarla en el siguiente formulario. En breve te responderemos.
@@ -97,7 +97,7 @@ Todos los campos son obligatorios.
 
 A continuación se muestra un botón "Enviar". Cuando el usuario completa correctamente el formulario, aparece un mensaje de confirmación "Su mensaje ha sido enviado.Lo contactaremos a la brevedad. Muchas gracias."
 
-
+...
 4. Iniciar sesión
 
 Cuando el usuario hace clic en Iniciar sesión, se le muestra la página con la siguiente información:
@@ -119,7 +119,7 @@ En el formulario se observa una casilla de verificación con el siguiente mensaj
 
 También se observa el texto: "Olvidé mi contraseña", donde al hacer click ahí se lo deriva a que ingrese su correo electrónico y un botón que indica: "Recuperar contraseña". 
 
-(Continúa....)
+(Continúa...)
 
 
 
