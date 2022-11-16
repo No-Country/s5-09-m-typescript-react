@@ -1,7 +1,7 @@
 import { Autocomplete, Grid, Button } from "@mui/material";
 import { display } from "@mui/system";
 import * as React from "react";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 type FormData = {
     fullName: string;
@@ -30,15 +30,21 @@ export default function ContactForm() {
       }
   
      const {register, handleSubmit,formState:{errors}} = useForm<FormData>();
+
+     //Para probar si funcionan los formularios
+     const formSubmitHandler: SubmitHandler<FormData> = (data: FormData) =>{
+      console.log('form data is',data);
+     }
     
     return (
       <Grid>
-        <form>
+        <form onSubmit={handleSubmit(formSubmitHandler)}>
+          
             <label style={laberSt}>Nombre Completo</label>
-            <input style={inputSt} placeholder='Ingresa tu nombre completo'{...register('fullName')}/>
+            <input style={inputSt} autoComplete= 'off' placeholder='Ingresa tu nombre completo'{...register('fullName')}/>
 
             <label style={laberSt}>Correo</label>
-            <input style={inputSt} placeholder='Ingresa tu correo'{...register('email')}/>
+            <input style={inputSt}  autoComplete= 'off' placeholder='Ingresa tu correo'{...register('email')}/>
 
             <label style={laberSt}>Comentario</label>
             <textarea placeholder='Escribe aquí tu comentario'{...register('text')}
