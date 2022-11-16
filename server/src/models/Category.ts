@@ -18,5 +18,5 @@ const categorySchema = new Schema<Category>({
     }
 })
 
-const Category = model('Habit', categorySchema)
+const Category = model('Category', categorySchema)
 export default Category
