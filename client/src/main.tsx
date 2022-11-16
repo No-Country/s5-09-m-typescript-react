@@ -3,12 +3,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
-import { globalTheme } from './themes';
+import Theme from './themes/Theme';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
-		<ThemeProvider theme={globalTheme}>
+		<Theme>
 			<App />
-		</ThemeProvider>
+		</Theme>
 	</React.StrictMode>,
 );
