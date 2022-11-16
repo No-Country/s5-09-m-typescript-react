@@ -1,6 +1,10 @@
 import { Box, Typography } from '@mui/material';
+import { GlobalButton } from '../../../components';
 
 export default function MyPractices() {
+	const navegacion = () => {
+		console.log('probando boton');
+	};
 	return (
 		<section>
 			<Box
@@ -46,7 +50,7 @@ export default function MyPractices() {
 						<Typography
 							variant='body1'
 							color={'text.primary'}
-							sx={{ marginTop: '30px', fontSize: '24px', lineHeight: '32px' }}
+							sx={{ margin: '30px 0px', fontSize: '24px', lineHeight: '32px' }}
 						>
 							Los 16 puntos son un sistema de prácticas, que promueven la
 							consolidación de hábitos en el estado físico y mental. Todo esto
@@ -56,6 +60,7 @@ export default function MyPractices() {
 							Segundo, se puede conseguir un cuerpo saludable y una mente
 							serena.
 						</Typography>
+						<GlobalButton text='Conoce Más' navegacion={navegacion} />
 					</div>
 
 					<img
