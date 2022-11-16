@@ -23,7 +23,7 @@ export default function BoletinInformativo() {
 								marginBottom: '40px',
 								width: '567px',
 								height: '253px',
-								borderRadius: '15px',
+								borderRadius: '16px',
 							}}
 						/>
 					</Grid>
