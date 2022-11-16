@@ -110,7 +110,19 @@ En el formulario se observa una casilla de verificación con el siguiente mensaj
 
 También se observa el texto: "Olvidé mi contraseña", donde al hacer click ahí se lo deriva a que ingrese su correo electrónico y un botón que indica: "Recuperar contraseña". 
 
-(Continúa...)
+También se muestra un mensaje: "¿Aún no tienes cuenta? Regístrate". Cuando el usuario hace click en Regístrate se lo deriva a la pantalla de Registro. La misma contiene:
+
+Bienvenido: Crea tu cuenta y disfruta de todo lo que tenemos para ti.
+
+Los campos para completar son: nombre completo, correo, contraseña. Todos los campos son obligatorios.
+
+Si el usuario no completa alguno de los campos, aparecerá un mensaje diciendo: Todos los campos son obligatorios.
+Si el usuario ingresa una contraseña que no cumple con la condición le aparece el mensaje: La contraseña debe tener 8 caracteres con al menos una mayúscula y un número.
+Si el usuario ingresa un mail que ya ha sido registrado, le aparecerá el mensaje: El mail ingresado ya ha sido registrado.
+
+
+
+
 
 
 
