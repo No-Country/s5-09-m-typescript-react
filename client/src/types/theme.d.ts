@@ -21,3 +21,9 @@ declare module '@mui/material/Button' {
 		third: true;
 	}
 }
+declare module '@mui/material/TextField' {
+	interface TextFieldPropsColorOverrides {
+		third: true;
+		text: true;
+	}
+}

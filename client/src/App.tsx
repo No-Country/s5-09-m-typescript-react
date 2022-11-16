@@ -12,7 +12,7 @@ function App() {
 	return (
 		<>
 			<MenuNavegation></MenuNavegation>
-			
+			<Home/>
 			<Contact/>
 			<Footer></Footer>
 		</>

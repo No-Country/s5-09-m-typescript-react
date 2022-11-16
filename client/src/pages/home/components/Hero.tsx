@@ -1,5 +1,5 @@
 import { Grid, Button, Typography, Box } from '@mui/material';
-export const Hero = () => {
+export default function Hero() {
 	return (
 		<Grid
 			container
@@ -41,7 +41,7 @@ export const Hero = () => {
 				<Button
 					variant='contained'
 					color='secondary'
-					sx={{ maxWidth: '200px', color: '#fff' }}
+					sx={{ maxWidth: '200px' }}
 				>
 					Comienza ahora
 				</Button>
@@ -86,4 +86,4 @@ export const Hero = () => {
 			</Grid>
 		</Grid>
 	);
-};
+}

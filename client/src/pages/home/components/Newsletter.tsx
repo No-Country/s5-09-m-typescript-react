@@ -1,42 +1,61 @@
-import { Grid, Typography, Paper, Button } from '@mui/material';
+import { Grid, Typography, Button, TextField, Paper } from '@mui/material';
 import image from '../../../assets/Rectangle4.png';
 
 export default function BoletinInformativo() {
 	return (
-		<Grid container spacing={2} padding='0px 0 0px 0' justifyContent='center'>
-			<Grid item xs={5}>
+		<Grid container spacing={1} padding='150px 0 150px 0'>
+			<Grid item xs={6}>
 				<Grid
-					container
+					item
 					sx={{
+						display: 'flex',
 						height: '100%',
 						width: '100%',
 						borderRadius: '20px',
-						justifyContent: 'center',
+						justifyContent: 'end',
 						alignItems: 'center',
 					}}
 				>
-					<Grid item xs={6}>
+					<div
+						className='prueba'
+						style={{
+							position: 'relative',
+						}}
+					>
 						<img
 							src={image}
 							alt='Chica Yoga'
 							style={{
-								marginBottom: '40px',
-								width: '567px',
-								height: '253px',
+								position: 'relative',
+								width: '500px',
+								height: '250px',
 								borderRadius: '16px',
+								zIndex: '5',
 							}}
 						/>
-					</Grid>
+						<Paper
+							sx={{
+								position: 'absolute',
+								width: '100px',
+								height: '100px',
+								borderRadius: '50%',
+								backgroundColor: 'secondary.light',
+								zIndex: '1',
+								left: -40,
+								bottom: -30,
+							}}
+						></Paper>
+					</div>
 				</Grid>
 			</Grid>
-			<Grid item xs={5}>
+			<Grid item xs={6}>
 				<Grid
 					container
 					sx={{
+						display: 'flex',
+						justifyContent: 'start',
 						width: '100%',
-						padding: '15px',
-						alignItems: 'center',
-						marginBottom: '50px',
+						paddingLeft: '30px',
 					}}
 				>
 					<Grid item xs={10}>
@@ -63,19 +82,20 @@ export default function BoletinInformativo() {
 							borderLeft='2px solid #FC802C'
 							paddingLeft='10px'
 							marginLeft='7px'
+							marginBottom='30px'
 						>
 							Suscríbete a nuestro boletín informativo y <br></br>mantente al
 							tanto de las últimas novedades <br></br> del yoga y mindfullness.
 						</Typography>
-						<input
-							placeholder='Suscribete'
-							style={{
-								borderRadius: '5px',
-								width: '303px',
-								height: '56px',
-								marginTop: '15px',
+						<TextField
+							id='outlined-basic'
+							label='Suscribete'
+							variant='outlined'
+							color='third'
+							sx={{
+								width: '300px',
 							}}
-						></input>
+						/>
 						<Button
 							variant='contained'
 							color='secondary'
