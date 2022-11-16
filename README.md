@@ -20,7 +20,8 @@ La página web contiene las siguientes secciones:
 3. Contacto
 4. Nosotros
 5. Iniciar sesión
-6. Términos Legales
+6. Panel usuario
+7. Términos Legales
 
 ...
 
@@ -63,6 +64,9 @@ y lograr la elevación espiritual. Gracias a todo esto podemos equilibrar el cue
   1.6  Boletín informativo
 
   Se observa junto a una imagen el siguiente texto: "Suscríbete a nuestro boletín informativo y mantente al tanto de las últimas novedades del yoga y mindfulness." 
+
+
+
 
    1.7 Menú del footer
 
@@ -123,11 +127,14 @@ Si el usuario no completa alguno de los campos, aparecerá un mensaje diciendo: 
 Si el usuario ingresa una contraseña que no cumple con la condición le aparece el mensaje: #La contraseña debe tener 8 caracteres con al menos una mayúscula y un número.#
 Si el usuario ingresa un mail que ya ha sido registrado, le aparecerá el mensaje: "El mail ingresado ya ha sido registrado".
 
+Luego de rellenar los campos y verificar su cuenta por mail, tendría que aparecer una pantalla con opciones para seleccionar.
+
 Cuando el usuario entra a su panel se le muestra:
 
-En panel de navegación izquierdo: Se observa foto del usuario (opcional) seguido de Nombre y apellido con el que se ha registrado.
+6. En panel de navegación izquierdo: Se observa foto del usuario (opcional) seguido de Nombre y apellido con el que se ha registrado.
 
 El menú consta de: Perfil, Notificaciones, Favoritos, Progreso, Mi calendario, Panel.
+
 
 
 
