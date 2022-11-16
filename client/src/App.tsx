@@ -1,17 +1,16 @@
-import { Typography } from '@mui/material';
+import { Home, InputLogin } from './pages';
 import { useState } from 'react';
-import Footer from './components/Footer';
-import MenuNavegation from './components/MenuNavegation';
-import Home from './pages/home/Home';
+import { MenuNavegation, Footer } from './components';
 
 function App() {
 	const [count, setCount] = useState(0);
 
 	return (
 		<>
-			<MenuNavegation></MenuNavegation>
+			<InputLogin />
+			<MenuNavegation />
 			<Home />
-			<Footer></Footer>
+			<Footer />
 		</>
 	);
 }

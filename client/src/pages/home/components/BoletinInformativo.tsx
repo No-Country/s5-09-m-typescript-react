@@ -1,4 +1,4 @@
-import { Grid, Typography, Paper, Button } from '@mui/material';
+import { Grid, Typography, Button } from '@mui/material';
 import image from '../../../assets/Rectangle4.png';
 
 export default function BoletinInformativo() {
