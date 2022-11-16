@@ -91,7 +91,7 @@ export default function BoletinInformativo() {
 							id='outlined-basic'
 							label='Suscribete'
 							variant='outlined'
-							color='third'
+							color='text'
 							sx={{
 								width: '300px',
 							}}

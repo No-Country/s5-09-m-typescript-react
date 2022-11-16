@@ -1,5 +1,9 @@
 import { Grid, Button, Typography, Box } from '@mui/material';
+import { GlobalButton } from '../../../components';
 export default function Hero() {
+	const navegacion = () => {
+		console.log('probando boton');
+	};
 	return (
 		<Grid
 			container
@@ -38,13 +42,7 @@ export default function Hero() {
 					nuevas tareas, ve registrando y evaluando tu progreso en el
 					cumplimiento de los 16 puntos.
 				</Typography>
-				<Button
-					variant='contained'
-					color='secondary'
-					sx={{ maxWidth: '200px' }}
-				>
-					Comienza ahora
-				</Button>
+				<GlobalButton text='Comienza ahora' navegacion={navegacion} />
 			</Grid>
 			<Grid
 				item
