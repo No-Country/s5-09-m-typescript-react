@@ -13,7 +13,6 @@ function App() {
 		<>
 			<MenuNavegation></MenuNavegation>
 			<Home/>
-			<Contact/>
 			<Footer></Footer>
 		</>
 	);
