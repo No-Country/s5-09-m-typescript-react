@@ -1,59 +1,60 @@
-import { Grid } from '@mui/material';
+import { Grid, Paper } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { forms } from '../types/interfaces';
 export default function Contact({ children, tittle, text }: forms) {
 	return (
 		<Grid
 			container
-			spacing={2}
-			padding='100px 0 100px 0'
-			justifyContent='center'
+			spacing={0}
+			sx={{
+				margin: '50px  0',
+			}}
 		>
-			<Grid
-				display='flex'
-				sx={{
-					height: '950px',
-					width: '1440px',
-				}}
-			>
-				<Grid className='contactUs' position='absolute' marginTop='50px'>
-					<Typography variant='h1' color='text.secondary' fontSize={64}>
-						{tittle}
-					</Typography>
-					<Typography
-						component='p'
-						variant='body1'
-						color='text.primary'
-						padding={1}
+			<Grid item lg={4}>
+				<Grid
+					container
+					sx={{
+						margin: '0 0 0 30px',
+					}}
+				>
+					<Grid item xs={12}>
+						<Typography variant='h1' color='text.secondary' fontSize={64}>
+							{tittle}
+						</Typography>
+					</Grid>
+					<Grid
+						item
+						xs={12}
 						sx={{
-							borderLeft: '3px solid',
+							borderLeft: '2px solid',
 							borderColor: 'secondary.main',
-							width: 402,
-							height: 115,
+							paddingLeft: '5px',
 						}}
 					>
-						{text}
-					</Typography>
+						<Typography component='p' color='text.primary'>
+							{text}
+						</Typography>
+					</Grid>
 				</Grid>
-				<Grid
-					position='absolute'
-					padding='60px 60px'
-					marginTop='50px'
-					marginLeft='700px'
-					display='grid'
-					justifyContent='center'
+			</Grid>
+			<Grid
+				item
+				lg={8}
+				sx={{
+					display: 'flex',
+					justifyContent: 'center',
+				}}
+			>
+				<Paper
 					sx={{
-						height: 670,
-						width: 600,
-						border: '1px solid',
-						borderRadius: '4px',
-						borderColor: '#B2BCCA',
-						boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.25)',
-						backgroundColor: '#FFFFFF',
+						width: '600px',
+						height: '700px',
+						background: '#FFFFFF',
+						border: '2px solid black',
 					}}
 				>
 					{children}
-				</Grid>
+				</Paper>
 			</Grid>
 		</Grid>
 	);
