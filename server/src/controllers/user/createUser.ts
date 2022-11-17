@@ -5,11 +5,14 @@ export const createUser = async (req: Request, res: Response) => {
     const user = req.body
 
     try {
-        const userRetrieved: any = await userService.createUser(user)
+        const userRetrieved: any = await userService.createUser(user) //! SOLUCIONAR PROBLEMA DE TIPADO
+
         const { status } = userRetrieved
 
-        res.status(status).json(userRetrieved)
+        return res.status(status).json(userRetrieved)
     } catch (error) {
-        return error
+        return res.status(500).json({
+            error,
+        })
     }
 }

@@ -1,24 +1,32 @@
-import User from '../models/User'
+import { User } from '../interfaces/user'
+import UserModel from '../models/User'
+import bcryptjs from 'bcryptjs'
 
-export const createUser = async (user: any) => {
+export const createUser = async (user: User) => {
     try {
-        let response
-        const findByEmail = await User.findOne({ email: user.email })
-        console.log(!findByEmail)
+        const findByEmail = await UserModel.findOne({ email: user.email })
+        console.log(findByEmail)
 
-        const userToCreate = await User.create(user)
+        if (findByEmail === null) {
+            const salt = bcryptjs.genSaltSync()
+            user.password = bcryptjs.hashSync(user.password, salt)
+            const userToCreate = await UserModel.create(user)
+            const { fullname, email } = userToCreate
 
-        if (findByEmail) {
-            response = {
-                status: 404,
-                msg: 'User already exist.',
+            const response = {
+                msg: 'Users created',
+                status: 200,
+                ok: true,
+                user: { fullname, email },
             }
-        }
 
-        response = {
-            msg: 'Users created',
-            status: 200,
-            userToCreate,
+            return response
+        }
+        //Todo: Aca iria el envio del mail de bienvenida
+        const response = {
+            status: 404,
+            msg: 'User already exist.',
+            ok: false,
         }
 
         return response
@@ -30,7 +38,7 @@ export const createUser = async (user: any) => {
 export const getUsers = async () => {
     try {
         let response
-        const usersRetrieved = await User.find()
+        const usersRetrieved = await UserModel.find()
 
         if (usersRetrieved.length < 0) {
             response = {
@@ -54,7 +62,7 @@ export const getUsers = async () => {
 export const getUser = async (id: string) => {
     try {
         let response
-        const userRetrieved = await User.findById(id)
+        const userRetrieved = await UserModel.findById(id)
 
         if (!userRetrieved) {
             response = {
@@ -77,7 +85,7 @@ export const getUser = async (id: string) => {
 export const deleteUser = async (id: string) => {
     try {
         let response
-        const userDeleted = await User.findByIdAndDelete({ _id: id })
+        const userDeleted = await UserModel.findByIdAndDelete({ _id: id })
         console.log(userDeleted)
 
         if (userDeleted === null) {
@@ -98,12 +106,16 @@ export const deleteUser = async (id: string) => {
     }
 }
 
-export const updateUser = async (id: string, user: any) => {
+export const updateUser = async (id: string, user: User) => {
     try {
         let response
-        const userUpdated = await User.findByIdAndUpdate({ _id: id }, user, {
-            new: true,
-        })
+        const userUpdated = await UserModel.findByIdAndUpdate(
+            { _id: id },
+            user,
+            {
+                new: true,
+            }
+        )
         console.log(userUpdated)
 
         if (userUpdated === null) {
