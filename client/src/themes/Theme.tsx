@@ -42,9 +42,11 @@ const Theme: FC<Props> = ({ children }) => {
 						main: '#FC802C',
 						light: '#FEA060',
 						dark: '#DD6F10',
+						contrastText: '#fff',
 					},
 					third: {
 						main: '#4E7D64',
+						contrastText: '#fff',
 					},
 					complementary: {
 						main: '#112734',

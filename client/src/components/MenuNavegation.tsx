@@ -16,7 +16,7 @@ export default function MenuNavegation() {
 			style={{
 				display: 'flex',
 				width: '100%',
-				height: '150px',
+				height: '100px',
 				justifyContent: 'space-evenly',
 				alignItems: 'center',
 			}}

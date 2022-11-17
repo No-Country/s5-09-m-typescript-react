@@ -1,4 +1,10 @@
-import { Hero, MyPractices, Slider, Testimonials, BoletinInformativo } from './components';
+import {
+	Hero,
+	MyPractices,
+	Slider,
+	Testimonials,
+	Newsletter,
+} from './components';
 import AboutHabits from './components/AboutHabits';
 
 export default function Home() {
@@ -9,7 +15,7 @@ export default function Home() {
 			<MyPractices />
 			<AboutHabits />
 			<Testimonials />
-			<BoletinInformativo/>
+			<Newsletter />
 		</>
 	);
 }
