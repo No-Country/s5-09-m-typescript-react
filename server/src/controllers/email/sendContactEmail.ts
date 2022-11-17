@@ -12,6 +12,6 @@ export const sendContactEmail = async (req: Request, res: Response) => {
         res.json({ ok: true, msg: 'Mensaje Enviado!' })
     } catch (error) {
         console.log(error) //* Sacar cuando finalice, solo usar mientras pruebo para ver errores consola
-        res.status(400).json({ ok: false, msg: 'El email no pude ser enviado' })
+        res.status(500).json({ ok: false, msg: 'El email no pude ser enviado' })
     }
 }

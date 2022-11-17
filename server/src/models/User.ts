@@ -13,7 +13,6 @@ const userSchema = new Schema<User>({
     },
     password: {
         type: String,
-        default: ':roll_eyes:',
         required: true,
     },
     email: {
@@ -29,7 +28,6 @@ const userSchema = new Schema<User>({
     ], */
     admin: {
         type: Boolean,
-        required: true,
         default: false,
     },
     externId: {
@@ -38,7 +36,6 @@ const userSchema = new Schema<User>({
     },
     email_verified: {
         type: Boolean,
-        required: true,
         default: false,
     },
     status: {
