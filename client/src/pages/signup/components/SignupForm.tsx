@@ -11,7 +11,10 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 export default function SignupForm() {
 	return (
-		<form>
+		<Stack component="form" direction={"column"} spacing="45px" sx={{
+      padding: "60px",
+      paddingBottom: "100px",
+    }}>
 			<Typography
 				variant='h3'
 				sx={{
@@ -80,6 +83,6 @@ export default function SignupForm() {
 					Inicia Sesión
 				</Typography>
 			</Typography>
-		</form>
+    </Stack>
 	);
 }
