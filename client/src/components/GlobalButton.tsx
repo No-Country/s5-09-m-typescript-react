@@ -2,13 +2,13 @@ import { Button } from '@mui/material';
 
 interface GlobalButton {
 	text: string;
-	navegacion: () => void;
+	action: () => void;
 	width?: string;
 	height?: string;
 }
 export default function GlobalButton({
 	text,
-	navegacion,
+	action,
 	width = '250px',
 	height = '50px',
 }: GlobalButton) {
@@ -20,7 +20,7 @@ export default function GlobalButton({
 				height: height,
 			}}
 			color='secondary'
-			onClick={() => navegacion()}
+			onClick={() => action()}
 		>
 			{text}
 		</Button>

@@ -1,7 +1,11 @@
 import { Grid, Typography, Button, TextField, Paper } from '@mui/material';
 import image from '../../../assets/Rectangle4.png';
+import { GlobalButton } from '../../../components';
 
 export default function BoletinInformativo() {
+	const logicaSuscripcion = () => {
+		console.log('hola');
+	};
 	return (
 		<Grid container spacing={1} padding='150px 0 150px 0'>
 			<Grid item xs={6}>
@@ -96,19 +100,7 @@ export default function BoletinInformativo() {
 								width: '300px',
 							}}
 						/>
-						<Button
-							variant='contained'
-							color='secondary'
-							sx={{
-								maxWidth: '200px',
-								color: '#fff',
-								height: '53px',
-								width: '171px',
-								marginLeft: '4px',
-							}}
-						>
-							Suscribete
-						</Button>
+						<GlobalButton text='Suscribete' action={logicaSuscripcion} />
 					</Grid>
 				</Grid>
 			</Grid>

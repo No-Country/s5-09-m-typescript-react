@@ -42,7 +42,7 @@ export default function Hero() {
 					nuevas tareas, ve registrando y evaluando tu progreso en el
 					cumplimiento de los 16 puntos.
 				</Typography>
-				<GlobalButton text='Comienza ahora' navegacion={navegacion} />
+				<GlobalButton text='Comienza ahora' action={navegacion} />
 			</Grid>
 			<Grid
 				item
