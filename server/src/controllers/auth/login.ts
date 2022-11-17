@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
 import { IResponse } from '../../interfaces/response'
 
-// import { generateJWT } from '../../utils/jwt'
 import { loginService } from '../../services/auth/loginService'
+import { generateJwt } from '../../utils/jwt'
 import { validatePassword } from '../../utils/validatePassword'
 
 export const login = async (req: Request, res: Response) => {
@@ -28,14 +28,13 @@ export const login = async (req: Request, res: Response) => {
             })
         }
 
-        //todo Crear JWT
-
-        // const token = await generateJWT(user.id, user.admin)
+        //*Creo token del usuario
+        const token = await generateJwt(user._id, user.admin)
 
         return res.status(200).json({
             ok: true,
             msg: 'Usuario logeado',
-            //token,
+            token,
             id: user._id,
             admin: user.admin,
         })
