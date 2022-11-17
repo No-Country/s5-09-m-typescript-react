@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Button, Menu, MenuItem, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 export default function MenuNavegation() {
+	const navigate = useNavigate();
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 	const open = Boolean(anchorEl);
 	const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -21,7 +23,7 @@ export default function MenuNavegation() {
 				alignItems: 'center',
 			}}
 		>
-			<Button id='basic-button' color='secondary'>
+			<Button id='basic-button' color='secondary' onClick={() => navigate('/')}>
 				<img
 					src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668527673/ananda%20marga/mindfulness_mmykqk.svg'
 					alt='logo'
@@ -29,13 +31,25 @@ export default function MenuNavegation() {
 				/>
 				Mindfulness
 			</Button>
-			<Button id='basic-button' color='third'>
+			<Button
+				id='basic-button'
+				color='third'
+				onClick={() => navigate('/misPracticas')}
+			>
 				Mis practicas
 			</Button>
-			<Button id='basic-button' color='third'>
+			<Button
+				id='basic-button'
+				color='third'
+				onClick={() => navigate('/contacto')}
+			>
 				Contacto
 			</Button>
-			<Button id='basic-button' color='third'>
+			<Button
+				id='basic-button'
+				color='third'
+				onClick={() => navigate('/nosotros')}
+			>
 				Nosotros
 			</Button>
 			<Button
@@ -45,7 +59,7 @@ export default function MenuNavegation() {
 				aria-controls={open ? 'basic-menu' : undefined}
 				aria-haspopup='true'
 				aria-expanded={open ? 'true' : undefined}
-				onClick={handleClick}
+				onClick={() => navigate('/iniciarSesion')}
 			>
 				inicio sesion
 			</Button>
