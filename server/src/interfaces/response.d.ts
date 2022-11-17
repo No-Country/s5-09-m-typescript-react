@@ -5,4 +5,5 @@ export interface IResponse {
     msg?: string
     user: User
     status: number
+    token?: string
 }

@@ -8,16 +8,18 @@ export const createUser = async (user: User) => {
         console.log(findByEmail)
 
         if (findByEmail === null) {
-            const salt = bcryptjs.genSaltSync()
-            user.password = bcryptjs.hashSync(user.password, salt)
             const userToCreate = await UserModel.create(user)
-            const { fullname, email } = userToCreate
+            const salt = bcryptjs.genSaltSync()
+            userToCreate.password = bcryptjs.hashSync(user.password, salt)
+            await userToCreate.save()
+
+            const { _id } = userToCreate
 
             const response = {
                 msg: 'Users created',
                 status: 200,
                 ok: true,
-                user: { fullname, email },
+                id: _id,
             }
 
             return response

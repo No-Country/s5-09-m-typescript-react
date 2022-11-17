@@ -2,8 +2,7 @@ import { Request, Response } from 'express'
 import { IResponse } from '../../interfaces/response'
 
 import { loginService } from '../../services/auth/loginService'
-import { generateJwt } from '../../utils/jwt'
-import { validatePassword } from '../../utils/validatePassword'
+import { generateJwt, validatePassword } from '../../utils'
 
 export const login = async (req: Request, res: Response) => {
     const { email, password } = req.body
@@ -42,6 +41,7 @@ export const login = async (req: Request, res: Response) => {
         return res.status(500).json({
             ok: false,
             msg: 'Ocurrio un error, contacta con un administrador',
+            error,
         })
     }
 }
