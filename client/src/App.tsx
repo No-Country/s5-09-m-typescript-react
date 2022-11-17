@@ -4,6 +4,7 @@ import LayoutNavegation from './utilities/LayoutNavegation';
 import Contact from './pages/contact/Contact';
 import Signup from './pages/signup/Signup';
 import Login from './pages/login/Login';
+import AboutUs from './pages/aboutus/AboutUs';
 
 function App() {
 	return (
@@ -15,7 +16,7 @@ function App() {
 					<Route path='/contacto' element={<Contact />} />
 					<Route path='/iniciarSesion' element={<Login />} />
 					<Route path='/registrate' element={<Signup />} />
-					<Route path='/nosotros' element={<h1>en contruccion</h1>} />
+					<Route path='/nosotros' element={<AboutUs />} />
 				</Routes>
 			</LayoutNavegation>
 		</BrowserRouter>
