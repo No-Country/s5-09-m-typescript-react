@@ -24,7 +24,7 @@ export default function InputLogin() {
 	} = useForm<Inputs>();
 	return (
 		<form>
-			<Grid container spacing={2} width='50%'>
+			<Grid container spacing={5} p={6}>
 				<Grid item xs={12}>
 					<Typography variant='h4' component='h4' color='text.secondary'>
 						Iniciar Sesión
