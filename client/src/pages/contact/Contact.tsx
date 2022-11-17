@@ -54,15 +54,7 @@ export default function Contact(){
                                         backgroundColor:'#FFFFFF'
                                         }}
                                 >
-                                    <Typography variant='h2' 
-                                                textAlign='center'
-                                                color='text.secondary'
-                                                fontSize={32}
-                                                fontWeight={700}
-                                                lineHeight='38px'
-                                                >
-                                                     Contacto
-                                    </Typography>
+                                 
                           
                                     <ContactForm />
                         </Grid>
