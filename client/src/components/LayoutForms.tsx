@@ -49,8 +49,10 @@ export default function Contact({ children, tittle, text }: forms) {
 					sx={{
 						width: '600px',
 						height: '700px',
-						background: '#FFFFFF',
-						border: '2px solid black',
+						backgroundColor: "#FFFFFF",
+            borderRadius: "4px",
+            border: "1px solid #B2BCCA",
+            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.25)",
 					}}
 				>
 					{children}
