@@ -7,6 +7,9 @@ import {
 	Checkbox,
 	FormControlLabel,
 } from '@mui/material';
+
+import { Link as RouterLink } from 'react-router-dom';
+
 import { useForm } from 'react-hook-form';
 
 type Inputs = {
@@ -76,14 +79,15 @@ export default function InputLogin() {
 						alignItems: 'flex-end',
 					}}
 				>
-					<Link
-						href='#'
-						sx={{
-							color: 'text.secondary',
-						}}
-					>
-						¿Olvidaste la contraseña?
-					</Link>
+					<RouterLink to='/'>
+						<Link
+							sx={{
+								color: 'text.secondary',
+							}}
+						>
+							¿Olvidaste la contraseña?
+						</Link>
+					</RouterLink>
 				</Grid>
 
 				<Grid
@@ -134,15 +138,17 @@ export default function InputLogin() {
 						alignItems: 'center',
 					}}
 				>
-					<Typography>Aún no tienes cuenta?</Typography>
-					<Link
-						href='#'
-						sx={{
-							color: 'text.secondary',
-						}}
-					>
-						Registrarse
-					</Link>
+					<Typography>Aún no tienes cuenta?</Typography>{' '}
+					<RouterLink to='/registrate'>
+						<Link
+							href='/registrate'
+							sx={{
+								color: 'text.secondary',
+							}}
+						>
+							Registrarse
+						</Link>
+					</RouterLink>
 				</Grid>
 
 				<Grid item xs={12}>
