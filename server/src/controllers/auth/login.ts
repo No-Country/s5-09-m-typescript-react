@@ -20,12 +20,11 @@ export const login = async (req: Request, res: Response) => {
 
         //* Comprobar que las contraseñas coincidan
         const validPassword = await validatePassword(password, user.password)
-        console.log(validPassword)
 
         if (!validPassword) {
             return res.status(404).json({
                 ok: false,
-                msg: 'Incorrect Password',
+                msg: 'Password Incorrecta',
             })
         }
 
@@ -35,14 +34,13 @@ export const login = async (req: Request, res: Response) => {
 
         return res.status(200).json({
             ok: true,
-            msg: 'User Logged',
+            msg: 'Usuario logeado',
             //token,
             id: user._id,
             admin: user.admin,
         })
     } catch (error) {
-        console.log(error)
-        return res.status(404).json({
+        return res.status(500).json({
             ok: false,
             msg: 'Ocurrio un error, contacta con un administrador',
         })
