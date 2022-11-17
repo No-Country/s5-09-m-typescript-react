@@ -1,8 +1,5 @@
 import { Footer, MenuNavegation } from '../components';
-
-interface children {
-	children: JSX.Element;
-}
+import { children } from '../types/interfaces';
 export default function LayoutNavegation({ children }: children) {
 	return (
 		<>
