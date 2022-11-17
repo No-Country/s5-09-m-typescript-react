@@ -1,9 +1,8 @@
-import express, { Response } from 'express'
+import express from 'express'
+import { sendContactEmail } from '../controllers'
 
 const router = express.Router()
 
-router.get('/prueba', async (_req, res: Response) => {
-    return res.json({ msg: 'Todo bien' })
-})
+router.post('/sendContact', sendContactEmail) //Todo: armar middlewares y validaciones
 
 export default router

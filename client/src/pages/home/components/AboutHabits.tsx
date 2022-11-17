@@ -7,6 +7,7 @@ import {
 	CardActions,
 	Card,
 } from '@mui/material';
+import { GlobalButton } from '../../../components';
 
 const itemList = [
 	{
@@ -30,6 +31,9 @@ const itemList = [
 ];
 
 export default function AboutHabits() {
+	const navegacion = () => {
+		console.log('probando boton');
+	};
 	return (
 		<section
 			style={{
@@ -50,6 +54,7 @@ export default function AboutHabits() {
 				<div className='cardsContainer' style={{ display: 'flex' }}>
 					{itemList.map(item => (
 						<Card
+							key={itemList.indexOf(item)}
 							sx={{
 								borderRadius: '12px',
 								margin: '28px 20px',
@@ -110,6 +115,7 @@ export default function AboutHabits() {
 						La filosofía de Mindfulness se fundamenta en un sistema de pasos de
 						16 puntos.
 					</Typography>
+					<GlobalButton text='Conoce Más' action={navegacion} />
 				</div>
 			</Box>
 		</section>
