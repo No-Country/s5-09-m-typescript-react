@@ -1,6 +1,8 @@
+import { ObjectId } from 'mongoose'
 import { StatusUser } from '../utils/enums.ts'
 
 export interface User {
+    _id: ObjectId
     fullname?: string
     img: string
     password: string
