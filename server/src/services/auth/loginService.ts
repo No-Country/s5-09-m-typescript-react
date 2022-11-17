@@ -16,6 +16,6 @@ export const loginService = async (email: string) => {
         const response = { ok: true, status: 200, user }
         return response
     } catch (error) {
-        return console.log('catch')
+        return error
     }
 }
