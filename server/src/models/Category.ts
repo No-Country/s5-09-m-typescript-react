@@ -10,7 +10,7 @@ const categorySchema = new Schema<Category>({
         type: String,
         required: true,
         default:
-            'https://www.softzone.es/app/uploads-softzone.es/2018/04/guest.png',
+            'https://st3.depositphotos.com/1561359/12975/i/600/depositphotos_129758564-stock-photo-3d-green-letter-c.jpg',
     },
     description: {
         type: String,
