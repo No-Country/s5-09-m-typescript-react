@@ -6,8 +6,9 @@ export const updateUser = async (req: Request, res: Response) => {
     const { body } = req
 
     try {
-        const userRetrieved: any = await userService.updateUser(id, body)
+        const userRetrieved: any = await userService.updateUser(id, body) //! SOLUCIONAR PROBLEMA DE TIPADO
         const { status } = userRetrieved
+
         return res.status(status).json({
             userRetrieved,
         })
