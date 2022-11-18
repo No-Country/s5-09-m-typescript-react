@@ -12,7 +12,7 @@ export default function PracticesCard({ tittle, urlImg, text }: cardContent){
 						width: '800px',
 						height: '100%',
 						backgroundColor: "#FFFFFF",
-                        borderRadius: "4px",
+                        borderRadius: "5px",
                         border: "1px solid #B2BCCA",
                         boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.25)",
 					}}
@@ -57,4 +57,4 @@ export default function PracticesCard({ tittle, urlImg, text }: cardContent){
 				</Paper>
         
     );
-                }
+}
