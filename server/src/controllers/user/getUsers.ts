@@ -3,13 +3,15 @@ import * as userService from '../../services/users'
 
 export const getUsers = async (_req: Request, res: Response) => {
     try {
-        const usersRetrieved: any = await userService.getUsers()
+        const usersRetrieved: any = await userService.getUsers() //! SOLUCIONAR PROBLEMA DE TIPADO
         const { status } = usersRetrieved
 
-        res.status(status).send({
+        return res.status(status).send({
             usersRetrieved,
         })
     } catch (error) {
-        return error
+        return res.status(500).send({
+            error,
+        })
     }
 }
