@@ -11,6 +11,10 @@ import {
 import { Link as RouterLink } from 'react-router-dom';
 
 import { useForm } from 'react-hook-form';
+import { useGoogleLogin } from '@react-oauth/google';
+import { onLogin, onLoginGoogle } from '../../../service/authApi';
+import axios from 'axios';
+import { GoogleLogin } from '@react-oauth/google';
 
 type Inputs = {
 	email: string;
@@ -25,13 +29,45 @@ export default function InputLogin() {
 		watch,
 		formState: { errors },
 	} = useForm<Inputs>();
+
+	// const login = useGoogleLogin({
+	// 	onSuccess: async response => {
+	// 		try {
+	// 			const data = await axios.get(
+	// 				'https://www.googleapis.com/oauth2/v3/userinfo',
+	// 				{
+	// 					headers: {
+	// 						Authorization: `Bearer ${response.access_token}`,
+	// 					},
+	// 				},
+	// 			);
+	// 			console.log(data);
+	// 		} catch (err) {
+	// 			console.log(err);
+	// 		}
+	// 	},
+	// });
+
+	const login = useGoogleLogin({
+		onSuccess: tokenResponse => onLoginGoogle(tokenResponse),
+	});
+
 	return (
-		<form>
+		<form onSubmit={handleSubmit(onLogin)}>
 			<Grid container spacing={5} p={6}>
 				<Grid item xs={12}>
 					<Typography variant='h4' component='h4' color='text.secondary'>
 						Iniciar Sesión
 					</Typography>
+					{/* <GoogleLogin
+						onSuccess={credentialResponse => {
+							console.log(credentialResponse);
+						}}
+						onError={() => {
+							console.log('Login Failed');
+						}}
+						useOneTap
+					/> */}
 				</Grid>
 
 				<Grid item xs={12}>
@@ -89,7 +125,6 @@ export default function InputLogin() {
 						</Link>
 					</RouterLink>
 				</Grid>
-
 				<Grid
 					item
 					xs={12}
@@ -104,7 +139,6 @@ export default function InputLogin() {
 						Inicia sesión con
 					</Typography>
 				</Grid>
-
 				<Grid
 					item
 					xs={12}
@@ -121,7 +155,12 @@ export default function InputLogin() {
 							alt='132'
 						/>
 					</Button>
-					<Button variant='outlined' fullWidth sx={{ maxWidth: '100px' }}>
+					<Button
+						variant='outlined'
+						fullWidth
+						sx={{ maxWidth: '100px' }}
+						onClick={() => login()}
+					>
 						<img
 							src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668694018/ananda%20marga/google_ic_nf3jdu.svg'
 							alt='132'
@@ -150,7 +189,6 @@ export default function InputLogin() {
 						</Link>
 					</RouterLink>
 				</Grid>
-
 				<Grid item xs={12}>
 					<Button
 						type='submit'
