@@ -1,6 +1,18 @@
 import { StatusUser } from '../utils/enums.ts'
 
-export interface User {
+export interface Notifications {
+    title: string
+    description?: string
+    img?: string
+    read?: boolean
+}
+
+export interface Notes {
+    type: string
+    date: date
+}
+
+export interface IUser {
     _id: string
     fullname?: string
     img: string
@@ -12,4 +24,8 @@ export interface User {
     email_verified: boolean
     status?: StatusUser
     resetLink: string
+    notifications?: Notifications
+    notes: Notes
 }
+
+ex
