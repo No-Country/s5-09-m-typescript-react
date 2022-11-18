@@ -1,14 +1,14 @@
-import { User } from '../interfaces/user'
-import UserModel from '../models/User'
+import { IUser } from '../interfaces/user'
+import User from '../models/User'
 import bcryptjs from 'bcryptjs'
 
-export const createUser = async (user: User) => {
+export const createUser = async (user: IUser) => {
     try {
-        const findByEmail = await UserModel.findOne({ email: user.email })
+        const findByEmail = await User.findOne({ email: user.email })
         console.log(findByEmail)
 
         if (findByEmail === null) {
-            const userToCreate = await UserModel.create(user)
+            const userToCreate = await User.create(user)
             const salt = bcryptjs.genSaltSync()
             userToCreate.password = bcryptjs.hashSync(user.password, salt)
             await userToCreate.save()
@@ -39,7 +39,7 @@ export const createUser = async (user: User) => {
 
 export const getUsers = async () => {
     try {
-        const usersRetrieved = await UserModel.find()
+        const usersRetrieved = await User.find()
 
         if (usersRetrieved.length <= 0) {
             const response = {
@@ -64,7 +64,7 @@ export const getUsers = async () => {
 
 export const getUser = async (id: string) => {
     try {
-        const userRetrieved = await UserModel.findById({ _id: id })
+        const userRetrieved = await User.findById({ _id: id })
 
         if (userRetrieved) {
             const { fullname, email, _id } = userRetrieved
@@ -91,7 +91,7 @@ export const getUser = async (id: string) => {
 }
 export const deleteUser = async (id: string) => {
     try {
-        const userDeleted = await UserModel.findByIdAndDelete({ _id: id })
+        const userDeleted = await User.findByIdAndDelete({ _id: id })
 
         if (userDeleted) {
             const response = {
@@ -113,15 +113,11 @@ export const deleteUser = async (id: string) => {
     }
 }
 
-export const updateUser = async (id: string, user: User) => {
+export const updateUser = async (id: string, user: IUser) => {
     try {
-        const userUpdated = await UserModel.findByIdAndUpdate(
-            { _id: id },
-            user,
-            {
-                new: true,
-            }
-        )
+        const userUpdated = await User.findByIdAndUpdate({ _id: id }, user, {
+            new: true,
+        })
         if (userUpdated) {
             const { fullname, email, _id } = userUpdated
             const response = {
