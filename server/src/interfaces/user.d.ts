@@ -15,17 +15,18 @@ export interface Notes {
 export interface IUser {
     _id: string
     fullname?: string
-    img: string
+    img?: string
     password: string
     email: string
     practices?: Types.ObjectId[]
     admin: boolean
     externId?: string
-    email_verified: boolean
+    email_verified?: boolean
     status?: StatusUser
-    resetLink: string
+    resetLink?: string
     notifications?: Notifications
-    notes: Notes
+    notes?: Notes
+    code?: number
 }
 
 ex

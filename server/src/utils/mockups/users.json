@@ -7,7 +7,8 @@
         "email": "yamilapaez2@hotmail.com",
         "admin": true,
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae2a494a22ed7eea30605",
@@ -18,7 +19,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae2e294a22ed7eea30608",
@@ -29,7 +31,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae31394a22ed7eea3060b",
@@ -40,7 +43,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae35d94a22ed7eea3060e",
@@ -51,7 +55,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae43a94a22ed7eea30611",
@@ -62,7 +67,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae49094a22ed7eea30614",
@@ -73,7 +79,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae4c294a22ed7eea30617",
@@ -84,7 +91,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae51394a22ed7eea3061a",
@@ -95,7 +103,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae57194a22ed7eea3061d",
@@ -106,7 +115,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae5bb94a22ed7eea30620",
@@ -117,7 +127,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae60094a22ed7eea30623",
@@ -128,7 +139,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae64594a22ed7eea30626",
@@ -139,7 +151,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae68e94a22ed7eea30629",
@@ -150,7 +163,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae6d494a22ed7eea3062c",
@@ -161,7 +175,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae71a94a22ed7eea3062f",
@@ -172,7 +187,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae75294a22ed7eea30632",
@@ -183,7 +199,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae79294a22ed7eea30635",
@@ -194,7 +211,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae7ca94a22ed7eea30638",
@@ -205,7 +223,8 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     },
     {
         "_id": "633ae86294a22ed7eea3063b",
@@ -216,6 +235,7 @@
         "admin": false,
         "externId": "",
         "email_verified": true,
-        "status": "Active"
+        "status": "Active",
+        "code": 0
     }
 ]
