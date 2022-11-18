@@ -8,8 +8,8 @@ import { deleteUser } from '../controllers/user/deleteUser'
 
 router.post('/', createUser)
 router.get('/', getUsers)
-router.get('/:id', getUser)
-router.put('/:id', updateUser)
-router.delete('/:id', deleteUser)
+router.get('/findOne/:id', getUser)
+router.put('/update/:id', updateUser)
+router.delete('/delete/:id', deleteUser)
 
 export default router
