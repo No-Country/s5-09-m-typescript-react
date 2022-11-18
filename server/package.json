@@ -5,8 +5,8 @@
     "main": "index.js",
     "scripts": {
         "dev": "cross-env NODE_ENV=development  ts-node-dev  src/index.ts",
-        "start": "node build/src/index.js",
-        "build": "tsc",
+        "start": "cross-env NODE_ENV=development  node build/src/index.js",
+        "build": "cross-env NODE_ENV=development  tsc",
         "test": "cross-env NODE_ENV=testing  ts-node-dev  src/index.ts"
     },
     "author": "",
