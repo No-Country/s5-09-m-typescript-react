@@ -39,19 +39,20 @@ export const createUser = async (user: IUser) => {
 
 export const getUsers = async () => {
     try {
-        let response
         const usersRetrieved = await User.find()
 
-        if (usersRetrieved.length < 0) {
-            response = {
+        if (usersRetrieved.length <= 0) {
+            const response = {
                 status: 404,
-                msg: 'No.',
+                msg: 'No user finded',
+                ok: false,
             }
+            return response
         }
 
-        // eslint-disable-next-line prefer-const
-        response = {
-            msg: 'Success',
+        const response = {
+            msg: 'Users finded with success',
+            ok: true,
             status: 200,
             usersRetrieved,
         }
@@ -63,22 +64,26 @@ export const getUsers = async () => {
 
 export const getUser = async (id: string) => {
     try {
-        let response
-        const userRetrieved = await User.findById(id)
+        const userRetrieved = await User.findById({ _id: id })
 
-        if (!userRetrieved) {
-            response = {
-                status: 404,
-                msg: 'No.',
+        if (userRetrieved) {
+            const { fullname, email, _id } = userRetrieved
+
+            const response = {
+                msg: 'User finded with success',
+                status: 200,
+                ok: true,
+                user: { fullname, email, _id },
             }
+            return response
         }
 
-        // eslint-disable-next-line prefer-const
-        response = {
-            msg: 'Success',
-            status: 200,
-            object: userRetrieved,
+        const response = {
+            status: 404,
+            msg: 'Cannot find user with this id',
+            ok: false,
         }
+
         return response
     } catch (error) {
         return error
@@ -86,22 +91,22 @@ export const getUser = async (id: string) => {
 }
 export const deleteUser = async (id: string) => {
     try {
-        let response
         const userDeleted = await User.findByIdAndDelete({ _id: id })
-        console.log(userDeleted)
 
-        if (userDeleted === null) {
-            response = {
-                status: 404,
-                msg: 'Cannot find user with this id',
-            }
-        } else {
-            response = {
+        if (userDeleted) {
+            const response = {
                 status: 200,
                 msg: 'User deleted with success',
+                ok: true,
             }
+            return response
         }
 
+        const response = {
+            status: 404,
+            msg: 'Cannot find user with this id',
+            ok: false,
+        }
         return response
     } catch (error) {
         return error
@@ -110,30 +115,27 @@ export const deleteUser = async (id: string) => {
 
 export const updateUser = async (id: string, user: IUser) => {
     try {
-        let response
         const userUpdated = await User.findByIdAndUpdate({ _id: id }, user, {
             new: true,
         })
-        console.log(userUpdated)
-
-        if (userUpdated === null) {
-            response = {
-                status: 404,
-                msg: 'Cannot find user with this id',
-            }
-            console.log('aca', userUpdated)
-        } else {
-            response = {
+        if (userUpdated) {
+            const { fullname, email, _id } = userUpdated
+            const response = {
                 status: 200,
                 msg: 'User updated with success',
-                userUpdated,
+                user: { fullname, email, _id },
+                ok: true,
             }
+            return response
         }
 
+        const response = {
+            status: 404,
+            msg: 'Cannot find user with this id',
+            ok: false,
+        }
         return response
     } catch (error) {
-        console.log('server err')
-
         return error
     }
 }
