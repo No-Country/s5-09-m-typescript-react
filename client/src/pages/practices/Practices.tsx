@@ -1,14 +1,32 @@
-import { Grid, Paper } from '@mui/material';
+import { Grid, Paper, Typography } from '@mui/material';
 import PracticesCard from './components/PracticesCard';
 
+const habitsList =[
+    {habit:"Asanas diarias"},
+    {habit:"Recetas saludables"},
+    {habit:"Ejercicio diario"},
+    {habit:"Meditación dos veces al día"},
+    {habit:"Higiene personal"},
+    {habit:"Limpieza del hogar"},
+    {habit:"Lectura espiritual"},
+    {habit:"Código de conducta"},
+    {habit:"Realizar servicio"},
+    {habit:"Reducir consumo de carne"},
+    {habit:"Tomar dos litros de agua al día"},
+    {habit:"Reducir ocio"},
+    {habit:"Pasar tiempo libre"},
+    {habit:"Evitar alcohol y tabaco, drogas"},
+    {habit:"Ayunar dos veces al mes"},
+    {habit:"Despertar al amanecer"},
+]
 
 export default function Practices(){
     return(
-        <Grid
+        <Grid 
 			container
 			spacing={0}
 			sx={{
-				margin: '50px 90px',
+				margin: '50px 20px',
 			}}
 		    >
                 <Grid item lg={4} >
@@ -16,12 +34,21 @@ export default function Practices(){
                                 width: '400px',
                                 height: '700px',
                                 backgroundColor: "#FFFFFF",
-                                borderRadius: "4px",
+                                borderRadius: "5px",
                                 border: "1px solid #B2BCCA",
-                                boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.25)",
+                                padding: '20px'
                             }}
-                        >
-                            
+                        > {habitsList.map(i =>(
+                            <Typography variant="h4" color='text.secondary' key={habitsList.indexOf(i)}
+                                        sx={{
+                                            fontWeight: '400',
+                                            fontSize: '20px',
+                                            lineHeight: '36px',   
+                                        }}
+                            > Hábito {habitsList.indexOf(i)+1}: {i.habit}
+                                    
+                            </Typography>
+                            ))}
                     </Paper>
                 </Grid>
 
@@ -36,8 +63,8 @@ export default function Practices(){
                     logy Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...'/>
                  
                  <PracticesCard
-                    tittle='Conoce nuestro sistema para consolidar los 16 habitos importantes en tu vida'
-                    urlImg= 'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696054/ananda%20marga/Practices/my_practices1_hpsjzt.jpg'
+                    tittle='Habito 1: Asanas Diariamente'
+                    urlImg= 'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696057/ananda%20marga/Practices/my_practices2_o42oyn.jpg'
                     text='Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...
                     Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet 
                     Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Techno
