@@ -13,7 +13,7 @@ interface AboutCardProps {
 
 export default function AboutCard({ item }: AboutCardProps) {
 	return (
-		<Stack spacing={4} alignItems="center" justifyContent="center" sx={{width: "378px", padding: "16px", boxShadow: "0px 3px 10px rgba(0, 0, 0, 0.18)", borderRadius: "4px"}}>
+		<Stack spacing={4} alignItems="center" justifyContent="center" sx={{ padding: "16px", boxShadow: "0px 3px 10px rgba(0, 0, 0, 0.18)", borderRadius: "4px"}}>
       <Stack spacing={2} alignItems="center" justifyContent="center">
         <img style={{width: 100, height: 100, borderRadius: 50, background: "#D9D9D9", border: "1px solid #93C5FD"}}/>
         <Typography>

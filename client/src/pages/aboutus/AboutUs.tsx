@@ -1,8 +1,7 @@
 import { Divider } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import Button from '@mui/material/Button';
+import BackButton from '../../components/BackButton';
 import AboutGrid from './components/AboutGrid';
 
 export default function AboutUs() {
@@ -14,12 +13,11 @@ export default function AboutUs() {
       <Stack direction='column'
 			spacing={5}
       alignItems='center'
+      sx={{padding: "25px 220px"}}
 			divider={
-				<Divider sx={{ width: 993, borderColor: 'rgba(231, 232, 234, 1)' }} />
+				<Divider flexItem sx={{ borderColor: 'rgba(231, 232, 234, 1)' }} />
 			}>
-        <Button variant="contained" startIcon={<ArrowBackIosNewIcon />} sx={{textTransform: "capitalize",}}>
-          Regresar
-        </Button>
+        <BackButton sx={{alignSelf: "flex-start"}}/>
         <AboutGrid />
       </Stack>
     </Paper>
