@@ -39,14 +39,17 @@ export default function Practices(){
                                 padding: '20px'
                             }}
                         > {habitsList.map(i =>(
-                            <Typography variant="h4" color='text.secondary' key={habitsList.indexOf(i)}
+                            <Typography variant="h6" color='text.secondary' key={habitsList.indexOf(i)}
                                         sx={{
                                             fontWeight: '400',
-                                            fontSize: '20px',
                                             lineHeight: '36px',   
                                         }}
-                            > Hábito {habitsList.indexOf(i)+1}: {i.habit}
-                                    
+                            > Hábito {habitsList.indexOf(i)+1}: 
+                                
+                                 {' '}
+                                        <Typography color={'text.primary'} component='span' variant='h6'>
+                                             {i.habit}
+                                       </Typography>
                             </Typography>
                             ))}
                     </Paper>
@@ -55,20 +58,31 @@ export default function Practices(){
                 <Grid item lg={4}>
                 <Grid>
                     <PracticesCard
-                    tittle='Conoce nuestro sistema para consolidar los 16 habitos importantes en tu vida'
-                    urlImg= 'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696054/ananda%20marga/Practices/my_practices1_hpsjzt.jpg'
-                    text='Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...
-                    Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet 
-                    Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Techno
-                    logy Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...'/>
+                        tittle='Conoce nuestro sistema para consolidar los 16 habitos importantes en tu vida'
+                        urlImg= 'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696054/ananda%20marga/Practices/my_practices1_hpsjzt.jpg'
+                        text='Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...
+                        Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet 
+                        Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Techno
+                        logy Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...'
+                    />
                  
-                 <PracticesCard
-                    tittle='Habito 1: Asanas Diariamente'
-                    urlImg= 'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696057/ananda%20marga/Practices/my_practices2_o42oyn.jpg'
-                    text='Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...
-                    Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet 
-                    Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Techno
-                    logy Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...'/>
+                    <PracticesCard
+                        tittle='Habito 1: Asanas Diariamente'
+                        urlImg= 'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696057/ananda%20marga/Practices/my_practices2_o42oyn.jpg'
+                        text='Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...
+                        Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet 
+                        Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Techno
+                        logy Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...'
+                    />
+
+                    <PracticesCard
+                        tittle='Habito 2: Recetas saludables'
+                        urlImg= 'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696062/ananda%20marga/Practices/my_practices3_afkvv9.png'
+                        text='Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...
+                        Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet 
+                        Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Techno
+                        logy Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...Applying The KIds Design Guide Internet Technology Such as Online and Social Media Platforms Have Given...'
+                    />
                  
                  
                 </Grid>
