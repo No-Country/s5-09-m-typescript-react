@@ -18,7 +18,7 @@ const habitsList =[
     {habit:"Evitar alcohol y tabaco, drogas"},
     {habit:"Ayunar dos veces al mes"},
     {habit:"Despertar al amanecer"},
-]
+];
 
 export default function Practices(){
     return(

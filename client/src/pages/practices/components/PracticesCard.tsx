@@ -57,4 +57,4 @@ export default function PracticesCard({ tittle, urlImg, text }: cardContent){
 				</Paper>
         
     );
-                }
+}
