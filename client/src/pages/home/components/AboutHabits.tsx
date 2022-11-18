@@ -115,7 +115,7 @@ export default function AboutHabits() {
 						La filosofía de Mindfulness se fundamenta en un sistema de pasos de
 						16 puntos.
 					</Typography>
-					<GlobalButton text='Conoce Más' navegacion={navegacion} />
+					<GlobalButton text='Conoce Más' action={navegacion} />
 				</div>
 			</Box>
 		</section>
