@@ -1,7 +1,7 @@
-import { Schema, model } from 'mongoose'
-import { User } from '../interfaces/user'
+import { Schema, model, Types } from 'mongoose'
+import { IUser } from '../interfaces/user'
 
-const userSchema = new Schema<User>({
+const userSchema = new Schema<IUser>({
     fullname: {
         type: String,
         required: true,
@@ -20,12 +20,22 @@ const userSchema = new Schema<User>({
         unique: true,
         required: true,
     },
-    /* practices: [
+    practices: [
         {
-            type: Types.ObjectId,
-            ref: 'Practices',
+            practice: { type: Types.ObjectId, ref: 'Habit' },
+            accomplished: { type: Boolean, default: false },
+            default: [],
         },
-    ], */
+    ],
+    notifications: [
+        {
+            title: { type: String },
+            description: { type: String },
+            img: { type: String },
+            read: { type: Boolean, default: false },
+        },
+    ],
+    notes: [{ type: { type: String }, date: { type: Date } }], //! Esta es para fechas del usuario a cargar calendario (pendiente poner mas campos)
     admin: {
         type: Boolean,
         default: false,
@@ -45,6 +55,11 @@ const userSchema = new Schema<User>({
     resetLink: {
         type: String,
         default: '',
+    },
+    code: {
+        //!Todo: aca se va a generar el codigo para activar la cuenta por email.
+        type: Number,
+        default: 0,
     },
 })
 

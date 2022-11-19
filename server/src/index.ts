@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser'
 
 import { router } from './routes/index'
 import { dbTest, dbDev, portDev, portTest } from './config/globals'
+import { userMocksService } from './services'
 
 const db = process.env.NODE_ENV === 'development' ? dbDev : dbTest
 
@@ -30,6 +31,7 @@ app.use('/', router)
 
 // * ----------Connection Local ------------
 app.listen(port, async () => {
+    userMocksService()
     console.log(`Server listening on port: ${port}`)
 })
 
