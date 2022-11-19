@@ -14,7 +14,7 @@ type Props = {};
 const ProSidebar = (props: Props) => {
 	return (
 		<>
-			<Sidebar style={{ height: '750px' }}>
+			<Sidebar style={{ height: '750px', backgroundColor: 'blue' }}>
 				<Menu>
 					<Grid sx={{ display: 'flex', justifyContent: 'center' }}>
 						<Avatar
