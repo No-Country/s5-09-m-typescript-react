@@ -7,8 +7,8 @@ export default function PracticesCard({ tittle, urlImg, text }: cardContent){
         
             <Paper
 					sx={{
+                        margin:'10px auto',
                         paddingBottom:'50px',
-                        marginBottom:'20px',
 						width: '800px',
 						height: '100%',
 						backgroundColor: "#FFFFFF",
