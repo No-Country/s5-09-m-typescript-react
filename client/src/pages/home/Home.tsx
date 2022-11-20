@@ -17,8 +17,6 @@ export default function Home() {
 			<AboutHabits />
 			<Testimonials />
 			<Newsletter />
-
-			<ProfilePage />
 		</>
 	);
 }

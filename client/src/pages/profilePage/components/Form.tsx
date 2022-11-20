@@ -1,36 +1,17 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import Checkbox from '@mui/material/Checkbox';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import GlobalButton from '../../components/GlobalButton';
+import {
+	Typography,
+	TextField,
+	Paper,
+	Link,
+	Grid,
+	Box,
+	Avatar,
+} from '@mui/material';
+import GlobalButton from '../../../components/GlobalButton';
 import TopBarProfile from './TopBarProfile';
-type Props = {};
 
-function Copyright(props: any) {
-	return (
-		<Typography
-			variant='body2'
-			color='text.secondary'
-			align='center'
-			{...props}
-		>
-			{'Copyright © '}
-			<Link color='inherit' href='https://mui.com/'>
-				Amanda Marga
-			</Link>{' '}
-			{new Date().getFullYear()}
-			{'.'}
-		</Typography>
-	);
-}
-
-const Form = (props: Props) => {
+export default function Form() {
 	const navegacion = () => {
 		console.log('probando boton');
 	};
@@ -85,7 +66,6 @@ const Form = (props: Props) => {
 						label='Correo'
 						name='Correo'
 						autoComplete='email'
-						autoFocus
 						placeholder='Ingresa tu correo'
 					/>
 					<TextField
@@ -127,11 +107,8 @@ const Form = (props: Props) => {
 							</Link>
 						</Grid>
 					</Grid>
-					<Copyright sx={{ mt: 5 }} />
 				</Box>
 			</Box>
 		</Grid>
 	);
-};
-
-export default Form;
+}
