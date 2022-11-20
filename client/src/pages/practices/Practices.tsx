@@ -1,4 +1,4 @@
-import { Grid, Paper, Typography } from '@mui/material';
+import { Grid, Paper, Typography, AppBar, Tabs } from '@mui/material';
 import PracticesCard from './components/PracticesCard';
 
 const habitsList = [
@@ -22,16 +22,20 @@ const habitsList = [
 
 export default function Practices() {
 	return (
+        
 		<Grid
 			container
 			spacing={0}
 			sx={{
-				margin: '50px 20px',
+                maxWidth:'1442px',
+				margin: '40px auto',
 			}}
 		>
 			<Grid item lg={4}>
+               
 				<Paper
 					sx={{
+                        margin:'10px ',
 						width: '400px',
 						height: '700px',
 						backgroundColor: '#FFFFFF',
@@ -40,7 +44,7 @@ export default function Practices() {
 						padding: '20px',
 					}}
 				>
-					{' '}
+					
 					{habitsList.map(i => (
 						<Typography
 							variant='h6'
@@ -51,7 +55,7 @@ export default function Practices() {
 								lineHeight: '36px',
 							}}
 						>
-							{' '}
+							
 							Hábito {habitsList.indexOf(i) + 1}:{' '}
 							<Typography color={'text.primary'} component='span' variant='h6'>
 								{i.habit}
@@ -61,7 +65,7 @@ export default function Practices() {
 				</Paper>
 			</Grid>
 
-			<Grid item lg={4}>
+			<Grid item lg={8}>
 				<Grid>
 					<PracticesCard
 						tittle='Conoce nuestro sistema para consolidar los 16 habitos importantes en tu vida'
@@ -92,5 +96,6 @@ export default function Practices() {
 				</Grid>
 			</Grid>
 		</Grid>
+      
 	);
 }

@@ -28,9 +28,9 @@ export default function ContactForm() {
 
 	return (
 		<form onSubmit={handleSubmit(formSubmitHandler)}>
-			<Grid container spacing={5}>
+			<Grid container spacing={5} p={6}>
 				<Grid item xs={12}>
-					<Typography variant='h4' component='h4' color='text.secondary'>
+					<Typography variant='h4' textAlign='center' component='h4' color='text.secondary'>
 						Contacto
 					</Typography>
 				</Grid>
@@ -78,7 +78,7 @@ export default function ContactForm() {
 						color='text'
 						fullWidth
 						multiline
-						rows={5}
+						rows={7}
 					/>
 				</Grid>
 
@@ -87,7 +87,7 @@ export default function ContactForm() {
 					xs={12}
 					style={{ display: 'flex', justifyContent: 'center' }}
 				>
-					<GlobalButton text='Conoce Más' action={navegacion} />
+					<GlobalButton text='Enviar' action={navegacion} />
 				</Grid>
 			</Grid>
 		</form>
