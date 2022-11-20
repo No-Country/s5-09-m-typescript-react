@@ -1,4 +1,3 @@
-import React from 'react';
 import { Grid, Typography, Button } from '@mui/material';
 type Props = {};
 

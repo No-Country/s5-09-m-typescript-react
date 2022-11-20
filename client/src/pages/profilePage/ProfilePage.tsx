@@ -1,7 +1,6 @@
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Form from './Form';
-import ProSidebar from './Sidebar';
+import Form from './components/Form';
+import ProSidebar from './components/Sidebar';
 
 export default function ProfilePage() {
 	return (
