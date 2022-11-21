@@ -14,7 +14,6 @@ import { useForm } from 'react-hook-form';
 import { useGoogleLogin } from '@react-oauth/google';
 import { onLogin, onLoginGoogle } from '../../../service/authApi';
 import axios from 'axios';
-import { GoogleLogin } from '@react-oauth/google';
 
 type Inputs = {
 	email: string;
@@ -30,26 +29,22 @@ export default function InputLogin() {
 		formState: { errors },
 	} = useForm<Inputs>();
 
-	// const login = useGoogleLogin({
-	// 	onSuccess: async response => {
-	// 		try {
-	// 			const data = await axios.get(
-	// 				'https://www.googleapis.com/oauth2/v3/userinfo',
-	// 				{
-	// 					headers: {
-	// 						Authorization: `Bearer ${response.access_token}`,
-	// 					},
-	// 				},
-	// 			);
-	// 			console.log(data);
-	// 		} catch (err) {
-	// 			console.log(err);
-	// 		}
-	// 	},
-	// });
-
 	const login = useGoogleLogin({
-		onSuccess: tokenResponse => onLoginGoogle(tokenResponse),
+		onSuccess: async response => {
+			try {
+				const data = await axios.get(
+					'https://www.googleapis.com/oauth2/v3/userinfo',
+					{
+						headers: {
+							Authorization: `Bearer ${response.access_token}`,
+						},
+					},
+				);
+				console.log(data);
+			} catch (err) {
+				console.log(err);
+			}
+		},
 	});
 
 	return (
@@ -59,15 +54,6 @@ export default function InputLogin() {
 					<Typography variant='h4' component='h4' color='text.secondary'>
 						Iniciar Sesión
 					</Typography>
-					{/* <GoogleLogin
-						onSuccess={credentialResponse => {
-							console.log(credentialResponse);
-						}}
-						onError={() => {
-							console.log('Login Failed');
-						}}
-						useOneTap
-					/> */}
 				</Grid>
 
 				<Grid item xs={12}>
