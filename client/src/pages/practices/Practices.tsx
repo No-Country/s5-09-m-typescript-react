@@ -35,13 +35,16 @@ export default function Practices() {
                
 				<Paper
 					sx={{
+						top: '0',
                         margin:'10px ',
 						width: '400px',
-						height: '700px',
+						height: '600px',
 						backgroundColor: '#FFFFFF',
 						borderRadius: '5px',
 						border: '1px solid #B2BCCA',
 						padding: '20px',
+						position:'sticky',
+						overflowY: 'scroll'
 					}}
 				>
 					
