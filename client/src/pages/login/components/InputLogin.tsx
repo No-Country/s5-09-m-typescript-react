@@ -14,6 +14,7 @@ import { useForm } from 'react-hook-form';
 import { useGoogleLogin } from '@react-oauth/google';
 import { onLogin, onLoginGoogle } from '../../../service/authApi';
 import axios from 'axios';
+import { FacebookProvider, useLogin } from 'react-facebook';
 
 type Inputs = {
 	email: string;
@@ -25,7 +26,7 @@ export default function InputLogin() {
 	const {
 		register,
 		handleSubmit,
-		watch,
+
 		formState: { errors },
 	} = useForm<Inputs>();
 
@@ -46,6 +47,20 @@ export default function InputLogin() {
 			}
 		},
 	});
+
+	const { login: loginFacebook, status, isLoading, error } = useLogin();
+
+	async function handleLogin() {
+		try {
+			const response = await loginFacebook({
+				scope: 'email',
+			});
+
+			console.log(response.status);
+		} catch (error: any) {
+			console.log(error.message);
+		}
+	}
 
 	return (
 		<form onSubmit={handleSubmit(onLogin)}>
@@ -135,7 +150,13 @@ export default function InputLogin() {
 						alignItems: 'center',
 					}}
 				>
-					<Button variant='outlined' fullWidth sx={{ maxWidth: '100px' }}>
+					<Button
+						variant='outlined'
+						fullWidth
+						sx={{ maxWidth: '100px' }}
+						onClick={handleLogin}
+						disabled={isLoading}
+					>
 						<img
 							src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668694018/ananda%20marga/facebook_ic_ashpl3.svg'
 							alt='132'
