@@ -7,7 +7,7 @@ const getCategories = async (_: Request, res: Response) => {
         const response = await getCategoriesService()
         res.send(response)
     } catch (e) {
-        handleHttp(res, 'ERROR_GET_HABIT')
+        handleHttp(res, 'ERROR_GET_CATEGORIES')
         console.log(e)
     }
 }

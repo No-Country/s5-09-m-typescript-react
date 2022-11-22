@@ -1,8 +1,8 @@
 import { Habit } from '../../interfaces/habit'
-import habitModel from '../../models/Habit'
+import HabitModel from '../../models/Habit'
 
 const createHabitService = async (habit: Habit) => {
-    const responseInsert = await habitModel.create(habit)
+    const responseInsert = await HabitModel.create(habit)
     return responseInsert
 }
 export { createHabitService }

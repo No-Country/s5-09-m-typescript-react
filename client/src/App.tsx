@@ -7,8 +7,6 @@ import { useAppSelector } from './redux/hooks';
 import { publicRoute } from './models/routes';
 
 function App() {
-	//me olvide de borrarla
-	const authentication = useAppSelector(state => state.user);
 	return (
 		<GoogleOAuthProvider
 			clientId={
