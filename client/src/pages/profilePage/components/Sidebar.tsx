@@ -9,24 +9,14 @@ import {
 } from '@mui/icons-material';
 import { Grid, Avatar, Typography } from '@mui/material';
 import { Menu, MenuItem, Sidebar, SubMenu } from 'react-pro-sidebar';
-
+import image from '../../../assets/Ellipse19.png';
 const ProSidebar = () => {
 	return (
 		<>
-			<Sidebar style={{ height: '750px', backgroundColor: 'blue' }}>
+			<Sidebar style={{ height: '750px', backgroundColor: 'white' }}>
 				<Menu>
 					<Grid sx={{ display: 'flex', justifyContent: 'center' }}>
-						<Avatar
-							sx={{
-								m: 1,
-								bgcolor: 'secondary.main',
-								alignSelf: 'center',
-								width: '120px',
-								height: '120px',
-							}}
-						>
-							<AccountCircle fontSize='large' />
-						</Avatar>
+						<img src={image} alt='no ando' />
 					</Grid>
 					<Typography
 						style={{ display: 'flex', justifyContent: 'center' }}

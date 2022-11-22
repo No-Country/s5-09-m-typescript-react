@@ -26,3 +26,24 @@ export default function GlobalButton({
 		</Button>
 	);
 }
+
+export function GlobalButtonWhite({
+	text,
+	action,
+	width = '250px',
+	height = '50px',
+}: GlobalButton) {
+	return (
+		<Button
+			variant='contained'
+			sx={{
+				width: width,
+				height: height,
+			}}
+			color='primary'
+			onClick={() => action()}
+		>
+			{text}
+		</Button>
+	);
+}

@@ -7,16 +7,19 @@ import {
 } from './components';
 import AboutHabits from './components/AboutHabits';
 import ProfilePage from '../profilePage/ProfilePage';
+import ProfileWithUserInfo from '../profilePage/ProfileWithUserInfo';
 
 export default function Home() {
 	return (
 		<>
-			<Hero />
+			{/* <Hero />
 			<Slider />
 			<MyPractices />
 			<AboutHabits />
 			<Testimonials />
-			<Newsletter />
+			<Newsletter /> */}
+			<ProfilePage />
+			<ProfileWithUserInfo />
 		</>
 	);
 }

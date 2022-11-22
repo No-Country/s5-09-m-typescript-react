@@ -8,8 +8,11 @@ import {
 	Box,
 	Avatar,
 } from '@mui/material';
-import GlobalButton from '../../../components/GlobalButton';
+import GlobalButton, {
+	GlobalButtonWhite,
+} from '../../../components/GlobalButton';
 import TopBarProfile from './TopBarProfile';
+import image from '../../../assets/Ellipse19.png';
 
 export default function Form() {
 	const navegacion = () => {
@@ -34,24 +37,19 @@ export default function Form() {
 					alignItems: 'center',
 				}}
 			>
-				<Avatar
-					sx={{
-						m: 1,
-						bgcolor: 'secondary.main',
-						alignSelf: 'center',
-						width: '120px',
-						height: '120px',
-					}}
-				>
-					<AccountCircleIcon fontSize='large' />
-				</Avatar>
+				<img src={image} alt='no ando' />
+
 				<Typography component='h1' variant='h5'>
-					Sign in
+					Malia Sanchez
 				</Typography>
-				<Box component='form' noValidate sx={{ mt: 1 }}>
+				<Box
+					component='form'
+					noValidate
+					sx={{ mt: 1, display: 'flex', flexDirection: 'column' }}
+				>
 					<TextField
+						sx={{ width: '527px' }}
 						margin='normal'
-						fullWidth
 						name='nombreCompleto'
 						label='Nombre Completo'
 						type='password'
@@ -61,7 +59,7 @@ export default function Form() {
 					/>
 					<TextField
 						margin='normal'
-						fullWidth
+						sx={{ width: '527px' }}
 						id='email'
 						label='Correo'
 						name='Correo'
@@ -70,7 +68,7 @@ export default function Form() {
 					/>
 					<TextField
 						margin='normal'
-						fullWidth
+						sx={{ width: '527px' }}
 						name='password'
 						label='Contraseña'
 						type='password'
@@ -78,33 +76,37 @@ export default function Form() {
 						autoComplete='current-password'
 						placeholder='Ingresa tu contraseña'
 					/>
-					<Grid spacing={8} style={{ display: 'flex', flexDirection: 'row' }}>
+					<Grid
+						spacing={10}
+						style={{
+							display: 'flex',
+							flexDirection: 'row',
+							justifyContent: 'center',
+							marginTop: '15px',
+						}}
+					>
 						<Grid
-							style={{ display: 'flex', justifyContent: 'center' }}
+							style={{
+								display: 'flex',
+								justifyContent: 'center',
+								width: '237px',
+								marginRight: '18px',
+							}}
 							item
 							xs={6}
 						>
-							<GlobalButton text='Guardar Cambios' action={navegacion} />
+							<GlobalButtonWhite text='Guardar Cambios' action={navegacion} />
 						</Grid>
 						<Grid
-							style={{ display: 'flex', justifyContent: 'center' }}
+							style={{
+								display: 'flex',
+								justifyContent: 'center',
+								width: '237px',
+							}}
 							item
 							xs={6}
 						>
 							<GlobalButton text='Cancelar' action={navegacion} />
-						</Grid>
-					</Grid>
-
-					<Grid container>
-						<Grid item xs>
-							<Link href='#' variant='body2'>
-								Forgot password?
-							</Link>
-						</Grid>
-						<Grid item>
-							<Link href='#' variant='body2'>
-								{"Don't have an account? Sign Up"}
-							</Link>
 						</Grid>
 					</Grid>
 				</Box>

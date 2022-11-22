@@ -5,7 +5,11 @@ import ProSidebar from './components/Sidebar';
 export default function ProfilePage() {
 	return (
 		<>
-			<Grid container spacing={2} style={{ padding: '35px' }}>
+			<Grid
+				container
+				spacing={2}
+				style={{ padding: '35px', marginRight: '52px' }}
+			>
 				<Grid item xs={2}>
 					<ProSidebar />
 				</Grid>
