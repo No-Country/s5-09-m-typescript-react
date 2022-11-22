@@ -133,15 +133,7 @@ export default function InputLogin() {
 						alignItems: 'flex-end',
 					}}
 				>
-					<RouterLink to='/'>
-						<Link
-							sx={{
-								color: 'text.secondary',
-							}}
-						>
-							¿Olvidaste la contraseña?
-						</Link>
-					</RouterLink>
+					<RouterLink to='/'>¿Olvidaste la contraseña?</RouterLink>
 				</Grid>
 				<Grid
 					item
@@ -212,16 +204,7 @@ export default function InputLogin() {
 					}}
 				>
 					<Typography>Aún no tienes cuenta?</Typography>{' '}
-					<RouterLink to='/registrate'>
-						<Link
-							href='/registrate'
-							sx={{
-								color: 'text.secondary',
-							}}
-						>
-							Registrarse
-						</Link>
-					</RouterLink>
+					<RouterLink to='/registrate'>Registrarse</RouterLink>
 				</Grid>
 				<Grid item xs={12}>
 					<Button
