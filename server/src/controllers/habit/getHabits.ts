@@ -7,7 +7,7 @@ const getHabits = async (_: Request, res: Response) => {
         const response = await getHabitsService()
         res.send(response)
     } catch(e) {
-        handleHttp(res, 'ERROR_GET_HABIT')
+        handleHttp(res, 'ERROR_GET_HABITS')
         console.log(e)
     }
 }
