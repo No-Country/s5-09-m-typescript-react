@@ -1,7 +1,10 @@
 import axios from 'axios';
-
+const localUrl = 'http://localhost:3002';
 const authApi = axios.create({
-	baseURL: import.meta.env.VITE_APP_BACKEND_URL,
+	baseURL:
+		process.env.NODE_ENV === 'production'
+			? import.meta.env.VITE_APP_BACKEND_URL
+			: localUrl + '/api',
 });
 
 export const onLogin = ({
