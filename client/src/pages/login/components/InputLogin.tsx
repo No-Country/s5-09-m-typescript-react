@@ -32,7 +32,7 @@ export default function InputLogin() {
 	const {
 		register,
 		handleSubmit,
-
+		watch,
 		formState: { errors },
 	} = useForm<Inputs>();
 

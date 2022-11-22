@@ -1,7 +1,10 @@
-import habitModel from '../../models/Habit'
+import HabitModel from '../../models/Habit'
 
 const getHabitService = async (id: string) => {
-    const responseHabit = await habitModel.find({ _id: id })
+    const responseHabit = await HabitModel.findById({ _id: id })
+    
+    if (!responseHabit) throw new Error('NOT_FOUND_ID');
+
     return responseHabit
 }
 

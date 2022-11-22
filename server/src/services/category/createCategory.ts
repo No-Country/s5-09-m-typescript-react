@@ -1,8 +1,8 @@
 import { Category } from '../../interfaces/category'
-import categoryModel from '../../models/Category'
+import CategoryModel from '../../models/Category'
 
 const createCategoryService = async (category: Category) => {
-    const responseInsert = await categoryModel.create(category)
+    const responseInsert = await CategoryModel.create(category)
     return responseInsert
 }
 export { createCategoryService }
