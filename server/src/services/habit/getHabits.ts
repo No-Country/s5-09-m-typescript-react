@@ -1,7 +1,7 @@
-import habitModel from '../../models/Habit'
+import HabitModel from '../../models/Habit'
 
 const getHabitsService = async () => {
-    const responseHabit = await habitModel.find({})
+    const responseHabit = await HabitModel.find({})
     return responseHabit
 }
 
