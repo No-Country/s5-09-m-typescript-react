@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { userEmptyState, user } from '../../types/user.type';
+import { userEmptyState, user } from '../../models/user.type';
 // Define a type for the slice state
 
 // Define the initial state using that type

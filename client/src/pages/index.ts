@@ -1,1 +1,18 @@
+export { default as AboutUs } from './aboutus/AboutUs';
+export { default as AboutCard } from './aboutus/components/AboutCard';
+export { default as AboutGrid } from './aboutus/components/AboutGrid';
+export { default as Contact } from './contact/Contact';
+export { default as ContactForm } from './contact/components/ContactForm';
+export * from './home/components';
 export * from './home';
+export { default as Login } from './login/Login';
+export { default as InputLogin } from './login/components/InputLogin';
+export { default as Practices } from './practices/Practices';
+export { default as PracticesCard } from './practices/components/PracticesCard';
+export * from './practices/types/interfaces.d';
+export { default as ProfilePage } from './profilePage/ProfilePage';
+export { default as Form } from './profilePage/components/Form';
+export { default as Sidebar } from './profilePage/components/Sidebar';
+export { default as TopBarProfile } from './profilePage/components/TopBarProfile';
+export { default as Signup } from './signup/Signup';
+export { default as SignupForm } from './signup/components/SignupForm';
