@@ -1,14 +1,16 @@
 import { Home } from './pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import LayoutNavegation from './utilities/LayoutNavegation';
+import { LayoutNavegation, PrivateRoute, PublicRoute } from './components';
 import Contact from './pages/contact/Contact';
 import Signup from './pages/signup/Signup';
 import Login from './pages/login/Login';
 import AboutUs from './pages/aboutus/AboutUs';
 import Practices from './pages/practices/Practices';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import { useAppSelector } from './redux/hooks';
 
 function App() {
+	const authentication = useAppSelector(state => state.user);
 	return (
 		<GoogleOAuthProvider
 			clientId={
@@ -21,10 +23,18 @@ function App() {
 						<Route path='/' element={<Home />} />
 						<Route path='/misPracticas' element={<Practices />} />
 						<Route path='/contacto' element={<Contact />} />
-						<Route path='/iniciarSesion' element={<Login />} />
-						<Route path='/nostros' element={<AboutUs />} />
-						<Route path='/registrate' element={<Signup />} />
-						<Route path='/nosotros' element={<h1>en contruccion</h1>} />
+						<Route path='/nosotros' element={<AboutUs />} />
+						<Route element={<PublicRoute isAuth={authentication.isAuth} />}>
+							<Route path='/iniciarSesion' element={<Login />} />
+							<Route path='/registrate' element={<Signup />} />
+							<Route
+								path='/recuperarContraseña'
+								element={<h1>recuperar contraseña</h1>}
+							/>
+						</Route>
+						<Route element={<PrivateRoute isAuth={authentication.isAuth} />}>
+							<Route path='/perfil' element={<h1>perfil en contruccion</h1>} />
+						</Route>
 					</Routes>
 				</LayoutNavegation>
 			</BrowserRouter>

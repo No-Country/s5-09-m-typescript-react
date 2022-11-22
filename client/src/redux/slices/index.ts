@@ -1,1 +1,1 @@
-export { usersSlice } from './users';
+export { default as userSliceReducer } from './user';
