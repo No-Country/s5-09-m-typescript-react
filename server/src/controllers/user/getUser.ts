@@ -1,10 +1,14 @@
 import { Response, Request } from 'express'
-import * as userService from '../../services/users'
-
+import { IResponse } from '../../interfaces'
+import { getUserService } from '../../services/user/getUser'
+/* import * as userService from '../../services/users'
+ */
 export const getUser = async (req: Request, res: Response) => {
     const { id } = req.params
+
     try {
-        const userRetrieved: any = await userService.getUser(id) //! SOLUCIONAR PROBLEMA DE TIPADO
+        const userRetrieved = (await getUserService(id)) as IResponse
+
         const { status } = userRetrieved
         return res.status(status).json(userRetrieved)
     } catch (error) {
