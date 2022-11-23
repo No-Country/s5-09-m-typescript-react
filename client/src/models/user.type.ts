@@ -7,12 +7,14 @@ export interface ApiUser {
 }
 
 export interface user {
+	id: string;
 	userName: string;
 	userJwt: string;
 	isAuth: boolean;
 }
 
 export const userEmptyState: user = {
+	id: '',
 	userName: '',
 	userJwt: '',
 	isAuth: false,
