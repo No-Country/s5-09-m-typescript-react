@@ -7,6 +7,7 @@ import Login from './pages/login/Login';
 import AboutUs from './pages/aboutus/AboutUs';
 import Practices from './pages/practices/Practices';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import Calendar from './pages/profilePage/components/Calendar';
 
 function App() {
 	return (
@@ -25,6 +26,8 @@ function App() {
 						<Route path='/nostros' element={<AboutUs />} />
 						<Route path='/registrate' element={<Signup />} />
 						<Route path='/nosotros' element={<h1>en contruccion</h1>} />
+            <Route path='/perfil' element={<Calendar />} />
+            {/* Falta la pagina de 404 */}
 					</Routes>
 				</LayoutNavegation>
 			</BrowserRouter>
