@@ -1,8 +1,9 @@
-import { Grid, TextField, Typography } from '@mui/material';
+import { Modal, Grid, TextField, Typography } from '@mui/material';
 import { display } from '@mui/system';
 import * as React from 'react';
-import { FieldValues, useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { GlobalButton } from '../../../components';
+import AlertModal from '../../../components/AlertModal';
 import { isEmail } from '../../../utilities';
 
 type FormData = {
@@ -13,6 +14,8 @@ type FormData = {
 
 export default function ContactForm() {
 
+	const [isOpenModal, setIsOpenModal] = React.useState(false);
+
 	const {
 		register,
 		handleSubmit,
@@ -22,6 +25,8 @@ export default function ContactForm() {
 	//Para probar si funcionan los formularios
 	const formSubmitHandler: SubmitHandler<FormData> = (data: FormData) => {
 		console.log('form data is', data);
+		
+		setIsOpenModal(!isOpenModal);
 	};
 
 	return (
@@ -88,8 +93,16 @@ export default function ContactForm() {
 					style={{ display: 'flex', justifyContent: 'center' }}
 				>
 					<GlobalButton text='Enviar' action={handleSubmit(formSubmitHandler)} />
+				
 				</Grid>
 			</Grid>
+						
+			{isOpenModal && <AlertModal title='Revisa tu correo' 
+										text='Tu mensaje ha sido enviado, contestaremos a la brevedad, muchas gracias.'
+										urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669209748/ananda%20marga/home/alerts/FeaturedIconMail_fgcdsc.png'/>
+										
+			}
 		</form>
+		
 	);
 }
