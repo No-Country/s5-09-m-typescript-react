@@ -3,7 +3,6 @@ import { LayoutNavegation } from './components';
 import { PrivateRoute, PublicRoute } from './guards';
 import { Practices, AboutUs, Login, Signup, Contact, Home } from './pages';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import { useAppSelector } from './redux/hooks';
 import { publicRoute } from './models/routes';
 
 function App() {
