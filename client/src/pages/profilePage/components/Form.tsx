@@ -1,18 +1,8 @@
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import {
-	Typography,
-	TextField,
-	Paper,
-	Link,
-	Grid,
-	Box,
-	Avatar,
-} from '@mui/material';
+import { Typography, TextField, Paper, Grid, Box } from '@mui/material';
 import GlobalButton, {
 	GlobalButtonWhite,
 } from '../../../components/GlobalButton';
 import TopBarProfile from './TopBarProfile';
-import image from '../../../assets/Ellipse19.png';
 
 export default function Form() {
 	const navegacion = () => {
@@ -37,7 +27,10 @@ export default function Form() {
 					alignItems: 'center',
 				}}
 			>
-				<img src={image} alt='no ando' />
+				<img
+					src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669229543/ananda%20marga/perfil/Ellipse19_x3azbk.png'
+					alt='perfil de usuario'
+				/>
 
 				<Typography component='h1' variant='h5'>
 					Malia Sanchez

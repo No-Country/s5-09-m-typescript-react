@@ -1,7 +1,15 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { LayoutNavegation } from './components';
 import { PrivateRoute, PublicRoute } from './guards';
-import { Practices, AboutUs, Login, Signup, Contact, Home } from './pages';
+import {
+	Practices,
+	AboutUs,
+	Login,
+	Signup,
+	Contact,
+	Home,
+	ProfileWithUserInfo,
+} from './pages';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { publicRoute } from './models/routes';
 
@@ -28,7 +36,7 @@ function App() {
 							/>
 						</Route>
 						<Route element={<PrivateRoute />}>
-							<Route path='/perfil' element={<h1>perfil en contruccion</h1>} />
+							<Route path='/perfil' element={<ProfileWithUserInfo />} />
 						</Route>
 					</Routes>
 				</LayoutNavegation>
