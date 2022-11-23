@@ -12,9 +12,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
 		<ProSidebarProvider>
 			<Theme>
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
-				  <App />
-        </LocalizationProvider>
+				<LocalizationProvider dateAdapter={AdapterDateFns}>
+					<App />
+				</LocalizationProvider>
 			</Theme>
 		</ProSidebarProvider>
 	</React.StrictMode>,
