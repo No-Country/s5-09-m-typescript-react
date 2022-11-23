@@ -1,135 +1,65 @@
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-
-import {
-	Typography,
-	TextField,
-	Paper,
-	Link,
-	Grid,
-	Box,
-	Avatar,
-} from '@mui/material';
-import GlobalButton, {
-	GlobalButtonWhite,
-} from '../../../components/GlobalButton';
+import { Typography, Grid } from '@mui/material';
 import TopBarProfile from './TopBarProfile';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
+import { Box } from '@mui/system';
 
 export default function FormProfileWithUserInfo() {
 	const navegacion = () => {
 		console.log('probando boton');
 	};
 	return (
-		<Grid
-			item
-			xs={12}
-			component={Paper}
-			elevation={6}
-			style={{ height: '475px' }}
-		>
-			<Grid>
-				<TopBarProfile />
-			</Grid>
-			<Grid
-				sx={{
-					display: 'flex',
-					flexDirection: 'row',
-					marginLeft: '56px',
-					marginTop: '75px',
-					marginBottom: '75px',
-				}}
-			>
-				<AccountCircleOutlinedIcon sx={{ color: '#2F6117' }} />
-				<Typography
+		<>
+			<TopBarProfile />
+			<Grid container height='40%'>
+				<Grid
+					item
+					xs={12}
 					sx={{
-						fontWeight: '500',
-						color: '#112734',
-						fontFamily: 'ubuntu',
-						fontSize: '20px',
-						marginRight: '150px',
+						display: 'flex',
+						justifyContent: 'start',
+						alignItems: 'center',
 					}}
 				>
-					Nombre Completo
-				</Typography>
-				<Grid item xs={4} sx={{ marginRight: '75px' }}>
-					<Typography
+					<Box
 						sx={{
-							fontWeight: '400',
-							color: '#112734',
-							fontFamily: 'ubuntu',
-							fontSize: '20px',
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							alignItems: 'start',
+							gap: '30px',
 						}}
 					>
-						Maria Sanchez
-					</Typography>
+						<Typography fontSize='1.5rem'>
+							<AccountCircleOutlinedIcon sx={{ color: 'secondary.main' }} />
+							Nombre Completo
+						</Typography>
+						<Typography fontSize='1.5rem'>
+							<VisibilityOffOutlinedIcon sx={{ color: 'secondary.main' }} />
+							Contraseña
+						</Typography>
+						<Typography fontSize='1.5rem'>
+							<MailOutlineOutlinedIcon sx={{ color: 'secondary.main' }} />
+							Correo
+						</Typography>
+					</Box>
+					<Box
+						sx={{
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							alignItems: 'start',
+							gap: '30px',
+							marginLeft: '100px',
+						}}
+					>
+						<Typography fontSize='1.5rem'>Maria Sanchez</Typography>
+						<Typography fontSize='1.5rem'>**********</Typography>
+						<Typography fontSize='1.5rem'>myemailj@gmail.com</Typography>
+					</Box>
 				</Grid>
 			</Grid>
-			<Grid
-				sx={{
-					display: 'flex',
-					flexDirection: 'row',
-					marginLeft: '56px',
-					marginTop: '75px',
-					marginBottom: '75px',
-				}}
-			>
-				<VisibilityOffOutlinedIcon sx={{ color: '#2F6117' }} />
-				<Typography
-					sx={{
-						fontWeight: '500',
-						color: '#112734',
-						fontFamily: 'ubuntu',
-						fontSize: '20px',
-						marginRight: '215px',
-					}}
-				>
-					Contraseña
-				</Typography>
-				<Typography
-					sx={{
-						fontWeight: '400',
-						color: '#112734',
-						fontFamily: 'ubuntu',
-						fontSize: '20px',
-						marginRight: '79px',
-					}}
-				>
-					**********
-				</Typography>
-			</Grid>
-			<Grid
-				sx={{
-					display: 'flex',
-					flexDirection: 'row',
-					marginLeft: '56px',
-					marginTop: '75px',
-					marginBottom: '75px',
-				}}
-			>
-				<MailOutlineOutlinedIcon sx={{ color: '#2F6117' }} />
-				<Typography
-					sx={{
-						fontWeight: '500',
-						color: '#112734',
-						fontFamily: 'ubuntu',
-						fontSize: '20px',
-						marginRight: '255px',
-					}}
-				>
-					Correo
-				</Typography>
-				<Typography
-					sx={{
-						fontWeight: '400',
-						color: '#112734',
-						fontFamily: 'ubuntu',
-						fontSize: '20px',
-					}}
-				>
-					marijajaj@gmail.com
-				</Typography>
-			</Grid>
-		</Grid>
+		</>
 	);
 }

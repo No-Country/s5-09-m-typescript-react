@@ -9,14 +9,17 @@ import {
 } from '@mui/icons-material';
 import { Grid, Avatar, Typography } from '@mui/material';
 import { Menu, MenuItem, Sidebar, SubMenu } from 'react-pro-sidebar';
-import image from '../../../assets/Ellipse19.png';
-const ProSidebar = () => {
+
+export default function ProSidebar() {
 	return (
 		<>
 			<Sidebar style={{ height: '750px', backgroundColor: 'white' }}>
 				<Menu>
 					<Grid sx={{ display: 'flex', justifyContent: 'center' }}>
-						<img src={image} alt='no ando' />
+						<img
+							src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669229543/ananda%20marga/perfil/Ellipse19_x3azbk.png'
+							alt='imagen de perfil'
+						/>
 					</Grid>
 					<Typography
 						style={{ display: 'flex', justifyContent: 'center' }}
@@ -34,14 +37,12 @@ const ProSidebar = () => {
 						{' '}
 						Notificaciones{' '}
 					</MenuItem>
-					<MenuItem icon={<BookmarkBorderOutlined />}> Favorito </MenuItem>
-					<MenuItem icon={<EventAvailableOutlined />}> Progreso </MenuItem>
-					<MenuItem icon={<CalendarMonthOutlined />}> Mi Calendario </MenuItem>
-					<MenuItem icon={<SelfImprovementOutlined />}> Mi Panel </MenuItem>
+					<MenuItem icon={<BookmarkBorderOutlined />}>Favorito</MenuItem>
+					<MenuItem icon={<EventAvailableOutlined />}>Progreso </MenuItem>
+					<MenuItem icon={<CalendarMonthOutlined />}> Mi Calendario</MenuItem>
+					<MenuItem icon={<SelfImprovementOutlined />}>Mi Panel</MenuItem>
 				</Menu>
 			</Sidebar>
 		</>
 	);
-};
-
-export default ProSidebar;
+}

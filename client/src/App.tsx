@@ -1,4 +1,4 @@
-import { Home } from './pages';
+import { Home, ProfilePage, ProfileWithUserInfo } from './pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LayoutNavegation from './utilities/LayoutNavegation';
 import Contact from './pages/contact/Contact';
@@ -26,8 +26,9 @@ function App() {
 						<Route path='/nostros' element={<AboutUs />} />
 						<Route path='/registrate' element={<Signup />} />
 						<Route path='/nosotros' element={<h1>en contruccion</h1>} />
-            <Route path='/perfil' element={<Calendar />} />
-            {/* Falta la pagina de 404 */}
+						<Route path='/perfil/calendar' element={<Calendar />} />
+						<Route path='/perfil' element={<ProfilePage />} />
+						<Route path='/perfil2' element={<ProfileWithUserInfo />} />
 					</Routes>
 				</LayoutNavegation>
 			</BrowserRouter>

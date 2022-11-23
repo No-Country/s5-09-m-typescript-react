@@ -12,14 +12,12 @@ import ProfileWithUserInfo from '../profilePage/ProfileWithUserInfo';
 export default function Home() {
 	return (
 		<>
-			{/* <Hero />
+			<Hero />
 			<Slider />
 			<MyPractices />
 			<AboutHabits />
 			<Testimonials />
-			<Newsletter /> */}
-			<ProfilePage />
-			<ProfileWithUserInfo />
+			<Newsletter />
 		</>
 	);
 }

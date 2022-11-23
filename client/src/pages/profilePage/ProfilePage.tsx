@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid';
 import Form from './components/Form';
-import ProSidebar from './components/Sidebar';
+import PerfilSidebar from '../../components/PerfilSidebar';
 
 export default function ProfilePage() {
 	return (
@@ -11,7 +11,7 @@ export default function ProfilePage() {
 				style={{ padding: '35px', marginRight: '52px' }}
 			>
 				<Grid item xs={2}>
-					<ProSidebar />
+					<PerfilSidebar />
 				</Grid>
 				<Grid item xs={10}>
 					<Form />

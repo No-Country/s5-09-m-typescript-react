@@ -1,8 +1,7 @@
 import Grid from '@mui/material/Grid';
-import Form from './components/Form';
 import FormProfileWithUserInfo from './components/FormProfileWithUserInfo';
 import FormProfileWithUserInfo2 from './components/FormProfileWithUserInfo2';
-import ProSidebar from './components/Sidebar';
+import ProSidebar from '../../components/PerfilSidebar';
 
 export default function ProfileWithUserInfo() {
 	return (
@@ -10,7 +9,9 @@ export default function ProfileWithUserInfo() {
 			<Grid
 				container
 				spacing={2}
-				style={{ padding: '35px', marginRight: '52px' }}
+				sx={{
+					height: '100vh',
+				}}
 			>
 				<Grid item xs={2}>
 					<ProSidebar />
