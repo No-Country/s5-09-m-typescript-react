@@ -19,10 +19,15 @@ export default function SignupForm() {
   };
 
 	return (
-		<Stack component="form" direction={"column"} spacing="45px" sx={{
-      padding: "60px",
-      paddingBottom: "100px",
-    }}>
+		<Stack
+			component='form'
+			direction={'column'}
+			spacing='45px'
+			sx={{
+				padding: '60px',
+				paddingBottom: '100px',
+			}}
+		>
 			<Typography
 				variant='h3'
 				sx={{
@@ -94,6 +99,6 @@ export default function SignupForm() {
 					Inicia Sesión
 				</Typography>
 			</Typography>
-    </Stack>
+		</Stack>
 	);
 }

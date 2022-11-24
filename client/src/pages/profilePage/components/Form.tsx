@@ -1,43 +1,29 @@
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import {
-	Typography,
-	TextField,
-	Paper,
-	Link,
-	Grid,
-	Box,
-	Avatar,
-} from '@mui/material';
+import { Typography, TextField, Paper, Grid, Box } from '@mui/material';
 import GlobalButton, {
 	GlobalButtonWhite,
 } from '../../../components/GlobalButton';
 import TopBarProfile from './TopBarProfile';
-import image from '../../../assets/Ellipse19.png';
 
 export default function Form() {
 	const navegacion = () => {
 		console.log('probando boton');
 	};
 	return (
-		<Grid
-			item
-			xs={12}
-			component={Paper}
-			elevation={6}
-			style={{ height: '750px' }}
-		>
-			<Grid>
-				<TopBarProfile />
-			</Grid>
+		<Grid container sx={{ width: '100%', height: '100%' }}>
 			<Box
 				sx={{
-					mx: 4,
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
+					justifyContent: 'center',
+					width: '100%',
+					height: '100%',
 				}}
 			>
-				<img src={image} alt='no ando' />
+				<img
+					src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669229543/ananda%20marga/perfil/Ellipse19_x3azbk.png'
+					alt='perfil de usuario'
+				/>
 
 				<Typography component='h1' variant='h5'>
 					Malia Sanchez
@@ -53,8 +39,6 @@ export default function Form() {
 						name='nombreCompleto'
 						label='Nombre Completo'
 						type='password'
-						id='password'
-						autoComplete='current-password'
 						placeholder='Ingresa tu nombre completo'
 					/>
 					<TextField
@@ -63,7 +47,6 @@ export default function Form() {
 						id='email'
 						label='Correo'
 						name='Correo'
-						autoComplete='email'
 						placeholder='Ingresa tu correo'
 					/>
 					<TextField
@@ -72,12 +55,9 @@ export default function Form() {
 						name='password'
 						label='Contraseña'
 						type='password'
-						id='password'
-						autoComplete='current-password'
 						placeholder='Ingresa tu contraseña'
 					/>
 					<Grid
-						spacing={10}
 						style={{
 							display: 'flex',
 							flexDirection: 'row',

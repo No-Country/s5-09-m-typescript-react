@@ -1,13 +1,17 @@
-import { Home, ProfilePage, ProfileWithUserInfo } from './pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import LayoutNavegation from './utilities/LayoutNavegation';
-import Contact from './pages/contact/Contact';
-import Signup from './pages/signup/Signup';
-import Login from './pages/login/Login';
-import AboutUs from './pages/aboutus/AboutUs';
-import Practices from './pages/practices/Practices';
+import { LayoutNavegation } from './components';
+import { PrivateRoute, PublicRoute } from './guards';
+import {
+	Practices,
+	AboutUs,
+	Login,
+	Signup,
+	Contact,
+	Home,
+	Profile,
+} from './pages';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import Calendar from './pages/profilePage/components/Calendar';
+import { publicRoute } from './models/routes';
 
 function App() {
 	return (
@@ -20,15 +24,20 @@ function App() {
 				<LayoutNavegation>
 					<Routes>
 						<Route path='/' element={<Home />} />
-						<Route path='/misPracticas' element={<Practices />} />
-						<Route path='/contacto' element={<Contact />} />
-						<Route path='/iniciarSesion' element={<Login />} />
-						<Route path='/nostros' element={<AboutUs />} />
-						<Route path='/registrate' element={<Signup />} />
-						<Route path='/nosotros' element={<h1>en contruccion</h1>} />
-						<Route path='/perfil/calendar' element={<Calendar />} />
-						<Route path='/perfil' element={<ProfilePage />} />
-						<Route path='/perfil2' element={<ProfileWithUserInfo />} />
+						<Route path={publicRoute.practices} element={<Practices />} />
+						<Route path={publicRoute.contact} element={<Contact />} />
+						<Route path={publicRoute.AboutUs} element={<AboutUs />} />
+						<Route element={<PublicRoute />}>
+							<Route path={publicRoute.login} element={<Login />} />
+							<Route path={publicRoute.register} element={<Signup />} />
+							<Route
+								path={publicRoute.register}
+								element={<h1>recuperar contraseña</h1>}
+							/>
+						</Route>
+						<Route element={<PrivateRoute />}>
+							<Route path='/perfil' element={<Profile />} />
+						</Route>
 					</Routes>
 				</LayoutNavegation>
 			</BrowserRouter>

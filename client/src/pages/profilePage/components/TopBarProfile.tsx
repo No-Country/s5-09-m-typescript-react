@@ -9,7 +9,7 @@ const TopBarProfile = (props: Props) => {
 	return (
 		<>
 			<Grid container>
-				<Grid xs={4} sx={{ display: 'flex', alignItems: 'center' }}>
+				<Grid item xs={4} sx={{ display: 'flex', alignItems: 'center' }}>
 					<Button
 						variant='text'
 						sx={{
@@ -34,6 +34,7 @@ const TopBarProfile = (props: Props) => {
 					</Button>
 				</Grid>
 				<Grid
+					item
 					xs={4}
 					sx={{
 						display: 'flex',
@@ -53,6 +54,7 @@ const TopBarProfile = (props: Props) => {
 					<EditOutlinedIcon sx={{ color: 'third.main' }} />
 				</Grid>
 				<Grid
+					item
 					xs={4}
 					sx={{
 						display: 'flex',
@@ -64,7 +66,7 @@ const TopBarProfile = (props: Props) => {
 						<Icon>
 							<LogoutIcon
 								fontSize='small'
-								sx={{ marginBottom: '7px', color: '#112734' }}
+								sx={{ marginBottom: '7px', color: 'third.main' }}
 							/>
 						</Icon>
 						<Typography
