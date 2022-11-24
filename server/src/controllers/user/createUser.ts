@@ -1,11 +1,13 @@
 import { Response, Request } from 'express'
-import * as userService from '../../services/users'
-
+import { IResponse } from '../../interfaces'
+import { createUserService } from '../../services/user/createUser'
+/* import * as userService from '../../services/users'
+ */
 export const createUser = async (req: Request, res: Response) => {
     const user = req.body
 
     try {
-        const userRetrieved: any = await userService.createUser(user) //! SOLUCIONAR PROBLEMA DE TIPADO
+        const userRetrieved = (await createUserService(user)) as IResponse
 
         const { status } = userRetrieved
 

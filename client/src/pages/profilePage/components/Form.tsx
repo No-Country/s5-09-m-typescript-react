@@ -1,14 +1,7 @@
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import {
-	Typography,
-	TextField,
-	Paper,
-	Link,
-	Grid,
-	Box,
-	Avatar,
-} from '@mui/material';
-import GlobalButton from '../../../components/GlobalButton';
+import { Typography, TextField, Paper, Grid, Box } from '@mui/material';
+import GlobalButton, {
+	GlobalButtonWhite,
+} from '../../../components/GlobalButton';
 import TopBarProfile from './TopBarProfile';
 
 export default function Form() {
@@ -16,95 +9,84 @@ export default function Form() {
 		console.log('probando boton');
 	};
 	return (
-		<Grid
-			item
-			xs={12}
-			component={Paper}
-			elevation={6}
-			style={{ height: '750px' }}
-		>
-			<Grid>
-				<TopBarProfile />
-			</Grid>
+		<Grid container sx={{ width: '100%', height: '100%' }}>
 			<Box
 				sx={{
-					mx: 4,
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
+					justifyContent: 'center',
+					width: '100%',
+					height: '100%',
 				}}
 			>
-				<Avatar
-					sx={{
-						m: 1,
-						bgcolor: 'secondary.main',
-						alignSelf: 'center',
-						width: '120px',
-						height: '120px',
-					}}
-				>
-					<AccountCircleIcon fontSize='large' />
-				</Avatar>
+				<img
+					src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669229543/ananda%20marga/perfil/Ellipse19_x3azbk.png'
+					alt='perfil de usuario'
+				/>
+
 				<Typography component='h1' variant='h5'>
-					Sign in
+					Malia Sanchez
 				</Typography>
-				<Box component='form' noValidate sx={{ mt: 1 }}>
+				<Box
+					component='form'
+					noValidate
+					sx={{ mt: 1, display: 'flex', flexDirection: 'column' }}
+				>
 					<TextField
+						sx={{ width: '527px' }}
 						margin='normal'
-						fullWidth
 						name='nombreCompleto'
 						label='Nombre Completo'
 						type='password'
-						id='password'
-						autoComplete='current-password'
 						placeholder='Ingresa tu nombre completo'
 					/>
 					<TextField
 						margin='normal'
-						fullWidth
+						sx={{ width: '527px' }}
 						id='email'
 						label='Correo'
 						name='Correo'
-						autoComplete='email'
 						placeholder='Ingresa tu correo'
 					/>
 					<TextField
 						margin='normal'
-						fullWidth
+						sx={{ width: '527px' }}
 						name='password'
 						label='Contraseña'
 						type='password'
-						id='password'
-						autoComplete='current-password'
 						placeholder='Ingresa tu contraseña'
 					/>
-					<Grid spacing={8} style={{ display: 'flex', flexDirection: 'row' }}>
+					<Grid
+						style={{
+							display: 'flex',
+							flexDirection: 'row',
+							justifyContent: 'center',
+							marginTop: '15px',
+						}}
+					>
 						<Grid
-							style={{ display: 'flex', justifyContent: 'center' }}
+							style={{
+								display: 'flex',
+								justifyContent: 'center',
+								width: '237px',
+								marginRight: '18px',
+							}}
 							item
 							xs={6}
 						>
-							<GlobalButton text='Guardar Cambios' action={navegacion} />
+							<GlobalButtonWhite text='Guardar Cambios' action={navegacion} />
 						</Grid>
 						<Grid
-							style={{ display: 'flex', justifyContent: 'center' }}
+							style={{
+								display: 'flex',
+								justifyContent: 'center',
+								width: '237px',
+							}}
 							item
 							xs={6}
 						>
 							<GlobalButton text='Cancelar' action={navegacion} />
-						</Grid>
-					</Grid>
-
-					<Grid container>
-						<Grid item xs>
-							<Link href='#' variant='body2'>
-								Forgot password?
-							</Link>
-						</Grid>
-						<Grid item>
-							<Link href='#' variant='body2'>
-								{"Don't have an account? Sign Up"}
-							</Link>
 						</Grid>
 					</Grid>
 				</Box>
