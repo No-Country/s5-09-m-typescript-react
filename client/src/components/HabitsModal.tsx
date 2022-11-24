@@ -28,8 +28,13 @@ export default function HabitsModal({close}:HabitsModal){
         <Grid container spacing={0}
             sx={{
                 position:'absolute',
-                display:'block',
+                top:0,
+                left: 0,
                 zIndex:999,
+                display: 'flex',
+                justifyContent: 'center',
+                width:'100%',
+                height:'100%'
             }}
             > 
             <Paper 
@@ -177,9 +182,13 @@ export default function HabitsModal({close}:HabitsModal){
                     </AccordionDetails>
                 </Accordion>
                 </Grid>
-
-                <GlobalButton text='Guardar' action={() => close()} />
-                <GlobalButton text='Cancelar' action={() => close()} />       
+                <Grid sx={{textAlign:'center', marginBottom:'20px'}}>
+                    <GlobalButton text='Guardar' width='370px' action={() => close()} />
+                </Grid> 
+                <Grid sx={{textAlign:'center'}}>
+                    <GlobalButton text='Cancelar' width='370px' action={() => close()}
+                                    sx={{backgroundColor:'#F9F9F9', color:'#FC802C',border:'2px solid #FC802C'}} />       
+                </Grid> 
             </Paper>
         </Grid>
 
