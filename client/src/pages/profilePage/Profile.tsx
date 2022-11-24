@@ -23,7 +23,11 @@ export default function Profile() {
 				return(<Form />)
 			case 'calendario':
 				return(<Calendar />)
-			
+			default:
+				return (<>
+					<FormProfileWithUserInfo />
+					<FormProfileWithUserInfo2 />
+					</>)
 		}
 	};
 	return (
@@ -40,7 +44,7 @@ export default function Profile() {
 				</Grid>
 
 				<Grid item xs={9}>
-					<TopBarProfile />
+					<TopBarProfile setModals={setModals} />
 					{renderModal(modal)}
 					
 				</Grid>

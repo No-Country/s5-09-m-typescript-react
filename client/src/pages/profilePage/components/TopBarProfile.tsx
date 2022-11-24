@@ -4,8 +4,10 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 type Props = {};
-
-const TopBarProfile = (props: Props) => {
+interface profileBar {
+	setModals: (nameModal: string) => void;
+}
+const TopBarProfile = ({ setModals }: profileBar) => {
 	return (
 		<>
 			<Grid container>
@@ -51,7 +53,10 @@ const TopBarProfile = (props: Props) => {
 					>
 						Mi Perfil
 					</Typography>
+					<button onClick={()=>setModals('editarPerfil')}>
 					<EditOutlinedIcon sx={{ color: 'third.main' }} />
+					</button>
+					
 				</Grid>
 				<Grid
 					item

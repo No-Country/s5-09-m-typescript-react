@@ -29,11 +29,12 @@ export default function ProSidebar({ setModals }: sidebar) {
 					>
 						Maria Sanchez
 					</Typography>
-			<MenuItem icon={<NotificationsActiveOutlined />} ><button onClick={()=>setModals('perfil')}>Perfil</button></MenuItem>
-				
+					<MenuItem icon={<NotificationsActiveOutlined />}>
+							<button onClick={()=>setModals('perfil')}>Perfil</button></MenuItem>
 					<MenuItem icon={<BookmarkBorderOutlined />}>Favorito</MenuItem>
 					<MenuItem icon={<EventAvailableOutlined />}>Progreso </MenuItem>
-					<MenuItem icon={<CalendarMonthOutlined />}><button onClick={()=>setModals('calendario')}>Mi Calendario</button></MenuItem>
+					<MenuItem icon={<CalendarMonthOutlined />}>
+							<button onClick={()=>setModals('calendario')}>Mi Calendario</button></MenuItem>
 					<MenuItem icon={<SelfImprovementOutlined />}>Mi Panel</MenuItem>
 				</Menu>
 			</Sidebar>
