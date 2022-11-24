@@ -5,8 +5,18 @@ import PerfilSidebar from '../../components/PerfilSidebar';
 import Calendar from './components/Calendar';
 import Form from './components/Form';
 import { TopBarProfile } from './components';
+import { useState } from 'react';
 
 export default function Profile() {
+	const [modal, setModal] = useState<string>('perfil');
+	const setModals = (nameModal: string) => {
+		setModal(nameModal);
+	};
+	const renderModal = (modal: string) => {
+		if ((modal = 'perfil')) {
+			return <FormProfileWithUserInfo />;
+		}
+	};
 	return (
 		<>
 			<Grid
@@ -17,18 +27,19 @@ export default function Profile() {
 				}}
 			>
 				<Grid item xs={2}>
-					<PerfilSidebar />
+					<PerfilSidebar setModals={setModals} />
 				</Grid>
 
 				<Grid item xs={10}>
 					<TopBarProfile />
-					{/* agregar logica de cambio de componentes utilizando el menu sidebard */}
-					{/* <FormProfileWithUserInfo />
-					<FormProfileWithUserInfo2 /> */}
-					{/* <Calendar /> */}
-					{/* <Form /> */}
+					{/* aca van los componentes */}
 				</Grid>
 			</Grid>
 		</>
 	);
 }
+/* agregar logica de cambio de componentes utilizando el menu sidebard */
+/* <FormProfileWithUserInfo />
+	<FormProfileWithUserInfo2 /> */
+/* <Calendar /> */
+/* <Form /> */

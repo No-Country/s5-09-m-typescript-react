@@ -7,8 +7,10 @@ import {
 } from '@mui/icons-material';
 import { Grid, Typography } from '@mui/material';
 import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar';
-
-export default function ProSidebar() {
+interface sidebar {
+	setModals: (nameModal: string) => void;
+}
+export default function ProSidebar({ setModals }: sidebar) {
 	return (
 		<>
 			<Sidebar style={{ height: '750px', backgroundColor: 'white' }}>
@@ -26,10 +28,7 @@ export default function ProSidebar() {
 					>
 						Maria Sanchez
 					</Typography>
-					<MenuItem icon={<NotificationsActiveOutlined />}>
-						{' '}
-						Notificaciones{' '}
-					</MenuItem>
+					<MenuItem icon={<NotificationsActiveOutlined />}>Perfil</MenuItem>
 					<MenuItem icon={<BookmarkBorderOutlined />}>Favorito</MenuItem>
 					<MenuItem icon={<EventAvailableOutlined />}>Progreso </MenuItem>
 					<MenuItem icon={<CalendarMonthOutlined />}> Mi Calendario</MenuItem>
