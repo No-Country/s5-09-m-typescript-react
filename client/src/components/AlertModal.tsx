@@ -24,40 +24,52 @@ export default function AlertModal({
                 top:0,
                 left: 0,
                 zIndex:999,
-                backgroundColor:'rgba(0,0,0,0.15)',
                 display: 'flex',
                 justifyContent: 'center',
                 width:'100%',
                 height:'100%'
 
+
        }}>
-            <Paper
+            <Paper 
                 sx={{
                     marginTop:'150px',
                     width:'400px',
                     height:'200px',
-                    display: 'flex',
+                    display: 'block',
                     flexDirection:'column',
-                    alignItems:'center',
                     padding: '20px 20px',
                     border: 'solid gray'
                 }}> 
                 
-                    <IconButton aria-label="close" 
-                                onClick={() => close()}
-                    >
-                        <CloseIcon />
-                    </IconButton>
+                    
 
-                    <img src={urlImg} alt="alert simbol" />
-
+                    <img src={urlImg} alt="alert simbol" 
+                                    style={{
+                                            display: 'inline-block', 
+                                            position:'relative', 
+                                            left: '150px'
+                                            }}/>
+                        
+                        
+                        
+                        <IconButton aria-label="close" 
+                                    onClick={() => close()}
+                                    sx={{ 
+                                        float: 'right',
+                                        display: 'inline-block'
+                                        }}
+                        >
+                            <CloseIcon />
+                        </IconButton>
                     <Typography variant="h4" 
                                 color="text.primary"
                                 sx={{
                                     fontSize:'18px',
                                     fontWeight:600,
                                     lineHeight:'28px',
-                                    margin:'5px 0'
+                                    margin:'5px 0',
+                                    textAlign: 'center'
                                 }}
                     >
                         {title}

@@ -1,13 +1,18 @@
 import { ExpandMore } from '@mui/icons-material'
-import { Accordion, Checkbox, AccordionDetails, AccordionSummary, FormControlLabel, FormGroup, Paper, Typography } from '@mui/material'
+import CloseIcon from '@mui/icons-material/Close';
+import { Accordion, Checkbox, AccordionDetails, AccordionSummary, FormControlLabel, FormGroup, Paper, Typography, IconButton } from '@mui/material'
 import Grid from '@mui/material/Grid'
 import React, { useEffect, useState } from 'react'
+import GlobalButton from './GlobalButton';
 
-export default function HabitsModal(){
+interface HabitsModal {
+    close: () => void;
+}
+
+export default function HabitsModal({close}:HabitsModal){
 
     const [habits, setHabits] = useState<string[]>([]);
-  
-
+   
     const handleHabitChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
         const { name, value } = event.target;
         setHabits({
@@ -23,16 +28,28 @@ export default function HabitsModal(){
         <Grid container spacing={0}
             sx={{
                 position:'absolute',
-                display:'block'
+                display:'block',
+                zIndex:999,
             }}
-            >
+            > 
             <Paper 
-            sx={{
-                width:'450px',
-                height: 'fit-content',
-                padding:'30px 20px',
-                margin:'20px auto'
-            }}>
+                sx={{
+                    width:'450px',
+                    height: 'fit-content',
+                    padding:'30px 20px',
+                    margin:'20px auto'
+                    
+                }}>
+                        <IconButton aria-label="close" 
+                                    onClick={() => close()}
+                                    sx={{ 
+                                        position:'absolute',
+                                        margin:'0 0 0 380px'
+                                        }}
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                           
                 <Grid>
                     <Typography variant="h1" 
                                 color="text.secondary" 
@@ -160,6 +177,9 @@ export default function HabitsModal(){
                     </AccordionDetails>
                 </Accordion>
                 </Grid>
+
+                <GlobalButton text='Guardar' action={() => close()} />
+                <GlobalButton text='Cancelar' action={() => close()} />       
             </Paper>
         </Grid>
 

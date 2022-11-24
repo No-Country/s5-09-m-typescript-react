@@ -7,7 +7,9 @@ import {
 	CardActions,
 	Card,
 } from '@mui/material';
+import * as React from 'react';
 import { GlobalButton } from '../../../components';
+import HabitsModal from '../../../components/HabitsModal';
 
 const itemList = [
 	{
@@ -31,8 +33,18 @@ const itemList = [
 ];
 
 export default function AboutHabits() {
+
+	const [isOpenModal, setIsOpenModal] = React.useState(false);
+	const closeModal = () =>{
+		setIsOpenModal(false);
+	}
+
+
+
+	
 	const navegacion = () => {
 		console.log('probando boton');
+		setIsOpenModal(true);
 	};
 	return (
 		<section
@@ -118,6 +130,8 @@ export default function AboutHabits() {
 					<GlobalButton text='Conoce Más' action={navegacion} />
 				</div>
 			</Box>
+						
+			{isOpenModal && <HabitsModal close={closeModal}/>}
 		</section>
 	);
 }
