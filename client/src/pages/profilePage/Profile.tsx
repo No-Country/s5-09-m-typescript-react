@@ -4,17 +4,26 @@ import FormProfileWithUserInfo2 from './components/FormProfileWithUserInfo2';
 import PerfilSidebar from '../../components/PerfilSidebar';
 import Calendar from './components/Calendar';
 import Form from './components/Form';
-import { TopBarProfile } from './components';
+import { DeletableChips, TopBarProfile } from './components';
 import { useState } from 'react';
 
 export default function Profile() {
-	const [modal, setModal] = useState<string>('perfil');
+	const [modal, setModal] = useState<string>('');
 	const setModals = (nameModal: string) => {
 		setModal(nameModal);
 	};
 	const renderModal = (modal: string) => {
-		if ((modal = 'perfil')) {
-			return <FormProfileWithUserInfo />;
+		switch ((modal)) {
+			case 'perfil':
+				return (<>
+						<FormProfileWithUserInfo />
+						<FormProfileWithUserInfo2 />
+						</>)
+			case 'editarPerfil':
+				return(<Form />)
+			case 'calendario':
+				return(<Calendar />)
+			
 		}
 	};
 	return (
@@ -26,13 +35,14 @@ export default function Profile() {
 					height: 'calc(100vh - 85px)',
 				}}
 			>
-				<Grid item xs={2}>
+				<Grid item xs={3}>
 					<PerfilSidebar setModals={setModals} />
 				</Grid>
 
-				<Grid item xs={10}>
+				<Grid item xs={9}>
 					<TopBarProfile />
-					{/* aca van los componentes */}
+					{renderModal(modal)}
+					
 				</Grid>
 			</Grid>
 		</>

@@ -11,9 +11,10 @@ interface sidebar {
 	setModals: (nameModal: string) => void;
 }
 export default function ProSidebar({ setModals }: sidebar) {
+	
 	return (
 		<>
-			<Sidebar style={{ height: '750px', backgroundColor: 'white' }}>
+			<Sidebar >
 				<Menu>
 					<Grid sx={{ display: 'flex', justifyContent: 'center' }}>
 						<img
@@ -28,10 +29,11 @@ export default function ProSidebar({ setModals }: sidebar) {
 					>
 						Maria Sanchez
 					</Typography>
-					<MenuItem icon={<NotificationsActiveOutlined />}>Perfil</MenuItem>
+			<MenuItem icon={<NotificationsActiveOutlined />} ><button onClick={()=>setModals('perfil')}>Perfil</button></MenuItem>
+				
 					<MenuItem icon={<BookmarkBorderOutlined />}>Favorito</MenuItem>
 					<MenuItem icon={<EventAvailableOutlined />}>Progreso </MenuItem>
-					<MenuItem icon={<CalendarMonthOutlined />}> Mi Calendario</MenuItem>
+					<MenuItem icon={<CalendarMonthOutlined />}><button onClick={()=>setModals('calendario')}>Mi Calendario</button></MenuItem>
 					<MenuItem icon={<SelfImprovementOutlined />}>Mi Panel</MenuItem>
 				</Menu>
 			</Sidebar>
