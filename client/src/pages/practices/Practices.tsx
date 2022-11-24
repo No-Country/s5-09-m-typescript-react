@@ -1,4 +1,6 @@
-import { Grid, Paper, Typography, AppBar, Tabs } from '@mui/material';
+import { Grid, Paper, Typography, AppBar, Tabs, Button, Modal } from '@mui/material';
+import { useState } from 'react';
+import HabitsModal from '../../components/HabitsModal';
 import PracticesCard from './components/PracticesCard';
 
 const habitsList = [
@@ -21,8 +23,8 @@ const habitsList = [
 ];
 
 export default function Practices() {
+
 	return (
-        
 		<Grid
 			container
 			spacing={0}
@@ -30,7 +32,8 @@ export default function Practices() {
                 maxWidth:'1442px',
 				margin: '40px auto',
 			}}
-		>
+		> 
+		
 			<Grid item lg={4}>
                
 				<Paper

@@ -1,8 +1,9 @@
-import { Grid, TextField, Typography } from '@mui/material';
+import { Modal, Grid, TextField, Typography } from '@mui/material';
 import { display } from '@mui/system';
 import * as React from 'react';
-import { FieldValues, useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { GlobalButton } from '../../../components';
+import AlertModal from '../../../components/AlertModal';
 import { isEmail } from '../../../utilities';
 
 type FormData = {
@@ -22,6 +23,7 @@ export default function ContactForm() {
 	//Para probar si funcionan los formularios
 	const formSubmitHandler: SubmitHandler<FormData> = (data: FormData) => {
 		console.log('form data is', data);
+
 	};
 
 	return (
@@ -88,8 +90,11 @@ export default function ContactForm() {
 					style={{ display: 'flex', justifyContent: 'center' }}
 				>
 					<GlobalButton text='Enviar' action={handleSubmit(formSubmitHandler)} />
+				
 				</Grid>
 			</Grid>
+		
 		</form>
+		
 	);
 }
