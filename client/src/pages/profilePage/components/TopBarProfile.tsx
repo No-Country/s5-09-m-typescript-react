@@ -66,7 +66,7 @@ const TopBarProfile = (props: Props) => {
 						<Icon>
 							<LogoutIcon
 								fontSize='small'
-								sx={{ marginBottom: '7px', color: '#112734' }}
+								sx={{ marginBottom: '7px', color: 'third.main' }}
 							/>
 						</Icon>
 						<Typography

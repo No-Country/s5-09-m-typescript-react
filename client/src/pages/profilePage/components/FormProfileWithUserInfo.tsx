@@ -11,7 +11,6 @@ export default function FormProfileWithUserInfo() {
 	};
 	return (
 		<>
-			<TopBarProfile />
 			<Grid container height='40%'>
 				<Grid
 					item

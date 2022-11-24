@@ -9,22 +9,15 @@ export default function Form() {
 		console.log('probando boton');
 	};
 	return (
-		<Grid
-			item
-			xs={12}
-			component={Paper}
-			elevation={6}
-			style={{ height: '750px' }}
-		>
-			<Grid>
-				<TopBarProfile />
-			</Grid>
+		<Grid container sx={{ width: '100%', height: '100%' }}>
 			<Box
 				sx={{
-					mx: 4,
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
+					justifyContent: 'center',
+					width: '100%',
+					height: '100%',
 				}}
 			>
 				<img
@@ -46,8 +39,6 @@ export default function Form() {
 						name='nombreCompleto'
 						label='Nombre Completo'
 						type='password'
-						id='password'
-						autoComplete='current-password'
 						placeholder='Ingresa tu nombre completo'
 					/>
 					<TextField
@@ -56,7 +47,6 @@ export default function Form() {
 						id='email'
 						label='Correo'
 						name='Correo'
-						autoComplete='email'
 						placeholder='Ingresa tu correo'
 					/>
 					<TextField
@@ -65,12 +55,9 @@ export default function Form() {
 						name='password'
 						label='Contraseña'
 						type='password'
-						id='password'
-						autoComplete='current-password'
 						placeholder='Ingresa tu contraseña'
 					/>
 					<Grid
-						spacing={10}
 						style={{
 							display: 'flex',
 							flexDirection: 'row',

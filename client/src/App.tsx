@@ -8,7 +8,7 @@ import {
 	Signup,
 	Contact,
 	Home,
-	ProfileWithUserInfo,
+	Profile,
 } from './pages';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { publicRoute } from './models/routes';
@@ -36,7 +36,7 @@ function App() {
 							/>
 						</Route>
 						<Route element={<PrivateRoute />}>
-							<Route path='/perfil' element={<ProfileWithUserInfo />} />
+							<Route path='/perfil' element={<Profile />} />
 						</Route>
 					</Routes>
 				</LayoutNavegation>

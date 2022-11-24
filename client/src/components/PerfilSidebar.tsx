@@ -1,14 +1,12 @@
 import {
-	AccountCircle,
-	AccountCircleOutlined,
 	BookmarkBorderOutlined,
 	CalendarMonthOutlined,
 	EventAvailableOutlined,
 	NotificationsActiveOutlined,
 	SelfImprovementOutlined,
 } from '@mui/icons-material';
-import { Grid, Avatar, Typography } from '@mui/material';
-import { Menu, MenuItem, Sidebar, SubMenu } from 'react-pro-sidebar';
+import { Grid, Typography } from '@mui/material';
+import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar';
 
 export default function ProSidebar() {
 	return (
@@ -28,11 +26,6 @@ export default function ProSidebar() {
 					>
 						Maria Sanchez
 					</Typography>
-
-					<SubMenu icon={<AccountCircleOutlined />} label='Perfil'>
-						<MenuItem> Opcion 1</MenuItem>
-						<MenuItem> Opcion 2</MenuItem>
-					</SubMenu>
 					<MenuItem icon={<NotificationsActiveOutlined />}>
 						{' '}
 						Notificaciones{' '}
