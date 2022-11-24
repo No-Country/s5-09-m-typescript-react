@@ -33,18 +33,8 @@ const itemList = [
 ];
 
 export default function AboutHabits() {
-
-	const [isOpenModal, setIsOpenModal] = React.useState(false);
-	const closeModal = () =>{
-		setIsOpenModal(false);
-	}
-
-
-
-	
 	const navegacion = () => {
 		console.log('probando boton');
-		setIsOpenModal(true);
 	};
 	return (
 		<section
@@ -131,7 +121,7 @@ export default function AboutHabits() {
 				</div>
 			</Box>
 						
-			{isOpenModal && <HabitsModal close={closeModal}/>}
+
 		</section>
 	);
 }

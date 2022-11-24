@@ -14,11 +14,6 @@ type FormData = {
 
 export default function ContactForm() {
 
-	const [isOpenModal, setIsOpenModal] = React.useState(false);
-	const closeModal = () =>{
-		setIsOpenModal(false);
-	}
-
 	const {
 		register,
 		handleSubmit,
@@ -28,8 +23,7 @@ export default function ContactForm() {
 	//Para probar si funcionan los formularios
 	const formSubmitHandler: SubmitHandler<FormData> = (data: FormData) => {
 		console.log('form data is', data);
-		
-		setIsOpenModal(true);
+
 	};
 
 	return (
@@ -100,12 +94,7 @@ export default function ContactForm() {
 				</Grid>
 			</Grid>
 						
-			{isOpenModal && <AlertModal title='Mensaje enviado' 
-										text='Muchas gracias por contactarnos, te contestaremos a la brevedad.'
-										urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669209748/ananda%20marga/home/alerts/FeaturedIconMail_fgcdsc.png'
-										close={closeModal}	/>
-									
-			}
+		
 		</form>
 		
 	);
