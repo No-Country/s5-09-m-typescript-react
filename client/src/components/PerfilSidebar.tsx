@@ -34,7 +34,7 @@ export default function ProSidebar({ setModals }: sidebar) {
 					<MenuItem icon={<BookmarkBorderOutlined />}>Favorito</MenuItem>
 					<MenuItem icon={<EventAvailableOutlined />}>Progreso </MenuItem>
 					<MenuItem icon={<CalendarMonthOutlined />}><button onClick={()=>setModals('calendario')}>Mi Calendario</button></MenuItem>
-					<MenuItem icon={<SelfImprovementOutlined />}>Mi Panel</MenuItem>
+					<MenuItem icon={<SelfImprovementOutlined />}><button onClick={()=>setModals('panel')}>Mi Panel</button></MenuItem>
 				</Menu>
 			</Sidebar>
 		</>

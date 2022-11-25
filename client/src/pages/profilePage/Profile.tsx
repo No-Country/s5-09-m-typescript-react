@@ -6,6 +6,7 @@ import Calendar from './components/Calendar';
 import Form from './components/Form';
 import { DeletableChips, TopBarProfile } from './components';
 import { useState } from 'react';
+import PanelCardList from './components/PanelCardList';
 
 export default function Profile() {
 	const [modal, setModal] = useState<string>('');
@@ -23,7 +24,8 @@ export default function Profile() {
 				return(<Form />)
 			case 'calendario':
 				return(<Calendar />)
-			
+			case 'panel':
+        return(<PanelCardList/>)
 		}
 	};
 	return (
@@ -32,7 +34,7 @@ export default function Profile() {
 				container
 				spacing={2}
 				sx={{
-					height: 'calc(100vh - 85px)',
+					minHeight: 'calc(100vh - 85px)',
 				}}
 			>
 				<Grid item xs={3}>
