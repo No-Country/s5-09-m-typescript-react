@@ -52,7 +52,8 @@ export default function InputLogin() {
 						},
 					},
 				);
-				console.log(data);
+				const { name, sub, picture, email } = data.data;
+				onLoginGoogle(name, sub, picture, email);
 			} catch (err) {
 				console.log(err);
 			}
