@@ -33,7 +33,7 @@ const TextButton = ({ text, ...props }: { text: string }) => (
 
 export default function Calendar() {
 	return (
-		<Stack direction='row' justifyContent='center' alignItems='center'>
+		<Stack direction='row' justifyContent='center' alignItems='center' sx={{mt: "65px"}}>
 			<Stack
 				direction={'row'}
 				divider={<Divider orientation='vertical' flexItem />}
@@ -75,7 +75,7 @@ export default function Calendar() {
 					</Grid>
 					<Grid item xs={12} container justifyContent={'flex-end'}>
 						<GlobalButton
-							sx={{ marginRight: '32px' }}
+							sx={{ marginRight: '32px', textTransform: "capitalize"}}
 							text='Guardar'
 							action={() => {}}
 						/>

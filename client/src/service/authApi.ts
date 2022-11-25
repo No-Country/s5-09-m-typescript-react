@@ -1,5 +1,8 @@
+import { AnyAction, Dispatch, ThunkDispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { loginAdapter } from '../adapters/adapter';
+import { user } from '../models/user.type';
+import { setUser } from '../redux/slices/user';
 const localUrl = 'http://localhost:3002';
 const authApi = axios.create({
 	baseURL:
@@ -8,13 +11,23 @@ const authApi = axios.create({
 			: localUrl, // no hay rutas /api,
 });
 
-export const onLogin = ({
-	email,
-	password,
-}: {
-	email: string;
-	password: string;
-}) => {
+export const onLogin = (
+	{
+		email,
+		password,
+	}: {
+		email: string;
+		password: string;
+	},
+	dispatch?: ThunkDispatch<
+		{
+			user: user;
+		},
+		undefined,
+		AnyAction
+	> &
+		any,
+) => {
 	authApi
 		.post('/login', {
 			email,
@@ -22,6 +35,7 @@ export const onLogin = ({
 		})
 		.then(({ data }) => {
 			localStorage.setItem('user', JSON.stringify(loginAdapter(data, email)));
+			dispatch(setUser(loginAdapter(data, email)));
 		});
 };
 

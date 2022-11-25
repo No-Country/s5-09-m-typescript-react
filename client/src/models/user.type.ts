@@ -17,5 +17,5 @@ export const userEmptyState: user = {
 	id: '',
 	userName: '',
 	userJwt: '',
-	isAuth: true,
+	isAuth: false,
 };
