@@ -5,7 +5,7 @@ import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 
 export interface cardContent{
 	title: string;
-    urlImg: string;
+  urlImg: string;
 	text: {
     title: string;
     body1: string;
