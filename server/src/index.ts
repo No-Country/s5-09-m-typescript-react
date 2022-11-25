@@ -33,7 +33,12 @@ app.use('/', router)
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(db)
+        if (db === '') {
+            const prodDb = dbDev
+            await mongoose.connect(prodDb)
+        } else {
+            await mongoose.connect(db)
+        }
 
         console.log('Connection successfully')
     } catch (error) {
