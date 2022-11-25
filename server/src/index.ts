@@ -6,12 +6,13 @@ import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 
 import { router } from './routes/index'
-import { dbTest, dbDev, portDev, portTest } from './config/globals'
+//import { dbTest, dbDev, portDev, portTest } from './config/globals'
 import { userMocksService } from './services'
 
-const db = process.env.NODE_ENV === 'development' ? dbDev : dbTest
+const db =
+    'mongodb+srv://admin:6d6r9dM9jFVkSTGL@mindfulness.wqh5lrp.mongodb.net/production?retryWrites=true&w=majority'
 
-const port = process.env.NODE_ENV === 'development' ? portDev : portTest
+const port = 3002
 
 //* ----------------Server configuration -----------------
 const app = express()
