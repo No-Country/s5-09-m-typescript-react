@@ -18,7 +18,7 @@ export default function PanelCard({ title, urlImg, text }: cardContent){
     return(
             <Paper
 					sx={{
-                        margin:'60px auto',
+                        margin:'14px auto',
                         padding:'29px 17px',
 						width: '963px',
 						backgroundColor: "#FFFFFF",

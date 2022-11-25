@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import PanelCard from './PanelCard';
 
 const content = {
@@ -19,12 +20,12 @@ const contentArray = [
 
 export default function PanelCardList(){
     return(
-      <>
+      <Box marginTop={"60px"}>
         {
           contentArray.map((item) => (
             <PanelCard {...item} />
           ))
         }
-      </>
+      </Box>
     );
 }
