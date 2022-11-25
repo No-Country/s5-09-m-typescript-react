@@ -1,4 +1,3 @@
-import { portTest } from './../../../server/src/config/globals';
 import { AnyAction, Dispatch, ThunkDispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { loginAdapter } from '../adapters/adapter';
