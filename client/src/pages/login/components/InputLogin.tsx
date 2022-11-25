@@ -14,7 +14,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import { useForm } from 'react-hook-form';
 import { useGoogleLogin } from '@react-oauth/google';
-import { onLogin, onLoginGoogle } from '../../../service/authApi';
+import { onLogin } from '../../../service';
 import axios from 'axios';
 // import { LoginSocialFacebook } from 'reactjs-social-login';
 import { isEmail } from '../../../utilities';

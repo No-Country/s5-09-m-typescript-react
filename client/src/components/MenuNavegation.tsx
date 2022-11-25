@@ -1,8 +1,12 @@
 import { useState } from 'react';
-import { Button, Menu, MenuItem, Typography } from '@mui/material';
+import { Button, Menu, MenuItem } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { resetUser } from '../redux/slices/user';
 
 export default function MenuNavegation() {
+	const user = useAppSelector(state => state.user);
+	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 	const open = Boolean(anchorEl);
@@ -52,30 +56,26 @@ export default function MenuNavegation() {
 			>
 				Nosotros
 			</Button>
-			<Button
-				id='basic-button'
-				color='third'
-				variant='outlined'
-				aria-controls={open ? 'basic-menu' : undefined}
-				aria-haspopup='true'
-				aria-expanded={open ? 'true' : undefined}
-				onClick={() => navigate('/iniciarSesion')}
-			>
-				inicio sesion
-			</Button>
-			<Menu
-				id='basic-menu'
-				anchorEl={anchorEl}
-				open={open}
-				onClose={handleClose}
-				MenuListProps={{
-					'aria-labelledby': 'basic-button',
-				}}
-			>
-				<MenuItem onClick={handleClose}>Profile</MenuItem>
-				<MenuItem onClick={handleClose}>My account</MenuItem>
-				<MenuItem onClick={handleClose}>Logout</MenuItem>
-			</Menu>
+
+			{!user.isAuth ? (
+				<Button
+					id='basic-button'
+					color='third'
+					variant='outlined'
+					onClick={() => navigate('/iniciarSesion')}
+				>
+					inicio sesion
+				</Button>
+			) : (
+				<Button
+					id='basic-button'
+					color='third'
+					variant='outlined'
+					onClick={() => dispatch(resetUser())}
+				>
+					Desconectarse
+				</Button>
+			)}
 		</div>
 	);
 }
