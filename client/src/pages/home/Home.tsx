@@ -6,7 +6,7 @@ import {
 	Newsletter,
 } from './components';
 import AboutHabits from './components/AboutHabits';
-import ProfilePage from '../profilePage/ProfilePage';
+import ProfilePage from '../profilePage/Profile';
 import ProfileWithUserInfo from '../profilePage/Profile';
 
 export default function Home() {

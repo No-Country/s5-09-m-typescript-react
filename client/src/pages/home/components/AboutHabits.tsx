@@ -7,8 +7,8 @@ import {
 	CardActions,
 	Card,
 } from '@mui/material';
+import React from 'react';
 import { GlobalButton } from '../../../components';
-import HabitsModal from '../../../components/HabitsModal';
 
 const itemList = [
 	{
@@ -33,11 +33,9 @@ const itemList = [
 
 export default function AboutHabits() {
 
-
-	
 	const navegacion = () => {
 		console.log('probando boton');
-	
+
 	};
 	return (
 		<section

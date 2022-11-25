@@ -66,6 +66,7 @@ export default function ContactForm() {
 						error={!!errors.email}
 						helperText={errors.email?.message}
 						type='email'
+						placeholder='you@example.com'
 						label='Correo'
 						variant='outlined'
 						color='text'

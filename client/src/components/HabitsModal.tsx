@@ -34,7 +34,8 @@ export default function HabitsModal({close}:HabitsModal){
                 display: 'flex',
                 justifyContent: 'center',
                 width:'100%',
-                height:'100%'
+                height:'100%',
+                backgroundColor: 'rgba(0,0,0,0.25)'
             }}
             > 
             <Paper 
