@@ -20,6 +20,9 @@ import axios from 'axios';
 import { isEmail } from '../../../utilities';
 import { Message, Visibility, VisibilityOff } from '@mui/icons-material';
 import { useState } from 'react';
+import { useAppDispatch } from '../../../redux/hooks';
+import { setUser } from '../../../redux/slices/user';
+import { user } from '../../../models/user.type';
 
 type Inputs = {
 	email: string;
@@ -28,6 +31,8 @@ type Inputs = {
 };
 
 export default function InputLogin() {
+	const dispatch = useAppDispatch();
+
 	const [showPassword, setshowPassword] = useState(false);
 	const {
 		register,
@@ -67,7 +72,7 @@ export default function InputLogin() {
 	// }
 
 	return (
-		<form onSubmit={handleSubmit(onLogin)}>
+		<form onSubmit={handleSubmit(data => onLogin(data, dispatch))}>
 			<Grid container spacing={5} p={6}>
 				<Grid item xs={12}>
 					<Typography variant='h4' component='h4' color='text.secondary'>

@@ -1,5 +1,5 @@
 import User from '../../models/User'
-import { createUser } from '../users'
+import { createUserService } from '../user/createUser'
 import users from '../../utils/mockups/users.json'
 
 export const userMocksService = async () => {
@@ -8,7 +8,7 @@ export const userMocksService = async () => {
     if (!isUser) {
         users.forEach(async (user) => {
             try {
-                await createUser(user)
+                await createUserService(user)
             } catch (error) {
                 return error
             }
