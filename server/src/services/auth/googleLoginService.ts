@@ -2,22 +2,26 @@ import bcrypt from 'bcryptjs'
 
 import User from '../../models/User'
 import { generateJwt } from '../../utils'
-import { IPayload } from '../../interfaces/jwtPayload'
 
-export const googleLoginService = async (userInfo: IPayload) => {
+export const googleLoginService = async (
+    name: string,
+    picture: string,
+    sub: string,
+    email: string
+) => {
     try {
         const user = await User.findOne({
-            email: userInfo.email,
+            email,
             status: 'Active',
         })
 
         if (!user) {
             const newUser = new User({
-                fullname: userInfo.name,
-                email: userInfo.email,
+                fullname: name,
+                email: email,
                 password: ':P',
-                img: userInfo.picture,
-                externId: userInfo.sub,
+                img: picture,
+                externId: sub,
             })
 
             //*Encrypt password

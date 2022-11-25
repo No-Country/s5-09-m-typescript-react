@@ -1,3 +1,4 @@
+import { portTest } from './../../../server/src/config/globals';
 import { AnyAction, Dispatch, ThunkDispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { loginAdapter } from '../adapters/adapter';
@@ -39,8 +40,22 @@ export const onLogin = (
 		});
 };
 
-export const onLoginGoogle = (data: any) => {
-	console.log(data);
+export const onLoginGoogle = async (
+	name: string,
+	picture: string,
+	sub: string,
+	email: string,
+) => {
+	try {
+		const res = await axios.post(`${localUrl}/googleLogin`, {
+			name,
+			picture,
+			sub,
+			email,
+		});
+	} catch (error) {
+		return error;
+	}
 };
 
 export default authApi;
