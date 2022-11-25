@@ -44,7 +44,7 @@ export default function InputLogin() {
 	const login = useGoogleLogin({
 		onSuccess: async response => {
 			try {
-				const data = await axios.get(
+				const { data } = await axios.get(
 					'https://www.googleapis.com/oauth2/v3/userinfo',
 					{
 						headers: {
@@ -52,8 +52,8 @@ export default function InputLogin() {
 						},
 					},
 				);
-				const { name, sub, picture, email } = data.data;
-				onLoginGoogle(name, sub, picture, email);
+				const { name, picture, sub, email } = data;
+				onLoginGoogle(name, picture, sub, email);
 			} catch (err) {
 				console.log(err);
 			}
