@@ -1,18 +1,21 @@
 import { Request, Response } from 'express'
-import jwt_decode from 'jwt-decode'
+import { IResponse } from '../../interfaces'
 
-import { generateJwt } from '../../utils'
 import { googleLoginService } from '../../services/auth/googleLoginService'
-import { IResponse } from '../../interfaces/response'
-import { IPayload } from '../../interfaces/jwtPayload'
+import { generateJwt } from '../../utils'
 
 export const googleLogin = async (req: Request, res: Response) => {
-    const { credential } = req.body
+    const { name, picture, sub, email } = req.body
+
+    console.log(name, picture, sub, email)
 
     try {
-        const userInfo = jwt_decode(credential) as IPayload
-
-        const response = (await googleLoginService(userInfo)) as IResponse
+        const response = (await googleLoginService(
+            name,
+            picture,
+            sub,
+            email
+        )) as IResponse
 
         if (!response.ok) {
             const { user, token } = response
