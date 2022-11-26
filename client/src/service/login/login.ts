@@ -13,10 +13,14 @@ export const onLogin = async (
 	},
 	dispatch: Dispatch,
 ) => {
-	const { data } = await API_URL.post('/login', {
-		email,
-		password,
-	});
-	localStorage.setItem('user', JSON.stringify(loginAdapter(data, email)));
-	dispatch(setUser(loginAdapter(data, email)));
+	try {
+		const { data } = await API_URL.post('/login', {
+			email,
+			password,
+		});
+		localStorage.setItem('user', JSON.stringify(loginAdapter(data, email)));
+		dispatch(setUser(loginAdapter(data, email)));
+	} catch (err) {
+		return err;
+	}
 };
