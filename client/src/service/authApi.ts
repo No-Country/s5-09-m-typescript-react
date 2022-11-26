@@ -6,7 +6,7 @@ import { setUser } from '../redux/slices/user';
 const localUrl = 'http://localhost:3002';
 const authApi = axios.create({
 	baseURL:
-		process.env.NODE_ENV === 'development'
+		process.env.NODE_ENV === 'production'
 			? import.meta.env.VITE_APP_BACKEND_URL
 			: localUrl, // no hay rutas /api,
 });
