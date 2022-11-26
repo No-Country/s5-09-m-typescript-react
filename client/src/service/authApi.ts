@@ -37,6 +37,7 @@ export const onLogin = (
 			localStorage.setItem('user', JSON.stringify(loginAdapter(data, email)));
 			dispatch(setUser(loginAdapter(data, email)));
 		});
+	console.log(process.env.NODE_ENV);
 };
 
 export const onLoginGoogle = async (
