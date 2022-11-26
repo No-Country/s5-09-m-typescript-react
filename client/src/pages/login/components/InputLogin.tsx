@@ -14,15 +14,13 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import { useForm } from 'react-hook-form';
 import { useGoogleLogin } from '@react-oauth/google';
-import { onLogin } from '../../../service';
+import { onLogin, onLoginGoogle } from '../../../service';
 import axios from 'axios';
 // import { LoginSocialFacebook } from 'reactjs-social-login';
 import { isEmail } from '../../../utilities';
 import { Message, Visibility, VisibilityOff } from '@mui/icons-material';
 import { useState } from 'react';
 import { useAppDispatch } from '../../../redux/hooks';
-import { setUser } from '../../../redux/slices/user';
-import { user } from '../../../models/user.type';
 
 type Inputs = {
 	email: string;
