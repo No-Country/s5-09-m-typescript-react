@@ -6,7 +6,7 @@ import { setUser } from '../redux/slices/user';
 const localUrl = 'http://localhost:3002';
 const authApi = axios.create({
 	baseURL:
-		process.env.NODE_ENV === 'production'
+		process.env.NODE_ENV === 'development'
 			? import.meta.env.VITE_APP_BACKEND_URL
 			: localUrl, // no hay rutas /api,
 });
@@ -37,6 +37,7 @@ export const onLogin = (
 			localStorage.setItem('user', JSON.stringify(loginAdapter(data, email)));
 			dispatch(setUser(loginAdapter(data, email)));
 		});
+	console.log(process.env.NODE_ENV);
 };
 
 export const onLoginGoogle = async (
