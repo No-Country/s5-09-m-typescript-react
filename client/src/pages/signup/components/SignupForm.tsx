@@ -11,22 +11,30 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { onRegister } from '../../../service/register';
+import { Link, useNavigate } from 'react-router-dom';
 
 type FormInput = {
-	fullName: string;
+	fullname: string;
 	email: string;
 	password: string;
 };
 
 export default function SignupForm() {
 	const [showPassword, setshowPassword] = useState(false);
+
+	const navigate = useNavigate();
+
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm<FormInput>();
+
 	const onSubmit = (data: FormInput) => {
-		onRegister(data);
+		const isSuccess = onRegister(data);
+		if (isSuccess) {
+			navigate('/iniciarSesion');
+		}
 	};
 
 	return (
@@ -52,9 +60,9 @@ export default function SignupForm() {
 				Crea tu Cuenta
 			</Typography>
 			<TextField
-				error={errors.fullName ? true : false}
-				helperText={errors.fullName ? errors.fullName.message?.toString() : ''}
-				{...register('fullName', { required: 'Ingrese un nombre' })}
+				error={errors.fullname ? true : false}
+				helperText={errors.fullname ? errors.fullname.message?.toString() : ''}
+				{...register('fullname', { required: 'Ingrese un nombre' })}
 				label='Nombre Completo'
 				variant='outlined'
 			/>
@@ -118,17 +126,18 @@ export default function SignupForm() {
 				}}
 			>
 				¿Tienes una cuenta?{' '}
-				<Typography
-					component='span'
-					sx={{
-						color: 'text.secondary',
-						fontWeight: 600,
-						fontSize: '20px',
-						lineHeight: '28px',
-					}}
-				>
-					Inicia Sesión
-				</Typography>
+				<Link to='/iniciarSesion'>
+					<Typography
+						component='span'
+						sx={{
+							fontWeight: 600,
+							fontSize: '20px',
+							lineHeight: '28px',
+						}}
+					>
+						Inicia Sesión
+					</Typography>
+				</Link>
 			</Typography>
 		</Stack>
 	);
