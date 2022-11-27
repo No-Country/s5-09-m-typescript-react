@@ -3,6 +3,7 @@ import { Button, Menu, MenuItem } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { resetUser } from '../redux/slices/user';
+import { privateRoute } from '../models/routes';
 
 export default function MenuNavegation() {
 	const user = useAppSelector(state => state.user);
@@ -12,6 +13,14 @@ export default function MenuNavegation() {
 	const open = Boolean(anchorEl);
 	const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
 		setAnchorEl(event.currentTarget);
+	};
+	const logout = () => {
+		dispatch(resetUser());
+		setAnchorEl(null);
+	};
+	const navegation = () => {
+		navigate(privateRoute.dashboard);
+		setAnchorEl(null);
 	};
 	const handleClose = () => {
 		setAnchorEl(null);
@@ -67,14 +76,40 @@ export default function MenuNavegation() {
 					inicio sesion
 				</Button>
 			) : (
-				<Button
-					id='basic-button'
-					color='third'
-					variant='outlined'
-					onClick={() => dispatch(resetUser())}
-				>
-					Desconectarse
-				</Button>
+				<div>
+					<Button
+						id='basic-button'
+						variant='text'
+						aria-controls={open ? 'basic-menu' : undefined}
+						aria-haspopup='true'
+						aria-expanded={open ? 'true' : undefined}
+						onClick={handleClick}
+					>
+						<img
+							src={user.img}
+							alt='imagen de perfil'
+							style={{
+								width: '50px',
+								height: '50px',
+								borderRadius: '50%',
+								border: '2px solid',
+								color: 'red',
+							}}
+						/>
+					</Button>
+					<Menu
+						id='basic-menu'
+						anchorEl={anchorEl}
+						open={open}
+						onClose={handleClose}
+						MenuListProps={{
+							'aria-labelledby': 'basic-button',
+						}}
+					>
+						<MenuItem onClick={navegation}>Profile</MenuItem>
+						<MenuItem onClick={logout}>Logout</MenuItem>
+					</Menu>
+				</div>
 			)}
 		</div>
 	);

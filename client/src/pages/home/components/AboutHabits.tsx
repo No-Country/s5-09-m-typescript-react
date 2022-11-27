@@ -1,12 +1,4 @@
-import {
-	Box,
-	Button,
-	Typography,
-	CardMedia,
-	CardContent,
-	CardActions,
-	Card,
-} from '@mui/material';
+import { Box, Typography, CardContent, Card } from '@mui/material';
 import { GlobalButton } from '../../../components';
 import HabitsModal from '../../../components/HabitsModal';
 
@@ -32,12 +24,8 @@ const itemList = [
 ];
 
 export default function AboutHabits() {
-
-
-	
 	const navegacion = () => {
 		console.log('probando boton');
-	
 	};
 	return (
 		<section
@@ -123,7 +111,6 @@ export default function AboutHabits() {
 					<GlobalButton text='Conoce Más' action={navegacion} />
 				</div>
 			</Box>
-			
 		</section>
 	);
 }
