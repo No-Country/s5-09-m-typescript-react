@@ -21,6 +21,7 @@
 
 | KEY            | TYPE                   | REQUIRED   |
 | -------------- | ---------------------- | ---------- |
+| \_id           | ObjectId               | NO, UNIQUE |
 | fullname       | String                 | YES        |
 | img            | String                 | NO         |
 | password       | String                 | YES        |
