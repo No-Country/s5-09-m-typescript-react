@@ -10,7 +10,8 @@ Equipo de trabajo:
 Back-End: Yamila Gisele Paez / Back-End: Maximiliano Miño / Back-End: Ezequiel Astrada / Front-End: Federico Di Cillo / Front-End: Anderson Cifuentes  / Front-End: Francisco Garcia Mendez / Front-End: Emanuel Palacio / Front-End: Joaquin Ramos / QA Tester : Romina Bello / Design Ui/Ux: Diana Zambrano
 
 Realizado con:
-![image](https://user-images.githubusercontent.com/105647455/204136664-59e43a31-b209-40fa-9980-34f378252d94.png) ![image](https://user-images.githubusercontent.com/105647455/204136896-89305a7e-def0-4fff-83b9-0cf10a8fc336.png)
+![image](https://user-images.githubusercontent.com/105647455/204136664-59e43a31-b209-40fa-9980-34f378252d94.png) ![image](https://user-images.githubusercontent.com/105647455/204136896-89305a7e-def0-4fff-83b9-0cf10a8fc336.png) ![image](https://user-images.githubusercontent.com/105647455/204136936-1830b37f-8e7b-4370-b05b-32df19248ee5.png)
+
 
 
 
