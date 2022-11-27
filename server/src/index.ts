@@ -14,7 +14,7 @@ const db = process.env.NODE_ENV === 'development' ? dbDev : dbTest
 const port = process.env.NODE_ENV === 'development' ? portDev : portTest
 
 //* ----------------Server configuration -----------------
-const app = express()
+export const app = express()
 app.use(express.json())
 app.use(
     cors({
@@ -30,7 +30,7 @@ app.use(cookieParser())
 app.use('/', router)
 
 // * ----------Connection Local ------------
-app.listen(port, async () => {
+export const server = app.listen(port, async () => {
     userMocksService()
     console.log(`Server listening on port: ${port}`)
 })
