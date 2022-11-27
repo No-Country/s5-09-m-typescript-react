@@ -19,6 +19,7 @@ export const onLogin = async (
 			password,
 		});
 		const { data: getUser } = await API_URL.get(`/user/findOne/${data.id}`);
+		console.log(getUser);
 		const dataUser = loginAdapter(getUser, data.token);
 		dispatch(setUser(dataUser));
 		localStorage.setItem('user', JSON.stringify(dataUser));

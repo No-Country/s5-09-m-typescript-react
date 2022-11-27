@@ -18,10 +18,7 @@ export default function ProSidebar({ setModals }: sidebar) {
 			<Sidebar>
 				<Menu>
 					<Grid sx={{ display: 'flex', justifyContent: 'center' }}>
-						<img
-							src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669229543/ananda%20marga/perfil/Ellipse19_x3azbk.png'
-							alt='imagen de perfil'
-						/>
+						<img src={user.img} alt='imagen de perfil' />
 					</Grid>
 					<Typography
 						style={{ display: 'flex', justifyContent: 'center' }}
