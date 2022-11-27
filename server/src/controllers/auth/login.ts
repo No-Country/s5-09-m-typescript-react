@@ -7,6 +7,8 @@ import { generateJwt, validatePassword } from '../../utils'
 export const login = async (req: Request, res: Response) => {
     const { email, password } = req.body
 
+    //Todo: Validar que el mail del usuario este verificado!!!
+
     try {
         const { ok, msg, status, user } = (await loginService(
             email
