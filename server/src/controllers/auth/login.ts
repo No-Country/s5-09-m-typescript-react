@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { IResponse } from '../../interfaces/response'
+//import { IResponse } from '../../interfaces/response'
 
 import { loginService } from '../../services/auth/loginService'
 import { generateJwt, validatePassword } from '../../utils'
@@ -10,9 +10,7 @@ export const login = async (req: Request, res: Response) => {
     //Todo: Validar que el mail del usuario este verificado!!!
 
     try {
-        const { ok, msg, status, user } = (await loginService(
-            email
-        )) as IResponse
+        const { ok, msg, status, user } = loginService(email) as any
 
         //*Comprobar que el email este en la base de datos
         if (!ok) {
