@@ -13,8 +13,10 @@ export const sendContactEmail = async (req: Request, res: Response) => {
             'Contact Form'
         )
 
-        res.json({ ok: true, msg: 'Mensaje Enviado!' })
+        return res.json({ ok: true, msg: 'Mensaje Enviado!' })
     } catch (error) {
-        res.status(500).json({ ok: false, msg: 'El email no pude ser enviado' })
+        return res
+            .status(500)
+            .json({ ok: false, msg: 'El email no pude ser enviado' })
     }
 }
