@@ -8,23 +8,18 @@ Proyecto: Página web de Yoga y Mindfulness
 
 Project: Yoga and Mindfulness website
 
+
+
 👨‍💻 Equipo de trabajo / Team: 
 
-Back-End:
+🟢Back-End: Yamila Gisele Paez / Maximiliano Miño / Ezequiel Astrada 
 
-Yamila Gisele Paez / Maximiliano Miño / Ezequiel Astrada 
+🟢Front-End: Federico Di Cillo  / Anderson Cifuentes / Francisco Garcia Mendez / Emanuel Palacio / Joaquin Ramos 
 
-Front-End: 
+🟢QA Tester: Romina Bello 
 
-Federico Di Cillo  / Anderson Cifuentes / Francisco Garcia Mendez / Emanuel Palacio / Joaquin Ramos 
+🟢Design UX/UI: Diana Zambrano
 
-QA Tester 
-
-Romina Bello 
-
-Design UX/UI
-
-Diana Zambrano
 
 🛠️ Realizado con / Made with:
 
