@@ -30,7 +30,7 @@ Diana Zambrano
 
 ![image](https://user-images.githubusercontent.com/105647455/204136664-59e43a31-b209-40fa-9980-34f378252d94.png) ![image](https://user-images.githubusercontent.com/105647455/204136896-89305a7e-def0-4fff-83b9-0cf10a8fc336.png) ![image](https://user-images.githubusercontent.com/105647455/204136936-1830b37f-8e7b-4370-b05b-32df19248ee5.png) ![image](https://user-images.githubusercontent.com/105647455/204136979-a5e15afa-a3f2-483b-b970-14a393ac7f8e.png)
 
-Resumen / Abstract:
+ 📋 Resumen / Abstract:
 
 La propuesta trata sobre un sitio web de yoga. En el mismo, el usuario podrá obtener información sobre esa actividad, registrarse y acceder a una cuenta personal dentro del sitio. En su perfil podrá seleccionar una hoja de ruta en la cual el usuario podrá elegir en cuáles de los 16 hábitos va a comenzar a trabajar. Por medio de selección diaria de tarjetas, podrá ir controlando de forma visual, los hábitos que está haciendo diariamente y en cuáles no está trabajando. También se le mostrará una barra de progreso que avanzará o retrocederá a medida que seleccione o deje de seleccionar las tarjetas. 
 
