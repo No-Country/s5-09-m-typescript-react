@@ -9,23 +9,25 @@ import { useState } from 'react';
 import PanelCardList from './components/PanelCardList';
 
 export default function Profile() {
-	const [modal, setModal] = useState<string>('');
+	const [modal, setModal] = useState<string>('perfil');
 	const setModals = (nameModal: string) => {
 		setModal(nameModal);
 	};
 	const renderModal = (modal: string) => {
-		switch ((modal)) {
+		switch (modal) {
 			case 'perfil':
-				return (<>
+				return (
+					<>
 						<FormProfileWithUserInfo />
 						<FormProfileWithUserInfo2 />
-						</>)
+					</>
+				);
 			case 'editarPerfil':
-				return(<Form />)
+				return <Form />;
 			case 'calendario':
-				return(<Calendar />)
+				return <Calendar />;
 			case 'panel':
-        return(<PanelCardList/>)
+				return <PanelCardList />;
 		}
 	};
 	return (
@@ -44,7 +46,6 @@ export default function Profile() {
 				<Grid item xs={9}>
 					<TopBarProfile />
 					{renderModal(modal)}
-					
 				</Grid>
 			</Grid>
 		</>

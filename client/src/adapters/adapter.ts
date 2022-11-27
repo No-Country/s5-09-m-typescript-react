@@ -8,20 +8,13 @@ export interface loginAdapter {
 		_id: string;
 	};
 }
-export function loginAdapter(data: loginAdapter) {
+export function loginAdapter(data: loginAdapter, token: string) {
 	const { user } = data;
 	return {
 		id: user._id,
 		userName: user.fullname,
 		email: user.email,
 		isAuth: data.ok,
+		userJwt: token,
 	};
 }
-/* "msg": "User finded with success",
-    "status": 200,
-    "ok": true,
-    "user": {
-        "fullname": "Yamila paez",
-        "email": "yamilapaez2@hotmail.com",
-        "_id": "6335bb7539217f29f0585bd7"
-    } */
