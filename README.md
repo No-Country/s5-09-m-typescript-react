@@ -10,7 +10,8 @@ Equipo de trabajo:
 Back-End: Yamila Gisele Paez / Back-End: Maximiliano Miño / Back-End: Ezequiel Astrada / Front-End: Federico Di Cillo / Front-End: Anderson Cifuentes  / Front-End: Francisco Garcia Mendez / Front-End: Emanuel Palacio / Front-End: Joaquin Ramos / QA Tester : Romina Bello / Design Ui/Ux: Diana Zambrano
 
 Realizado con:
-![image](https://user-images.githubusercontent.com/105647455/204136664-59e43a31-b209-40fa-9980-34f378252d94.png)
+![image](https://user-images.githubusercontent.com/105647455/204136664-59e43a31-b209-40fa-9980-34f378252d94.png) ![image](https://user-images.githubusercontent.com/105647455/204136896-89305a7e-def0-4fff-83b9-0cf10a8fc336.png)
+
 
 
 La propuesta trata sobre un sitio web de yoga. En el mismo, el usuario podrá obtener información sobre esa actividad, registrarse y acceder a una cuenta personal dentro del sitio. En su perfil podrá seleccionar una hoja de ruta en la cual el usuario podrá elegir en cuáles de los 16 hábitos va a comenzar a trabajar. Por medio de selección diaria de tarjetas, podrá ir controlando de forma visual, los hábitos que está haciendo diariamente y en cuáles no está trabajando. También se le mostrará una barra de progreso que avanzará o retrocederá a medida que seleccione o deje de seleccionar las tarjetas. 
