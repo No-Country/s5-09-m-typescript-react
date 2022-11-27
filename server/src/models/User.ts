@@ -52,14 +52,12 @@ const userSchema = new Schema<IUser>({
         type: String,
         default: 'Active',
     },
-    resetLink: {
-        type: String,
-        default: '',
-    },
+    // resetLink: {
+    //     type: String,
+    //     default: '',
+    // },
     code: {
-        //!Todo: aca se va a generar el codigo para activar la cuenta por email.
         type: Number,
-        default: 0,
     },
 })
 
