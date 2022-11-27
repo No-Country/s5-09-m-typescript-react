@@ -9,13 +9,13 @@ export interface ApiUser {
 export interface user {
 	id: string;
 	userName: string;
-	userJwt: string;
+	email: string;
 	isAuth: boolean;
 }
 
 export const userEmptyState: user = {
 	id: '',
 	userName: '',
-	userJwt: '',
+	email: '',
 	isAuth: false,
 };

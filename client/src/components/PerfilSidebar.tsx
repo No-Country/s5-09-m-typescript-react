@@ -7,14 +7,15 @@ import {
 } from '@mui/icons-material';
 import { Grid, Typography } from '@mui/material';
 import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar';
+import { useAppSelector } from '../redux/hooks';
 interface sidebar {
 	setModals: (nameModal: string) => void;
 }
 export default function ProSidebar({ setModals }: sidebar) {
-	
+	const user = useAppSelector(store => store.user);
 	return (
 		<>
-			<Sidebar >
+			<Sidebar>
 				<Menu>
 					<Grid sx={{ display: 'flex', justifyContent: 'center' }}>
 						<img
@@ -27,14 +28,22 @@ export default function ProSidebar({ setModals }: sidebar) {
 						component='h1'
 						variant='h6'
 					>
-						Maria Sanchez
+						{user.userName}
 					</Typography>
-			<MenuItem icon={<NotificationsActiveOutlined />} ><button onClick={()=>setModals('perfil')}>Perfil</button></MenuItem>
-				
+					<MenuItem icon={<NotificationsActiveOutlined />}>
+						<button onClick={() => setModals('perfil')}>Perfil</button>
+					</MenuItem>
+
 					<MenuItem icon={<BookmarkBorderOutlined />}>Favorito</MenuItem>
 					<MenuItem icon={<EventAvailableOutlined />}>Progreso </MenuItem>
-					<MenuItem icon={<CalendarMonthOutlined />}><button onClick={()=>setModals('calendario')}>Mi Calendario</button></MenuItem>
-					<MenuItem icon={<SelfImprovementOutlined />}><button onClick={()=>setModals('panel')}>Mi Panel</button></MenuItem>
+					<MenuItem icon={<CalendarMonthOutlined />}>
+						<button onClick={() => setModals('calendario')}>
+							Mi Calendario
+						</button>
+					</MenuItem>
+					<MenuItem icon={<SelfImprovementOutlined />}>
+						<button onClick={() => setModals('panel')}>Mi Panel</button>
+					</MenuItem>
 				</Menu>
 			</Sidebar>
 		</>
