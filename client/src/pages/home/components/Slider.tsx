@@ -17,28 +17,27 @@ const itemList = [
 		image:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668438081/ananda%20marga/home/slider/slider_2_mgqjip.png',
 		description:
-			'Al registrar tu cuenta  podars elegir las actividades que quieres ver y si lo deseas podras ir ampliando gradualmente tus practicas',
+			'Al registrarte podrás elegir las actividades que prefieras, así como también ir ampliando gradualmente tus prácticas.',
 	},
 	{
 		title: 'Entra a tu panel',
 		image:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668438081/ananda%20marga/home/slider/slider_3_oaiwpb.png',
 		description:
-			'En tu perfil podras Visualizar tu panel con las preferncias que elegistes ver.',
+			'En tu perfil podrás visualizar un panel con información de tu preferencia',
 	},
 	{
 		title: 'LLeva el Control',
 		image:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668438081/ananda%20marga/home/slider/slider_4_pqio2c.png',
 		description:
-			'Desde tu perfil ve a tus prácticas espirituales, y registra las que lograstes cumplir en el día.',
+			'En tu Panel podrás registrar las prácticas  que has logrado cumplir en el día.',
 	},
 	{
 		title: 'Analiza tus resultados',
 		image:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668438081/ananda%20marga/home/slider/slider_5_kp7ljx.png',
-		description:
-			'Semanalmente recibe tu reporte de control de tareas y autoevalua tu progreso',
+		description: 'Recibe un reporte semanal en tu correo y evalúa tu progreso.',
 	},
 ];
 
@@ -54,16 +53,17 @@ export default function Slider() {
 			}}
 		>
 			<Typography variant='h1' sx={{ fontSize: 64, fontWeight: 400 }}>
-				¿Como usar{' '}
-				<span style={{ color: 'rgba(47, 97, 23, 1)' }}>Nuestra Web</span>?
+				¿Como usar <span style={{ color: 'third.main' }}>Nuestra Web</span>?
 			</Typography>
-			<div style={{ width: 500, padding: 50 }}>
+			<div style={{ width: 700, padding: 50 }}>
 				<Carousel
 					navButtonsAlwaysVisible
 					fullHeightHover={false}
 					NextIcon={<EastIcon />}
 					PrevIcon={<WestIcon />}
-					navButtonsProps={{ style: { backgroundColor: '#FC802C' } }}
+					navButtonsProps={{
+						style: { backgroundColor: '#FC802C' },
+					}}
 				>
 					{itemList.map(item => (
 						<div
@@ -81,13 +81,12 @@ export default function Slider() {
 									width: 300,
 									height: 430,
 									padding: 20,
-									backgroundColor: '#FFFFFF',
 								}}
 							>
 								<Typography
 									variant='h3'
 									sx={{
-										color: '#FF6801',
+										color: 'secondary.main',
 										fontWeight: 400,
 										fontSize: 26,
 										textAlign: 'center',
@@ -101,6 +100,7 @@ export default function Slider() {
 										width: 'auto',
 										maxWidth: '100%',
 										height: '242.42px',
+										objectFit: 'contain',
 									}}
 								/>
 								<Typography

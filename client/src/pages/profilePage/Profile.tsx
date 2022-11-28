@@ -4,32 +4,38 @@ import FormProfileWithUserInfo2 from './components/FormProfileWithUserInfo2';
 import PerfilSidebar from '../../components/PerfilSidebar';
 import Calendar from './components/Calendar';
 import Form from './components/Form';
-import { DeletableChips, TopBarProfile } from './components';
+import { TopBarProfile } from './components';
 import { useState } from 'react';
 import PanelCardList from './components/PanelCardList';
+import { EmailVerification } from './components';
+import { useAppSelector } from '../../redux/hooks';
 
 export default function Profile() {
-	const [modal, setModal] = useState<string>('');
+	const user = useAppSelector(store => store.user);
+	const [modal, setModal] = useState<string>('perfil');
 	const setModals = (nameModal: string) => {
 		setModal(nameModal);
 	};
 	const renderModal = (modal: string) => {
-		switch ((modal)) {
+		switch (modal) {
 			case 'perfil':
-				return (<>
+				return (
+					<>
 						<FormProfileWithUserInfo />
 						<FormProfileWithUserInfo2 />
-						</>)
+					</>
+				);
 			case 'editarPerfil':
-				return(<Form />)
+				return <Form />;
 			case 'calendario':
-				return(<Calendar />)
+				return <Calendar />;
 			case 'panel':
-        return(<PanelCardList/>)
+				return <PanelCardList />;
 		}
 	};
 	return (
 		<>
+			{user.emailVerified && <EmailVerification />}
 			<Grid
 				container
 				spacing={2}
@@ -44,7 +50,6 @@ export default function Profile() {
 				<Grid item xs={9}>
 					<TopBarProfile />
 					{renderModal(modal)}
-					
 				</Grid>
 			</Grid>
 		</>

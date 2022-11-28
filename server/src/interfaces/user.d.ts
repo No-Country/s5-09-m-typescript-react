@@ -14,7 +14,7 @@ export interface Notes {
 
 export interface IUser {
     _id: string
-    fullname?: string
+    fullname: string
     img?: string
     password: string
     email: string
@@ -28,5 +28,3 @@ export interface IUser {
     notes?: Notes
     code?: number
 }
-
-ex
