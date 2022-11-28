@@ -12,6 +12,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { onRegister } from '../../../service/register';
 import { Link, useNavigate } from 'react-router-dom';
+import { BoxDragAndDrop, DragAndDrop } from '../../../components/imgDrag';
 
 type FormInput = {
 	fullname: string;
@@ -21,6 +22,7 @@ type FormInput = {
 
 export default function SignupForm() {
 	const [showPassword, setshowPassword] = useState(false);
+	const [url, setUrl] = useState('');
 
 	const navigate = useNavigate();
 
@@ -31,10 +33,9 @@ export default function SignupForm() {
 	} = useForm<FormInput>();
 
 	const onSubmit = (data: FormInput) => {
-		const isSuccess = onRegister(data);
-		if (isSuccess) {
-			navigate('/iniciarSesion');
-		}
+		const modifiedData = { ...data, img: url };
+		console.log(url, 'hola');
+		const isSuccess = onRegister(modifiedData);
 	};
 
 	return (
@@ -102,6 +103,7 @@ export default function SignupForm() {
 					),
 				}}
 			/>
+			<DragAndDrop url={setUrl} />
 			<Button
 				onClick={handleSubmit(onSubmit)}
 				variant='contained'
@@ -117,6 +119,7 @@ export default function SignupForm() {
 			>
 				Registrarse
 			</Button>
+
 			<Typography
 				sx={{
 					alignSelf: 'flex-end',

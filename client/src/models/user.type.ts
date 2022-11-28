@@ -7,6 +7,10 @@ export interface user {
 	img: string;
 	userJwt: string;
 }
+
+export interface userCreated {
+	status: 'Loading' | 'Success' | 'Error';
+}
 export interface loginAdapter {
 	ok: boolean;
 	status?: number;

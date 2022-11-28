@@ -1,12 +1,17 @@
 import { API_URL } from '../';
 
-export const onRegister = (data: any) => {
-	let isSuccess = false;
-	API_URL.post('/user/', { ...data, img: '' })
-		.then(data => console.log(data))
-		.then(() => {
-			isSuccess = true;
-		});
+interface data {
+	fullname: string;
+	email: string;
+	password: string;
+}
 
-	return isSuccess;
+export const onRegister = async (data: data) => {
+	try {
+		const resp = await API_URL.post('/user/', data);
+		console.log(resp.data);
+		// dispatch(setUser(dataUser));
+	} catch (error) {
+		console.log(error);
+	}
 };
