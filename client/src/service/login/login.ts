@@ -24,6 +24,6 @@ export const onLogin = async (
 		dispatch(setUser(dataUser));
 		localStorage.setItem('user', JSON.stringify(dataUser));
 	} catch (err) {
-		return err;
+		console.warn(err);
 	}
 };
