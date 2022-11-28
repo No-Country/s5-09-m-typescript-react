@@ -18,9 +18,12 @@ export const onLogin = async (
 			email,
 			password,
 		});
-		localStorage.setItem('user', JSON.stringify(loginAdapter(data, email)));
-		dispatch(setUser(loginAdapter(data, email)));
+		const { data: getUser } = await API_URL.get(`/user/findOne/${data.id}`);
+		console.log(getUser);
+		const dataUser = loginAdapter(getUser, data.token);
+		dispatch(setUser(dataUser));
+		localStorage.setItem('user', JSON.stringify(dataUser));
 	} catch (err) {
-		return err;
+		console.warn(err);
 	}
 };
