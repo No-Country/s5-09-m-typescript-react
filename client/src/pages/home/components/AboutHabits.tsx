@@ -1,13 +1,4 @@
-import {
-	Box,
-	Button,
-	Typography,
-	CardMedia,
-	CardContent,
-	CardActions,
-	Card,
-} from '@mui/material';
-import { GlobalButton } from '../../../components';
+import { Box, Typography, CardContent, Card } from '@mui/material';
 
 const itemList = [
 	{
@@ -31,9 +22,6 @@ const itemList = [
 ];
 
 export default function AboutHabits() {
-	const navegacion = () => {
-		console.log('probando boton');
-	};
 	return (
 		<section
 			style={{
@@ -112,10 +100,9 @@ export default function AboutHabits() {
 						color='primary.main'
 						sx={{ margin: '20px auto', fontSize: 24, fontWeight: 400 }}
 					>
-						La filosofía de Mindfulness se fundamenta en un sistema de pasos de
-						16 puntos.
+						Siéntete mejor en todos los aspectos de tu vida incorporando nuevas
+						rutinas.
 					</Typography>
-					<GlobalButton text='Conoce Más' action={navegacion} />
 				</div>
 			</Box>
 		</section>

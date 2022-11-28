@@ -1,8 +1,10 @@
-import { Grid, TextField, Typography } from '@mui/material';
+import { Modal, Grid, TextField, Typography } from '@mui/material';
 import { display } from '@mui/system';
 import * as React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { GlobalButton } from '../../../components';
+import AlertModal from '../../../components/AlertModal';
+import { isEmail } from '../../../utilities';
 
 type FormData = {
 	fullName: string;
@@ -11,9 +13,11 @@ type FormData = {
 };
 
 export default function ContactForm() {
-	const navegacion = () => {
-		console.log('probando boton');
-	};
+
+	const [isOpenModal, setIsOpenModal] = React.useState(false);
+	const closeModal = () =>{
+		setIsOpenModal(false);
+	}
 
 	const {
 		register,
@@ -24,13 +28,15 @@ export default function ContactForm() {
 	//Para probar si funcionan los formularios
 	const formSubmitHandler: SubmitHandler<FormData> = (data: FormData) => {
 		console.log('form data is', data);
+		
+		setIsOpenModal(true);
 	};
 
 	return (
 		<form onSubmit={handleSubmit(formSubmitHandler)}>
-			<Grid container spacing={5}>
+			<Grid container spacing={5} p={6}>
 				<Grid item xs={12}>
-					<Typography variant='h4' component='h4' color='text.secondary'>
+					<Typography variant='h4' textAlign='center' component='h4' color='text.secondary'>
 						Contacto
 					</Typography>
 				</Grid>
@@ -52,8 +58,10 @@ export default function ContactForm() {
 				</Grid>
 				<Grid item xs={12}>
 					<TextField
+						
 						{...register('email', {
 							required: 'Este campo es requerido',
+							pattern: { message: "Ingrese un correo valido", value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/} 
 						})}
 						error={!!errors.email}
 						helperText={errors.email?.message}
@@ -78,7 +86,7 @@ export default function ContactForm() {
 						color='text'
 						fullWidth
 						multiline
-						rows={5}
+						rows={7}
 					/>
 				</Grid>
 
@@ -87,9 +95,18 @@ export default function ContactForm() {
 					xs={12}
 					style={{ display: 'flex', justifyContent: 'center' }}
 				>
-					<GlobalButton text='Conoce Más' action={navegacion} />
+					<GlobalButton text='Enviar' action={handleSubmit(formSubmitHandler)} />
+				
 				</Grid>
 			</Grid>
+						
+			{isOpenModal && <AlertModal title='Mensaje enviado' 
+										text='Muchas gracias por contactarnos, te contestaremos a la brevedad.'
+										urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669209748/ananda%20marga/home/alerts/FeaturedIconMail_fgcdsc.png'
+										close={closeModal}	/>
+									
+			}
 		</form>
+		
 	);
 }

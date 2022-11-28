@@ -1,1 +1,2 @@
-export * from './email/sendContactEmail'
+export * from './email'
+export * from './auth'

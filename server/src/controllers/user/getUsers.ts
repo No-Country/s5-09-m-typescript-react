@@ -1,9 +1,12 @@
 import { Response, Request } from 'express'
-import * as userService from '../../services/users'
+import { IResponse } from '../../interfaces'
+import { getUsersService } from '../../services/user/getUsers'
+/* import * as userService from '../../services/users'
+ */
 
 export const getUsers = async (_req: Request, res: Response) => {
     try {
-        const usersRetrieved: any = await userService.getUsers() //! SOLUCIONAR PROBLEMA DE TIPADO
+        const usersRetrieved = (await getUsersService()) as IResponse
         const { status } = usersRetrieved
 
         return res.status(status).send({

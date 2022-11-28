@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose'
+import { Schema, model, Types } from 'mongoose'
 import { Habit } from '../interfaces/habit'
 
 const habitSchema = new Schema<Habit>({
@@ -10,16 +10,17 @@ const habitSchema = new Schema<Habit>({
         type: String,
         required: true,
         default:
-            'https://www.softzone.es/app/uploads-softzone.es/2018/04/guest.png',
+            'https://st3.depositphotos.com/3867453/13387/v/450/depositphotos_133874112-stock-illustration-letter-h-heart-logo-icon.jpg',
     },
     description: {
         type: String,
         required: true,
     },
-    /* category: {
+    category: 
+        {
             type: Types.ObjectId,
-            ref: 'Categorys',
-    }, */
+            ref: 'Category',
+        },
 })
 
 const Habit = model('Habit', habitSchema)

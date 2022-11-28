@@ -8,13 +8,26 @@ import {
 } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { FieldValues, useForm } from 'react-hook-form';
+import { useState } from 'react';
 
 export default function SignupForm() {
+  const [showPassword, setshowPassword] = useState(false)
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = ( data : FieldValues ) => {
+    console.log(data)
+  };
+
 	return (
-		<Stack component="form" direction={"column"} spacing="45px" sx={{
-      padding: "60px",
-      paddingBottom: "100px",
-    }}>
+		<Stack
+			component='form'
+			direction={'column'}
+			spacing='45px'
+			sx={{
+				padding: '60px',
+				paddingBottom: '100px',
+			}}
+		>
 			<Typography
 				variant='h3'
 				sx={{
@@ -27,10 +40,13 @@ export default function SignupForm() {
 			>
 				Crea tu Cuenta
 			</Typography>
-			<TextField label='Nombre Completo' variant='outlined' />
-			<TextField label='Correo' variant='outlined' />
+			<TextField error={errors.name ? true : false} helperText={errors.name ? errors.name.message?.toString() : ""} {...register('name', {required: "Ingrese un nombre"})} label='Nombre Completo' variant='outlined' />
+			<TextField error={errors.email ? true : false} helperText={errors.email ? errors.email.message?.toString() : ""} {...register('email', {pattern: { message: "Ingrese un correo valido", value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/} })} label='Correo' variant='outlined' />
 			<TextField
-				helperText='Debe contener caracteres con letras y numeros'
+        error={errors.password ? true : false}
+        type={showPassword ? 'text' : 'password'}
+        {...register('password', {pattern: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/})}
+				helperText='Debe contener 8 caracteres con al menos una letra mayuscula, minuscula y un numero'
 				label='Contraseña'
 				variant='outlined'
 				InputProps={{
@@ -38,17 +54,17 @@ export default function SignupForm() {
 						<InputAdornment position='start'>
 							<IconButton
 								aria-label='toggle password visibility'
-								onClick={() => {}}
-								onMouseDown={() => {}}
+								onClick={() => setshowPassword((prev) => !prev)}
 								edge='end'
 							>
-								{false ? <VisibilityOff /> : <Visibility />}
+								{showPassword ? <VisibilityOff /> : <Visibility />}
 							</IconButton>
 						</InputAdornment>
 					),
 				}}
 			/>
 			<Button
+        onClick={handleSubmit(onSubmit)}
 				variant='contained'
 				sx={{
 					backgroundColor: 'secondary.main',
@@ -83,6 +99,6 @@ export default function SignupForm() {
 					Inicia Sesión
 				</Typography>
 			</Typography>
-    </Stack>
+		</Stack>
 	);
 }

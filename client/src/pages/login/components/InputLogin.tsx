@@ -6,11 +6,21 @@ import {
 	Typography,
 	Checkbox,
 	FormControlLabel,
+	IconButton,
+	InputAdornment,
 } from '@mui/material';
 
 import { Link as RouterLink } from 'react-router-dom';
 
 import { useForm } from 'react-hook-form';
+import { useGoogleLogin } from '@react-oauth/google';
+import { onLogin, onLoginGoogle } from '../../../service';
+import axios from 'axios';
+// import { LoginSocialFacebook } from 'reactjs-social-login';
+import { isEmail } from '../../../utilities';
+import { Message, Visibility, VisibilityOff } from '@mui/icons-material';
+import { useState } from 'react';
+import { useAppDispatch } from '../../../redux/hooks';
 
 type Inputs = {
 	email: string;
@@ -19,14 +29,49 @@ type Inputs = {
 };
 
 export default function InputLogin() {
+	const dispatch = useAppDispatch();
+
+	const [showPassword, setshowPassword] = useState(false);
 	const {
 		register,
 		handleSubmit,
 		watch,
 		formState: { errors },
 	} = useForm<Inputs>();
+
+	const login = useGoogleLogin({
+		onSuccess: async response => {
+			try {
+				const { data } = await axios.get(
+					'https://www.googleapis.com/oauth2/v3/userinfo',
+					{
+						headers: {
+							Authorization: `Bearer ${response.access_token}`,
+						},
+					},
+				);
+				const { name, picture, sub, email } = data;
+				onLoginGoogle(name, picture, sub, email);
+			} catch (err) {
+				console.log(err);
+			}
+		},
+	});
+
+	// async function handleLogin() {
+	// 	try {
+	// 		const response = await loginFacebook({
+	// 			scope: 'email',
+	// 		});
+
+	// 		console.log(response.status);
+	// 	} catch (error: any) {
+	// 		console.log(error.message);
+	// 	}
+	// }
+
 	return (
-		<form>
+		<form onSubmit={handleSubmit(data => onLogin(data, dispatch))}>
 			<Grid container spacing={5} p={6}>
 				<Grid item xs={12}>
 					<Typography variant='h4' component='h4' color='text.secondary'>
@@ -38,6 +83,7 @@ export default function InputLogin() {
 					<TextField
 						{...register('email', {
 							required: 'Este campo es requerido',
+							validate: isEmail,
 						})}
 						error={!!errors.email}
 						helperText={errors.email?.message}
@@ -52,15 +98,27 @@ export default function InputLogin() {
 					<TextField
 						{...register('password', {
 							required: 'Este campo es requerido',
-							minLength: { value: 6, message: 'Mínimo 6 caracteres' },
 						})}
 						error={!!errors.password}
 						helperText={errors.password?.message}
 						label='Contraseña'
-						type='password'
 						variant='outlined'
 						color='text'
 						fullWidth
+						InputProps={{
+							endAdornment: (
+								<InputAdornment position='start'>
+									<IconButton
+										aria-label='toggle password visibility'
+										onClick={() => setshowPassword((prev: any) => !prev)}
+										edge='end'
+									>
+										{showPassword ? <VisibilityOff /> : <Visibility />}
+									</IconButton>
+								</InputAdornment>
+							),
+						}}
+						type={showPassword ? 'text' : 'password'}
 					/>
 				</Grid>
 				<Grid item xs={6}>
@@ -79,17 +137,8 @@ export default function InputLogin() {
 						alignItems: 'flex-end',
 					}}
 				>
-					<RouterLink to='/'>
-						<Link
-							sx={{
-								color: 'text.secondary',
-							}}
-						>
-							¿Olvidaste la contraseña?
-						</Link>
-					</RouterLink>
+					<RouterLink to='/'>¿Olvidaste la contraseña?</RouterLink>
 				</Grid>
-
 				<Grid
 					item
 					xs={12}
@@ -104,7 +153,6 @@ export default function InputLogin() {
 						Inicia sesión con
 					</Typography>
 				</Grid>
-
 				<Grid
 					item
 					xs={12}
@@ -115,13 +163,34 @@ export default function InputLogin() {
 						alignItems: 'center',
 					}}
 				>
-					<Button variant='outlined' fullWidth sx={{ maxWidth: '100px' }}>
-						<img
-							src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668694018/ananda%20marga/facebook_ic_ashpl3.svg'
-							alt='132'
-						/>
-					</Button>
-					<Button variant='outlined' fullWidth sx={{ maxWidth: '100px' }}>
+					{/* <LoginSocialFacebook
+						appId='461951009397297'
+						onResolve={res => {
+							console.log(res);
+						}}
+						onReject={error => {
+							console.log(error);
+						}}
+					>
+						<Button
+							variant='outlined'
+							fullWidth
+							sx={{ maxWidth: '100px' }}
+							// onClick={handleLogin}
+							// disabled={isLoading}
+						>
+							<img
+								src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668694018/ananda%20marga/facebook_ic_ashpl3.svg'
+								alt='132'
+							/>
+						</Button>
+					</LoginSocialFacebook> */}
+					<Button
+						variant='outlined'
+						fullWidth
+						sx={{ maxWidth: '100px' }}
+						onClick={() => login()}
+					>
 						<img
 							src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668694018/ananda%20marga/google_ic_nf3jdu.svg'
 							alt='132'
@@ -139,18 +208,8 @@ export default function InputLogin() {
 					}}
 				>
 					<Typography>Aún no tienes cuenta?</Typography>{' '}
-					<RouterLink to='/registrate'>
-						<Link
-							href='/registrate'
-							sx={{
-								color: 'text.secondary',
-							}}
-						>
-							Registrarse
-						</Link>
-					</RouterLink>
+					<RouterLink to='/registrate'>Registrarse</RouterLink>
 				</Grid>
-
 				<Grid item xs={12}>
 					<Button
 						type='submit'

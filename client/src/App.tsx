@@ -1,26 +1,44 @@
-import { Home } from './pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import LayoutNavegation from './utilities/LayoutNavegation';
-import Contact from './pages/contact/Contact';
-import Signup from './pages/signup/Signup';
-import Login from './pages/login/Login';
-import AboutUs from './pages/aboutus/AboutUs';
-import Practices from './pages/practices/Practices';
+import { LayoutNavegation } from './components';
+import { PrivateRoute, PublicRoute } from './guards';
+import {
+	Practices,
+	AboutUs,
+	Login,
+	Signup,
+	Contact,
+	Home,
+	Profile,
+} from './pages';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { publicRoute } from './models/routes';
 
 function App() {
 	return (
-		<BrowserRouter>
-			<LayoutNavegation>
-				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/misPracticas' element={<Practices/>} />
-					<Route path='/contacto' element={<Contact />} />
-					<Route path='/iniciarSesion' element={<Login />} />
-					<Route path='/registrate' element={<Signup />} />
-					<Route path='/nosotros' element={<AboutUs />} />
-				</Routes>
-			</LayoutNavegation>
-		</BrowserRouter>
+		<GoogleOAuthProvider
+			clientId={
+				'460211922745-6t4k8cs9kk2a48a6c33r20g6mjel9tfu.apps.googleusercontent.com'
+			}
+		>
+			<BrowserRouter>
+				<LayoutNavegation>
+					<Routes>
+						<Route path='/' element={<Home />} />
+						<Route path={publicRoute.practices} element={<Practices />} />
+						<Route path={publicRoute.contact} element={<Contact />} />
+						<Route path={publicRoute.AboutUs} element={<AboutUs />} />
+						<Route element={<PublicRoute />}>
+							<Route path={publicRoute.login} element={<Login />} />
+							<Route path={publicRoute.register} element={<Signup />} />
+							<Route path={publicRoute.register} element={<h1>recuperar</h1>} />
+						</Route>
+						<Route element={<PrivateRoute />}>
+							<Route path='/perfil' element={<Profile />} />
+						</Route>
+					</Routes>
+				</LayoutNavegation>
+			</BrowserRouter>
+		</GoogleOAuthProvider>
 	);
 }
 

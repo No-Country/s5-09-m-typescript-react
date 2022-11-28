@@ -60,7 +60,10 @@ export default function MyPractices() {
 							Segundo, se puede conseguir un cuerpo saludable y una mente
 							serena.
 						</Typography>
-						<GlobalButton text='Conoce Más' action={navegacion} />
+						<GlobalButton
+							text='Conoce Más'
+							action={() => console.log('hola')}
+						/>
 					</div>
 
 					<img
