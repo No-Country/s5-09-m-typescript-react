@@ -88,12 +88,13 @@ export default function BoletinInformativo() {
 							marginLeft='7px'
 							marginBottom='30px'
 						>
-							Suscríbete a nuestro boletín informativo y <br></br>mantente al
-							tanto de las últimas novedades <br></br> del yoga y mindfullness.
+							"Recibe en tu correo nuestro boletín informativo y mantente al
+							tanto de las últimas novedades del Yoga y Mindfulness."
 						</Typography>
 						<TextField
 							id='outlined-basic'
-							label='Suscribete'
+							label='email'
+							placeholder='olivia@gmail.com'
 							variant='outlined'
 							color='text'
 							sx={{

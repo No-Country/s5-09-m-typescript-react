@@ -42,12 +42,8 @@ export default function Testimonials() {
 									borderLeft='2px solid #FC802C'
 									paddingLeft='10px'
 								>
-									“Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Vivamus sit amet mi nec massa tincidunt blandit et eu sem.
-									Maecenas laoreet ultrices diam dignissim posuere. Aenean
-									ultrices dui at ipsum sagittis, pharetra lacinia dui faucibus.
-									In ac bibendum ex. Aenean dolor massa, euismod sit amet
-									suscipit et“
+									"Poder hacer un seguimiento diario de los hábitos que realizo
+									me ha ayudado a mejorar mi vida de una manera maravillosa."
 								</Typography>
 							</Grid>
 							<Grid item xs={2} textAlign='center'>
@@ -90,12 +86,9 @@ export default function Testimonials() {
 									borderLeft='2px solid #FC802C'
 									paddingLeft='10px'
 								>
-									“Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Vivamus sit amet mi nec massa tincidunt blandit et eu sem.
-									Maecenas laoreet ultrices diam dignissim posuere. Aenean
-									ultrices dui at ipsum sagittis, pharetra lacinia dui faucibus.
-									In ac bibendum ex. Aenean dolor massa, euismod sit amet
-									suscipit et“
+									"Practicar el mindfulness a diario me ha ayudado a controlar
+									mi ansiedad y a tomar las situaciones estresantes con mayor
+									tranquilidad."
 								</Typography>
 							</Grid>
 							<Grid item xs={2} textAlign='center'>
