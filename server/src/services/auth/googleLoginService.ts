@@ -22,6 +22,7 @@ export const googleLoginService = async (
                 password: ':P',
                 img: picture,
                 externId: sub,
+                email_verified: true,
             })
 
             //*Encrypt password
