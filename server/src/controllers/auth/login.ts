@@ -18,6 +18,8 @@ export const login = async (req: Request, res: Response) => {
         if (!ok && msg === 'El email no esta registrado') {
             return res.status(status).json({ ok: false, msg: msg })
         }
+
+        //*Comprobar que este verificado el usuario
         if (!ok && msg === 'El email no esta verificado') {
             return res.status(status).json({ ok: false, msg: msg, code })
         }
