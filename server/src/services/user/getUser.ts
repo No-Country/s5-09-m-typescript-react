@@ -6,7 +6,7 @@ export const getUserService = async (id: string) => {
 
         if (userRetrieved) {
             const response = {
-                msg: 'User finded with success',
+                msg: 'Usuario encontrado con exito.',
                 status: 200,
                 ok: true,
                 user: userRetrieved,
@@ -16,7 +16,7 @@ export const getUserService = async (id: string) => {
 
         const response = {
             status: 404,
-            msg: 'Cannot find user with this id',
+            msg: 'Usuario no encontrado.',
             ok: false,
         }
 

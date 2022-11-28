@@ -13,13 +13,13 @@
 
 ## User
 
-| TYPE   | DETAIL  | ROUTE                         | SEND                                       |
-| ------ | ------- | ----------------------------- | ------------------------------------------ |
-| GET    | GET ALL | http://localhost:PORT/        |                                            |
-| GET    | GET ONE | http://localhost:PORT/findOne | params : id                                |
-| POST   | CREATE  | http://localhost:PORT/        | body : accept all User Schema              |
-| PUT    | UPDATE  | http://localhost:PORT/update  | params : id, body : accept all User Schema |
-| DELETE | DELETE  | http://localhost:PORT/delete  | params: id                                 |
+| TYPE   | DETAIL  | ROUTE                              | SEND                                       |
+| ------ | ------- | ---------------------------------- | ------------------------------------------ |
+| GET    | GET ALL | http://localhost:PORT/user         |                                            |
+| GET    | GET ONE | http://localhost:PORT/user/findOne | params : id                                |
+| POST   | CREATE  | http://localhost:PORT/user         | body : accept all User Schema              |
+| PUT    | UPDATE  | http://localhost:PORT/user/update  | params : id, body : accept all User Schema |
+| DELETE | DELETE  | http://localhost:PORT/user/delete  | params: id                                 |
 
 **User Schema**
 

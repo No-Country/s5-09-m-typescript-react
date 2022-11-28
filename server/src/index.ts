@@ -35,7 +35,6 @@ export const server = app.listen(port, async () => {
     console.log(`Server listening on port: ${port}`)
 })
 
-
 // * ----------Connection with Mongo Atlas ------------
 
 const connectDB = async () => {
@@ -49,8 +48,3 @@ const connectDB = async () => {
 }
 
 connectDB()
-// * ----------Connection Local ------------
-app.listen(port, async () => {
-    await userMocksService()
-    console.log(`Server listening on port: ${port}`)
-})

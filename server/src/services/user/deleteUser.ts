@@ -7,7 +7,7 @@ export const deleteUserService = async (id: string) => {
         if (userDeleted) {
             const response = {
                 status: 200,
-                msg: 'User deleted with success',
+                msg: 'Usuario eliminado con exito.',
                 ok: true,
             }
             return response
@@ -15,7 +15,7 @@ export const deleteUserService = async (id: string) => {
 
         const response = {
             status: 404,
-            msg: 'Cannot find user with this id',
+            msg: 'Usuario no encontrado.',
             ok: false,
         }
         return response
