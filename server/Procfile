@@ -1,1 +1,1 @@
-web: cross-env NODE_ENV=development node build/src/index.js
+web: node build/src/index.js
