@@ -10,13 +10,16 @@ export const login = async (req: Request, res: Response) => {
     //Todo: Validar que el mail del usuario este verificado!!!
 
     try {
-        const { ok, msg, status, user } = (await loginService(
+        const { ok, msg, status, user, code } = (await loginService(
             email
         )) as IResponse
 
         //*Comprobar que el email este en la base de datos
-        if (!ok) {
+        if (!ok && msg === 'El email no esta registrado') {
             return res.status(status).json({ ok: false, msg: msg })
+        }
+        if (!ok && msg === 'El email no esta verificado') {
+            return res.status(status).json({ ok: false, msg: msg, code })
         }
 
         //* Comprobar que las contraseñas coincidan
