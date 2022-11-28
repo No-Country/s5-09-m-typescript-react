@@ -14,15 +14,13 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import { useForm } from 'react-hook-form';
 import { useGoogleLogin } from '@react-oauth/google';
-import { onLogin, onLoginGoogle } from '../../../service/authApi';
+import { onLogin, onLoginGoogle } from '../../../service';
 import axios from 'axios';
 // import { LoginSocialFacebook } from 'reactjs-social-login';
 import { isEmail } from '../../../utilities';
 import { Message, Visibility, VisibilityOff } from '@mui/icons-material';
 import { useState } from 'react';
 import { useAppDispatch } from '../../../redux/hooks';
-import { setUser } from '../../../redux/slices/user';
-import { user } from '../../../models/user.type';
 
 type Inputs = {
 	email: string;
@@ -44,7 +42,7 @@ export default function InputLogin() {
 	const login = useGoogleLogin({
 		onSuccess: async response => {
 			try {
-				const data = await axios.get(
+				const { data } = await axios.get(
 					'https://www.googleapis.com/oauth2/v3/userinfo',
 					{
 						headers: {
@@ -52,7 +50,8 @@ export default function InputLogin() {
 						},
 					},
 				);
-				console.log(data);
+				const { name, picture, sub, email } = data;
+				onLoginGoogle(name, picture, sub, email);
 			} catch (err) {
 				console.log(err);
 			}

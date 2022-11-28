@@ -18,11 +18,15 @@ export const sendEmail = async (
     template: string,
     sub: string
 ) => {
-    await transporter.sendMail({
-        from: `MindFulness <${nodemailerApi}>`, // sender address
-        to: email, // list of receivers
-        subject: sub, // Subject line
-        text: sub, // plain text body
-        html: template, // html body
-    })
+    try {
+        await transporter.sendMail({
+            from: `MindFulness <${nodemailerApi}>`, // sender address
+            to: email, // list of receivers
+            subject: sub, // Subject line
+            text: sub, // plain text body
+            html: template, // html body
+        })
+    } catch (error) {
+        return error
+    }
 }

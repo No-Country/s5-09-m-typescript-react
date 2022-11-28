@@ -29,7 +29,7 @@ export default function Hero() {
 					</Typography>
 				</Typography>
 				<Typography component='h3' variant='h4'>
-					Registra y evalua tu progreso
+					Registra y evalúa tu progreso
 				</Typography>
 				<Typography
 					component='p'
@@ -58,7 +58,7 @@ export default function Hero() {
 					component='h2'
 					textAlign='end'
 				>
-					Formas Hábitos
+					Registra tus
 				</Typography>
 				<Box
 					// bgcolor='third'

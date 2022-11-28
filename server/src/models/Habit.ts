@@ -19,7 +19,7 @@ const habitSchema = new Schema<Habit>({
     category: 
         {
             type: Types.ObjectId,
-            ref: 'Categories',
+            ref: 'Category',
         },
 })
 
