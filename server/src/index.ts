@@ -9,6 +9,9 @@ import { router } from './routes/index'
 import { dbTest, dbDev, portDev, portTest } from './config/globals'
 import { userMocksService } from './services'
 
+import dotenv from 'dotenv'
+dotenv.config()
+
 const db = process.env.NODE_ENV === 'development' ? dbDev : dbTest
 
 const port = process.env.NODE_ENV === 'development' ? portDev : portTest
