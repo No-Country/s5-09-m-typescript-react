@@ -20,7 +20,7 @@ export const createUserService = async (user: IUser) => {
             const { _id, code, fullname, email } = userToCreate
 
             const response = {
-                msg: 'Users created',
+                msg: 'Usuario creado',
                 status: 200,
                 ok: true,
                 id: _id,
@@ -33,7 +33,7 @@ export const createUserService = async (user: IUser) => {
 
         const response = {
             status: 404,
-            msg: 'User already exist.',
+            msg: 'El usuario ya existe.',
             ok: false,
         }
 
