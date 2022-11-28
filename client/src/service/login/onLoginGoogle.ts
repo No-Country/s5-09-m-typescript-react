@@ -1,4 +1,4 @@
-import axios from 'axios';
+//import axios from 'axios';
 import API_URL from '../API_URL';
 
 export const onLoginGoogle = async (
@@ -8,7 +8,7 @@ export const onLoginGoogle = async (
 	email: string,
 ) => {
 	try {
-		const res = await axios.post(`${API_URL}/googleLogin`, {
+		const res = await API_URL.post('/googleLogin', {
 			name,
 			picture,
 			sub,
