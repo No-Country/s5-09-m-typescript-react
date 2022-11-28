@@ -1,6 +1,8 @@
 import { IUser } from '../../interfaces/user'
 import User from '../../models/User'
 import bcryptjs from 'bcryptjs'
+import generateCode from '../../utils/generateCode'
+import { sendWelcomeEmail } from '../../utils/sendWelcomeEmail'
 
 export const createUserService = async (user: IUser) => {
     try {
@@ -11,23 +13,27 @@ export const createUserService = async (user: IUser) => {
             const userToCreate = await User.create(user)
             const salt = bcryptjs.genSaltSync()
             userToCreate.password = bcryptjs.hashSync(user.password, salt)
+            const newCode = generateCode()
+            userToCreate.code = newCode
             await userToCreate.save()
 
-            const { _id } = userToCreate
+            const { _id, code, fullname, email } = userToCreate
 
             const response = {
-                msg: 'Users created',
+                msg: 'Usuario creado',
                 status: 200,
                 ok: true,
                 id: _id,
             }
 
+            sendWelcomeEmail(fullname, code, email)
+
             return response
         }
-        //Todo: Aca iria el envio del mail de bienvenida
+
         const response = {
             status: 404,
-            msg: 'User already exist.',
+            msg: 'El usuario ya existe.',
             ok: false,
         }
 

@@ -10,7 +10,7 @@ export const updateUserService = async (id: string, user: IUser) => {
             const { fullname, email, _id } = userUpdated
             const response = {
                 status: 200,
-                msg: 'User updated with success',
+                msg: 'Usuario actualizado con exito.',
                 user: { fullname, email, _id },
                 ok: true,
             }
@@ -19,7 +19,7 @@ export const updateUserService = async (id: string, user: IUser) => {
 
         const response = {
             status: 404,
-            msg: 'Cannot find user with this id',
+            msg: 'Usuario no encontrado.',
             ok: false,
         }
         return response

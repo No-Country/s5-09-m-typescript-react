@@ -7,14 +7,14 @@ export const getUsersService = async () => {
         if (usersRetrieved.length <= 0) {
             const response = {
                 status: 404,
-                msg: 'No user finded',
+                msg: 'No existe ningun usuario todavia.',
                 ok: false,
             }
             return response
         }
 
         const response = {
-            msg: 'Users finded with success',
+            msg: 'Usuarios encontrados con exito.',
             ok: true,
             status: 200,
             usersRetrieved,

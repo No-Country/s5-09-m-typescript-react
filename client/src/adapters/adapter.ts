@@ -1,15 +1,14 @@
-interface loginAdapter {
-	admin: boolean;
-	id: string;
-	msg: string;
-	ok: boolean;
-	token: string;
-}
-export function loginAdapter(data: loginAdapter, name: string) {
+import { loginAdapter, user } from '../models/user.type';
+
+export function loginAdapter(data: loginAdapter, token: string): user {
+	const { user } = data;
 	return {
-		id: data.id,
-		userName: name,
-		userJwt: data.token,
+		id: user._id,
+		userName: user.fullname,
+		email: user.email,
 		isAuth: data.ok,
+		userJwt: token,
+		img: '',
+		emailVerified: false,
 	};
 }
