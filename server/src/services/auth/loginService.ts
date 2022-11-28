@@ -13,12 +13,13 @@ export const loginService = async (email: string) => {
             return response
         }
 
-        if(user.email_verified === false){
+        if (user.email_verified === false) {
             const response = {
-                ok:false,
-                status:404,
-                msg:'El email no esta verificado',
-                code: user.code
+                ok: false,
+                status: 404,
+                msg: 'El email no esta verificado',
+                code: user.code,
+                id: user._id,
             }
 
             return response
