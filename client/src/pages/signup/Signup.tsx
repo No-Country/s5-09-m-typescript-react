@@ -5,7 +5,7 @@ export default function Signup() {
 	return (
 		<LayoutForms
 			tittle='Bienvenido'
-			text='Inicia Sesion y disfruta de todo lo que tenemos para ti.'
+			text='Crea tu cuenta  y disfruta de todo lo que tenemos para ti.'
 		>
 			<SignupForm />
 		</LayoutForms>
