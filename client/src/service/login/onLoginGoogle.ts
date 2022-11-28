@@ -14,6 +14,7 @@ export const onLoginGoogle = async (
 			sub,
 			email,
 		});
+		console.log(res);
 	} catch (error) {
 		return error;
 	}
