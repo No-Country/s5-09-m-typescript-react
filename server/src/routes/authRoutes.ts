@@ -1,5 +1,5 @@
 import express from 'express'
-import { login, googleLogin } from '../controllers/auth'
+import { login, googleLogin } from '../controllers'
 
 const router = express.Router()
 
