@@ -11,6 +11,7 @@ const initialState: User = {
 	name: '',
 	img: '',
 	id: undefined,
+	practices: [],
 };
 // setUser y closeSesion sin return no andan.
 export const userSlice = createSlice({
@@ -35,6 +36,12 @@ export const userSlice = createSlice({
 		emailVerification: (state, action: PayloadAction<User>) => {
 			state.code = action.payload.code;
 			state.id = action.payload.id;
+		},
+		addPractices: (state, action: PayloadAction<User>) => {
+			state.practices.push(action.payload);
+		},
+		removePractices: (state, action: PayloadAction<User>) => {
+			//terminar logica
 		},
 	},
 });
