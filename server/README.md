@@ -77,3 +77,31 @@
 
 -   http://localhost:PORT/sendContact
 -   http://localhost:PORT/resendCode
+
+## Habit
+
+| TYPE   | DETAIL  | ROUTE                              | SEND                                       |
+| ------ | ------- | ---------------------------------- | ------------------------------------------ |
+| GET    | GET ALL | http://localhost:PORT/habit        |                                            |
+| GET    | GET ONE | http://localhost:PORT/habit/{id}   | params : id                                |
+| POST   | CREATE  | http://localhost:PORT/habit        | body : accept all Habit Schema             |
+| PUT    | UPDATE  | http://localhost:PORT/habit/{id}   | params : id, body : accept all Habit Schema|
+| DELETE | DELETE  | http://localhost:PORT/habit/{id}   | params: id                                 |
+
+**Habit Schema**
+
+| KEY            | TYPE                   | REQUIRED   |
+| -------------- | ---------------------- | ---------- |
+| \_id           | ObjectId               | NO, UNIQUE |
+| name           | String                 | YES        |
+| img            | String                 | YES        |
+| description    | String                 | YES        |
+| category       |  ObjectId              | YES        |
+
+**Example Routes Habit**
+
+-   http://localhost:PORT/habit/ --------> Post para crear
+-   http://localhost:PORT/habit/ --------> Get all habit
+-   http://localhost:PORT/habit/638341cda5c03d7124de5676 ---------> Get habit By Id
+-   http://localhost:PORT/habit/629375c1545316ac4d6924a9 ---------> Put update habit by Id
+-   http://localhost:PORT/habit/629375c1545316ac4d6924a9 ---------> Delete habit by Id
