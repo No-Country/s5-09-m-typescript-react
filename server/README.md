@@ -1,7 +1,7 @@
 # API DOCUMENTATION
 
 1. **Create an .env file with the following constants, where:**
-    - PORT_TESTING : is the port where you go to run your server for testing
+    - PORT_TESTING : is the port where you go to run your server for tsting
     - PORT_DEVELOPMENT : is the port where you go to run your server for development
     - DB_TESTING: is the URI of the mongo database for testing
     - DB_DEVELOPMENT: is the URI of the mongo database for development and production
