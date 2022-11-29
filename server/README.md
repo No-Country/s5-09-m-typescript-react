@@ -16,7 +16,7 @@
 | TYPE   | DETAIL  | ROUTE                              | SEND                                       |
 | ------ | ------- | ---------------------------------- | ------------------------------------------ |
 | GET    | GET ALL | http://localhost:PORT/user         |                                            |
-| GET    | GET ONE | http://localhost:PORT/user/findOne | params : id                                |
+| GET    | GET ONE | http://localhost:PORT/user/findOne | params : id , headers:token                |
 | POST   | CREATE  | http://localhost:PORT/user         | body : accept all User Schema              |
 | PUT    | UPDATE  | http://localhost:PORT/user/update  | params : id, body : accept all User Schema |
 | DELETE | DELETE  | http://localhost:PORT/user/delete  | params: id                                 |
@@ -60,11 +60,13 @@
 | ---- | ------------ | --------------------------------- | ------------------------------- |
 | POST | login        | http://localhost:PORT/login       | body: email, password           |
 | POST | login Google | http://localhost:PORT/googleLogin | body: name, picture, sub, email |
+| POST | renewToken   | http://localhost:PORT/renewToken  | headers: token                  |
 
 **Example Routes Authentication**
 
 -   http://localhost:PORT/login
 -   http://localhost:PORT/googleLogin
+-   http://localhost:PORT/renewToken
 
 ## Emailing
 
