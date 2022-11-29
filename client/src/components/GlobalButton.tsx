@@ -2,10 +2,11 @@ import { Button, SxProps, Theme } from '@mui/material';
 
 interface GlobalButton {
 	text: string;
-	action: () => void;
+	action?: () => void;
 	width?: string;
 	height?: string;
   sx?: SxProps<Theme>,
+  type?: "button" | "submit" | "reset" | undefined;
 }
 export default function GlobalButton({
 	text,
@@ -13,6 +14,7 @@ export default function GlobalButton({
 	width = '250px',
 	height = '50px',
   sx,
+  type,
 }: GlobalButton) {
 	return (
 		<Button
@@ -23,7 +25,8 @@ export default function GlobalButton({
         ...sx,
 			}}
 			color='secondary'
-			onClick={() => action()}
+			onClick={action}
+      type={type}
 		>
 			{text}
 		</Button>
@@ -44,7 +47,7 @@ export function GlobalButtonWhite({
 				height: height,
 			}}
 			color='primary'
-			onClick={() => action()}
+			onClick={action}
 		>
 			{text}
 		</Button>
