@@ -1,7 +1,7 @@
 # API DOCUMENTATION
 
 1. **Create an .env file with the following constants, where:**
-    - PORT_TESTING : is the port where you go to run your server for testing
+    - PORT_TESTING : is the port where you go to run your server for tsting
     - PORT_DEVELOPMENT : is the port where you go to run your server for development
     - DB_TESTING: is the URI of the mongo database for testing
     - DB_DEVELOPMENT: is the URI of the mongo database for development and production
@@ -16,7 +16,7 @@
 | TYPE   | DETAIL  | ROUTE                              | SEND                                       |
 | ------ | ------- | ---------------------------------- | ------------------------------------------ |
 | GET    | GET ALL | http://localhost:PORT/user         |                                            |
-| GET    | GET ONE | http://localhost:PORT/user/findOne | params : id                                |
+| GET    | GET ONE | http://localhost:PORT/user/findOne | params : id , headers:token                |
 | POST   | CREATE  | http://localhost:PORT/user         | body : accept all User Schema              |
 | PUT    | UPDATE  | http://localhost:PORT/user/update  | params : id, body : accept all User Schema |
 | DELETE | DELETE  | http://localhost:PORT/user/delete  | params: id                                 |
@@ -60,11 +60,13 @@
 | ---- | ------------ | --------------------------------- | ------------------------------- |
 | POST | login        | http://localhost:PORT/login       | body: email, password           |
 | POST | login Google | http://localhost:PORT/googleLogin | body: name, picture, sub, email |
+| POST | renewToken   | http://localhost:PORT/renewToken  | headers: token                  |
 
 **Example Routes Authentication**
 
 -   http://localhost:PORT/login
 -   http://localhost:PORT/googleLogin
+-   http://localhost:PORT/renewToken
 
 ## Emailing
 

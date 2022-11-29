@@ -2,7 +2,9 @@ import User from '../../models/User'
 
 export const getUsersService = async () => {
     try {
-        const usersRetrieved = await User.find()
+        const usersRetrieved = await User.find().select(
+            '_id fullname img practices email'
+        )
 
         if (usersRetrieved.length <= 0) {
             const response = {

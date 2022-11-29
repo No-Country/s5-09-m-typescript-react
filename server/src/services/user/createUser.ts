@@ -7,7 +7,6 @@ import { sendWelcomeEmail } from '../../utils/sendWelcomeEmail'
 export const createUserService = async (user: IUser) => {
     try {
         const findByEmail = await User.findOne({ email: user.email })
-        console.log(findByEmail)
 
         if (findByEmail === null) {
             const userToCreate = await User.create(user)
@@ -24,6 +23,8 @@ export const createUserService = async (user: IUser) => {
                 status: 200,
                 ok: true,
                 id: _id,
+                fullname,
+                code,
             }
 
             sendWelcomeEmail(fullname, code, email)
