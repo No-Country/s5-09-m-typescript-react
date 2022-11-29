@@ -1,2 +1,5 @@
 export * from './email'
 export * from './auth'
+export * from './category'
+export * from './habit'
+export * from './user'
