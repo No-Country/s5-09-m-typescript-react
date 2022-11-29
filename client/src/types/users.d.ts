@@ -8,7 +8,7 @@ export interface User {
 	practices?: Array;
 	id: string | undefined;
 }
-export interface emailVerified {
+export interface EmailVerified {
 	code: string | undefined;
 	id: string | undefined;
 	msg: string;

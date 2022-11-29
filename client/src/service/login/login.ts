@@ -1,6 +1,6 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import { loginAdapter } from '../../adapters/adapter';
-import { setUser } from '../../redux/slices/user';
+import { setUser, emailVerification } from '../../redux/slices/user';
 import API_URL from '../API_URL';
 
 export const onLogin = async (
@@ -26,5 +26,10 @@ export const onLogin = async (
 	} catch (err: any) {
 		const data = err.response.data;
 		console.log(data);
+		if (data.msg === 'El email no esta verificado') {
+			const { data: getUser } = await API_URL.get(`/user/findOne/${data.id}`);
+			const dataUser = loginAdapter(getUser);
+			dispatch(setUser(dataUser));
+		}
 	}
 };

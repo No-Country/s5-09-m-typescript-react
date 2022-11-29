@@ -66,7 +66,7 @@ export default function MenuNavegation() {
 				Nosotros
 			</Button>
 
-			{!user.emailVerified ? (
+			{!user.id ? (
 				<Button
 					id='basic-button'
 					color='third'

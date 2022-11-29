@@ -4,9 +4,5 @@ import { useAppSelector } from '../redux/hooks';
 
 export default function PrivateRoute() {
 	const user = useAppSelector(store => store.user);
-	return user.emailVerified ? (
-		<Outlet />
-	) : (
-		<Navigate replace to={publicRoute.login} />
-	);
+	return user.id ? <Outlet /> : <Navigate replace to={publicRoute.login} />;
 }
