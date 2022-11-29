@@ -1,5 +1,5 @@
 export interface User {
-	code?: string | undefined;
+	code?: number | undefined;
 	email?: string;
 	emailVerified?: boolean;
 	name?: string;

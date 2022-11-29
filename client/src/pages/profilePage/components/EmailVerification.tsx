@@ -2,8 +2,24 @@ import { Grid, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { GlobalButton } from '../../../components';
+import { useForm } from 'react-hook-form';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
+import { verifyCode } from '../../../service';
+
+type Inputs = {
+	verificationCode: number;
+};
 
 export default function EmailVerification() {
+  const { register, handleSubmit } = useForm<Inputs>()
+  const user = useAppSelector((state) => state.user)
+  const dispatch = useAppDispatch();
+
+  const onSubmit = (value : Inputs) => {
+    if (user.code === value.verificationCode) {
+      verifyCode( {userId: user.id}, dispatch )
+    }    
+  }
 	return (
 		<Box
 			sx={{
@@ -19,6 +35,8 @@ export default function EmailVerification() {
 			}}
 		>
 			<Grid
+        component="form"
+        onSubmit={handleSubmit(onSubmit)}
 				container
 				sx={{
 					width: '400px',
@@ -66,6 +84,9 @@ export default function EmailVerification() {
 					}}
 				>
 					<TextField
+            {...register("verificationCode",{
+              valueAsNumber: true,
+            })}
 						type='number'
 						variant='outlined'
 						color='secondary'
@@ -99,7 +120,7 @@ export default function EmailVerification() {
 						alignItems: 'center',
 					}}
 				>
-					<GlobalButton text='enviar' action={() => console.log('enviar')} />
+					<GlobalButton type="submit" text='enviar'/>
 				</Grid>
 			</Grid>
 		</Box>

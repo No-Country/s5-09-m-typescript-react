@@ -51,7 +51,7 @@ export default function Profile() {
 				</Grid>
 
 				<Grid item xs={9}>
-					<TopBarProfile />
+					<TopBarProfile setModals={setModals} />
 					{renderModal(modal)}
 				</Grid>
 			</Grid>
