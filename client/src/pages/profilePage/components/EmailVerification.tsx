@@ -71,40 +71,7 @@ export default function EmailVerification() {
 						color='secondary'
 						focused
 						sx={{
-							width: '80px',
-							height: '80px',
-							textAlign: 'center',
-						}}
-					/>
-					<TextField
-						type='number'
-						variant='outlined'
-						color='secondary'
-						focused
-						sx={{
-							width: '80px',
-							height: '80px',
-							textAlign: 'center',
-						}}
-					/>
-					<TextField
-						type='number'
-						variant='outlined'
-						color='secondary'
-						focused
-						sx={{
-							width: '80px',
-							height: '80px',
-							textAlign: 'center',
-						}}
-					/>
-					<TextField
-						type='number'
-						variant='outlined'
-						color='secondary'
-						focused
-						sx={{
-							width: '80px',
+							width: '250px',
 							height: '80px',
 							textAlign: 'center',
 						}}

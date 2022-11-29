@@ -1,10 +1,10 @@
 import { Modal, Grid, TextField, Typography } from '@mui/material';
-import { display } from '@mui/system';
 import * as React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { GlobalButton } from '../../../components';
 import AlertModal from '../../../components/AlertModal';
-import { isEmail } from '../../../utilities';
+import { sendContact } from '../../../service/contact/sendContact';
+
 
 type FormData = {
 	fullName: string;
@@ -28,7 +28,7 @@ export default function ContactForm() {
 	//Para probar si funcionan los formularios
 	const formSubmitHandler: SubmitHandler<FormData> = (data: FormData) => {
 		console.log('form data is', data);
-		
+		sendContact(data.fullName, data.text, data.email);
 		setIsOpenModal(true);
 	};
 
