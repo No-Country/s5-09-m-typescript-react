@@ -4,12 +4,13 @@ import { getCategory } from '../controllers/category/getCategory'
 import { createCategory } from '../controllers/category/createCategory'
 import { updateCategory } from '../controllers/category/updateCategory'
 import { deleteCategory } from '../controllers/category/deleteCategory'
+import { validateCreateCategory } from '../middlewares/category'
 
 const router = express.Router()
 
 router.get('/', getCategories)
 router.get('/:id', getCategory)
-router.post('/', createCategory)
+router.post('/', validateCreateCategory, createCategory)
 router.put('/:id', updateCategory)
 router.delete('/:id', deleteCategory)
 
