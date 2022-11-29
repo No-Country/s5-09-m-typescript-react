@@ -5,6 +5,7 @@ import { createUserService } from '../../services/user/createUser'
  */
 export const createUser = async (req: Request, res: Response) => {
     const user = req.body
+    console.log(user)
 
     try {
         const userRetrieved = (await createUserService(user)) as IResponse
