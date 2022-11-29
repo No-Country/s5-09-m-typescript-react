@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button, Menu, MenuItem } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
-import { resetUser } from '../redux/slices/user';
+import { closeSession } from '../redux/slices/user';
 import { privateRoute } from '../models/routes';
 
 export default function MenuNavegation() {
@@ -15,7 +15,7 @@ export default function MenuNavegation() {
 		setAnchorEl(event.currentTarget);
 	};
 	const logout = () => {
-		dispatch(resetUser());
+		dispatch(closeSession());
 		setAnchorEl(null);
 	};
 	const navegation = () => {
@@ -66,7 +66,7 @@ export default function MenuNavegation() {
 				Nosotros
 			</Button>
 
-			{!user.isAuth ? (
+			{!user.id ? (
 				<Button
 					id='basic-button'
 					color='third'

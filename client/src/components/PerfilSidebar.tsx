@@ -25,7 +25,7 @@ export default function ProSidebar({ setModals }: sidebar) {
 						component='h1'
 						variant='h6'
 					>
-						{user.userName}
+						{user.name}
 					</Typography>
 					<MenuItem icon={<NotificationsActiveOutlined />}>
 						<button onClick={() => setModals('perfil')}>Perfil</button>

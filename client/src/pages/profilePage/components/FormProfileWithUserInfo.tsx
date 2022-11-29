@@ -55,7 +55,7 @@ export default function FormProfileWithUserInfo() {
 							marginLeft: '100px',
 						}}
 					>
-						<Typography fontSize='1.5rem'>{user.userName}</Typography>
+						<Typography fontSize='1.5rem'>{user.name}</Typography>
 						<Typography fontSize='1.5rem'>**********</Typography>
 						<Typography fontSize='1.5rem'>{user.email}</Typography>
 					</Box>
