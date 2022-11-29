@@ -8,13 +8,14 @@ import {
     deleteHabit,
 } from '../controllers'
 import { validateCreateHabit } from '../middlewares'
+import { validateAdmin } from '../middlewares/validateAdmin'
 
 const router = express.Router()
 
 router.get('/', getHabits)
 router.get('/:id', getHabit)
-router.post('/', validateCreateHabit, createHabit)
-router.put('/:id', updateHabit)
-router.delete('/:id', deleteHabit)
+router.post('/', validateAdmin, validateCreateHabit, createHabit)
+router.put('/:id', validateAdmin, updateHabit)
+router.delete('/:id', validateAdmin, deleteHabit)
 
 export default router
