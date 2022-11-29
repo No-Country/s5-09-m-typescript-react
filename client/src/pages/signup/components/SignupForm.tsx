@@ -8,15 +8,35 @@ import {
 } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { FieldValues, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { useState } from 'react';
+import { onRegister } from '../../../service/register';
+import { Link, useNavigate } from 'react-router-dom';
+import { BoxDragAndDrop, DragAndDrop } from '../../../components/imgDrag';
+
+type FormInput = {
+	fullname: string;
+	email: string;
+	password: string;
+};
 
 export default function SignupForm() {
-  const [showPassword, setshowPassword] = useState(false)
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = ( data : FieldValues ) => {
-    console.log(data)
-  };
+	const [showPassword, setshowPassword] = useState(false);
+	const [url, setUrl] = useState('');
+
+	const navigate = useNavigate();
+
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<FormInput>();
+
+	const onSubmit = (data: FormInput) => {
+		const modifiedData = { ...data, img: url };
+		console.log(url, 'hola');
+		const isSuccess = onRegister(modifiedData);
+	};
 
 	return (
 		<Stack
@@ -40,12 +60,32 @@ export default function SignupForm() {
 			>
 				Crea tu Cuenta
 			</Typography>
-			<TextField error={errors.name ? true : false} helperText={errors.name ? errors.name.message?.toString() : ""} {...register('name', {required: "Ingrese un nombre"})} label='Nombre Completo' variant='outlined' />
-			<TextField error={errors.email ? true : false} helperText={errors.email ? errors.email.message?.toString() : ""} {...register('email', {pattern: { message: "Ingrese un correo valido", value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/} })} label='Correo' variant='outlined' />
 			<TextField
-        error={errors.password ? true : false}
-        type={showPassword ? 'text' : 'password'}
-        {...register('password', {pattern: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/})}
+				error={errors.fullname ? true : false}
+				helperText={errors.fullname ? errors.fullname.message?.toString() : ''}
+				{...register('fullname', { required: 'Ingrese un nombre' })}
+				label='Nombre Completo'
+				variant='outlined'
+			/>
+			<TextField
+				error={errors.email ? true : false}
+				helperText={errors.email ? errors.email.message?.toString() : ''}
+				{...register('email', {
+					pattern: {
+						message: 'Ingrese un correo valido',
+						value:
+							/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+					},
+				})}
+				label='Correo'
+				variant='outlined'
+			/>
+			<TextField
+				error={errors.password ? true : false}
+				type={showPassword ? 'text' : 'password'}
+				{...register('password', {
+					pattern: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/,
+				})}
 				helperText='Debe contener 8 caracteres con al menos una letra mayuscula, minuscula y un numero'
 				label='Contraseña'
 				variant='outlined'
@@ -54,7 +94,7 @@ export default function SignupForm() {
 						<InputAdornment position='start'>
 							<IconButton
 								aria-label='toggle password visibility'
-								onClick={() => setshowPassword((prev) => !prev)}
+								onClick={() => setshowPassword(prev => !prev)}
 								edge='end'
 							>
 								{showPassword ? <VisibilityOff /> : <Visibility />}
@@ -63,8 +103,9 @@ export default function SignupForm() {
 					),
 				}}
 			/>
+			<DragAndDrop url={setUrl} />
 			<Button
-        onClick={handleSubmit(onSubmit)}
+				onClick={handleSubmit(onSubmit)}
 				variant='contained'
 				sx={{
 					backgroundColor: 'secondary.main',
@@ -78,6 +119,7 @@ export default function SignupForm() {
 			>
 				Registrarse
 			</Button>
+
 			<Typography
 				sx={{
 					alignSelf: 'flex-end',
@@ -87,17 +129,18 @@ export default function SignupForm() {
 				}}
 			>
 				¿Tienes una cuenta?{' '}
-				<Typography
-					component='span'
-					sx={{
-						color: 'text.secondary',
-						fontWeight: 600,
-						fontSize: '20px',
-						lineHeight: '28px',
-					}}
-				>
-					Inicia Sesión
-				</Typography>
+				<Link to='/iniciarSesion'>
+					<Typography
+						component='span'
+						sx={{
+							fontWeight: 600,
+							fontSize: '20px',
+							lineHeight: '28px',
+						}}
+					>
+						Inicia Sesión
+					</Typography>
+				</Link>
 			</Typography>
 		</Stack>
 	);
