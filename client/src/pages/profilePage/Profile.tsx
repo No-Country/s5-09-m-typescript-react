@@ -35,7 +35,7 @@ export default function Profile() {
 	};
 	return (
 		<>
-			{user.emailVerified && <EmailVerification />}
+			{!user.emailVerified && <EmailVerification />}
 			<Grid
 				container
 				spacing={2}
