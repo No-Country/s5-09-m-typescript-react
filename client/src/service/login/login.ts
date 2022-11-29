@@ -31,9 +31,7 @@ export const onLogin = async (
 		const data = err.response.data;
 		console.log(data);
 		if (data.msg === 'El email no esta verificado') {
-			const { data: getUser } = await API_URL.get(`/user/findOne/${data.id}`);
-			const dataUser = loginAdapter(getUser);
-			dispatch(setUser(dataUser));
+			dispatch(emailVerification({ code: data.code, id: data.id }));
 		}
 	}
 };
