@@ -9,6 +9,7 @@ import { useState } from 'react';
 import PanelCardList from './components/PanelCardList';
 import { EmailVerification } from './components';
 import { useAppSelector } from '../../redux/hooks';
+import Progress from './components/Progress';
 
 export default function Profile() {
 	const user = useAppSelector(store => store.user);
@@ -31,6 +32,8 @@ export default function Profile() {
 				return <Calendar />;
 			case 'panel':
 				return <PanelCardList />;
+			case 'progreso':
+				return <Progress />;
 		}
 	};
 	return (
