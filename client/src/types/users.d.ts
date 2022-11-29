@@ -1,9 +1,9 @@
 export interface User {
 	code?: string | undefined;
-	email: string;
-	emailVerified: boolean;
-	name: string;
-	img: string;
+	email?: string;
+	emailVerified?: boolean;
+	name?: string;
+	img?: string;
 	password?: string;
 	practices?: Array;
 	id: string | undefined;
