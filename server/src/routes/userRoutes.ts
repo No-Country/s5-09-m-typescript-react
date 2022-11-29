@@ -1,14 +1,20 @@
 import express from 'express'
-const router = express.Router()
-import { createUser } from '../controllers/user/createUser'
-import { getUsers } from '../controllers/user/getUsers'
-import { getUser } from '../controllers/user/getUser'
-import { updateUser } from '../controllers/user/updateUser'
-import { deleteUser } from '../controllers/user/deleteUser'
 
-router.post('/', createUser)
+import {
+    createUser,
+    getUsers,
+    getUser,
+    updateUser,
+    deleteUser,
+} from '../controllers'
+import { validateToken } from '../middlewares'
+import { validateCreateUser } from '../middlewares/checks/user'
+
+const router = express.Router()
+
+router.post('/', validateCreateUser, createUser)
 router.get('/', getUsers)
-router.get('/findOne/:id', getUser)
+router.get('/findOne/:id', validateToken, getUser)
 router.put('/update/:id', updateUser)
 router.delete('/delete/:id', deleteUser)
 

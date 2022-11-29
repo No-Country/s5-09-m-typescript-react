@@ -1,3 +1,4 @@
+import { ObjectId } from 'mongoose'
 import { User } from './user'
 
 export interface IResponse {
@@ -6,4 +7,6 @@ export interface IResponse {
     user: User
     status: number
     token?: string
+    code?: number
+    id?: ObjectId
 }

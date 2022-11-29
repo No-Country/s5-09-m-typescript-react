@@ -5,17 +5,19 @@ export const deleteUserService = async (id: string) => {
         const userDeleted = await User.findByIdAndDelete({ _id: id })
 
         if (userDeleted) {
+            const { _id } = userDeleted
             const response = {
                 status: 200,
-                msg: 'User deleted with success',
+                msg: 'Usuario eliminado con exito.',
                 ok: true,
+                _id,
             }
             return response
         }
 
         const response = {
             status: 404,
-            msg: 'Cannot find user with this id',
+            msg: 'Usuario no encontrado.',
             ok: false,
         }
         return response

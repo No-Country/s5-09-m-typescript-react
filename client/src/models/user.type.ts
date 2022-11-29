@@ -1,21 +1,33 @@
-export interface ApiUser {
-	jwt: string;
-	user: {
-		id: string | number;
-		user_name: string;
-	};
-}
-
 export interface user {
 	id: string;
 	userName: string;
-	userJwt: string;
+	email: string;
 	isAuth: boolean;
+	emailVerified: boolean;
+	img: string;
+	userJwt: string;
+}
+
+export interface userCreated {
+	status: 'Loading' | 'Success' | 'Error';
+}
+export interface loginAdapter {
+	ok: boolean;
+	status?: number;
+	msg?: string;
+	user: {
+		fullname: string;
+		email: string;
+		_id: string;
+	};
 }
 
 export const userEmptyState: user = {
 	id: '',
 	userName: '',
-	userJwt: '',
+	email: '',
 	isAuth: false,
+	emailVerified: false,
+	img: '',
+	userJwt: '',
 };

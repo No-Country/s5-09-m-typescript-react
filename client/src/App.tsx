@@ -30,10 +30,7 @@ function App() {
 						<Route element={<PublicRoute />}>
 							<Route path={publicRoute.login} element={<Login />} />
 							<Route path={publicRoute.register} element={<Signup />} />
-							<Route
-								path={publicRoute.register}
-								element={<h1>recuperar contraseña</h1>}
-							/>
+							<Route path={publicRoute.register} element={<h1>recuperar</h1>} />
 						</Route>
 						<Route element={<PrivateRoute />}>
 							<Route path='/perfil' element={<Profile />} />

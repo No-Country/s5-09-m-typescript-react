@@ -4,8 +4,10 @@ import TopBarProfile from './TopBarProfile';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
 import { Box } from '@mui/system';
+import { useAppSelector } from '../../../redux/hooks';
 
 export default function FormProfileWithUserInfo() {
+	const user = useAppSelector(store => store.user);
 	const navegacion = () => {
 		console.log('probando boton');
 	};
@@ -53,9 +55,9 @@ export default function FormProfileWithUserInfo() {
 							marginLeft: '100px',
 						}}
 					>
-						<Typography fontSize='1.5rem'>Maria Sanchez</Typography>
+						<Typography fontSize='1.5rem'>{user.name}</Typography>
 						<Typography fontSize='1.5rem'>**********</Typography>
-						<Typography fontSize='1.5rem'>myemailj@gmail.com</Typography>
+						<Typography fontSize='1.5rem'>{user.email}</Typography>
 					</Box>
 				</Grid>
 			</Grid>

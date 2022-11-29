@@ -10,7 +10,7 @@ export default function Hero() {
 			alignItems='center'
 			justifyContent='space-between'
 			sx={{
-				minHeight: 'calc(100vh - 150px)',
+				minHeight: 'calc(100vh - 100px)',
 				backgroundImage:
 					'url(https://res.cloudinary.com/dlxlitkl6/image/upload/v1668534521/ananda%20marga/home/woman_without_background_img.png)',
 
@@ -29,7 +29,7 @@ export default function Hero() {
 					</Typography>
 				</Typography>
 				<Typography component='h3' variant='h4'>
-					Registra y evalua tu progreso
+					Registra y evalúa tu progreso
 				</Typography>
 				<Typography
 					component='p'
@@ -58,7 +58,7 @@ export default function Hero() {
 					component='h2'
 					textAlign='end'
 				>
-					Formas Hábitos
+					Registra tus
 				</Typography>
 				<Box
 					// bgcolor='third'

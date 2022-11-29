@@ -5,20 +5,20 @@ export const getUserService = async (id: string) => {
         const userRetrieved = await User.findById({ _id: id })
 
         if (userRetrieved) {
-            const { fullname, email, _id } = userRetrieved
-
+            const { email, _id, fullname, img, practices, email_verified } =
+                userRetrieved
             const response = {
-                msg: 'User finded with success',
+                msg: 'Usuario encontrado con exito.',
                 status: 200,
                 ok: true,
-                user: { fullname, email, _id },
+                user: { email, _id, fullname, img, practices, email_verified },
             }
             return response
         }
 
         const response = {
             status: 404,
-            msg: 'Cannot find user with this id',
+            msg: 'Usuario no encontrado.',
             ok: false,
         }
 
