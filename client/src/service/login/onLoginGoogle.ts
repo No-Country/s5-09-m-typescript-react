@@ -20,7 +20,14 @@ export const onLoginGoogle = async (
 		});
 		console.log(res);
 		localStorage.setItem('toke', JSON.stringify(res.data.token));
-		const { data: getUser } = await API_URL.get(`/user/findOne/${res.data.id}`);
+		const { data: getUser } = await API_URL.get(
+			`/user/findOne/${res.data.id}`,
+			{
+				headers: {
+					token: `${res.data.token}`,
+				},
+			},
+		);
 		const dataUser = loginAdapter(getUser);
 		console.log(getUser);
 		dispatch(setUser(dataUser));

@@ -19,7 +19,11 @@ export const onLogin = async (
 			password,
 		});
 		localStorage.setItem('toke', JSON.stringify(data.token));
-		const { data: getUser } = await API_URL.get(`/user/findOne/${data.id}`);
+		const { data: getUser } = await API_URL.get(`/user/findOne/${data.id}`, {
+			headers: {
+				token: `${data.token}`,
+			},
+		});
 		const dataUser = loginAdapter(getUser);
 		console.log(dataUser);
 		dispatch(setUser(dataUser));
@@ -27,9 +31,7 @@ export const onLogin = async (
 		const data = err.response.data;
 		console.log(data);
 		if (data.msg === 'El email no esta verificado') {
-			const { data: getUser } = await API_URL.get(`/user/findOne/${data.id}`);
-			const dataUser = loginAdapter(getUser);
-			dispatch(setUser(dataUser));
+			dispatch(emailVerification({ code: data.code, id: data.id }));
 		}
 	}
 };
