@@ -5,10 +5,12 @@ export const deleteUserService = async (id: string) => {
         const userDeleted = await User.findByIdAndDelete({ _id: id })
 
         if (userDeleted) {
+            const { _id } = userDeleted
             const response = {
                 status: 200,
                 msg: 'Usuario eliminado con exito.',
                 ok: true,
+                _id,
             }
             return response
         }
