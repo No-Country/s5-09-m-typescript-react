@@ -5,11 +5,13 @@ export const getUserService = async (id: string) => {
         const userRetrieved = await User.findById({ _id: id })
 
         if (userRetrieved) {
+            const { email, _id, fullname, img, practices, email_verified } =
+                userRetrieved
             const response = {
                 msg: 'Usuario encontrado con exito.',
                 status: 200,
                 ok: true,
-                user: userRetrieved,
+                user: { email, _id, fullname, img, practices, email_verified },
             }
             return response
         }
