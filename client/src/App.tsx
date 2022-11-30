@@ -9,6 +9,7 @@ import {
 	Contact,
 	Home,
 	Profile,
+	FormProfileWithUserInfo2,
 } from './pages';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { publicRoute } from './models/routes';
