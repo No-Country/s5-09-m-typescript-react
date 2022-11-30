@@ -12,30 +12,35 @@ export default function Hero() {
 			sx={{
 				minHeight: 'calc(100vh - 100px)',
 				backgroundImage:
-					'url(https://res.cloudinary.com/dlxlitkl6/image/upload/v1668534521/ananda%20marga/home/woman_without_background_img.png)',
+					'url(https://res.cloudinary.com/dlxlitkl6/image/upload/v1669744454/dise%C3%B1o%20definitivo/yoga_tres_amigas_hv9pjr.svg)',
 
 				backgroundRepeat: 'no-repeat',
-				backgroundPosition: '50% 100%',
+				backgroundPosition: '50% 90%',
 				backgroundColor: 'primary.main',
-				backgroundSize: 'contain',
+				backgroundSize: '60%',
 			}}
-			padding={20}
+			padding={4}
 		>
-			<Grid item xs={4} gap={2} display='flex' flexDirection='column'>
+			<Grid item xs={8} gap={2} display='flex' flexDirection='column'>
 				<Typography variant='h2' component='h2'>
 					Lleva tu{' '}
-					<Typography color={'text.secondary'} component='span' variant='h2'>
+					<Typography color='third.main' component='span' variant='h2'>
 						Control
 					</Typography>
 				</Typography>
-				<Typography component='h3' variant='h4'>
+				<Typography component='h3' variant='h4' color='text.secondary'>
 					Registra y evalúa tu progreso
 				</Typography>
 				<Typography
 					component='p'
 					variant='body1'
 					padding={1}
-					sx={{ borderLeft: '3px solid', borderColor: 'secondary.main' }}
+					sx={{
+						borderLeft: '3px solid',
+						borderColor: 'secondary.main',
+						width: '50%',
+						color: 'text.secondary',
+					}}
 				>
 					¿Necesitas ayuda con tu práctica de atención plena? aquí te ayudamos a
 					cumplir con tus metas diarias, comienza poco a poca agregando cada día
@@ -44,27 +49,30 @@ export default function Hero() {
 				</Typography>
 				<GlobalButton text='Comienza ahora' action={navegacion} />
 			</Grid>
+
 			<Grid
 				item
 				xs={4}
-				alignItems='flex-end'
+				alignItems='center'
 				justifyContent='center'
 				display='flex'
 				flexDirection='column'
+				gap={2}
 			>
 				<Typography
-					color={'text.secondary'}
-					variant='h2'
+					color='third.main'
+					variant='h3'
 					component='h2'
 					textAlign='end'
+					borderBottom='2px solid'
 				>
-					Registra tus
+					Registra Aquí
 				</Typography>
 				<Box
 					// bgcolor='third'
 					sx={{
 						alignItems: 'center',
-						backgroundColor: '#4E7D64',
+						backgroundColor: 'primary.dark',
 						color: 'white',
 						display: 'flex',
 						flexDirection: 'column',
@@ -72,12 +80,13 @@ export default function Hero() {
 						justifyContent: 'center',
 						width: 200,
 						borderRadius: '50%',
+						filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.35))',
 					}}
 				>
-					<Typography variant='h2' component='h4'>
+					<Typography variant='h2' component='h4' color='third.main'>
 						16
 					</Typography>
-					<Typography variant='h4' component='span'>
+					<Typography variant='h4' component='span' color='third.main'>
 						Hábitos
 					</Typography>
 				</Box>

@@ -35,6 +35,7 @@ const Theme: FC<Props> = ({ children }) => {
 				palette: {
 					type: 'light',
 					primary: {
+						dark: '#E0E0E0',
 						main: '#FFFFFF',
 					},
 					secondary: {
