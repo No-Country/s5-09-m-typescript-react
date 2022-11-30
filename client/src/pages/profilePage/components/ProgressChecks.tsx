@@ -23,7 +23,7 @@ export default function ProgressChecks({ tittle, urlImg }: checksContent){
                   
         }}>
             
-            <Grid 
+            <Grid container
                 sx={{
                 borderBottom:'1px solid rgba(151, 151, 151, 0.2)',
                 height:'110px',
@@ -33,25 +33,36 @@ export default function ProgressChecks({ tittle, urlImg }: checksContent){
                 flexDirection:'column',
                 alignItems:'flex-start',
             }}> 
-               <FormGroup>
-            <FormControlLabel
-                control={<Checkbox icon={<CheckCircleOutline/>} checkedIcon={<CheckCircleOutline/>} />}
-                label=''
-                sx={{
-                    float: 'left',
-                    position:'flex'
-                }}
-                />
-    
-            </FormGroup>
+
                 <img src= {urlImg} alt='imagen check'
-                    style={{
-                        height:'100px',
-                        width:'100px',
-                        backgroundColor:'black',
-                    }} />
+                                    style={{
+                                        display:'inline-flex',
+                                        height:'100px',
+                                        width:'100px',
+                }} />
+
+                <Grid item
+                        sx={{
+                            position: 'absolute',
+                            left: '85%',
+                            top: '5%',
+                        }}>
+                    <FormGroup>
+                    <FormControlLabel
+                    control={<Checkbox icon={<CheckCircleOutline/>} checkedIcon={<CheckCircleOutline/>} />}
+                    label=''
+                    />
+                    </FormGroup>
+                </Grid>
          
-                <Typography>
+                <Typography sx={{
+                                display:'inline-flex',
+                                fontSize:'24px',
+                                fontWeight:400,
+                                lineHeight:'36px',
+                                textAlign:'center',
+                                margin:'auto 0',
+                                }}>
                     {tittle}
                 </Typography>
             </Grid>
