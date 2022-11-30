@@ -35,6 +35,10 @@ export default function Progress(){
                 }}>
               <ProgressChecks tittle='Meditar'
 						urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696054/ananda%20marga/Practices/my_practices1_hpsjzt.jpg'/>
+                <ProgressChecks tittle='Meditar'
+						urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696054/ananda%20marga/Practices/my_practices1_hpsjzt.jpg'/>
+                <ProgressChecks tittle='Meditar'
+						urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696054/ananda%20marga/Practices/my_practices1_hpsjzt.jpg'/>
               
             </Grid>
 
