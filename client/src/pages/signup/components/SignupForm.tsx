@@ -35,7 +35,7 @@ export default function SignupForm() {
 	const onSubmit = (data: FormInput) => {
 		const modifiedData = { ...data, img: url };
 		console.log(url, 'hola');
-		const isSuccess = onRegister(modifiedData);
+		onRegister(modifiedData);
 	};
 
 	return (
@@ -60,6 +60,7 @@ export default function SignupForm() {
 			>
 				Crea tu Cuenta
 			</Typography>
+
 			<TextField
 				error={errors.fullname ? true : false}
 				helperText={errors.fullname ? errors.fullname.message?.toString() : ''}
@@ -84,9 +85,10 @@ export default function SignupForm() {
 				error={errors.password ? true : false}
 				type={showPassword ? 'text' : 'password'}
 				{...register('password', {
-					pattern: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/,
+					pattern:
+						/^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[!@#\][:()"`;+\-'|_?,.</\\>=$%}{^&*~]).{8,}$/,
 				})}
-				helperText='Debe contener 8 caracteres con al menos una letra mayuscula, minuscula y un numero'
+				helperText='Debe contener 8 caracteres con al menos una letra mayuscula, minuscula y un numero, caracter especial'
 				label='Contraseña'
 				variant='outlined'
 				InputProps={{
