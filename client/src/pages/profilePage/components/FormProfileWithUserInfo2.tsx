@@ -6,13 +6,29 @@ import { Typography, Grid } from '@mui/material';
 import GlobalButton from '../../../components/GlobalButton';
 import DeletableChips from './DeletableChips';
 import { HabitsModal } from '../../../components';
+import { getHabits } from '../../../service/habits/habits';
 
 export default function FormProfileWithUserInfo2() {
 	const [isOpenModal, setIsOpenModal] = React.useState(false);
-	const closeModal = () =>{
-		setIsOpenModal(false);
-	}
+	const [habits, setHabits] = React.useState<string[]>([]);
 
+	const handleHabits = async () => {
+		try {
+			const res: any = await getHabits();
+
+			setHabits(res.data);
+		} catch (error) {
+			return error;
+		}
+	};
+
+	React.useEffect(() => {
+		handleHabits();
+	}, []);
+
+	const closeModal = () => {
+		setIsOpenModal(false);
+	};
 
 	const navegacion = () => {
 		console.log('probando boton');
@@ -58,8 +74,9 @@ export default function FormProfileWithUserInfo2() {
 				}}
 			>
 				<GlobalButton text='Cambia tus habitos' action={navegacion} />
-							
-			{isOpenModal && <HabitsModal close={closeModal}/>}
+				{/* 				{isOpenModal && <HabitsModal close={closeModal}  />}
+				 */}{' '}
+				<HabitsModal close={closeModal} habitos={habits} />
 			</Grid>
 		</Grid>
 	);

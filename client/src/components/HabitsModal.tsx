@@ -17,10 +17,13 @@ import GlobalButton from './GlobalButton';
 
 interface HabitsModal {
 	close: () => void;
+	habitos: any;
 }
 
-export default function HabitsModal({ close }: HabitsModal) {
+export default function HabitsModal({ close, habitos }: HabitsModal) {
 	const [habits, setHabits] = useState<string[]>([]);
+
+	console.log(habitos);
 
 	const handleHabitChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = event.target;
@@ -105,49 +108,6 @@ export default function HabitsModal({ close }: HabitsModal) {
 							}}
 						>
 							<Typography variant='body1' color='initial'>
-								Espiritual
-							</Typography>
-						</AccordionSummary>
-						<AccordionDetails
-							sx={{
-								boxShadow:
-									'0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2)',
-								borderRadius: '4px',
-							}}
-						>
-							<FormGroup>
-								<FormControlLabel
-									control={<Checkbox onChange={handleHabitChange} />}
-									label='Asanas diarias'
-									name='Asanas diarias'
-								/>
-								<FormControlLabel
-									control={<Checkbox onChange={handleHabitChange} />}
-									label='Lectura espiritual'
-									name='Lectura espiritual'
-								/>
-								<FormControlLabel
-									control={<Checkbox onChange={handleHabitChange} />}
-									label='Realizar servicio'
-									name='Realizar servicio'
-								/>
-								<FormControlLabel
-									control={<Checkbox onChange={handleHabitChange} />}
-									label='Meditación dos veces al día'
-									name='Meditación dos veces al día'
-								/>
-							</FormGroup>
-						</AccordionDetails>
-					</Accordion>
-					<Accordion style={{ border: 'black', margin: '20px' }}>
-						<AccordionSummary
-							expandIcon={<ExpandMore />}
-							sx={{
-								border: '1px solid rgba(17, 39, 52, 0.7)',
-								borderRadius: '4px',
-							}}
-						>
-							<Typography variant='body1' color='initial'>
 								Salud Física
 							</Typography>
 						</AccordionSummary>
@@ -170,6 +130,7 @@ export default function HabitsModal({ close }: HabitsModal) {
 							</FormGroup>
 						</AccordionDetails>
 					</Accordion>
+
 					<Accordion style={{ border: 'black', margin: '20px' }}>
 						<AccordionSummary
 							expandIcon={<ExpandMore />}
