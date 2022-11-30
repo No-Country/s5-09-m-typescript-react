@@ -6,8 +6,8 @@ import axios from 'axios';
 const API_URL = axios.create({
 	baseURL:
 		process.env.NODE_ENV === 'development'
-			? import.meta.env.VITE_APP_BACKEND_URL
-			: import.meta.env.VITE_APP_LOCAL_BACKEND, // no hay rutas /api,
+			? import.meta.env.VITE_APP_LOCAL_BACKEND
+			: import.meta.env.VITE_APP_BACKEND_URL,
 });
 
 export default API_URL;
