@@ -18,7 +18,7 @@ import GlobalButton from './GlobalButton';
 interface HabitsModal {
 	close: () => void;
 }
-
+//colocar modal en el registro
 export default function HabitsModal({ close }: HabitsModal) {
 	const [habits, setHabits] = useState<string[]>([]);
 
