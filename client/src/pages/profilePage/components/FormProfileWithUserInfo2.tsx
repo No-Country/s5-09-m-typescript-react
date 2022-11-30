@@ -8,13 +8,16 @@ import DeletableChips from './DeletableChips';
 import { HabitsModal } from '../../../components';
 import { getHabits } from '../../../service/habits/habits';
 
+interface Habits {
+	data: Array<string>;
+}
 export default function FormProfileWithUserInfo2() {
 	const [isOpenModal, setIsOpenModal] = React.useState(false);
 	const [habits, setHabits] = React.useState<string[]>([]);
 
 	const handleHabits = async () => {
 		try {
-			const res: any = await getHabits();
+			const res = (await getHabits()) as Habits;
 
 			setHabits(res.data);
 		} catch (error) {
