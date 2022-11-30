@@ -17,7 +17,7 @@ export default function ContactForm() {
 	const [isOpenModal, setIsOpenModal] = React.useState(false);
 	const closeModal = () =>{
 		setIsOpenModal(false);
-	}
+	};
 
 	const {
 		register,
@@ -45,6 +45,7 @@ export default function ContactForm() {
 					<TextField
 						{...register('fullName', {
 							required: 'Este campo es requerido',
+							pattern: { message: "Nombre inválido", value: /^[A-Z ]+$/i} 
 						})}
 						error={!!errors.fullName}
 						helperText={errors.fullName?.message}
@@ -61,7 +62,7 @@ export default function ContactForm() {
 						
 						{...register('email', {
 							required: 'Este campo es requerido',
-							pattern: { message: "Ingrese un correo valido", value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/} 
+							pattern: { message: "Ingrese un correo válido", value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/} 
 						})}
 						error={!!errors.email}
 						helperText={errors.email?.message}

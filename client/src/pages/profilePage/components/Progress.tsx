@@ -33,13 +33,16 @@ export default function Progress(){
                 sx={{
                     display:'contents'
                 }}>
-              <ProgressChecks tittle='Meditar'
-						urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696054/ananda%20marga/Practices/my_practices1_hpsjzt.jpg'/>
-                <ProgressChecks tittle='Meditar'
-						urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696054/ananda%20marga/Practices/my_practices1_hpsjzt.jpg'/>
-                <ProgressChecks tittle='Meditar'
-						urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696054/ananda%20marga/Practices/my_practices1_hpsjzt.jpg'/>
-              
+              <ProgressChecks 
+                            tittle='Meditar'
+						    urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696054/ananda%20marga/Practices/my_practices1_hpsjzt.jpg'/>
+                 <ProgressChecks 
+                            tittle='Tomar agua'
+						    urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696054/ananda%20marga/Practices/my_practices1_hpsjzt.jpg'/>
+                 <ProgressChecks 
+                            tittle='Asana'
+						    urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668696054/ananda%20marga/Practices/my_practices1_hpsjzt.jpg'/>
+                
             </Grid>
 
         </Grid>
