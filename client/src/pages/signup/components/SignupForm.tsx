@@ -1,4 +1,5 @@
 import {
+	Avatar,
 	Button,
 	IconButton,
 	InputAdornment,
@@ -13,6 +14,8 @@ import { useState } from 'react';
 import { onRegister } from '../../../service/register';
 import { Link, useNavigate } from 'react-router-dom';
 import { BoxDragAndDrop, DragAndDrop } from '../../../components/imgDrag';
+import { useDispatch } from 'react-redux';
+import { useAppSelector } from '../../../redux/hooks';
 
 type FormInput = {
 	fullname: string;
@@ -23,7 +26,8 @@ type FormInput = {
 export default function SignupForm() {
 	const [showPassword, setshowPassword] = useState(false);
 	const [url, setUrl] = useState('');
-
+	const dispatch = useDispatch();
+	const { isLoading } = useAppSelector(store => store.setting);
 	const navigate = useNavigate();
 
 	const {
@@ -34,8 +38,8 @@ export default function SignupForm() {
 
 	const onSubmit = (data: FormInput) => {
 		const modifiedData = { ...data, img: url };
-		console.log(url, 'hola');
-		onRegister(modifiedData);
+		onRegister(modifiedData, dispatch);
+		navigate('/iniciarSesion');
 	};
 
 	return (
@@ -60,6 +64,20 @@ export default function SignupForm() {
 			>
 				Crea tu Cuenta
 			</Typography>
+			<Stack justifyContent={'center'} alignItems={'center'}>
+				<Avatar
+					alt='avatar provisional'
+					src={url}
+					sx={{
+						width: 80,
+						height: 80,
+						objectFit: 'contain',
+					}}
+					style={{
+						border: '2px solid #2F6117a',
+					}}
+				/>
+			</Stack>
 
 			<TextField
 				error={errors.fullname ? true : false}
@@ -67,8 +85,10 @@ export default function SignupForm() {
 				{...register('fullname', { required: 'Ingrese un nombre' })}
 				label='Nombre Completo'
 				variant='outlined'
+				color='text'
 			/>
 			<TextField
+				color='text'
 				error={errors.email ? true : false}
 				helperText={errors.email ? errors.email.message?.toString() : ''}
 				{...register('email', {
@@ -82,6 +102,7 @@ export default function SignupForm() {
 				variant='outlined'
 			/>
 			<TextField
+				color='text'
 				error={errors.password ? true : false}
 				type={showPassword ? 'text' : 'password'}
 				{...register('password', {
