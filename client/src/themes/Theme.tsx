@@ -33,29 +33,26 @@ const Theme: FC<Props> = ({ children }) => {
 		() =>
 			createTheme({
 				palette: {
+					type: 'light',
 					primary: {
-						main: '#E7E8EA',
-						dark: '#194067',
-						light: '#9CC0DF',
+						main: '#FFFFFF',
 					},
 					secondary: {
-						main: '#FC802C',
-						light: '#FEA060',
-						dark: '#DD6F10',
-						contrastText: '#fff',
+						main: '#9C51B7',
+						light: '#B691C3',
 					},
 					third: {
-						main: '#4E7D64',
-						contrastText: '#fff',
+						main: '#279F87',
 					},
 					complementary: {
 						main: '#112734',
 					},
 					text: {
 						primary: '#112734',
-						secondary: '#2F6117',
+						secondary: '#41525D',
 					},
 				},
+
 				// typography: {
 				// 	htmlFontSize: 10,
 				// 	fontSize: 10,
