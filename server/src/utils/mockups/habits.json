@@ -1,0 +1,114 @@
+[
+    {
+        "_id": "637cdb2bb0d39b6840ae9953",
+        "name": "Meditar 2 veces diaramente",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdb78b0d39b6840ae9973"
+    },
+    {
+        "_id": "637cdb31b0d39b6840ae9955",
+        "name": "Lectura espiritual",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdb78b0d39b6840ae9973"
+    },
+    {
+        "_id": "637cdb35b0d39b6840ae9957",
+        "name": "Realizar servicio",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdb78b0d39b6840ae9973"
+    },
+    {
+        "_id": "637cdb40b0d39b6840ae9959",
+        "name": "Seguir código de conducta",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdb78b0d39b6840ae9973"
+    },
+    {
+        "_id": "637cdb46b0d39b6840ae995b",
+        "name": "Realizar asanas",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdbb5b0d39b6840ae9975"
+    },
+    {
+        "_id": "637cdb49b0d39b6840ae995d",
+        "name": "Realizar ejercicio",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdbb5b0d39b6840ae9975"
+    },
+    {
+        "_id": "637cdb4cb0d39b6840ae995f",
+        "name": "Pasar tiempo al aire libre",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdbb5b0d39b6840ae9975"
+    },
+    {
+        "_id": "637cdb4fb0d39b6840ae9961",
+        "name": "Evitar intoxicantes (drogas, alcohol, etc)",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdbb5b0d39b6840ae9975"
+    },
+    {
+        "_id": "637cdb52b0d39b6840ae9963",
+        "name": "Recetas saludables",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdbcab0d39b6840ae9977"
+    },
+    {
+        "_id": "637cdb54b0d39b6840ae9965",
+        "name": "Ayunas 2 veces al mes",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdbcab0d39b6840ae9977"
+    },
+    {
+        "_id": "637cdb57b0d39b6840ae9967",
+        "name": "Tomar 2 litros de agua al dia",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdbcab0d39b6840ae9977"
+    },
+    {
+        "_id": "637cdb59b0d39b6840ae9969",
+        "name": "Aumentar ingesta de vegetales",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdbcab0d39b6840ae9977"
+    },
+    {
+        "_id": "637cdb5cb0d39b6840ae996b",
+        "name": "Bañarse diaramente",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdbd5b0d39b6840ae9979"
+    },
+    {
+        "_id": "637cdb5eb0d39b6840ae996d",
+        "name": "Limpieza del hogar y ambiente",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdbd5b0d39b6840ae9979"
+    },
+    {
+        "_id": "637cdb62b0d39b6840ae996f",
+        "name": "Desechar pensamientos negativos",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdbd5b0d39b6840ae9979"
+    },
+    {
+        "_id": "637cdb65b0d39b6840ae9971",
+        "name": "Consumo psíquico adecuado",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
+        "description": "loren",
+        "category": "637cdbd5b0d39b6840ae9979"
+    }
+]
