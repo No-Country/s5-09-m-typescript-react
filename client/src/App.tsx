@@ -32,7 +32,6 @@ function App() {
 							<Route path={publicRoute.login} element={<Login />} />
 							<Route path={publicRoute.register} element={<Signup />} />
 							<Route path={publicRoute.register} element={<h1>recuperar</h1>} />
-							<Route path='/habits' element={<FormProfileWithUserInfo2 />} />
 						</Route>
 						<Route element={<PrivateRoute />}>
 							<Route path='/perfil' element={<Profile />} />

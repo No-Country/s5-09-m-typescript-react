@@ -1,33 +1,12 @@
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import * as React from 'react';
 import CoronavirusOutlinedIcon from '@mui/icons-material/CoronavirusOutlined';
 import { Typography, Grid } from '@mui/material';
 import GlobalButton from '../../../components/GlobalButton';
 import DeletableChips from './DeletableChips';
-import { HabitsModal } from '../../../components';
-import { getHabits } from '../../../service/habits/habits';
 
-interface Habits {
-	data: Array<string>;
-}
 export default function FormProfileWithUserInfo2() {
 	const [isOpenModal, setIsOpenModal] = React.useState(false);
 	const [habits, setHabits] = React.useState<string[]>([]);
-
-	const handleHabits = async () => {
-		try {
-			const res = (await getHabits()) as Habits;
-
-			setHabits(res.data);
-		} catch (error) {
-			return error;
-		}
-	};
-
-	React.useEffect(() => {
-		handleHabits();
-	}, []);
 
 	const closeModal = () => {
 		setIsOpenModal(false);
@@ -77,9 +56,6 @@ export default function FormProfileWithUserInfo2() {
 				}}
 			>
 				<GlobalButton text='Cambia tus habitos' action={navegacion} />
-				{/* 				{isOpenModal && <HabitsModal close={closeModal}  />}
-				 */}{' '}
-				<HabitsModal close={closeModal} habitos={habits} />
 			</Grid>
 		</Grid>
 	);

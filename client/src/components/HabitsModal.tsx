@@ -14,52 +14,64 @@ import {
 import Grid from '@mui/material/Grid';
 import React, { useEffect, useState } from 'react';
 import GlobalButton from './GlobalButton';
+import { getHabits } from '../service/habits/habits';
 
-interface HabitsModal {
-	close: () => void;
-	habitos: any;
+interface Habits {
+	data: Array<string>;
+}
+interface SetHabits {
+	data: {
+		name: string;
+	};
 }
 
-export default function HabitsModal({ close, habitos }: HabitsModal) {
+export default function HabitsModal() {
+	const [changeHabits, setChangeHabits] = useState<string[]>([]);
 	const [habits, setHabits] = useState<string[]>([]);
 	const [healthHabits, setHealthHabits] = useState<string[]>([]);
 	const [alimentationHabits, setAlimentationHabits] = useState<string[]>([]);
 	const [meditationHabits, setMeditationHabits] = useState<string[]>([]);
 	const [physicalAct, setPhysicalAct] = useState<string[]>([]);
-
-	console.log(meditationHabits);
+	const handleHabits = async () => {
+		try {
+			const res = (await getHabits()) as Habits;
+			return setHabits(res.data);
+		} catch (error) {
+			return error;
+		}
+	};
 
 	const handleHabitChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = event.target;
-		setHabits({
-			...habits,
+		setChangeHabits({
+			...changeHabits,
 			[name]: value,
 		});
 	};
 	useEffect(() => {
-		console.log({ habits });
-
+		console.log(habits);
+		handleHabits();
 		setHealthHabits(
-			habitos.filter((habit: any) => {
+			habits.filter((habit: any) => {
 				return habit.category.name === 'Salud';
 			}),
 		);
 		setAlimentationHabits(
-			habitos.filter((habit: any) => {
+			habits.filter((habit: any) => {
 				return habit.category.name === 'Alimentación';
 			}),
 		);
 		setMeditationHabits(
-			habitos.filter((habit: any) => {
+			habits.filter((habit: any) => {
 				return habit.category.name === 'Meditación';
 			}),
 		);
 		setPhysicalAct(
-			habitos.filter((habit: any) => {
+			habits.filter((habit: any) => {
 				return habit.category.name === 'Actividad Fisica';
 			}),
 		);
-	}, [habits]);
+	}, []);
 
 	return (
 		<Grid
@@ -144,7 +156,7 @@ export default function HabitsModal({ close, habitos }: HabitsModal) {
 							}}
 						>
 							<FormGroup>
-								{meditationHabits.map(meditationHabit => {
+								{meditationHabits.map((meditationHabit: any) => {
 									return (
 										<FormControlLabel
 											control={<Checkbox onChange={handleHabitChange} />}
@@ -176,7 +188,7 @@ export default function HabitsModal({ close, habitos }: HabitsModal) {
 							}}
 						>
 							<FormGroup>
-								{healthHabits.map(healthHabit => {
+								{healthHabits.map((healthHabit: any) => {
 									return (
 										<FormControlLabel
 											control={<Checkbox onChange={handleHabitChange} />}
@@ -209,7 +221,7 @@ export default function HabitsModal({ close, habitos }: HabitsModal) {
 							}}
 						>
 							<FormGroup>
-								{physicalAct.map(act => {
+								{physicalAct.map((act: any) => {
 									return (
 										<FormControlLabel
 											control={<Checkbox onChange={handleHabitChange} />}
@@ -242,7 +254,7 @@ export default function HabitsModal({ close, habitos }: HabitsModal) {
 							}}
 						>
 							<FormGroup>
-								{alimentationHabits.map(alimentationHabit => {
+								{alimentationHabits.map((alimentationHabit: any) => {
 									return (
 										<FormControlLabel
 											control={<Checkbox onChange={handleHabitChange} />}
