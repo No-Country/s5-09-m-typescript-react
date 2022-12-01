@@ -14,7 +14,6 @@ export const getUserService = async (id: string) => {
                 status: 200,
                 ok: true,
                 user: { email, _id, fullname, img, practices, email_verified },
-                userRetrieved,
             }
             return response
         }

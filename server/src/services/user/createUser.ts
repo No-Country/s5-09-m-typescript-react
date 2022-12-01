@@ -40,6 +40,8 @@ export const createUserService = async (user: IUser) => {
 
         return response
     } catch (error) {
+        console.log(error)
+
         return error
     }
 }
