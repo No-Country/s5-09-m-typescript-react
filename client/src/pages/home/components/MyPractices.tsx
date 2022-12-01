@@ -1,5 +1,4 @@
 import { Box, Typography } from '@mui/material';
-import { GlobalButton } from '../../../components';
 
 export default function MyPractices() {
 	const navegacion = () => {
@@ -18,8 +17,8 @@ export default function MyPractices() {
 			>
 				<Typography
 					variant='h2'
-					color='text.secondary'
-					sx={{ textAlign: 'center', fontSize: 64, fontWeight: 600 }}
+					color='text.primary'
+					sx={{ textAlign: 'center', fontSize: 64 }}
 				>
 					Mis Prácticas
 				</Typography>
@@ -49,7 +48,7 @@ export default function MyPractices() {
 						</Typography>
 						<Typography
 							variant='body1'
-							color={'text.primary'}
+							color={'text.secondary'}
 							sx={{ margin: '30px 0px', fontSize: '24px', lineHeight: '32px' }}
 						>
 							Los 16 puntos son un sistema de prácticas, que promueven la
@@ -60,17 +59,13 @@ export default function MyPractices() {
 							Segundo, se puede conseguir un cuerpo saludable y una mente
 							serena.
 						</Typography>
-						<GlobalButton
-							text='Conoce Más'
-							action={() => console.log('hola')}
-						/>
 					</div>
 
 					<img
-						src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668435967/ananda%20marga/home/my_practices_nsp7fc.jpg'
+						src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669855664/dise%C3%B1o%20definitivo/practicas_dnmqno.svg'
 						alt='Sesión de yoga'
 						className='imageMyPractices'
-						style={{ width: '554px', height: '334px', marginRight: '40px' }}
+						style={{ marginRight: '40px' }}
 					/>
 				</div>
 			</Box>

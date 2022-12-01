@@ -18,7 +18,7 @@ export default function Contact({ children, tittle, text }: forms) {
 					}}
 				>
 					<Grid item xs={12}>
-						<Typography variant='h1' color='text.secondary' fontSize={64}>
+						<Typography variant='h1' color='third.main' fontSize={64}>
 							{tittle}
 						</Typography>
 					</Grid>
@@ -31,7 +31,7 @@ export default function Contact({ children, tittle, text }: forms) {
 							paddingLeft: '5px',
 						}}
 					>
-						<Typography component='p' color='text.primary'>
+						<Typography component='p' color='text.secondary'>
 							{text}
 						</Typography>
 					</Grid>
@@ -49,9 +49,10 @@ export default function Contact({ children, tittle, text }: forms) {
 					sx={{
 						width: '600px',
 						minHeight: '700px',
-						backgroundColor: '#FFFFFF',
+						backgroundColor: 'primary.main',
 						borderRadius: '4px',
-						border: '1px solid #B2BCCA',
+						border: '1px solid',
+						borderColor: 'third.main',
 						boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.25)',
 					}}
 				>

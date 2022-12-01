@@ -72,7 +72,12 @@ export default function InputLogin() {
 		<form onSubmit={handleSubmit(data => onLogin(data, dispatch))}>
 			<Grid container spacing={5} p={6}>
 				<Grid item xs={12}>
-					<Typography variant='h4' component='h4' color='text.secondary'>
+					<Typography
+						variant='h4'
+						component='h4'
+						color='third.main'
+						textAlign='center'
+					>
 						Iniciar Sesión
 					</Typography>
 				</Grid>
@@ -135,7 +140,15 @@ export default function InputLogin() {
 						alignItems: 'flex-end',
 					}}
 				>
-					<RouterLink to='/'>¿Olvidaste la contraseña?</RouterLink>
+					<Link
+						component='button'
+						sx={{
+							color: 'secondary.main',
+						}}
+						onClick={() => {}}
+					>
+						¿Olvidaste la contraseña?
+					</Link>
 				</Grid>
 				<Grid
 					item
@@ -161,28 +174,6 @@ export default function InputLogin() {
 						alignItems: 'center',
 					}}
 				>
-					{/* <LoginSocialFacebook
-						appId='461951009397297'
-						onResolve={res => {
-							console.log(res);
-						}}
-						onReject={error => {
-							console.log(error);
-						}}
-					>
-						<Button
-							variant='outlined'
-							fullWidth
-							sx={{ maxWidth: '100px' }}
-							// onClick={handleLogin}
-							// disabled={isLoading}
-						>
-							<img
-								src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668694018/ananda%20marga/facebook_ic_ashpl3.svg'
-								alt='132'
-							/>
-						</Button>
-					</LoginSocialFacebook> */}
 					<Button
 						variant='outlined'
 						fullWidth

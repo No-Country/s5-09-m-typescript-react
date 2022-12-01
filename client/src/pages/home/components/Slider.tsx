@@ -8,35 +8,35 @@ const itemList = [
 	{
 		title: 'Inicia Sesión',
 		image:
-			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668438081/ananda%20marga/home/slider/slider_1_dbrrlw.png',
+			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1669744903/dise%C3%B1o%20definitivo/iniciaSesion_2_tiqhjq.svg',
 		description:
 			'Registra tu cuenta y podras acceder a los beneficios que tenemos para ti',
 	},
 	{
 		title: 'Personaliza tu Cuenta',
 		image:
-			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668438081/ananda%20marga/home/slider/slider_2_mgqjip.png',
+			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1669776430/dise%C3%B1o%20definitivo/iniciaSesion_ndwqel.svg',
 		description:
 			'Al registrarte podrás elegir las actividades que prefieras, así como también ir ampliando gradualmente tus prácticas.',
 	},
 	{
 		title: 'Entra a tu panel',
 		image:
-			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668438081/ananda%20marga/home/slider/slider_3_oaiwpb.png',
+			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1669779083/dise%C3%B1o%20definitivo/Entra-a-tu-panel_ix2ijj.svg',
 		description:
 			'En tu perfil podrás visualizar un panel con información de tu preferencia',
 	},
 	{
 		title: 'LLeva el Control',
 		image:
-			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668438081/ananda%20marga/home/slider/slider_4_pqio2c.png',
+			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1669748530/dise%C3%B1o%20definitivo/panel_q4mar1.svg',
 		description:
 			'En tu Panel podrás registrar las prácticas  que has logrado cumplir en el día.',
 	},
 	{
 		title: 'Analiza tus resultados',
 		image:
-			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668438081/ananda%20marga/home/slider/slider_5_kp7ljx.png',
+			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1669854058/dise%C3%B1o%20definitivo/analize_jbl9g4.svg',
 		description: 'Recibe un reporte semanal en tu correo y evalúa tu progreso.',
 	},
 ];
@@ -52,8 +52,8 @@ export default function Slider() {
 				margin: '80px 0 0 0',
 			}}
 		>
-			<Typography variant='h1' sx={{ fontSize: 64, fontWeight: 400 }}>
-				¿Como usar <span style={{ color: 'third.main' }}>Nuestra Web</span>?
+			<Typography variant='h2' sx={{ fontSize: 64, fontWeight: 400 }}>
+				¿Como usar Nuestra Web?
 			</Typography>
 			<div style={{ width: 700, padding: 50 }}>
 				<Carousel
@@ -62,13 +62,13 @@ export default function Slider() {
 					NextIcon={<EastIcon />}
 					PrevIcon={<WestIcon />}
 					navButtonsProps={{
-						style: { backgroundColor: '#FC802C' },
+						style: { backgroundColor: '#9C51B7' },
 					}}
 				>
 					{itemList.map(item => (
-						<div
+						<Box
 							key={itemList.indexOf(item)}
-							style={{
+							sx={{
 								display: 'flex',
 								alignItems: 'center',
 								justifyContent: 'center',
@@ -76,17 +76,25 @@ export default function Slider() {
 								gap: 12,
 							}}
 						>
-							<div
-								style={{
-									width: 300,
+							<Box
+								sx={{
+									display: 'flex',
+									flexDirection: 'column',
+									justifyContent: 'center',
+									alingItems: 'center',
+									width: 360,
 									height: 430,
-									padding: 20,
+									gap: '10px',
+									borderRadius: '20px',
+									background:
+										'linear-gradient(180deg, #E0E0E0 0%, #FFFFFF 75%, #FFFFFF 88.02%, #E0E0E0 100%)',
+									boxShadow: '0px 8px 8px rgba(0, 0, 0, 0.2)',
 								}}
 							>
 								<Typography
 									variant='h3'
 									sx={{
-										color: 'secondary.main',
+										color: 'third.main',
 										fontWeight: 400,
 										fontSize: 26,
 										textAlign: 'center',
@@ -114,7 +122,7 @@ export default function Slider() {
 								>
 									{item.description}
 								</Typography>
-							</div>
+							</Box>
 							<Box
 								sx={{
 									width: 125,
@@ -125,7 +133,7 @@ export default function Slider() {
 									right: 40,
 								}}
 							></Box>
-						</div>
+						</Box>
 					))}
 				</Carousel>
 			</div>
