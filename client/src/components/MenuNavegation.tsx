@@ -79,7 +79,7 @@ export default function MenuNavegation() {
 					variant='outlined'
 					onClick={() => navigate('/iniciarSesion')}
 				>
-					inicio sesion
+					inicia sesion
 				</Button>
 			) : (
 				<div>

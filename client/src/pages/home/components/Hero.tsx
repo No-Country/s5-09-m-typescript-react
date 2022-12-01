@@ -1,7 +1,7 @@
-import { Grid, Typography, Box } from '@mui/material';
+import { Grid, Typography, Box, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { GlobalButton } from '../../../components';
-import { publicRoute } from '../../../models/routes';
+import { publicRoute, privateRoute } from '../../../models/routes';
 
 export default function Hero() {
 	const navegation = useNavigate();
@@ -46,10 +46,9 @@ export default function Hero() {
 						color: 'text.secondary',
 					}}
 				>
-					¿Necesitas ayuda con tu práctica de atención plena? aquí te ayudamos a
-					cumplir con tus metas diarias, comienza poco a poca agregando cada día
-					nuevas tareas, ve registrando y evaluando tu progreso en el
-					cumplimiento de los 16 puntos.
+					¿Necesitas ayuda con tu práctica diaria de atención plena? Comienza
+					agregando tareas. Has un seguimiento de tu progreso y observa tu
+					evolución.
 				</Typography>
 				<GlobalButton text='Comienza ahora' action={redirection} />
 			</Grid>
@@ -68,11 +67,12 @@ export default function Hero() {
 					variant='h3'
 					component='h2'
 					textAlign='end'
-					borderBottom='2px solid'
 				>
 					Registra Aquí
 				</Typography>
-				<Box
+				<Button
+					variant='text'
+					onClick={() => navegation(privateRoute.dashboard)}
 					// bgcolor='third'
 					sx={{
 						alignItems: 'center',
@@ -93,7 +93,7 @@ export default function Hero() {
 					<Typography variant='h4' component='span' color='third.main'>
 						Hábitos
 					</Typography>
-				</Box>
+				</Button>
 			</Grid>
 		</Grid>
 	);
