@@ -1,16 +1,28 @@
 
+import * as React from 'react';
 import CheckCircleOutline from "@mui/icons-material/CheckCircleOutline";
-import { Grid, Card, Paper, Typography, IconButton, FormControl, FormLabel, FormHelperText, FormControlLabel, Checkbox, FormGroup } from "@mui/material";
+import { Grid, Card, Typography,  FormControlLabel, Checkbox, FormGroup } from "@mui/material";
+
 
 interface checksContent{
     tittle:string;
     urlImg:string;
 }
+
+
 export default function ProgressChecks({ tittle, urlImg }: checksContent){
+    
+const [checked, setChecked] = React.useState(false);
+
+const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(event.target.checked);
+    console.log({tittle},checked);
+  
+};
     return(
         <Card 
-            sx={{
-                    height:'130px',
+            sx={[
+                {   height:'130px',
                     width:'240px',
                     margin:'20px',
                     border: '1px solid #DCDCDC',
@@ -19,9 +31,12 @@ export default function ProgressChecks({ tittle, urlImg }: checksContent){
                     display:'flex',
                     flexDirection:'column',
                     position:'relative',
-                    alignItems:'flex-start',
-                  
-        }}>
+                    alignItems:'flex-start',   
+                },
+                !checked && {
+                     border: '4px solid #9C51B7',
+                }                   
+            ]}>
             
             <Grid container
                 sx={{
@@ -44,24 +59,32 @@ export default function ProgressChecks({ tittle, urlImg }: checksContent){
                 <Grid item
                         sx={{
                             position: 'absolute',
-                            left: '85%',
-                            top: '5%',
+                            left: '87%',
+                            top: '1%',
                         }}>
                     <FormGroup>
                     <FormControlLabel
-                    control={<Checkbox icon={<CheckCircleOutline/>} checkedIcon={<CheckCircleOutline/>} />}
+                    control={<Checkbox 
+                                onChange={handleChange}
+                                icon={<CheckCircleOutline/>} 
+                                checkedIcon={<CheckCircleOutline/>}
+                                sx={{color:'#9C51B7'}} />}
                     label=''
                     />
                     </FormGroup>
                 </Grid>
          
                 <Typography sx={{
-                                display:'inline-flex',
+                                display:'flex',
                                 fontSize:'24px',
                                 fontWeight:400,
                                 lineHeight:'36px',
-                                textAlign:'center',
                                 margin:'auto 0',
+                                textAlign:'center',
+                                justifyContent:'center',
+                                width:'50px',
+                                height:'fit-content'
+                             
                                 }}>
                     {tittle}
                 </Typography>
