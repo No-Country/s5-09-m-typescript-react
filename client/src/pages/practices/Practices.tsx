@@ -1,4 +1,12 @@
-import { Grid, Paper, Typography, AppBar, Tabs, Button, Modal } from '@mui/material';
+import {
+	Grid,
+	Paper,
+	Typography,
+	AppBar,
+	Tabs,
+	Button,
+	Modal,
+} from '@mui/material';
 import { useState } from 'react';
 import HabitsModal from '../../components/HabitsModal';
 import PracticesCard from './components/PracticesCard';
@@ -23,47 +31,46 @@ const habitsList = [
 ];
 
 export default function Practices() {
-
 	return (
 		<Grid
 			container
 			spacing={0}
 			sx={{
-                maxWidth:'1442px',
+				maxWidth: '1442px',
 				margin: '40px auto',
 			}}
-		> 
-		
+		>
 			<Grid item lg={4}>
-               
 				<Paper
 					sx={{
 						top: '0',
-                        margin:'10px ',
+						margin: '10px ',
 						width: '400px',
 						height: '600px',
-						backgroundColor: '#FFFFFF',
+						backgroundColor: 'primary.main',
 						borderRadius: '5px',
-						border: '1px solid #B2BCCA',
+						border: '1px solid',
+						borderColor: 'third.main',
 						padding: '20px',
-						position:'sticky',
-						overflowY: 'scroll'
+						position: 'sticky',
 					}}
 				>
-					
 					{habitsList.map(i => (
 						<Typography
-							variant='h6'
-							color='text.secondary'
+							variant='body1'
+							color='third.main'
 							key={habitsList.indexOf(i)}
 							sx={{
 								fontWeight: '400',
 								lineHeight: '36px',
 							}}
 						>
-							
 							Hábito {habitsList.indexOf(i) + 1}:{' '}
-							<Typography color={'text.primary'} component='span' variant='h6'>
+							<Typography
+								color={'text.secondary'}
+								component='span'
+								variant='body1'
+							>
 								{i.habit}
 							</Typography>
 						</Typography>
@@ -102,6 +109,5 @@ export default function Practices() {
 				</Grid>
 			</Grid>
 		</Grid>
-      
 	);
 }

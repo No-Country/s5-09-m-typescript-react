@@ -4,21 +4,21 @@ export const globalTheme = createTheme({
 	palette: {
 		type: 'light',
 		primary: {
-			main: '#E7E8EA',
+			main: '#FFFFFF',
 		},
 		secondary: {
-			main: '#FC802C',
-			light: '#FEA060',
+			main: '#9C51B7',
+			light: '#B691C3',
 		},
 		third: {
-			main: '#4E7D64',
+			main: '#279F87',
 		},
 		complementary: {
 			main: '#112734',
 		},
 		text: {
 			primary: '#112734',
-			secondary: '#2F6117',
+			secondary: '#41525D',
 		},
 	},
 });

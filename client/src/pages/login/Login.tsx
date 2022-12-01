@@ -1,4 +1,4 @@
-import { LayoutForms } from '../../components';
+import { ForgotPasswordModal, LayoutForms } from '../../components';
 import InputLogin from './components/InputLogin';
 export default function Login() {
 	return (
@@ -7,6 +7,7 @@ export default function Login() {
 			text='Inicia Sesion y disfruta de todo lo que tenemos para ti.'
 		>
 			<InputLogin />
+			{/* <ForgotPasswordModal close={() => console.log()} /> */}
 		</LayoutForms>
 	);
 }
