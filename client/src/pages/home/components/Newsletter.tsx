@@ -1,5 +1,4 @@
 import { Grid, Typography, Button, TextField, Paper } from '@mui/material';
-import image from '../../../assets/Rectangle4.png';
 import { GlobalButton } from '../../../components';
 
 export default function BoletinInformativo() {
@@ -8,7 +7,7 @@ export default function BoletinInformativo() {
 	};
 	return (
 		<Grid container spacing={1} padding='150px 0 150px 0'>
-			<Grid item xs={6}>
+			<Grid item xs={5}>
 				<Grid
 					item
 					sx={{
@@ -21,23 +20,21 @@ export default function BoletinInformativo() {
 					}}
 				>
 					<div
-						className='prueba'
 						style={{
 							position: 'relative',
 						}}
 					>
 						<img
-							src={image}
+							src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669745203/dise%C3%B1o%20definitivo/undraw_Newsletter_re_wrob_zbwke0.png'
 							alt='Chica Yoga'
 							style={{
 								position: 'relative',
-								width: '500px',
-								height: '250px',
+								height: '300px',
 								borderRadius: '16px',
 								zIndex: '5',
 							}}
 						/>
-						<Paper
+						{/* <Paper
 							sx={{
 								position: 'absolute',
 								width: '100px',
@@ -48,33 +45,29 @@ export default function BoletinInformativo() {
 								left: -40,
 								bottom: -30,
 							}}
-						></Paper>
+						></Paper> */}
 					</div>
 				</Grid>
 			</Grid>
-			<Grid item xs={6}>
-				<Grid
-					container
-					sx={{
-						display: 'flex',
-						justifyContent: 'start',
-						width: '100%',
-						paddingLeft: '30px',
-					}}
-				>
+			<Grid
+				item
+				xs={7}
+				sx={{
+					display: 'flex',
+					justifyContent: 'start',
+					alignItems: 'center',
+				}}
+			>
+				<Grid container>
 					<Grid item xs={10}>
-						<Grid item xs={12} margin='0 0 0 0'>
+						<Grid item xs={12}>
 							<Typography
 								variant='h2'
-								color='third.main'
+								color='text.primary'
 								textAlign='left'
 								marginBottom='10px'
 								fontWeight={600}
 								fontSize='48px'
-								fontFamily='crimson'
-								lineHeight='100%'
-								fontStyle='semibold'
-								letterSpacing='1px'
 							>
 								Boletín Informativo
 							</Typography>
@@ -83,7 +76,7 @@ export default function BoletinInformativo() {
 							component='p'
 							fontSize={20}
 							color='text'
-							borderLeft='2px solid #FC802C'
+							borderLeft='3px solid #279F87'
 							paddingLeft='10px'
 							marginLeft='7px'
 							marginBottom='30px'

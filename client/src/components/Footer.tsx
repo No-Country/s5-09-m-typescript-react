@@ -12,7 +12,7 @@ export default function Footer() {
 			}
 			justifyContent='center'
 			alignItems='center'
-			sx={{ padding: '40px 0', background: '#4E7D64' }}
+			sx={{ padding: '40px 0', backgroundColor: 'text.secondary' }}
 		>
 			<Stack direction='row' spacing={10}>
 				<Typography
@@ -22,7 +22,7 @@ export default function Footer() {
 						fontWeight: 600,
 						fontSize: '22px',
 						lineHeight: '30px',
-						color: '#FFFFFF',
+						color: 'primary.main',
 					}}
 				>
 					Contacto
@@ -34,7 +34,7 @@ export default function Footer() {
 						fontWeight: 600,
 						fontSize: '22px',
 						lineHeight: '30px',
-						color: '#FFFFFF',
+						color: 'primary.main',
 					}}
 				>
 					Mis prácticas
@@ -47,7 +47,7 @@ export default function Footer() {
 							fontWeight: 600,
 							fontSize: '22px',
 							lineHeight: '30px',
-							color: '#FFFFFF',
+							color: 'primary.main',
 						}}
 					>
 						Terminos Legales
@@ -58,7 +58,7 @@ export default function Footer() {
 							fontWeight: 500,
 							fontSize: '18px',
 							lineHeight: '25px',
-							color: '#FFFFFF',
+							color: 'primary.main',
 						}}
 					>
 						Politica de privacidad
@@ -69,7 +69,7 @@ export default function Footer() {
 							fontWeight: 500,
 							fontSize: '18px',
 							lineHeight: '25px',
-							color: '#FFFFFF',
+							color: 'primary.main',
 						}}
 					>
 						Politica de cookis
@@ -80,7 +80,7 @@ export default function Footer() {
 							fontWeight: 500,
 							fontSize: '18px',
 							lineHeight: '25px',
-							color: '#FFFFFF',
+							color: 'primary.main',
 						}}
 					>
 						Aviso legal
@@ -92,7 +92,7 @@ export default function Footer() {
 					fontWeight: 500,
 					fontSize: '17px',
 					lineHeight: '26px',
-					color: '#FFFFFF',
+					color: 'primary.main',
 				}}
 			>
 				Copyright (insertar icono) 2022 . All Rights reserved By Nocountry (no

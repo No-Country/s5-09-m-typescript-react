@@ -5,16 +5,16 @@ interface GlobalButton {
 	action?: () => void;
 	width?: string;
 	height?: string;
-  sx?: SxProps<Theme>,
-  type?: "button" | "submit" | "reset" | undefined;
+	sx?: SxProps<Theme>;
+	type?: 'button' | 'submit' | 'reset' | undefined;
 }
 export default function GlobalButton({
 	text,
 	action,
 	width = '250px',
 	height = '50px',
-  sx,
-  type,
+	sx,
+	type,
 }: GlobalButton) {
 	return (
 		<Button
@@ -22,11 +22,12 @@ export default function GlobalButton({
 			sx={{
 				width: width,
 				height: height,
-        ...sx,
+				boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.4)',
+				...sx,
 			}}
 			color='secondary'
 			onClick={action}
-      type={type}
+			type={type}
 		>
 			{text}
 		</Button>

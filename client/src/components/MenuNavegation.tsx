@@ -38,7 +38,7 @@ export default function MenuNavegation() {
 		>
 			<Button id='basic-button' color='secondary' onClick={() => navigate('/')}>
 				<img
-					src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668527673/ananda%20marga/mindfulness_mmykqk.svg'
+					src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669771559/dise%C3%B1o%20definitivo/LogoSinNombre_vfinvl.svg'
 					alt='logo'
 					style={{ margin: '0 20px 0 0' }}
 				/>
@@ -46,21 +46,27 @@ export default function MenuNavegation() {
 			</Button>
 			<Button
 				id='basic-button'
-				color='third'
+				sx={{
+					color: 'text.secondary',
+				}}
 				onClick={() => navigate('/misPracticas')}
 			>
 				Mis practicas
 			</Button>
 			<Button
 				id='basic-button'
-				color='third'
+				sx={{
+					color: 'text.secondary',
+				}}
 				onClick={() => navigate('/contacto')}
 			>
 				Contacto
 			</Button>
 			<Button
 				id='basic-button'
-				color='third'
+				sx={{
+					color: 'text.secondary',
+				}}
 				onClick={() => navigate('/nosotros')}
 			>
 				Nosotros
@@ -69,11 +75,11 @@ export default function MenuNavegation() {
 			{!user.id ? (
 				<Button
 					id='basic-button'
-					color='third'
+					color='secondary'
 					variant='outlined'
 					onClick={() => navigate('/iniciarSesion')}
 				>
-					inicio sesion
+					inicia sesion
 				</Button>
 			) : (
 				<div>
@@ -93,7 +99,7 @@ export default function MenuNavegation() {
 								height: '50px',
 								borderRadius: '50%',
 								border: '2px solid',
-								color: 'red',
+								color: '#9C51B7',
 							}}
 						/>
 					</Button>
