@@ -14,24 +14,64 @@ import {
 import Grid from '@mui/material/Grid';
 import React, { useEffect, useState } from 'react';
 import GlobalButton from './GlobalButton';
+import { getHabits } from '../service/habits/habits';
 
-interface HabitsModal {
-	close: () => void;
+interface Habits {
+	data: Array<string>;
+}
+interface SetHabits {
+	data: {
+		name: string;
+	};
 }
 
-export default function HabitsModal({ close }: HabitsModal) {
+export default function HabitsModal() {
+	const [changeHabits, setChangeHabits] = useState<string[]>([]);
 	const [habits, setHabits] = useState<string[]>([]);
+	const [healthHabits, setHealthHabits] = useState<string[]>([]);
+	const [alimentationHabits, setAlimentationHabits] = useState<string[]>([]);
+	const [meditationHabits, setMeditationHabits] = useState<string[]>([]);
+	const [physicalAct, setPhysicalAct] = useState<string[]>([]);
+	const handleHabits = async () => {
+		try {
+			const res = (await getHabits()) as Habits;
+			return setHabits(res.data);
+		} catch (error) {
+			return error;
+		}
+	};
 
 	const handleHabitChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = event.target;
-		setHabits({
-			...habits,
+		setChangeHabits({
+			...changeHabits,
 			[name]: value,
 		});
 	};
 	useEffect(() => {
-		console.log({ habits });
-	}, [habits]);
+		console.log(habits);
+		handleHabits();
+		setHealthHabits(
+			habits.filter((habit: any) => {
+				return habit.category.name === 'Salud';
+			}),
+		);
+		setAlimentationHabits(
+			habits.filter((habit: any) => {
+				return habit.category.name === 'Alimentación';
+			}),
+		);
+		setMeditationHabits(
+			habits.filter((habit: any) => {
+				return habit.category.name === 'Meditación';
+			}),
+		);
+		setPhysicalAct(
+			habits.filter((habit: any) => {
+				return habit.category.name === 'Actividad Fisica';
+			}),
+		);
+	}, []);
 
 	return (
 		<Grid
@@ -44,7 +84,7 @@ export default function HabitsModal({ close }: HabitsModal) {
 				zIndex: 999,
 				display: 'flex',
 				justifyContent: 'center',
-				width: '100%',
+
 				height: '100%',
 			}}
 		>
@@ -105,7 +145,7 @@ export default function HabitsModal({ close }: HabitsModal) {
 							}}
 						>
 							<Typography variant='body1' color='initial'>
-								Espiritual
+								Meditación
 							</Typography>
 						</AccordionSummary>
 						<AccordionDetails
@@ -116,26 +156,15 @@ export default function HabitsModal({ close }: HabitsModal) {
 							}}
 						>
 							<FormGroup>
-								<FormControlLabel
-									control={<Checkbox onChange={handleHabitChange} />}
-									label='Asanas diarias'
-									name='Asanas diarias'
-								/>
-								<FormControlLabel
-									control={<Checkbox onChange={handleHabitChange} />}
-									label='Lectura espiritual'
-									name='Lectura espiritual'
-								/>
-								<FormControlLabel
-									control={<Checkbox onChange={handleHabitChange} />}
-									label='Realizar servicio'
-									name='Realizar servicio'
-								/>
-								<FormControlLabel
-									control={<Checkbox onChange={handleHabitChange} />}
-									label='Meditación dos veces al día'
-									name='Meditación dos veces al día'
-								/>
+								{meditationHabits.map((meditationHabit: any) => {
+									return (
+										<FormControlLabel
+											control={<Checkbox onChange={handleHabitChange} />}
+											label={`${meditationHabit.name}`}
+											name={meditationHabit.name}
+										/>
+									);
+								})}
 							</FormGroup>
 						</AccordionDetails>
 					</Accordion>
@@ -148,7 +177,7 @@ export default function HabitsModal({ close }: HabitsModal) {
 							}}
 						>
 							<Typography variant='body1' color='initial'>
-								Salud Física
+								Salud
 							</Typography>
 						</AccordionSummary>
 						<AccordionDetails
@@ -159,17 +188,52 @@ export default function HabitsModal({ close }: HabitsModal) {
 							}}
 						>
 							<FormGroup>
-								<FormControlLabel
-									control={<Checkbox />}
-									label='Ejercicio diario'
-								/>
-								<FormControlLabel
-									control={<Checkbox />}
-									label='Higiene corporal'
-								/>
+								{healthHabits.map((healthHabit: any) => {
+									return (
+										<FormControlLabel
+											control={<Checkbox onChange={handleHabitChange} />}
+											label={healthHabit.name}
+											name={healthHabit.name}
+										/>
+									);
+								})}
 							</FormGroup>
 						</AccordionDetails>
 					</Accordion>
+
+					<Accordion style={{ border: 'black', margin: '20px' }}>
+						<AccordionSummary
+							expandIcon={<ExpandMore />}
+							sx={{
+								border: '1px solid rgba(17, 39, 52, 0.7)',
+								borderRadius: '4px',
+							}}
+						>
+							<Typography variant='body1' color='initial'>
+								Actividad Fisica
+							</Typography>
+						</AccordionSummary>
+						<AccordionDetails
+							sx={{
+								boxShadow:
+									'0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2)',
+								borderRadius: '4px',
+							}}
+						>
+							<FormGroup>
+								{physicalAct.map((act: any) => {
+									return (
+										<FormControlLabel
+											control={<Checkbox onChange={handleHabitChange} />}
+											label={act.name}
+											name={act.name}
+										/>
+									);
+								})}
+							</FormGroup>
+						</AccordionDetails>
+					</Accordion>
+
 					<Accordion style={{ border: 'black', margin: '20px' }}>
 						<AccordionSummary
 							expandIcon={<ExpandMore />}
@@ -190,15 +254,15 @@ export default function HabitsModal({ close }: HabitsModal) {
 							}}
 						>
 							<FormGroup>
-								<FormControlLabel control={<Checkbox />} label='Ayunar' />
-								<FormControlLabel
-									control={<Checkbox />}
-									label='Reducir consumo de carne'
-								/>
-								<FormControlLabel
-									control={<Checkbox />}
-									label='Tomar dos litros de agua al día'
-								/>
+								{alimentationHabits.map((alimentationHabit: any) => {
+									return (
+										<FormControlLabel
+											control={<Checkbox onChange={handleHabitChange} />}
+											label={alimentationHabit.name}
+											name={alimentationHabit.name}
+										/>
+									);
+								})}
 							</FormGroup>
 						</AccordionDetails>
 					</Accordion>

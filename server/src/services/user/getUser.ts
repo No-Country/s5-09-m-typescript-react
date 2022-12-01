@@ -2,7 +2,9 @@ import User from '../../models/User'
 
 export const getUserService = async (id: string) => {
     try {
-        const userRetrieved = await User.findById({ _id: id })
+        const userRetrieved = await User.findById({ _id: id }).populate(
+            'practices.practice'
+        )
 
         if (userRetrieved) {
             const { email, _id, fullname, img, practices, email_verified } =
@@ -12,6 +14,7 @@ export const getUserService = async (id: string) => {
                 status: 200,
                 ok: true,
                 user: { email, _id, fullname, img, practices, email_verified },
+                userRetrieved,
             }
             return response
         }

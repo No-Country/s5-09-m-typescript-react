@@ -24,7 +24,6 @@ const userSchema = new Schema<IUser>({
         {
             practice: { type: Types.ObjectId, ref: 'Habit' },
             accomplished: { type: Boolean, default: false },
-            default: [],
         },
     ],
     notifications: [

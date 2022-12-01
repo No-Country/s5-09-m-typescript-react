@@ -1,0 +1,26 @@
+[
+    {
+        "_id": "637cdb78b0d39b6840ae9973",
+        "name": "Espiritualidad",
+        "img": "https://st3.depositphotos.com/1561359/12975/i/600/depositphotos_129758564-stock-photo-3d-green-letter-c.jpg",
+        "description": "Meditacion, lecturas espirituales, hábitos intuitivos"
+    },
+    {
+        "_id": "637cdbb5b0d39b6840ae9975",
+        "name": "Salud",
+        "img": "https://st3.depositphotos.com/1561359/12975/i/600/depositphotos_129758564-stock-photo-3d-green-letter-c.jpg",
+        "description": "Ejercicio físico, Evitar intoxicantes, dormir adecuadamente"
+    },
+    {
+        "_id": "637cdbcab0d39b6840ae9977",
+        "name": "Alimentación",
+        "img": "https://st3.depositphotos.com/1561359/12975/i/600/depositphotos_129758564-stock-photo-3d-green-letter-c.jpg",
+        "description": "Consumo de vegetales, tomar cantidad adecuada de agua, ayuno"
+    },
+    {
+        "_id": "637cdbd5b0d39b6840ae9979",
+        "name": "Limpieza externa e interna",
+        "img": "https://st3.depositphotos.com/1561359/12975/i/600/depositphotos_129758564-stock-photo-3d-green-letter-c.jpg",
+        "description": "Bañarse diaramente, limpieza del ambiente"
+    }
+]
