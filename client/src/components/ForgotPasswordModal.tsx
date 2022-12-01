@@ -1,23 +1,23 @@
 import {
-	Button,
 	Grid,
 	Paper,
 	Typography,
 	IconButton,
 	TextField,
+	Box,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import GlobalButton from './GlobalButton';
-
-interface ForgotPasswordModal {
-	close: () => void;
-}
+import { useAppDispatch } from '../redux/hooks';
+import { changeForgotPasswordModal } from '../redux/slices/setting';
 
 type FormData = {
 	email: string;
 };
-export default function ForgotPasswordModal({ close }: ForgotPasswordModal) {
+export default function ForgotPasswordModal() {
+	const dispatch = useAppDispatch();
 	const {
 		register,
 		handleSubmit,
@@ -54,26 +54,31 @@ export default function ForgotPasswordModal({ close }: ForgotPasswordModal) {
 					border: 'solid gray',
 				}}
 			>
-				<img
-					src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669209748/ananda%20marga/home/alerts/FeaturedIconMail_fgcdsc.png'
-					alt='alert simbol'
-					style={{
-						display: 'inline-block',
-						position: 'relative',
-						left: '150px',
-					}}
-				/>
-
-				<IconButton
-					aria-label='close'
-					onClick={() => close()}
+				<Box
 					sx={{
-						float: 'right',
-						display: 'inline-block',
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+						position: 'relative',
 					}}
 				>
-					<CloseIcon />
-				</IconButton>
+					<MailOutlineIcon
+						sx={{
+							color: 'secondary.main',
+						}}
+					/>
+
+					<IconButton
+						sx={{
+							position: 'absolute',
+							right: '0',
+						}}
+						aria-label='close'
+						onClick={() => dispatch(changeForgotPasswordModal())}
+					>
+						<CloseIcon />
+					</IconButton>
+				</Box>
 				<Typography
 					variant='h4'
 					color='text.primary'
