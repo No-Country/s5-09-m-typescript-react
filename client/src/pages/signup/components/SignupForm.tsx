@@ -1,19 +1,22 @@
 import {
 	Avatar,
+	Box,
 	Button,
+	createStyles,
 	IconButton,
 	InputAdornment,
 	Stack,
 	TextField,
 	Typography,
 } from '@mui/material';
+import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { onRegister } from '../../../service/register';
 import { Link, useNavigate } from 'react-router-dom';
-import { BoxDragAndDrop, DragAndDrop } from '../../../components/imgDrag';
+import { DragAndDrop } from '../../../components/imgDrag';
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../../redux/hooks';
 
@@ -22,6 +25,16 @@ type FormInput = {
 	email: string;
 	password: string;
 };
+
+const styles = () =>
+	createStyles({
+		h: {
+			'&:hover': {
+				background: '#2F6117',
+				color: '#fff',
+			},
+		},
+	});
 
 export default function SignupForm() {
 	const [showPassword, setshowPassword] = useState(false);
@@ -64,19 +77,57 @@ export default function SignupForm() {
 			>
 				Crea tu Cuenta
 			</Typography>
-			<Stack justifyContent={'center'} alignItems={'center'}>
-				<Avatar
-					alt='avatar provisional'
-					src={url}
-					sx={{
-						width: 80,
-						height: 80,
-						objectFit: 'contain',
-					}}
-					style={{
-						border: '2px solid #2F6117a',
-					}}
-				/>
+			<Stack
+				justifyContent={'center'}
+				alignItems={'center'}
+				sx={{
+					position: 'relative',
+				}}
+			>
+				<Box>
+					{url.length > 0 && (
+						<IconButton
+							onClick={() => setUrl('')}
+							aria-label='update img'
+							sx={{
+								background: '#2F8919',
+
+								color: '#fff',
+								position: 'absolute',
+								zIndex: 2,
+								top: '53%',
+								left: '53%',
+
+								transition:
+									'color .2s ease, background .2s linear, transform .1s linear',
+								'&:hover': {
+									background: '#2F6117',
+									color: '#fff',
+									transform: 'scale(1.2)',
+									transition:
+										'color .2s ease, background .2s linear, transform .1s linear',
+								},
+								// transform: 'translate(-50%, -50%);',
+								// width: 80,
+								// height: 80,
+							}}
+						>
+							<AddOutlinedIcon />
+						</IconButton>
+					)}
+					<Avatar
+						alt='avatar provisional'
+						src={url}
+						sx={{
+							width: 80,
+							height: 80,
+							objectFit: 'contain',
+						}}
+						style={{
+							border: '2px solid #2F6117',
+						}}
+					/>
+				</Box>
 			</Stack>
 
 			<TextField
@@ -126,7 +177,7 @@ export default function SignupForm() {
 					),
 				}}
 			/>
-			<DragAndDrop url={setUrl} />
+			{url.length < 1 && <DragAndDrop url={setUrl} />}
 			<Button
 				onClick={handleSubmit(onSubmit)}
 				variant='contained'
