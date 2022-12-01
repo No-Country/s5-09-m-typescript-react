@@ -11,11 +11,13 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import { onRegister } from '../../../service/register';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { BoxDragAndDrop, DragAndDrop } from '../../../components/imgDrag';
+import { HabitsModal } from '../../../components';
 import { useDispatch } from 'react-redux';
+import { setUser } from '../../../redux/slices/user';
 import { useAppSelector } from '../../../redux/hooks';
+import { changeShowHabitModal } from '../../../redux/slices/setting';
 
 type FormInput = {
 	fullname: string;
@@ -26,9 +28,8 @@ type FormInput = {
 export default function SignupForm() {
 	const [showPassword, setshowPassword] = useState(false);
 	const [url, setUrl] = useState('');
-	const dispatch = useDispatch();
-	const { isLoading } = useAppSelector(store => store.setting);
-	const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const showModal = useAppSelector((state) => state.setting.showHabitModal)
 
 	const {
 		register,
@@ -37,12 +38,19 @@ export default function SignupForm() {
 	} = useForm<FormInput>();
 
 	const onSubmit = (data: FormInput) => {
-		const modifiedData = { ...data, img: url };
-		onRegister(modifiedData, dispatch);
-		navigate('/iniciarSesion');
+
+    dispatch(changeShowHabitModal())
+
+    const modifiedData = { ...data, img: url, id: undefined};
+
+		dispatch(setUser(modifiedData))
 	};
 
 	return (
+    <>
+    {
+      showModal && <HabitsModal closeModal={() => dispatch(changeShowHabitModal())}/>
+    }
 		<Stack
 			component='form'
 			direction={'column'}
@@ -166,5 +174,6 @@ export default function SignupForm() {
 				</Link>
 			</Typography>
 		</Stack>
+    </>
 	);
 }
