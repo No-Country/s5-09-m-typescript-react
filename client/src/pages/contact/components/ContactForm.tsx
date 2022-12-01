@@ -1,3 +1,5 @@
+
+
 import { Modal, Grid, TextField, Typography } from '@mui/material';
 import * as React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
@@ -17,6 +19,7 @@ export default function ContactForm() {
 	const [isOpenModal, setIsOpenModal] = React.useState(false);
 	const closeModal = () =>{
 		setIsOpenModal(false);
+		
 	};
 
 	const {
@@ -28,7 +31,7 @@ export default function ContactForm() {
 	//Para probar si funcionan los formularios
 	const formSubmitHandler: SubmitHandler<FormData> = (data: FormData) => {
 		console.log('form data is', data);
-		sendContact(data.fullName, data.text, data.email);
+		sendContact(data.fullName, data.email, data.text);
 		setIsOpenModal(true);
 	};
 
@@ -55,6 +58,7 @@ export default function ContactForm() {
 						color='text'
 						fullWidth
 						autoComplete='off'
+						
 					/>
 				</Grid>
 				<Grid item xs={12}>
@@ -104,11 +108,14 @@ export default function ContactForm() {
 						
 			{isOpenModal && <AlertModal title='Mensaje enviado' 
 										text='Muchas gracias por contactarnos, te contestaremos a la brevedad.'
-										urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669209748/ananda%20marga/home/alerts/FeaturedIconMail_fgcdsc.png'
+										urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669814885/ananda%20marga/home/alerts/FeaturedIconMail_i5fwva.png'
 										close={closeModal}	/>
 									
 			}
+
+			
 		</form>
 		
 	);
 }
+
