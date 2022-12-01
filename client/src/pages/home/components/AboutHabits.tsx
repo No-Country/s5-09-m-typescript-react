@@ -1,31 +1,32 @@
-import { Box, Typography, CardContent, Card } from '@mui/material';
+import { Box, Typography, CardContent, Card, Link } from '@mui/material';
+import { GlobalButton } from '../../../components';
 
 const itemList = [
 	{
 		about: 'Uso del Agua',
 		image:
-			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668435967/ananda%20marga/home/water_usrv38.jpg',
+			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1669744904/dise%C3%B1o%20definitivo/agua_t7u982.svg',
 		url: 'link',
 	},
 	{
 		about: 'La Comida',
 		image:
-			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668435966/ananda%20marga/home/food_lifp0h.jpg',
+			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1669750013/dise%C3%B1o%20definitivo/alimentos_yqhbto.jpg',
 		url: 'link',
 	},
 	{
 		about: 'Lectura',
 		image:
-			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668435966/ananda%20marga/home/reading_o5pcih.jpg',
+			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1669750157/dise%C3%B1o%20definitivo/8609147_5836_g4nuni.jpg',
 		url: 'link',
 	},
 ];
 
 export default function AboutHabits() {
 	return (
-		<section
-			style={{
-				backgroundColor: '#4E7D64',
+		<Box
+			sx={{
+				backgroundColor: 'primary.dark',
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'center',
@@ -53,14 +54,17 @@ export default function AboutHabits() {
 							<CardContent>
 								<div
 									style={{
-										width: '100%',
+										margin: 'auto',
+										height: '150px',
+										width: '150px',
 									}}
 								>
 									<img
 										src={item.image}
 										style={{
-											width: '100%',
-											objectFit: 'cover',
+											width: '150px',
+											height: '150px',
+											objectFit: 'contain',
 										}}
 									/>
 								</div>
@@ -71,18 +75,17 @@ export default function AboutHabits() {
 								>
 									{item.about}
 								</Typography>
-								<a
+								<Link
 									href={item.url}
-									color='secondary'
-									style={{
+									sx={{
 										fontSize: 16,
 										fontWeight: 400,
 										margin: '0 0 0 60%',
-										color: '#FC802C',
+										color: 'third.main',
 									}}
 								>
 									Ver más
-								</a>
+								</Link>
 							</CardContent>
 						</Card>
 					))}
@@ -90,21 +93,22 @@ export default function AboutHabits() {
 				<div className='textHabits' style={{ padding: '28px 30px' }}>
 					<Typography
 						variant='h2'
-						color='primary.main'
+						color='text.primary'
 						sx={{ fontSize: 40, fontWeight: 600 }}
 					>
 						Conoce los 16 Hábitos
 					</Typography>
 					<Typography
 						variant='body1'
-						color='primary.main'
+						color='text.secondary'
 						sx={{ margin: '20px auto', fontSize: 24, fontWeight: 400 }}
 					>
 						Siéntete mejor en todos los aspectos de tu vida incorporando nuevas
 						rutinas.
 					</Typography>
+					<GlobalButton text='Conoce Más' action={() => console.log('hola')} />
 				</div>
 			</Box>
-		</section>
+		</Box>
 	);
 }

@@ -52,7 +52,7 @@ export default function Slider() {
 				margin: '80px 0 0 0',
 			}}
 		>
-			<Typography variant='h1' sx={{ fontSize: 64, fontWeight: 400 }}>
+			<Typography variant='h2' sx={{ fontSize: 64, fontWeight: 400 }}>
 				¿Como usar Nuestra Web?
 			</Typography>
 			<div style={{ width: 700, padding: 50 }}>
