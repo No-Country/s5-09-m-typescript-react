@@ -8,6 +8,7 @@ import {
 import AboutHabits from './components/AboutHabits';
 //import ProfilePage from '../profilePage/ProfilePage';
 //import ProfileWithUserInfo from '../profilePage/Profile';
+import SimpleForm from '../mailchimp/SimpleForm';
 
 export default function Home() {
 	return (
@@ -18,6 +19,7 @@ export default function Home() {
 			<AboutHabits />
 			<Testimonials />
 			<Newsletter />
+			<SimpleForm />
 		</>
 	);
 }
