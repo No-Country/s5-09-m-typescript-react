@@ -5,7 +5,7 @@ import { publicRoute } from '../../../models/routes';
 
 export default function Hero() {
 	const navegation = useNavigate();
-	const navegacion = () => {
+	const redirection = () => {
 		navegation(publicRoute.login);
 	};
 	return (
@@ -51,7 +51,7 @@ export default function Hero() {
 					nuevas tareas, ve registrando y evaluando tu progreso en el
 					cumplimiento de los 16 puntos.
 				</Typography>
-				<GlobalButton text='Comienza ahora' action={navegacion} />
+				<GlobalButton text='Comienza ahora' action={redirection} />
 			</Grid>
 
 			<Grid
