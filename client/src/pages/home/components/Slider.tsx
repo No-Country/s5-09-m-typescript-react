@@ -29,14 +29,14 @@ const itemList = [
 	{
 		title: 'LLeva el Control',
 		image:
-			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668438081/ananda%20marga/home/slider/slider_4_pqio2c.png',
+			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1669748530/dise%C3%B1o%20definitivo/panel_q4mar1.svg',
 		description:
 			'En tu Panel podrás registrar las prácticas  que has logrado cumplir en el día.',
 	},
 	{
 		title: 'Analiza tus resultados',
 		image:
-			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1668438081/ananda%20marga/home/slider/slider_5_kp7ljx.png',
+			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1669854058/dise%C3%B1o%20definitivo/analize_jbl9g4.svg',
 		description: 'Recibe un reporte semanal en tu correo y evalúa tu progreso.',
 	},
 ];
