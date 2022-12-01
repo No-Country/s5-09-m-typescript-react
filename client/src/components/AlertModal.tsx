@@ -12,7 +12,7 @@ export default function AlertModal({ close, urlImg, title, text }: AlertModal) {
 	return (
 		<Grid
 			sx={{
-				position: 'absolute',
+				position: 'fixed',
 				top: 0,
 				left: 0,
 				zIndex: 999,
@@ -20,11 +20,12 @@ export default function AlertModal({ close, urlImg, title, text }: AlertModal) {
 				justifyContent: 'center',
 				width: '100%',
 				height: '100%',
+				backgroundColor: 'rgba(0,0,0,0.25)'
 			}}
 		>
 			<Paper
 				sx={{
-					marginTop: '150px',
+					marginTop: '130px',
 					width: '400px',
 					height: '200px',
 					display: 'block',

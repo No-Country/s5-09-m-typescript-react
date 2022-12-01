@@ -26,7 +26,7 @@ export default function ContactForm() {
 	//Para probar si funcionan los formularios
 	const formSubmitHandler: SubmitHandler<FormData> = (data: FormData) => {
 		console.log('form data is', data);
-		sendContact(data.fullName, data.text, data.email);
+		sendContact(data.fullName, data.email, data.text);
 		setIsOpenModal(true);
 	};
 
