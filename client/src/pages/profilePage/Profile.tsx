@@ -41,17 +41,16 @@ export default function Profile() {
 			{!user.emailVerified && <EmailVerification />}
 			<Grid
 				container
-				spacing={2}
+				spacing={8}
 				sx={{
 					minHeight: 'calc(100vh - 85px)',
 				}}
 			>
-				<Grid item xs={3}>
+				<Grid item xs={2}>
 					<PerfilSidebar setModals={setModals} />
 				</Grid>
 
-				<Grid item xs={9}>
-					<TopBarProfile setModals={setModals} />
+				<Grid item xs={9} sx={{ marginTop: '10px' }}>
 					{renderModal(modal)}
 				</Grid>
 			</Grid>

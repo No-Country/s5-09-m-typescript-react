@@ -8,7 +8,12 @@ export default function DeletableChips() {
 
 	return (
 		<Stack direction='row' spacing={2}>
-			<Chip label='Deletable' variant='outlined' onDelete={handleDelete} />
+			<Chip
+				label='Meditar'
+				component='h1'
+				variant='outlined'
+				onDelete={handleDelete}
+			/>
 		</Stack>
 	);
 }

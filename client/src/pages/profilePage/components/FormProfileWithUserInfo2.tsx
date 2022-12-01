@@ -17,27 +17,28 @@ export default function FormProfileWithUserInfo2() {
 		setIsOpenModal(true);
 	};
 	return (
-		<Grid container height='30%'>
-			<Grid item xs={3}>
+		<Grid container height='33%' sx={{ marginTop: '75px' }}>
+			<Grid item xs={2}>
 				<Typography fontSize='1.5rem'>
 					<CoronavirusOutlinedIcon sx={{ color: 'secondary.main' }} />
 					Hábitos
 				</Typography>
-				;
 			</Grid>
-			<Grid item xs={9}>
+			<Grid item xs={9} sx={{ marginBottom: '25px' }}>
 				<Typography fontSize='1.5rem'>
 					Aquí puedes ver y editar los hábitos que estás trabajando
 				</Typography>
-				;
 			</Grid>
 			<Grid
 				item
-				xs={12}
+				xs={6}
 				sx={{
 					display: 'flex',
-					justifyContent: 'center',
+					justifyContent: 'space-between',
 					alingItems: 'center',
+					flexWrap: 'wrap',
+					marginLeft: '225px',
+					alignContent: 'stretch',
 				}}
 			>
 				<DeletableChips />
@@ -48,11 +49,12 @@ export default function FormProfileWithUserInfo2() {
 			</Grid>
 			<Grid
 				item
-				xs={11}
+				xs={8}
 				sx={{
 					display: 'flex',
 					justifyContent: 'end',
 					alingItems: 'center',
+					marginTop: '25px',
 				}}
 			>
 				<GlobalButton text='Cambia tus habitos' action={navegacion} />
