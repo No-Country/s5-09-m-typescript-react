@@ -56,7 +56,7 @@ export default function SignupForm() {
 				variant='h3'
 				sx={{
 					alignSelf: 'center',
-					color: 'text.secondary',
+					color: 'third.main',
 					fontWeight: 700,
 					fontSize: '32px',
 					lineHeight: '38px',

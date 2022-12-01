@@ -72,7 +72,12 @@ export default function InputLogin() {
 		<form onSubmit={handleSubmit(data => onLogin(data, dispatch))}>
 			<Grid container spacing={5} p={6}>
 				<Grid item xs={12}>
-					<Typography variant='h4' component='h4' color='text.secondary'>
+					<Typography
+						variant='h4'
+						component='h4'
+						color='third.main'
+						textAlign='center'
+					>
 						Iniciar Sesión
 					</Typography>
 				</Grid>

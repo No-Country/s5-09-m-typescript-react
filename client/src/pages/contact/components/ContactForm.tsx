@@ -5,7 +5,6 @@ import { GlobalButton } from '../../../components';
 import AlertModal from '../../../components/AlertModal';
 import { sendContact } from '../../../service/contact/sendContact';
 
-
 type FormData = {
 	fullName: string;
 	email: string;
@@ -13,9 +12,8 @@ type FormData = {
 };
 
 export default function ContactForm() {
-
 	const [isOpenModal, setIsOpenModal] = React.useState(false);
-	const closeModal = () =>{
+	const closeModal = () => {
 		setIsOpenModal(false);
 	};
 
@@ -36,7 +34,12 @@ export default function ContactForm() {
 		<form onSubmit={handleSubmit(formSubmitHandler)}>
 			<Grid container spacing={5} p={6}>
 				<Grid item xs={12}>
-					<Typography variant='h4' textAlign='center' component='h4' color='text.secondary'>
+					<Typography
+						variant='h4'
+						textAlign='center'
+						component='h4'
+						color='third.main'
+					>
 						Contacto
 					</Typography>
 				</Grid>
@@ -45,7 +48,7 @@ export default function ContactForm() {
 					<TextField
 						{...register('fullName', {
 							required: 'Este campo es requerido',
-							pattern: { message: "Nombre inválido", value: /^[A-Z ]+$/i} 
+							pattern: { message: 'Nombre inválido', value: /^[A-Z ]+$/i },
 						})}
 						error={!!errors.fullName}
 						helperText={errors.fullName?.message}
@@ -59,10 +62,13 @@ export default function ContactForm() {
 				</Grid>
 				<Grid item xs={12}>
 					<TextField
-						
 						{...register('email', {
 							required: 'Este campo es requerido',
-							pattern: { message: "Ingrese un correo válido", value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/} 
+							pattern: {
+								message: 'Ingrese un correo válido',
+								value:
+									/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+							},
 						})}
 						error={!!errors.email}
 						helperText={errors.email?.message}
@@ -97,18 +103,21 @@ export default function ContactForm() {
 					xs={12}
 					style={{ display: 'flex', justifyContent: 'center' }}
 				>
-					<GlobalButton text='Enviar' action={handleSubmit(formSubmitHandler)} />
-				
+					<GlobalButton
+						text='Enviar'
+						action={handleSubmit(formSubmitHandler)}
+					/>
 				</Grid>
 			</Grid>
-						
-			{isOpenModal && <AlertModal title='Mensaje enviado' 
-										text='Muchas gracias por contactarnos, te contestaremos a la brevedad.'
-										urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669209748/ananda%20marga/home/alerts/FeaturedIconMail_fgcdsc.png'
-										close={closeModal}	/>
-									
-			}
+
+			{isOpenModal && (
+				<AlertModal
+					title='Mensaje enviado'
+					text='Muchas gracias por contactarnos, te contestaremos a la brevedad.'
+					urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669209748/ananda%20marga/home/alerts/FeaturedIconMail_fgcdsc.png'
+					close={closeModal}
+				/>
+			)}
 		</form>
-		
 	);
 }
