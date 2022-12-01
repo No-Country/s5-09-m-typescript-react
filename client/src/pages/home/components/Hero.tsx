@@ -1,8 +1,12 @@
-import { Grid, Button, Typography, Box } from '@mui/material';
+import { Grid, Typography, Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { GlobalButton } from '../../../components';
+import { publicRoute } from '../../../models/routes';
+
 export default function Hero() {
+	const navegation = useNavigate();
 	const navegacion = () => {
-		console.log('probando boton');
+		navegation(publicRoute.login);
 	};
 	return (
 		<Grid

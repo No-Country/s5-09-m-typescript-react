@@ -1,5 +1,7 @@
 import { Box, Typography, CardContent, Card, Link } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { GlobalButton } from '../../../components';
+import { publicRoute } from '../../../models/routes';
 
 const itemList = [
 	{
@@ -23,6 +25,10 @@ const itemList = [
 ];
 
 export default function AboutHabits() {
+	const navegation = useNavigate();
+	const redirection = () => {
+		navegation(publicRoute.practices);
+	};
 	return (
 		<Box
 			sx={{
@@ -106,7 +112,7 @@ export default function AboutHabits() {
 						Siéntete mejor en todos los aspectos de tu vida incorporando nuevas
 						rutinas.
 					</Typography>
-					<GlobalButton text='Conoce Más' action={() => console.log('hola')} />
+					<GlobalButton text='Conoce Más' action={redirection} />
 				</div>
 			</Box>
 		</Box>
