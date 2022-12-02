@@ -21,15 +21,15 @@ export const ImageSelected = ({
 			/>
 			<div className='container-buttons'>
 				{loading ? (
-					<p className='loading-label'>Upload image ⏳...</p>
+					<p className='loading-label'>Subiendo imagen ⏳...</p>
 				) : (
 					<>
 						<button disabled={loading} onClick={onUpload}>
-							Upload 📤
+							Subir 📤
 						</button>
 
 						<button disabled={loading} onClick={() => onImageRemove(0)}>
-							Cancel ❌
+							Cancelar ❌
 						</button>
 					</>
 				)}
