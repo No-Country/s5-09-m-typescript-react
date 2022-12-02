@@ -17,8 +17,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-// import { onRegister } from '../../../service/register';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import { DragAndDrop } from '../../../components/imgDrag';
 import { HabitsModal } from '../../../components';
 import { useDispatch } from 'react-redux';
@@ -46,7 +45,6 @@ const styles = () =>
 export default function SignupForm() {
 	const [showPassword, setshowPassword] = useState(false);
 	const [url, setUrl] = useState('');
-	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const showModal = useAppSelector(state => state.setting.showHabitModal);
 
@@ -64,7 +62,6 @@ export default function SignupForm() {
 		const modifiedData = { ...data, img: url, id: undefined };
 
 		dispatch(setUser(modifiedData));
-		navigate('/iniciarSesion');
 	};
 
 	return (
@@ -146,7 +143,7 @@ export default function SignupForm() {
 					helperText={
 						errors.fullname ? errors.fullname.message?.toString() : ''
 					}
-					{...register('fullname', { required: 'Ingrese un nombre' })}
+					{...register('fullname', { required: 'Ingrese su nombre completo' })}
 					label='Nombre Completo'
 					variant='outlined'
 					color='text'
@@ -156,6 +153,7 @@ export default function SignupForm() {
 					error={errors.email ? true : false}
 					helperText={errors.email ? errors.email.message?.toString() : ''}
 					{...register('email', {
+            required: 'Ingrese un correo valido',
 						pattern: {
 							message: 'Ingrese un correo valido',
 							value:
@@ -170,6 +168,7 @@ export default function SignupForm() {
 					error={errors.password ? true : false}
 					type={showPassword ? 'text' : 'password'}
 					{...register('password', {
+            required: true,
 						pattern:
 							/^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[!@#\][:()"`;+\-'|_?,.</\\>=$%}{^&*~]).{8,}$/,
 					})}
@@ -201,13 +200,13 @@ export default function SignupForm() {
 						fontSize: '18px',
 						lineHeight: '24px',
 						height: '52px',
-						textTransform: 'capitalize',
+						textTransform: 'initial',
 						'&:hover': {
 							backgroundColor: 'secondary.dark',
 						},
 					}}
 				>
-					Registrarse
+					Seguir con el registro
 				</Button>
 
 				<Grid
