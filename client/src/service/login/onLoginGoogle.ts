@@ -28,8 +28,8 @@ export const onLoginGoogle = async (
 				},
 			},
 		);
-		const dataUser = loginAdapter(getUser);
 		console.log(getUser);
+		const dataUser = loginAdapter(getUser, res.data.google);
 		dispatch(setUser(dataUser));
 	} catch (error) {
 		console.log(error);

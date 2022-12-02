@@ -7,6 +7,7 @@ export interface User {
 	password?: string;
 	practices?: Array;
 	id: string | undefined;
+	google?: boolean;
 }
 export interface EmailVerified {
 	code: string | undefined;
