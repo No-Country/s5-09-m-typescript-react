@@ -7,8 +7,8 @@ import { useAppSelector } from '../../../redux/hooks';
 
 export default function FormProfileWithUserInfo2() {
 	const { practices } = useAppSelector(store => store.user);
-	const habits = practices.map((e: any) => e.practice);
-	console.log(habits);
+	const habits = practices?.map((e: any) => e.practice);
+
 	const navegacion = () => {
 		console.log('probando boton');
 	};
@@ -37,7 +37,7 @@ export default function FormProfileWithUserInfo2() {
 					gap: '10px',
 				}}
 			>
-				{habits.map((e: any) => {
+				{habits?.map((e: any) => {
 					return <DeletableChips key={e._id} name={e.name} />;
 				})}
 			</Grid>
