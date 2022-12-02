@@ -25,7 +25,7 @@ export default function ForgotPasswordModal() {
 	} = useForm<FormData>();
 
 	//Para probar si funcionan los formularios
-	const formSubmitHandler: SubmitHandler<FormData> = (data: FormData) => {
+	const formSubmitHandler: SubmitHandler<FormData> = data => {
 		console.log('email ', data);
 		() => close();
 	};
