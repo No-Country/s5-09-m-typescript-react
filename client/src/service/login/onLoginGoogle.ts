@@ -35,3 +35,4 @@ export const onLoginGoogle = async (
 		console.log(error);
 	}
 };
+//agregar modal de habitos a nuevos usuarios de google
