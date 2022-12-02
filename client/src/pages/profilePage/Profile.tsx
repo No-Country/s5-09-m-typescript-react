@@ -46,20 +46,14 @@ export default function Profile() {
 					minHeight: 'calc(100vh - 85px)',
 				}}
 			>
-				<Grid item xs={3}>
+				<Grid item xs={2}>
 					<PerfilSidebar setModals={setModals} />
 				</Grid>
 
-				<Grid item xs={9}>
-					<TopBarProfile setModals={setModals} />
+				<Grid item xs={10}>
 					{renderModal(modal)}
 				</Grid>
 			</Grid>
 		</>
 	);
 }
-/* agregar logica de cambio de componentes utilizando el menu sidebard */
-/* <FormProfileWithUserInfo />
-	<FormProfileWithUserInfo2 /> */
-/* <Calendar /> */
-/* <Form /> */

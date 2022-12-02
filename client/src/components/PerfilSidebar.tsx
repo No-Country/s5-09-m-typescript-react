@@ -1,11 +1,11 @@
 import {
+	AccountCircleOutlined,
 	BookmarkBorderOutlined,
 	CalendarMonthOutlined,
 	EventAvailableOutlined,
-	NotificationsActiveOutlined,
 	SelfImprovementOutlined,
 } from '@mui/icons-material';
-import { Grid, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar';
 import { useAppSelector } from '../redux/hooks';
 interface sidebar {
@@ -17,30 +17,47 @@ export default function ProSidebar({ setModals }: sidebar) {
 		<>
 			<Sidebar>
 				<Menu>
-					<Grid sx={{ display: 'flex', justifyContent: 'center' }}>
-						<img src={user.img} alt='imagen de perfil' />
-					</Grid>
+					<Box
+						sx={{
+							display: 'flex',
+							justifyContent: 'center',
+							height: '150px',
+						}}
+					>
+						<img
+							src={user.img}
+							alt='imagen de perfil'
+							style={{
+								borderRadius: '50%',
+								border: '2px solid',
+								borderColor: '#9C51B7',
+							}}
+						/>
+					</Box>
 					<Typography
 						style={{ display: 'flex', justifyContent: 'center' }}
-						component='h1'
-						variant='h6'
+						component='p'
+						variant='h5'
 					>
 						{user.name}
 					</Typography>
-					<MenuItem icon={<NotificationsActiveOutlined />}>
-						<button onClick={() => setModals('perfil')}>Perfil</button>
+					<MenuItem
+						onClick={() => setModals('perfil')}
+						icon={<AccountCircleOutlined />}
+					>
+						Perfil
 					</MenuItem>
-					<MenuItem icon={<BookmarkBorderOutlined />}>Favorito</MenuItem>
-					<MenuItem icon={<EventAvailableOutlined />}>
-						<button onClick={() => setModals('progreso')}>Progreso</button> 
+					<MenuItem
+						onClick={() => setModals('progreso')}
+						icon={<EventAvailableOutlined />}
+					>
+						Habitos
 					</MenuItem>
-					<MenuItem icon={<CalendarMonthOutlined />}>
-						<button onClick={() => setModals('calendario')}>
-							Mi Calendario
-						</button>
-					</MenuItem>
-					<MenuItem icon={<SelfImprovementOutlined />}>
-						<button onClick={() => setModals('panel')}>Mi Panel</button>
+					<MenuItem
+						onClick={() => setModals('calendario')}
+						icon={<CalendarMonthOutlined />}
+					>
+						Calendario
 					</MenuItem>
 				</Menu>
 			</Sidebar>
