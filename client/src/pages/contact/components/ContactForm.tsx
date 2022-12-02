@@ -12,9 +12,13 @@ type FormData = {
 };
 
 export default function ContactForm() {
+
 	const [isOpenModal, setIsOpenModal] = React.useState(false);
+	const [alertError, setAlertError] = React.useState(false);
+	
 	const closeModal = () => {
 		setIsOpenModal(false);
+		setAlertError(false);
 	};
 
 	const {
@@ -25,10 +29,12 @@ export default function ContactForm() {
 
 	//Para probar si funcionan los formularios
 	const formSubmitHandler: SubmitHandler<FormData> = (data: FormData) => {
-		console.log('form data is', data);
-		sendContact(data.fullName, data.email, data.text);
-		setIsOpenModal(true);
+			console.log('form data is', data);
+			sendContact(data.fullName, data.email, data.text);
+			setIsOpenModal(true);
+			setAlertError(false);
 	};
+	
 
 	return (
 		<form onSubmit={handleSubmit(formSubmitHandler)}>
@@ -114,7 +120,16 @@ export default function ContactForm() {
 				<AlertModal
 					title='Mensaje enviado'
 					text='Muchas gracias por contactarnos, te contestaremos a la brevedad.'
-					urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669209748/ananda%20marga/home/alerts/FeaturedIconMail_fgcdsc.png'
+					urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669814885/ananda%20marga/home/alerts/FeaturedIconMail_i5fwva.png'
+					close={closeModal}
+				/>
+			)}
+
+			{alertError && (
+				<AlertModal
+					title='Ha ocurrido un error'
+					text='Por favor, intentalo de nuevo.'
+					urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669209748/ananda%20marga/home/alerts/FeaturedIconError_v1ijn4.png'
 					close={closeModal}
 				/>
 			)}
