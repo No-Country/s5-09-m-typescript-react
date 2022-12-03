@@ -18,8 +18,9 @@ import axios from 'axios';
 import { isEmail } from '../../../utilities';
 import { Message, Visibility, VisibilityOff } from '@mui/icons-material';
 import { useState } from 'react';
-import { useAppDispatch } from '../../../redux/hooks';
-import { changeForgotPasswordModal } from '../../../redux/slices/setting';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
+import { changeErrorPassword, changeForgotPasswordModal } from '../../../redux/slices/setting';
+import { AlertModal } from '../../../components';
 
 type Inputs = {
 	email: string;
@@ -28,7 +29,15 @@ type Inputs = {
 };
 
 export default function InputLogin() {
+
+	
 	const dispatch = useAppDispatch();
+	const errorPassword = useAppSelector(state => state.setting.errorPassword);
+
+	
+	const closeModal = () => {
+			dispatch(changeErrorPassword());
+	};
 
 	const [showPassword, setshowPassword] = useState(false);
 	const {
@@ -124,6 +133,14 @@ export default function InputLogin() {
 						}}
 						type={showPassword ? 'text' : 'password'}
 					/>
+
+					{errorPassword &&(<AlertModal
+											title='Contraseña incorrecta'
+											text=''
+											urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669814884/ananda%20marga/home/alerts/FeaturedIconAlert_juurtw.png'
+											close={() => dispatch(changeErrorPassword())}
+										/>
+							)}
 				</Grid>
 				<Grid item xs={6}>
 					<FormControlLabel
