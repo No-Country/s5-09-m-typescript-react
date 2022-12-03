@@ -1,15 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface modalState {
 	isLoading: Boolean;
 	showHabitModal: Boolean;
 	showForgotPasswordModal: Boolean;
+	errorPassword: Boolean;
 }
 
 const initialState: modalState = {
 	isLoading: false,
 	showHabitModal: false,
 	showForgotPasswordModal: false,
+	errorPassword: false,
 };
 
 const settingSlice = createSlice({
@@ -25,9 +27,12 @@ const settingSlice = createSlice({
 		changeForgotPasswordModal(state) {
 			state.showForgotPasswordModal = !state.showForgotPasswordModal;
 		},
+		changeErrorPassword(state){
+			state.errorPassword = !state.errorPassword;;
+		}
 	},
 });
 
-export const { changeState, changeShowHabitModal, changeForgotPasswordModal } =
+export const { changeState, changeShowHabitModal, changeForgotPasswordModal, changeErrorPassword } =
 	settingSlice.actions;
 export default settingSlice.reducer;
