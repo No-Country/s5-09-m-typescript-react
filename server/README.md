@@ -37,6 +37,7 @@
 | email_verified | Boolean                | NO         |
 | status         | StatusUser enum String | NO         |
 | code           | Number                 | NO         |
+| resetLink      | String                 | NO         |
 
 **Example Routes User**
 
@@ -56,17 +57,21 @@
 
 ## Authentication
 
-| TYPE | DETAIL       | ROUTE                             | SEND                            |
-| ---- | ------------ | --------------------------------- | ------------------------------- |
-| POST | login        | http://localhost:PORT/login       | body: email, password           |
-| POST | login Google | http://localhost:PORT/googleLogin | body: name, picture, sub, email |
-| POST | renewToken   | http://localhost:PORT/renewToken  | headers: token                  |
+| TYPE | DETAIL         | ROUTE                                | SEND                            |
+| ---- | -------------- | ------------------------------------ | ------------------------------- | --- |
+| POST | login          | http://localhost:PORT/login          | body: email, password           |
+| POST | login Google   | http://localhost:PORT/googleLogin    | body: name, picture, sub, email |
+| POST | renewToken     | http://localhost:PORT/renewToken     | headers: token                  |
+| POST | forgotPassword | http://localhost:PORT/forgotPassword | body:email                      |
+| POST | resetPassword  | http://localhost:PORT/resetPassword  | headers: token ,body:password   |     |
 
 **Example Routes Authentication**
 
 -   http://localhost:PORT/login
 -   http://localhost:PORT/googleLogin
 -   http://localhost:PORT/renewToken
+-   http://localhost:PORT/forgotPassword
+-   http://localhost:PORT/resetPassword
 
 ## Emailing
 
