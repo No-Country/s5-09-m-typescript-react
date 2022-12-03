@@ -159,7 +159,6 @@ export default function InputLogin() {
 					}}
 				>
 					<Link
-						component='button'
 						sx={{
 							color: 'secondary.main',
 						}}
@@ -209,13 +208,21 @@ export default function InputLogin() {
 					xs={12}
 					sx={{
 						display: 'flex',
-
+						gap: 1,
 						justifyContent: 'flex-end',
 						alignItems: 'center',
 					}}
 				>
-					<Typography>Aún no tienes cuenta?</Typography>{' '}
-					<RouterLink to='/registrate'>Registrarse</RouterLink>
+					<Typography>Aún no tienes cuenta?</Typography>
+					<RouterLink to='/registrate'>
+						<Link
+							sx={{
+								color: 'secondary.main',
+							}}
+						>
+							Registrarse
+						</Link>
+					</RouterLink>
 				</Grid>
 				<Grid item xs={12}>
 					<Button

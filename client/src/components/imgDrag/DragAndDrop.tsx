@@ -2,7 +2,7 @@ import React from 'react';
 import ImageUploading from 'react-images-uploading';
 import { useUploadImage } from '../../hooks';
 
-import { ImageSelected, BoxDragAndDrop, Message } from './';
+import { ImageSelected, BoxDragAndDrop} from './';
 
 interface Props {
 	url: React.Dispatch<React.SetStateAction<string>>;

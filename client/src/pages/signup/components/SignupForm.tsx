@@ -3,25 +3,28 @@ import {
 	Box,
 	Button,
 	createStyles,
+	Grid,
 	IconButton,
 	InputAdornment,
 	Stack,
 	TextField,
+	Link,
 	Typography,
+	useTheme,
 } from '@mui/material';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import { onRegister } from '../../../service/register';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import { DragAndDrop } from '../../../components/imgDrag';
 import { HabitsModal } from '../../../components';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../../redux/slices/user';
 import { useAppSelector } from '../../../redux/hooks';
 import { changeShowHabitModal } from '../../../redux/slices/setting';
+import { Theme } from '@mui/system';
 
 type FormInput = {
 	fullname: string;
@@ -42,9 +45,10 @@ const styles = () =>
 export default function SignupForm() {
 	const [showPassword, setshowPassword] = useState(false);
 	const [url, setUrl] = useState('');
-	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const showModal = useAppSelector(state => state.setting.showHabitModal);
+
+	const { palette } = useTheme<Theme>();
 
 	const {
 		register,
@@ -58,7 +62,6 @@ export default function SignupForm() {
 		const modifiedData = { ...data, img: url, id: undefined };
 
 		dispatch(setUser(modifiedData));
-		navigate('/iniciarSesion');
 	};
 
 	return (
@@ -100,9 +103,9 @@ export default function SignupForm() {
 								onClick={() => setUrl('')}
 								aria-label='update img'
 								sx={{
-									background: '#2F8919',
+									background: `${palette.secondary.main}`,
 
-									color: '#fff',
+									color: `${palette.primary.main}`,
 									position: 'absolute',
 									zIndex: 2,
 									top: '53%',
@@ -111,15 +114,12 @@ export default function SignupForm() {
 									transition:
 										'color .2s ease, background .2s linear, transform .1s linear',
 									'&:hover': {
-										background: '#2F6117',
-										color: '#fff',
+										background: `${palette.secondary.dark}`,
+
 										transform: 'scale(1.2)',
 										transition:
 											'color .2s ease, background .2s linear, transform .1s linear',
 									},
-									// transform: 'translate(-50%, -50%);',
-									// width: 80,
-									// height: 80,
 								}}
 							>
 								<AddOutlinedIcon />
@@ -132,9 +132,7 @@ export default function SignupForm() {
 								width: 80,
 								height: 80,
 								objectFit: 'contain',
-							}}
-							style={{
-								border: '2px solid #2F6117',
+								border: `2px solid ${palette.secondary.main}`,
 							}}
 						/>
 					</Box>
@@ -145,7 +143,7 @@ export default function SignupForm() {
 					helperText={
 						errors.fullname ? errors.fullname.message?.toString() : ''
 					}
-					{...register('fullname', { required: 'Ingrese un nombre' })}
+					{...register('fullname', { required: 'Ingrese su nombre completo' })}
 					label='Nombre Completo'
 					variant='outlined'
 					color='text'
@@ -155,6 +153,7 @@ export default function SignupForm() {
 					error={errors.email ? true : false}
 					helperText={errors.email ? errors.email.message?.toString() : ''}
 					{...register('email', {
+            required: 'Ingrese un correo valido',
 						pattern: {
 							message: 'Ingrese un correo valido',
 							value:
@@ -169,6 +168,7 @@ export default function SignupForm() {
 					error={errors.password ? true : false}
 					type={showPassword ? 'text' : 'password'}
 					{...register('password', {
+            required: true,
 						pattern:
 							/^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[!@#\][:()"`;+\-'|_?,.</\\>=$%}{^&*~]).{8,}$/,
 					})}
@@ -195,39 +195,42 @@ export default function SignupForm() {
 					variant='contained'
 					sx={{
 						backgroundColor: 'secondary.main',
-						color: '#FFFFFF',
+						color: `${palette.primary.main}`,
 						fontWeight: 500,
 						fontSize: '18px',
 						lineHeight: '24px',
 						height: '52px',
-						textTransform: 'capitalize',
+						textTransform: 'initial',
+						'&:hover': {
+							backgroundColor: 'secondary.dark',
+						},
 					}}
 				>
-					Registrarse
+					Seguir con el registro
 				</Button>
 
-				<Typography
+				<Grid
+					item
+					xs={12}
 					sx={{
-						alignSelf: 'flex-end',
-						fontWeight: 500,
-						fontSize: '20px',
-						lineHeight: '28px',
+						display: 'flex',
+						gap: 1,
+						justifyContent: 'flex-end',
+						alignItems: 'center',
 					}}
 				>
-					¿Tienes una cuenta?{' '}
-					<Link to='/iniciarSesion'>
-						<Typography
-							component='span'
+					<Typography>Ya tienes una cuenta?</Typography>
+
+					<RouterLink to='/iniciarSesion'>
+						<Link
 							sx={{
-								fontWeight: 600,
-								fontSize: '20px',
-								lineHeight: '28px',
+								color: 'secondary.main',
 							}}
 						>
-							Inicia Sesión
-						</Typography>
-					</Link>
-				</Typography>
+							Iniciar sesión
+						</Link>
+					</RouterLink>
+				</Grid>
 			</Stack>
 		</>
 	);
