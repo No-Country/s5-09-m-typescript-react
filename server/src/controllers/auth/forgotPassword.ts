@@ -23,7 +23,7 @@ export const forgotPassword = async (req: Request, res: Response) => {
         //* Genero Token
         const { _id, admin } = user
 
-        const token = jwt.sign({ _id, admin }, secretKey, {
+        const token = jwt.sign({ id: _id, admin }, secretKey, {
             expiresIn: '15m',
         })
 
