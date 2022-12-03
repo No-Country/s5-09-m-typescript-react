@@ -1,11 +1,18 @@
 import { Grid, Typography, Button, TextField, Paper } from '@mui/material';
 import image from '../../../assets/Rectangle4.png';
 import { GlobalButton } from '../../../components';
+import { useState } from 'react';
+export default function BoletinInformativo({ onSubmitted, status, message }) {
+	const [email, setEmail] = useState('');
 
-export default function BoletinInformativo() {
-	const logicaSuscripcion = () => {
+	const handleSubmit = e => {
+		e.preventDefault();
+		setEmail('');
+		console.log(email);
+		onSubmitted({ EMAIL: email });
 		console.log('hola');
 	};
+
 	return (
 		<Grid container spacing={1} padding='150px 0 150px 0'>
 			<Grid item xs={6}>
@@ -91,17 +98,23 @@ export default function BoletinInformativo() {
 							"Recibe en tu correo nuestro boletín informativo y mantente al
 							tanto de las últimas novedades del Yoga y Mindfulness."
 						</Typography>
-						<TextField
-							id='outlined-basic'
-							label='email'
-							placeholder='olivia@gmail.com'
-							variant='outlined'
-							color='text'
-							sx={{
-								width: '300px',
-							}}
-						/>
-						<GlobalButton text='Suscribete' action={logicaSuscripcion} />
+						<form onSubmit={handleSubmit}>
+							<TextField
+								id='outlined-basic'
+								label='Correo'
+								placeholder='olivia@gmail.com'
+								variant='outlined'
+								color='text'
+								value={email}
+								onChange={event => setEmail(event.target.value)}
+								sx={{
+									width: '300px',
+									marginRight: '15px',
+									height: '36px',
+								}}
+							/>
+							<GlobalButton text='Suscribete' type='submit' />
+						</form>
 					</Grid>
 				</Grid>
 			</Grid>

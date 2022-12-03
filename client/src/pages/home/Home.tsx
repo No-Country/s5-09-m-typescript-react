@@ -18,7 +18,6 @@ export default function Home() {
 			<MyPractices />
 			<AboutHabits />
 			<Testimonials />
-			<Newsletter />
 			<SimpleForm />
 		</>
 	);
