@@ -1,9 +1,10 @@
 import { Request, Response } from 'express'
 
 import { IResponse } from '../../interfaces/response'
-import { getUserByEmailService } from './../../services'
-import { generateCode, sendWelcomeEmail } from '../../utils'
-import { updateUserService } from '../../services'
+import { getUserByEmailService, updateUserService } from './../../services'
+import { sendForgotPasswordEmail } from '../../utils/sendForgotPasswordEmail'
+import jwt from 'jsonwebtoken'
+import { secretKey, baseUrl } from '../../config/globals'
 
 export const forgotPassword = async (req: Request, res: Response) => {
     const { email } = req.body
@@ -19,19 +20,24 @@ export const forgotPassword = async (req: Request, res: Response) => {
             })
         }
 
-        //*Genero nuevo codigo y lo cambio en el usuario
-        const code = generateCode()
-        user.code = code
+        //* Genero Token
+        const { _id, admin } = user
 
-        //* Actualizo el usuario con el nuevo codigo
-        await updateUserService(user.id, user)
+        const token = jwt.sign({ _id, admin }, secretKey, {
+            expiresIn: '15m',
+        })
+
+        user.resetLink = token
+
+        //*Guardo token en la la base de datos
+        updateUserService(_id, user) //Todo: Revisar validaciones de llamadas...
 
         //* Mando email con codigo nuevo
-        await sendWelcomeEmail(user.fullname, user.code, user.email)
+        await sendForgotPasswordEmail(user.email, baseUrl, token)
 
         return res.status(200).json({
             ok: true,
-            msg: 'Su codigo ha sido reenviado a su casilla de correo',
+            msg: 'Las instrucciones para resetear su contraseña fueron enviadas por mail',
         })
     } catch (error) {
         return res.status(500).json({
