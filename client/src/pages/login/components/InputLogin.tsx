@@ -19,6 +19,7 @@ import { isEmail } from '../../../utilities';
 import { Message, Visibility, VisibilityOff } from '@mui/icons-material';
 import { useState } from 'react';
 import { useAppDispatch } from '../../../redux/hooks';
+import { changeForgotPasswordModal } from '../../../redux/slices/setting';
 
 type Inputs = {
 	email: string;
@@ -141,11 +142,10 @@ export default function InputLogin() {
 					}}
 				>
 					<Link
-						component='button'
 						sx={{
 							color: 'secondary.main',
 						}}
-						onClick={() => {}}
+						onClick={() => dispatch(changeForgotPasswordModal())}
 					>
 						¿Olvidaste la contraseña?
 					</Link>
@@ -191,13 +191,21 @@ export default function InputLogin() {
 					xs={12}
 					sx={{
 						display: 'flex',
-
+						gap: 1,
 						justifyContent: 'flex-end',
 						alignItems: 'center',
 					}}
 				>
-					<Typography>Aún no tienes cuenta?</Typography>{' '}
-					<RouterLink to='/registrate'>Registrarse</RouterLink>
+					<Typography>Aún no tienes cuenta?</Typography>
+					<RouterLink to='/registrate'>
+						<Link
+							sx={{
+								color: 'secondary.main',
+							}}
+						>
+							Registrarse
+						</Link>
+					</RouterLink>
 				</Grid>
 				<Grid item xs={12}>
 					<Button

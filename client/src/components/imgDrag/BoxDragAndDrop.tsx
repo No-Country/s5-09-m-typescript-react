@@ -15,9 +15,7 @@ export const BoxDragAndDrop = ({
 			{...dragProps}
 			className={`container-dnd center-flex ${isDragging ? 'isDragging' : ''}`}
 		>
-			<span className='label-dnd'>
-				Chosee an Image or Drag and Drop an Image
-			</span>
+			<span className='label-dnd'>Elije una imagen o arrastrala aquí</span>
 		</div>
 	);
 };

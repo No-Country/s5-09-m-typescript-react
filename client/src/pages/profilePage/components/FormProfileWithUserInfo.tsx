@@ -1,5 +1,5 @@
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import { Typography, Grid } from '@mui/material';
+import { Typography, Grid, TextField } from '@mui/material';
 import TopBarProfile from './TopBarProfile';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
@@ -50,14 +50,28 @@ export default function FormProfileWithUserInfo() {
 							display: 'flex',
 							flexDirection: 'column',
 							justifyContent: 'center',
+							width: '300px',
 							alignItems: 'start',
 							gap: '30px',
 							marginLeft: '100px',
 						}}
 					>
-						<Typography fontSize='1.5rem'>{user.name}</Typography>
-						<Typography fontSize='1.5rem'>**********</Typography>
-						<Typography fontSize='1.5rem'>{user.email}</Typography>
+						<TextField
+							aria-readonly
+							value={user.name}
+							variant='standard'
+							fullWidth
+						></TextField>
+						<TextField
+							value='**********'
+							variant='standard'
+							fullWidth
+						></TextField>
+						<TextField
+							value={user.email}
+							variant='standard'
+							fullWidth
+						></TextField>
 					</Box>
 				</Grid>
 			</Grid>

@@ -43,7 +43,7 @@ export default function HabitsModal({closeModal} : HabitsModalProps) {
 		try {
 			const res = (await getHabits()) as Habits; //buscar el id
       const habits = res.data;
-      console.log("ahbtiso", habits)
+      console.log("Lista completa de habitos", habits)
       setHealthHabits(
         habits.filter((habit: any) => {
           return habit.category.name === 'Salud';
@@ -71,7 +71,7 @@ export default function HabitsModal({closeModal} : HabitsModalProps) {
 
 	const handleHabitChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { name: habitId, value } = event.target;
-    console.log("event",{ habitId, value })  
+    console.log("Habito seleccionado",{ habitId, value })  
 		setChangeHabits((prev) => [...prev, habitId]);
 	};
 	useEffect(() => {
@@ -279,7 +279,7 @@ export default function HabitsModal({closeModal} : HabitsModalProps) {
 					</Accordion>
 				</Grid>
 				<Grid sx={{ textAlign: 'center', marginBottom: '20px' }}>
-					<GlobalButton text='Guardar' width='370px' action={handleSave} />
+					<GlobalButton text='Registrarse' width='370px' action={handleSave} />
 				</Grid>
 				<Grid sx={{ textAlign: 'center' }}>
 					<GlobalButton
