@@ -1,12 +1,7 @@
 import { Response, Request, NextFunction } from 'express'
 import { body, validationResult } from 'express-validator'
 
-export const validateLogin = [
-    body('email')
-        .notEmpty()
-        .withMessage('The email field is required')
-        .isEmail()
-        .withMessage('Email invalid'),
+export const resetPasswordValidate = [
     body('password')
         .isStrongPassword()
         .withMessage(
