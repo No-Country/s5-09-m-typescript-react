@@ -1,4 +1,4 @@
-import { Box, Typography, CardContent, Card } from '@mui/material';
+import { Box, Typography, CardContent, Card, Grid } from '@mui/material';
 
 const itemList = [
 	{
@@ -23,23 +23,21 @@ const itemList = [
 
 export default function AboutHabits() {
 	return (
-		<section
-			style={{
-				backgroundColor: '#4E7D64',
-				display: 'flex',
-				flexDirection: 'column',
-				alignItems: 'center',
-			}}
-		>
+		<Grid item xs={2} sm={6}>
 			<Box
 				style={{
+					backgroundColor: '#4E7D64',
+					alignItems: 'center',
 					padding: '0 49px 0 86px',
 					display: 'flex',
-					width: '1442px',
-					height: '301px',
+					flexWrap: 'wrap',
+					justifyContent: 'center',
 				}}
 			>
-				<div className='cardsContainer' style={{ display: 'flex' }}>
+				<div
+					className='cardsContainer'
+					style={{ display: 'flex', flexWrap: 'wrap' }}
+				>
 					{itemList.map(item => (
 						<Card
 							key={itemList.indexOf(item)}
@@ -48,6 +46,7 @@ export default function AboutHabits() {
 								margin: '28px 20px',
 								width: 200,
 								height: 245,
+								flexWrap: 'wrap',
 							}}
 						>
 							<CardContent>
@@ -105,6 +104,6 @@ export default function AboutHabits() {
 					</Typography>
 				</div>
 			</Box>
-		</section>
+		</Grid>
 	);
 }

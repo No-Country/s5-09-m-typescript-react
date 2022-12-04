@@ -13,12 +13,12 @@ import SimpleForm from '../mailchimp/SimpleForm';
 export default function Home() {
 	return (
 		<>
-			<Hero />
+			{/* <Hero />
 			<Slider />
-			<MyPractices />
+			<MyPractices /> */}
 			<AboutHabits />
-			<Testimonials />
-			<SimpleForm />
+			{/* <Testimonials />
+			<SimpleForm /> */}
 		</>
 	);
 }

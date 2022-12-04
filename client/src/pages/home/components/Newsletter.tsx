@@ -16,9 +16,7 @@ export default function BoletinInformativo({ onSubmitted, status, message }) {
 	const handleSubmit = e => {
 		e.preventDefault();
 		setEmail('');
-		console.log(email);
 		onSubmitted({ EMAIL: email });
-		console.log('hola');
 		setTimeout(() => {
 			setMensaje(false);
 		}, 3500);
@@ -27,7 +25,7 @@ export default function BoletinInformativo({ onSubmitted, status, message }) {
 
 	return (
 		<Grid container spacing={1} padding='150px 0 150px 0'>
-			<Grid item xs={6}>
+			<Grid item md={6} xs='auto'>
 				<Grid
 					item
 					sx={{
@@ -50,7 +48,7 @@ export default function BoletinInformativo({ onSubmitted, status, message }) {
 							alt='Chica Yoga'
 							style={{
 								position: 'relative',
-								width: '500px',
+								width: '78%',
 								height: '250px',
 								borderRadius: '16px',
 								zIndex: '5',
@@ -81,35 +79,36 @@ export default function BoletinInformativo({ onSubmitted, status, message }) {
 						paddingLeft: '30px',
 					}}
 				>
-					<Grid item xs={10}>
-						<Grid item xs={12} margin='0 0 0 0'>
+					<Grid item sm={10} xs={4}>
+						<Typography
+							variant='h2'
+							color='third.main'
+							textAlign='left'
+							marginBottom='10px'
+							fontWeight={600}
+							fontSize='48px'
+							fontFamily='crimson'
+							lineHeight='100%'
+							fontStyle='semibold'
+							letterSpacing='1px'
+						>
+							Boletín Informativo
+						</Typography>
+						<Grid item xs={4} sm={6}>
 							<Typography
-								variant='h2'
-								color='third.main'
-								textAlign='left'
-								marginBottom='10px'
-								fontWeight={600}
-								fontSize='48px'
-								fontFamily='crimson'
-								lineHeight='100%'
-								fontStyle='semibold'
-								letterSpacing='1px'
+								component='p'
+								width='350px'
+								fontSize={20}
+								color='text'
+								borderLeft='2px solid #FC802C'
+								paddingLeft='10px'
+								marginLeft='7px'
+								marginBottom='30px'
 							>
-								Boletín Informativo
+								"Recibe en tu correo nuestro boletín informativo y mantente al
+								tanto de las últimas novedades del Yoga y Mindfulness."
 							</Typography>
 						</Grid>
-						<Typography
-							component='p'
-							fontSize={20}
-							color='text'
-							borderLeft='2px solid #FC802C'
-							paddingLeft='10px'
-							marginLeft='7px'
-							marginBottom='30px'
-						>
-							"Recibe en tu correo nuestro boletín informativo y mantente al
-							tanto de las últimas novedades del Yoga y Mindfulness."
-						</Typography>
 						<form onSubmit={handleSubmit}>
 							<TextField
 								id='outlined-basic'
@@ -122,25 +121,27 @@ export default function BoletinInformativo({ onSubmitted, status, message }) {
 								sx={{
 									width: '300px',
 									marginRight: '15px',
-									height: '36px',
+									marginBottom: '15px',
 								}}
 							/>
 							<GlobalButton text='Suscribete' type='submit' />
-							{mensaje ? (
-								<Stack marginTop={1}>
-									{status === 'sending' && (
-										<Alert severity='info'>Sending...</Alert>
-									)}
-									{status === 'error' && (
-										<Alert severity='error'>{message}</Alert>
-									)}
-									{status === 'success' && (
-										<Alert severity='success'>Subscribed</Alert>
-									)}
-								</Stack>
-							) : (
-								''
-							)}
+							<Grid item xs={12}>
+								{mensaje ? (
+									<Stack marginTop={1}>
+										{status === 'sending' && (
+											<Alert severity='info'>Sending...</Alert>
+										)}
+										{status === 'error' && (
+											<Alert severity='error'>{message}</Alert>
+										)}
+										{status === 'success' && (
+											<Alert severity='success'>Subscribed</Alert>
+										)}
+									</Stack>
+								) : (
+									''
+								)}
+							</Grid>
 						</form>
 					</Grid>
 				</Grid>

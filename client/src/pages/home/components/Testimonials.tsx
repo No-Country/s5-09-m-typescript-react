@@ -18,9 +18,8 @@ export default function Testimonials() {
 				<Grid item xs={5}>
 					<Paper
 						sx={{
-							height: 400,
-							width: '100%',
 							borderRadius: '20px',
+							height: '100%',
 						}}
 					>
 						<Grid
@@ -46,7 +45,7 @@ export default function Testimonials() {
 									me ha ayudado a mejorar mi vida de una manera maravillosa."
 								</Typography>
 							</Grid>
-							<Grid item xs={2} textAlign='center'>
+							<Grid item xs={4} sm={2} textAlign='center'>
 								<img
 									src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668565240/ananda%20marga/home/testimonio1_fma5xn.png'
 									alt='foto de perfil'
@@ -62,7 +61,7 @@ export default function Testimonials() {
 				<Grid item xs={5}>
 					<Paper
 						sx={{
-							height: 400,
+							height: '100%',
 							width: '100%',
 							borderRadius: '20px',
 						}}
@@ -91,7 +90,7 @@ export default function Testimonials() {
 									tranquilidad."
 								</Typography>
 							</Grid>
-							<Grid item xs={2} textAlign='center'>
+							<Grid item xs={4} sm={2} textAlign='center'>
 								<img
 									src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668565240/ananda%20marga/home/testimonio2_bf1x7n.png'
 									alt='foto de perfil'
