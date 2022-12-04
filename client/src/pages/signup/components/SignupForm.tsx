@@ -74,7 +74,7 @@ export default function SignupForm() {
 				direction={'column'}
 				spacing='45px'
 				sx={{
-					padding: '60px',
+					padding: { xs: '15px', sm: '60px' },
 					paddingBottom: '100px',
 				}}
 			>
@@ -153,7 +153,7 @@ export default function SignupForm() {
 					error={errors.email ? true : false}
 					helperText={errors.email ? errors.email.message?.toString() : ''}
 					{...register('email', {
-            required: 'Ingrese un correo valido',
+						required: 'Ingrese un correo valido',
 						pattern: {
 							message: 'Ingrese un correo valido',
 							value:
@@ -168,7 +168,7 @@ export default function SignupForm() {
 					error={errors.password ? true : false}
 					type={showPassword ? 'text' : 'password'}
 					{...register('password', {
-            required: true,
+						required: true,
 						pattern:
 							/^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[!@#\][:()"`;+\-'|_?,.</\\>=$%}{^&*~]).{8,}$/,
 					})}
