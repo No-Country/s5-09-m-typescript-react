@@ -103,8 +103,8 @@ export default function ForgotPasswordModal() {
 						textAlign: 'center',
 					}}
 				>
-					¡No te preocupes! Ingrese la dirección de correo electrónico vinculada
-					con su cuenta.
+					¿Olvidaste la contraseña?, no te preocupes ingresa la dirección de
+					correo electrónico vinculada con tu cuenta.
 				</Typography>
 
 				<Grid item xs={12} sx={{ margin: '30px 0' }}>

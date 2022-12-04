@@ -5,6 +5,7 @@ interface modalState {
 	showHabitModal: Boolean;
 	showForgotPasswordModal: Boolean;
 	errorPassword: Boolean;
+	verifyLog: string;
 }
 
 const initialState: modalState = {
@@ -12,6 +13,7 @@ const initialState: modalState = {
 	showHabitModal: false,
 	showForgotPasswordModal: false,
 	errorPassword: false,
+	verifyLog: '',
 };
 
 const settingSlice = createSlice({
@@ -27,12 +29,20 @@ const settingSlice = createSlice({
 		changeForgotPasswordModal(state) {
 			state.showForgotPasswordModal = !state.showForgotPasswordModal;
 		},
-		changeErrorPassword(state){
-			state.errorPassword = !state.errorPassword;;
-		}
+		changeErrorPassword(state) {
+			state.errorPassword = !state.errorPassword;
+		},
+		changeVerifyLog(state, action: PayloadAction<string>) {
+			state.verifyLog = action.payload;
+		},
 	},
 });
 
-export const { changeState, changeShowHabitModal, changeForgotPasswordModal, changeErrorPassword } =
-	settingSlice.actions;
+export const {
+	changeState,
+	changeShowHabitModal,
+	changeForgotPasswordModal,
+	changeErrorPassword,
+	changeVerifyLog,
+} = settingSlice.actions;
 export default settingSlice.reducer;
