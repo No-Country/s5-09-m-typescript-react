@@ -22,7 +22,11 @@ import { User } from '../types';
 			__v: Number
 	
 } */
-export function loginAdapter(data: any, google?: boolean): User {
+export function loginAdapter(
+	data: any,
+	google?: boolean,
+	token?: string,
+): User {
 	const { user } = data;
 	return {
 		email: user.email,
@@ -33,5 +37,6 @@ export function loginAdapter(data: any, google?: boolean): User {
 		password: user.password,
 		practices: user.practices,
 		google: google,
+		token: token,
 	};
 }

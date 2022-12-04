@@ -12,6 +12,7 @@ const initialState: Partial<User> = {
 	img: '',
 	id: undefined,
 	practices: [],
+	token: '',
 };
 // setUser y closeSesion sin return no andan.
 export const userSlice = createSlice({

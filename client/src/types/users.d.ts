@@ -8,6 +8,7 @@ export interface User {
 	practices?: Array;
 	id: string | undefined;
 	google?: boolean;
+	token?: string;
 }
 export interface EmailVerified {
 	code: string | undefined;

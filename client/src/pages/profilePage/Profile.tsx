@@ -4,7 +4,7 @@ import FormProfileWithUserInfo2 from './components/FormProfileWithUserInfo2';
 import PerfilSidebar from '../../components/PerfilSidebar';
 import Calendar from './components/Calendar';
 import Form from './components/Form';
-import { TopBarProfile } from './components';
+import { ChangeHabits, TopBarProfile } from './components';
 import { useState } from 'react';
 import PanelCardList from './components/PanelCardList';
 import { EmailVerification } from './components';
@@ -13,17 +13,26 @@ import Progress from './components/Progress';
 
 export default function Profile() {
 	const user = useAppSelector(store => store.user);
+	const [showChangeHabitsModal, setShowChangeHabitsModal] =
+		useState<Boolean>(false);
 	const [modal, setModal] = useState<string>('perfil');
 	const setModals = (nameModal: string) => {
 		setModal(nameModal);
+	};
+	const showHabitsModal = () => {
+		setShowChangeHabitsModal(!showChangeHabitsModal);
+		console.log(!showChangeHabitsModal);
 	};
 	const renderModal = (modal: string) => {
 		switch (modal) {
 			case 'perfil':
 				return (
 					<>
+						{showChangeHabitsModal && (
+							<ChangeHabits closeModal={showHabitsModal} />
+						)}
 						<FormProfileWithUserInfo />
-						<FormProfileWithUserInfo2 />
+						<FormProfileWithUserInfo2 closeModal={showHabitsModal} />
 					</>
 				);
 			case 'editarPerfil':
