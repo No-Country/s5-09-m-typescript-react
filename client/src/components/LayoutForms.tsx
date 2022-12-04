@@ -8,17 +8,32 @@ export default function Contact({ children, tittle, text }: forms) {
 			spacing={0}
 			sx={{
 				margin: '50px  0',
+				justifyContent: { xs: 'center', md: 'flex-start' },
+				alignItems: { xs: 'center', md: 'flex-start' },
+				gap: { sm: 5, md: 0 },
+				textAlign: { sm: 'center', md: 'start' },
 			}}
 		>
-			<Grid item lg={4}>
+			<Grid
+				item
+				xs={12}
+				md={4}
+				sx={{
+					display: { xs: 'none', sm: 'block' },
+				}}
+			>
 				<Grid
 					container
 					sx={{
-						margin: '0 0 0 30px',
+						margin: { xs: '0', md: '0 0 0 30px' },
 					}}
 				>
 					<Grid item xs={12}>
-						<Typography variant='h1' color='third.main' fontSize={64}>
+						<Typography
+							variant='h1'
+							color='third.main'
+							sx={{ fontSize: { xs: 30, md: 60 } }}
+						>
 							{tittle}
 						</Typography>
 					</Grid>
@@ -26,7 +41,7 @@ export default function Contact({ children, tittle, text }: forms) {
 						item
 						xs={12}
 						sx={{
-							borderLeft: '2px solid',
+							borderLeft: { xs: 'none', md: '2px solid' },
 							borderColor: 'secondary.main',
 							paddingLeft: '5px',
 						}}
@@ -39,7 +54,8 @@ export default function Contact({ children, tittle, text }: forms) {
 			</Grid>
 			<Grid
 				item
-				lg={8}
+				xs={12}
+				md={8}
 				sx={{
 					display: 'flex',
 					justifyContent: 'center',
@@ -47,13 +63,13 @@ export default function Contact({ children, tittle, text }: forms) {
 			>
 				<Paper
 					sx={{
-						width: '600px',
+						width: { xs: '100%', sm: '600px' },
 						minHeight: '700px',
 						backgroundColor: 'primary.main',
 						borderRadius: '4px',
-						border: '1px solid',
+						border: { xs: 'none', sm: '1px solid' },
 						borderColor: 'third.main',
-						boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.25)',
+						boxShadow: { xs: 'none', sm: '0px 4px 6px rgba(0, 0, 0, 0.25)' },
 					}}
 				>
 					{children}

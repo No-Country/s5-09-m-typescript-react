@@ -68,7 +68,7 @@ export default function SignupForm() {
 				direction={'column'}
 				spacing='45px'
 				sx={{
-					padding: '60px',
+					padding: { xs: '15px', sm: '60px' },
 					paddingBottom: '100px',
 				}}
 			>
