@@ -1,14 +1,5 @@
-import {
-	Grid,
-	Paper,
-	Typography,
-	AppBar,
-	Tabs,
-	Button,
-	Modal,
-} from '@mui/material';
-import { useState } from 'react';
-import HabitsModal from '../../components/HabitsModal';
+import { Grid, Paper, Typography } from '@mui/material';
+
 import PracticesCard from './components/PracticesCard';
 
 const habitsList = [
@@ -24,7 +15,7 @@ const habitsList = [
 	{ habit: 'Reducir consumo de carne' },
 	{ habit: 'Tomar dos litros de agua al día' },
 	{ habit: 'Reducir ocio' },
-	{ habit: 'Pasar tiempo libre' },
+	{ habit: 'Pasar tiempo al aire libre' },
 	{ habit: 'Evitar alcohol y tabaco, drogas' },
 	{ habit: 'Ayunar dos veces al mes' },
 	{ habit: 'Despertar al amanecer' },
