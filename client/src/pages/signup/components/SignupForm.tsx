@@ -19,10 +19,8 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { DragAndDrop } from '../../../components/imgDrag';
-import { HabitsModal } from '../../../components';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../../redux/slices/user';
-import { useAppSelector } from '../../../redux/hooks';
 import { changeShowHabitModal } from '../../../redux/slices/setting';
 import { Theme } from '@mui/system';
 
@@ -46,7 +44,6 @@ export default function SignupForm() {
 	const [showPassword, setshowPassword] = useState(false);
 	const [url, setUrl] = useState('');
 	const dispatch = useDispatch();
-	const showModal = useAppSelector(state => state.setting.showHabitModal);
 
 	const { palette } = useTheme<Theme>();
 
@@ -66,9 +63,6 @@ export default function SignupForm() {
 
 	return (
 		<>
-			{showModal && (
-				<HabitsModal closeModal={() => dispatch(changeShowHabitModal())} />
-			)}
 			<Stack
 				component='form'
 				direction={'column'}
@@ -153,7 +147,7 @@ export default function SignupForm() {
 					error={errors.email ? true : false}
 					helperText={errors.email ? errors.email.message?.toString() : ''}
 					{...register('email', {
-            required: 'Ingrese un correo valido',
+						required: 'Ingrese un correo valido',
 						pattern: {
 							message: 'Ingrese un correo valido',
 							value:
@@ -168,7 +162,7 @@ export default function SignupForm() {
 					error={errors.password ? true : false}
 					type={showPassword ? 'text' : 'password'}
 					{...register('password', {
-            required: true,
+						required: true,
 						pattern:
 							/^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[!@#\][:()"`;+\-'|_?,.</\\>=$%}{^&*~]).{8,}$/,
 					})}
