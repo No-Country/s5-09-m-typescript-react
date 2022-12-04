@@ -53,7 +53,7 @@ export default function Slider() {
 			}}
 		>
 			<Typography variant='h2' sx={{ fontSize: 64, fontWeight: 400 }}>
-				¿Como usar Nuestra Web?
+				¿Cómo usar Nuestra Web?
 			</Typography>
 			<div style={{ width: 700, padding: 50 }}>
 				<Carousel

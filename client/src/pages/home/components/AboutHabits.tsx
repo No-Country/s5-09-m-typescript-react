@@ -11,7 +11,7 @@ const itemList = [
 		url: 'link',
 	},
 	{
-		about: 'La Comida',
+		about: 'Alimentación',
 		image:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1669750013/dise%C3%B1o%20definitivo/alimentos_yqhbto.jpg',
 		url: 'link',

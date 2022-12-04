@@ -1,9 +1,6 @@
 import { Box, Typography } from '@mui/material';
 
 export default function MyPractices() {
-	const navegacion = () => {
-		console.log('probando boton');
-	};
 	return (
 		<section>
 			<Box
@@ -51,13 +48,12 @@ export default function MyPractices() {
 							color={'text.secondary'}
 							sx={{ margin: '30px 0px', fontSize: '24px', lineHeight: '32px' }}
 						>
-							Los 16 puntos son un sistema de prácticas, que promueven la
-							consolidación de hábitos en el estado físico y mental. Todo esto
-							con el objetivo de conseguir una salud física, desarrollo mental y
-							elevación espiritual. Está claro que por medio de hábitos
-							adecuados se contribuye al funcionamiento adecuado de ellas.
-							Segundo, se puede conseguir un cuerpo saludable y una mente
-							serena.
+							Los 16 hábitos son un sistema de prácticas, que promueven la
+							consolidación de hábitos saludables. El objetivo principal es
+							mejorar el cuerpo físico, fomentar el desarrollo mental y lograr
+							la elevación espiritual. Gracias a todo esto podemos equilibrar el
+							cuerpo, la mente y el espíritu, entendiendo la salud como un todo
+							y mejorando nuestra calidad de vida.
 						</Typography>
 					</div>
 
