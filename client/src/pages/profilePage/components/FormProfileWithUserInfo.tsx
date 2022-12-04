@@ -3,6 +3,7 @@ import { Typography, Grid, TextField } from '@mui/material';
 import TopBarProfile from './TopBarProfile';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
+import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 import { Box } from '@mui/system';
 import { useAppSelector } from '../../../redux/hooks';
 import { useState } from 'react';
@@ -10,6 +11,8 @@ export default function FormProfileWithUserInfo() {
 	const user = useAppSelector(store => store.user);
 	const [name, setName] = useState(user.name);
 	const [password, setPassword] = useState('*********');
+	const [input, setInput] = useState(true);
+	const [inputPass, setInputPass] = useState(true);
 
 	const navegacion = () => {
 		console.log('probando boton');
@@ -51,13 +54,19 @@ export default function FormProfileWithUserInfo() {
 							</Typography>
 							<TextField
 								id='outlined-name'
+								disabled={input}
 								value={name}
 								onChange={handleChange}
-								variant='outlined'
+								variant='standard'
+								sx={{ border: 'none' }}
 								defaultValue={user.name}
+								InputProps={{
+									disableUnderline: true,
+								}}
 							>
 								<Typography fontSize='1.5rem'>{user.name}</Typography>
 							</TextField>
+							<ModeEditOutlineOutlinedIcon onClick={() => setInput(!input)} />
 						</Grid>
 						<Grid sx={{ display: 'flex' }}>
 							<Typography fontSize='1.5rem' sx={{ marginRight: '14px' }}>
@@ -69,12 +78,19 @@ export default function FormProfileWithUserInfo() {
 							<TextField
 								id='outlined-pass'
 								value={password}
+								disabled={inputPass}
 								onChange={handleChangePass}
-								variant='outlined'
+								variant='standard'
 								defaultValue={user.password}
+								InputProps={{
+									disableUnderline: true,
+								}}
 							>
 								<Typography fontSize='1.5rem'>**********</Typography>
 							</TextField>
+							<ModeEditOutlineOutlinedIcon
+								onClick={() => setInputPass(!inputPass)}
+							/>
 						</Grid>
 						<Grid sx={{ display: 'flex' }}>
 							<Typography fontSize='1.5rem' sx={{ marginRight: '14px' }}>
