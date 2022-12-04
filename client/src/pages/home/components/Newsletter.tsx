@@ -1,9 +1,17 @@
-import { Grid, Typography, Button, TextField, Paper } from '@mui/material';
+import {
+	Alert,
+	Grid,
+	Paper,
+	Stack,
+	TextField,
+	Typography,
+} from '@mui/material';
+import { useState } from 'react';
 import image from '../../../assets/Rectangle4.png';
 import { GlobalButton } from '../../../components';
-import { useState } from 'react';
 export default function BoletinInformativo({ onSubmitted, status, message }) {
 	const [email, setEmail] = useState('');
+	const [mensaje, setMensaje] = useState(true);
 
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -11,6 +19,10 @@ export default function BoletinInformativo({ onSubmitted, status, message }) {
 		console.log(email);
 		onSubmitted({ EMAIL: email });
 		console.log('hola');
+		setTimeout(() => {
+			setMensaje(false);
+		}, 3500);
+		setMensaje(true);
 	};
 
 	return (
@@ -114,6 +126,21 @@ export default function BoletinInformativo({ onSubmitted, status, message }) {
 								}}
 							/>
 							<GlobalButton text='Suscribete' type='submit' />
+							{mensaje ? (
+								<Stack marginTop={1}>
+									{status === 'sending' && (
+										<Alert severity='info'>Sending...</Alert>
+									)}
+									{status === 'error' && (
+										<Alert severity='error'>{message}</Alert>
+									)}
+									{status === 'success' && (
+										<Alert severity='success'>Subscribed</Alert>
+									)}
+								</Stack>
+							) : (
+								''
+							)}
 						</form>
 					</Grid>
 				</Grid>
