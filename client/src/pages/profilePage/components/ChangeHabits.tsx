@@ -318,7 +318,11 @@ export default function ChangeHabits({ closeModal }: HabitsModalProps) {
 					</Accordion>
 				</Grid>
 				<Grid sx={{ textAlign: 'center', marginBottom: '20px' }}>
-					<GlobalButton text='Registrarse' width='370px' action={handleSave} />
+					<GlobalButton
+						text='Modificar habitos'
+						width='370px'
+						action={handleSave}
+					/>
 				</Grid>
 				<Grid sx={{ textAlign: 'center' }}>
 					<GlobalButton

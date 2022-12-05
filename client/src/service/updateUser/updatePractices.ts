@@ -19,7 +19,7 @@ export const updatePractices = async (
 				token: user.token,
 			},
 		});
-		const dataUser = loginAdapter(getUser, false, user.token);
+		const dataUser = loginAdapter(getUser, user.google, user.token);
 		dispatch(setUser(dataUser));
 	} catch (error: any) {
 		console.log(error);

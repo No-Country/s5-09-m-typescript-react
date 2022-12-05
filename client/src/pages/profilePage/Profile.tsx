@@ -20,15 +20,17 @@ export default function Profile() {
 		setModal(nameModal);
 	};
 	const showHabitsModal = () => {
-		setShowChangeHabitsModal(!showChangeHabitsModal);
-		console.log(!showChangeHabitsModal);
+		user.practices.length == 0
+			? setShowChangeHabitsModal(false)
+			: setShowChangeHabitsModal(!showChangeHabitsModal);
+		console.log(user.practices.length == 0);
 	};
 	const renderModal = (modal: string) => {
 		switch (modal) {
 			case 'perfil':
 				return (
 					<>
-						{showChangeHabitsModal && (
+						{(showChangeHabitsModal || user.practices.length == 0) && (
 							<ChangeHabits closeModal={showHabitsModal} />
 						)}
 						<FormProfileWithUserInfo />
