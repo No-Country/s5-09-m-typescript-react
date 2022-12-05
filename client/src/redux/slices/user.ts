@@ -41,9 +41,6 @@ export const userSlice = createSlice({
 		addPractices: (state, action: PayloadAction<User>) => {
 			state.practices.push(action.payload);
 		},
-		removePractices: (state, action: PayloadAction<User>) => {
-			//terminar logica
-		},
 	},
 });
 
