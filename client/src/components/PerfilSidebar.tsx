@@ -1,4 +1,5 @@
 import {
+	AccountCircleOutlined,
 	BookmarkBorderOutlined,
 	CalendarMonthOutlined,
 	EventAvailableOutlined,

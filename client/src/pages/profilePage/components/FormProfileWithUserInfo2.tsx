@@ -3,19 +3,17 @@ import CoronavirusOutlinedIcon from '@mui/icons-material/CoronavirusOutlined';
 import { Typography, Grid } from '@mui/material';
 import GlobalButton from '../../../components/GlobalButton';
 import DeletableChips from './DeletableChips';
+import { useAppSelector } from '../../../redux/hooks';
 
-export default function FormProfileWithUserInfo2() {
-	const [isOpenModal, setIsOpenModal] = React.useState(false);
-	const [habits, setHabits] = React.useState<string[]>([]);
+type HabitsModalProps = {
+	closeModal: () => void;
+};
+export default function FormProfileWithUserInfo2({
+	closeModal,
+}: HabitsModalProps) {
+	const { practices } = useAppSelector(store => store.user);
+	const habits = practices?.map((e: any) => e.practice);
 
-	const closeModal = () => {
-		setIsOpenModal(false);
-	};
-
-	const navegacion = () => {
-		console.log('probando boton');
-		setIsOpenModal(true);
-	};
 	return (
 		<Grid container height='33%' sx={{ marginTop: '75px' }}>
 			<Grid item xs={2}>
@@ -41,11 +39,9 @@ export default function FormProfileWithUserInfo2() {
 					alignContent: 'stretch',
 				}}
 			>
-				<DeletableChips />
-				<DeletableChips />
-				<DeletableChips />
-				<DeletableChips />
-				<DeletableChips />
+				{habits?.map((e: any) => {
+					return <DeletableChips key={e._id} name={e.name} />;
+				})}
 			</Grid>
 			<Grid
 				item
@@ -57,7 +53,7 @@ export default function FormProfileWithUserInfo2() {
 					marginTop: '25px',
 				}}
 			>
-				<GlobalButton text='Cambia tus habitos' action={navegacion} />
+				<GlobalButton text='Cambia tus habitos' action={closeModal} />
 			</Grid>
 		</Grid>
 	);

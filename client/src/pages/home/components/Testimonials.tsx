@@ -8,10 +8,9 @@ export default function Testimonials() {
 				spacing={2}
 				padding='100px 0 100px 0'
 				justifyContent='center'
-				sx={{ backgroundColor: '#E7E8EA' }}
 			>
 				<Grid item xs={12} margin='0 0 20px 0'>
-					<Typography variant='h2' color='third.main' textAlign='center'>
+					<Typography variant='h2' color='text.primary' textAlign='center'>
 						Testimonios
 					</Typography>
 				</Grid>
@@ -35,11 +34,13 @@ export default function Testimonials() {
 						>
 							<Grid item xs={12}>
 								<Typography
+									sx={{
+										fontSize: '20',
+										color: 'text.secondary',
+										borderLeft: '3px solid #279F87',
+										paddingLeft: '5px',
+									}}
 									component='p'
-									fontSize={20}
-									color='text'
-									borderLeft='2px solid #FC802C'
-									paddingLeft='10px'
 								>
 									"Poder hacer un seguimiento diario de los hábitos que realizo
 									me ha ayudado a mejorar mi vida de una manera maravillosa."
@@ -64,6 +65,7 @@ export default function Testimonials() {
 							height: '100%',
 							width: '100%',
 							borderRadius: '20px',
+							backgroundColor: 'primary.dark',
 						}}
 					>
 						<Grid
@@ -80,10 +82,12 @@ export default function Testimonials() {
 							<Grid item xs={12}>
 								<Typography
 									component='p'
-									fontSize={20}
-									color='text'
-									borderLeft='2px solid #FC802C'
-									paddingLeft='10px'
+									sx={{
+										fontSize: '20',
+										color: 'text.secondary',
+										borderLeft: '3px solid #279F87',
+										paddingLeft: '5px',
+									}}
 								>
 									"Practicar el mindfulness a diario me ha ayudado a controlar
 									mi ansiedad y a tomar las situaciones estresantes con mayor

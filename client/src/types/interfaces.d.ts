@@ -1,5 +1,5 @@
 export interface children {
-	children: JSX.Element;
+	children: JSX.Elements;
 }
 
 export interface forms extends children {

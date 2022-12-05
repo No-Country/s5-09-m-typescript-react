@@ -2,9 +2,6 @@ import { Box, Typography, Grid } from '@mui/material';
 import { GlobalButton } from '../../../components';
 
 export default function MyPractices() {
-	const navegacion = () => {
-		console.log('probando boton');
-	};
 	return (
 		<section>
 			<Box
@@ -58,21 +55,16 @@ export default function MyPractices() {
 								lineHeight: '32px',
 							}}
 						>
-							Los 16 puntos son un sistema de prácticas, que promueven la
-							consolidación de hábitos en el estado físico y mental. Todo esto
-							con el objetivo de conseguir una salud física, desarrollo mental y
-							elevación espiritual. Está claro que por medio de hábitos
-							adecuados se contribuye al funcionamiento adecuado de ellas.
-							Segundo, se puede conseguir un cuerpo saludable y una mente
-							serena.
+							Los 16 hábitos son un sistema de prácticas, que promueven la
+							consolidación de hábitos saludables. El objetivo principal es
+							mejorar el cuerpo físico, fomentar el desarrollo mental y lograr
+							la elevación espiritual. Gracias a todo esto podemos equilibrar el
+							cuerpo, la mente y el espíritu, entendiendo la salud como un todo
+							y mejorando nuestra calidad de vida.
 						</Typography>
-						<GlobalButton
-							text='Conoce Más'
-							action={() => console.log('hola')}
-						/>
 					</div>
 					<img
-						src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668435967/ananda%20marga/home/my_practices_nsp7fc.jpg'
+						src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669855664/dise%C3%B1o%20definitivo/practicas_dnmqno.svg'
 						alt='Sesión de yoga'
 						className='imageMyPractices'
 						style={{ width: '40%', height: '40%', marginRight: '40px' }}

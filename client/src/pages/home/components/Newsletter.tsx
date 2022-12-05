@@ -38,13 +38,12 @@ export default function BoletinInformativo({ onSubmitted, status, message }) {
 					}}
 				>
 					<div
-						className='prueba'
 						style={{
 							position: 'relative',
 						}}
 					>
 						<img
-							src={image}
+							src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669745203/dise%C3%B1o%20definitivo/undraw_Newsletter_re_wrob_zbwke0.png'
 							alt='Chica Yoga'
 							style={{
 								position: 'relative',
@@ -54,7 +53,7 @@ export default function BoletinInformativo({ onSubmitted, status, message }) {
 								zIndex: '5',
 							}}
 						/>
-						<Paper
+						{/* <Paper
 							sx={{
 								position: 'absolute',
 								width: '100px',
@@ -65,7 +64,7 @@ export default function BoletinInformativo({ onSubmitted, status, message }) {
 								left: -40,
 								bottom: -30,
 							}}
-						></Paper>
+						></Paper> */}
 					</div>
 				</Grid>
 			</Grid>

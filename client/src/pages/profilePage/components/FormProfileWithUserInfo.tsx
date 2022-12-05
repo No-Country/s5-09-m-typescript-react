@@ -107,6 +107,7 @@ export default function FormProfileWithUserInfo() {
 							display: 'flex',
 							flexDirection: 'column',
 							justifyContent: 'center',
+							width: '300px',
 							alignItems: 'start',
 							gap: '30px',
 							marginLeft: '100px',
