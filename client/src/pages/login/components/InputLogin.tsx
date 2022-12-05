@@ -9,7 +9,7 @@ import {
 	IconButton,
 	InputAdornment,
 } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useGoogleLogin } from '@react-oauth/google';
 import { onLogin, onLoginGoogle } from '../../../service';
@@ -18,7 +18,13 @@ import axios from 'axios';
 import { isEmail } from '../../../utilities';
 import { Message, Visibility, VisibilityOff } from '@mui/icons-material';
 import { useState } from 'react';
-import { useAppDispatch } from '../../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
+import {
+	changeErrorPassword,
+	changeForgotPasswordModal,
+} from '../../../redux/slices/setting';
+import { AlertModal } from '../../../components';
+import { publicRoute } from '../../../models/routes';
 
 type Inputs = {
 	email: string;
@@ -27,7 +33,13 @@ type Inputs = {
 };
 
 export default function InputLogin() {
+	const navigate = useNavigate();
 	const dispatch = useAppDispatch();
+	const errorPassword = useAppSelector(state => state.setting.errorPassword);
+
+	const closeModal = () => {
+		dispatch(changeErrorPassword());
+	};
 
 	const [showPassword, setshowPassword] = useState(false);
 	const {
@@ -70,9 +82,22 @@ export default function InputLogin() {
 
 	return (
 		<form onSubmit={handleSubmit(data => onLogin(data, dispatch))}>
-			<Grid container spacing={5} p={6}>
+			<Grid
+				container
+				spacing={5}
+				sx={{
+					flexDirection: { xs: 'column', sm: 'row' },
+					padding: { xs: '15px', sm: 6 },
+				}}
+			>
 				<Grid item xs={12}>
-					<Typography variant='h4' component='h4' color='text.secondary'>
+					<Typography
+						variant='h4'
+						component='h4'
+						color='third.main'
+						textAlign='center'
+						sx={{ fontSize: { xs: 26, md: 34 } }}
+					>
 						Iniciar Sesión
 					</Typography>
 				</Grid>
@@ -118,8 +143,17 @@ export default function InputLogin() {
 						}}
 						type={showPassword ? 'text' : 'password'}
 					/>
+
+					{errorPassword && (
+						<AlertModal
+							title='Contraseña incorrecta'
+							text=''
+							urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669814884/ananda%20marga/home/alerts/FeaturedIconAlert_juurtw.png'
+							close={() => dispatch(changeErrorPassword())}
+						/>
+					)}
 				</Grid>
-				<Grid item xs={6}>
+				<Grid item xs={12} sm={6}>
 					<FormControlLabel
 						control={<Checkbox {...register('isChecked')} color='secondary' />}
 						label='Acuerdate de mi'
@@ -127,15 +161,24 @@ export default function InputLogin() {
 				</Grid>
 				<Grid
 					item
-					xs={6}
+					xs={12}
+					sm={6}
 					sx={{
 						display: 'flex',
 						flexDirection: 'column',
+
 						justifyContent: 'center',
-						alignItems: 'flex-end',
+						alignItems: { sx: 'flex-start', sm: 'flex-end' },
 					}}
 				>
-					<RouterLink to='/'>¿Olvidaste la contraseña?</RouterLink>
+					<Link
+						sx={{
+							color: 'secondary.main',
+						}}
+						onClick={() => dispatch(changeForgotPasswordModal())}
+					>
+						¿Olvidaste la contraseña?
+					</Link>
 				</Grid>
 				<Grid
 					item
@@ -161,28 +204,6 @@ export default function InputLogin() {
 						alignItems: 'center',
 					}}
 				>
-					{/* <LoginSocialFacebook
-						appId='461951009397297'
-						onResolve={res => {
-							console.log(res);
-						}}
-						onReject={error => {
-							console.log(error);
-						}}
-					>
-						<Button
-							variant='outlined'
-							fullWidth
-							sx={{ maxWidth: '100px' }}
-							// onClick={handleLogin}
-							// disabled={isLoading}
-						>
-							<img
-								src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668694018/ananda%20marga/facebook_ic_ashpl3.svg'
-								alt='132'
-							/>
-						</Button>
-					</LoginSocialFacebook> */}
 					<Button
 						variant='outlined'
 						fullWidth
@@ -200,13 +221,22 @@ export default function InputLogin() {
 					xs={12}
 					sx={{
 						display: 'flex',
-
+						gap: 1,
 						justifyContent: 'flex-end',
+						flexDirection: { xs: 'column', sm: 'row' },
 						alignItems: 'center',
 					}}
 				>
-					<Typography>Aún no tienes cuenta?</Typography>{' '}
-					<RouterLink to='/registrate'>Registrarse</RouterLink>
+					<Typography>Aún no tienes cuenta?</Typography>
+					<Link
+						onClick={() => navigate(publicRoute.register)}
+						sx={{
+							cursor: 'pointer',
+							color: 'secondary.main',
+						}}
+					>
+						Registrarse
+					</Link>
 				</Grid>
 				<Grid item xs={12}>
 					<Button

@@ -10,7 +10,7 @@ export const validateLogin = [
     body('password')
         .isStrongPassword()
         .withMessage(
-            'The Password has to contain min 8 chars, 1 lowercase(min), 1 uppercase(min), 1 number(min), 1 symbol(min) '
+            'La contraseña debe contener min 8 carácteres, 1 minúscula(min), 1 mayúscula(min), 1 numero(min), 1 simbolo(min) '
         ),
 
     (req: Request, res: Response, next: NextFunction) => {

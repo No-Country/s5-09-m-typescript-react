@@ -4,7 +4,7 @@ import { User } from '../../types';
 // Define a type for the slice state
 
 // Define the initial state using that type
-const initialState: User = {
+const initialState: Partial<User> = {
 	code: undefined,
 	email: '',
 	emailVerified: false,
@@ -12,6 +12,7 @@ const initialState: User = {
 	img: '',
 	id: undefined,
 	practices: [],
+	token: '',
 };
 // setUser y closeSesion sin return no andan.
 export const userSlice = createSlice({

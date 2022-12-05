@@ -1,70 +1,90 @@
-import { Grid, Button, Typography, Box } from '@mui/material';
+import { Grid, Typography, Box, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { GlobalButton } from '../../../components';
+import { publicRoute, privateRoute } from '../../../models/routes';
+
 export default function Hero() {
-	const navegacion = () => {
-		console.log('probando boton');
+	const navegation = useNavigate();
+	const redirection = () => {
+		navegation(publicRoute.login);
 	};
 	return (
 		<Grid
 			container
-			alignItems='center'
+			alignItems='start'
 			justifyContent='space-between'
 			sx={{
 				minHeight: 'calc(100vh - 100px)',
 				backgroundImage:
-					'url(https://res.cloudinary.com/dlxlitkl6/image/upload/v1668534521/ananda%20marga/home/woman_without_background_img.png)',
+					'url(https://res.cloudinary.com/dlxlitkl6/image/upload/v1669744454/dise%C3%B1o%20definitivo/yoga_tres_amigas_hv9pjr.svg)',
 
 				backgroundRepeat: 'no-repeat',
-				backgroundPosition: '50% 100%',
+				backgroundPosition: '50% 90%',
 				backgroundColor: 'primary.main',
-				backgroundSize: 'contain',
+				backgroundSize: '50%',
 			}}
-			padding={20}
+			padding={4}
 		>
-			<Grid item xs={4} gap={2} display='flex' flexDirection='column'>
+			<Grid
+				item
+				xs={8}
+				gap={2}
+				display='flex'
+				flexDirection='column'
+				marginTop='80px'
+			>
 				<Typography variant='h2' component='h2'>
 					Lleva tu{' '}
-					<Typography color={'text.secondary'} component='span' variant='h2'>
+					<Typography color='third.main' component='span' variant='h2'>
 						Control
 					</Typography>
 				</Typography>
-				<Typography component='h3' variant='h4'>
+				<Typography component='h3' variant='h4' color='text.secondary'>
 					Registra y evalúa tu progreso
 				</Typography>
 				<Typography
 					component='p'
 					variant='body1'
 					padding={1}
-					sx={{ borderLeft: '3px solid', borderColor: 'secondary.main' }}
+					sx={{
+						borderLeft: '3px solid',
+						borderColor: 'secondary.main',
+						width: '50%',
+						color: 'text.secondary',
+					}}
 				>
-					¿Necesitas ayuda con tu práctica de atención plena? aquí te ayudamos a
-					cumplir con tus metas diarias, comienza poco a poca agregando cada día
-					nuevas tareas, ve registrando y evaluando tu progreso en el
-					cumplimiento de los 16 puntos.
+					¿Necesitas ayuda con tu práctica diaria de atención plena? Comienza
+					agregando tareas. Has un seguimiento de tu progreso y observa tu
+					evolución.
 				</Typography>
-				<GlobalButton text='Comienza ahora' action={navegacion} />
+				<GlobalButton text='Comienza ahora' action={redirection} />
 			</Grid>
+
 			<Grid
 				item
 				xs={4}
-				alignItems='flex-end'
+				alignItems='center'
 				justifyContent='center'
 				display='flex'
 				flexDirection='column'
+				gap={2}
+				marginTop='100px'
 			>
 				<Typography
-					color={'text.secondary'}
-					variant='h2'
+					color='third.main'
+					variant='h3'
 					component='h2'
 					textAlign='end'
 				>
-					Registra tus
+					Registra Aquí
 				</Typography>
-				<Box
+				<Button
+					variant='text'
+					onClick={() => navegation(privateRoute.dashboard)}
 					// bgcolor='third'
 					sx={{
 						alignItems: 'center',
-						backgroundColor: '#4E7D64',
+						backgroundColor: 'primary.dark',
 						color: 'white',
 						display: 'flex',
 						flexDirection: 'column',
@@ -72,15 +92,16 @@ export default function Hero() {
 						justifyContent: 'center',
 						width: 200,
 						borderRadius: '50%',
+						filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.35))',
 					}}
 				>
-					<Typography variant='h2' component='h4'>
+					<Typography variant='h2' component='h4' color='third.main'>
 						16
 					</Typography>
-					<Typography variant='h4' component='span'>
+					<Typography variant='h4' component='span' color='third.main'>
 						Hábitos
 					</Typography>
-				</Box>
+				</Button>
 			</Grid>
 		</Grid>
 	);

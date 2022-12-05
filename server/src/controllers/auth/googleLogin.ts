@@ -21,7 +21,7 @@ export const googleLogin = async (req: Request, res: Response) => {
             const { user, token } = response
             return res.status(200).json({
                 ok: true,
-                msg: 'User Created and Logged',
+                msg: 'Usuario Creado y Logeado',
                 id: user._id,
                 token: token,
                 google: true,

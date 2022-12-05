@@ -1,14 +1,20 @@
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
+import { Typography } from '@mui/material';
 
-export default function DeletableChips() {
-	const handleDelete = () => {
-		console.info('You clicked the delete icon.');
-	};
-
+export default function DeletableChips({ name }: any) {
 	return (
-		<Stack direction='row' spacing={2}>
-			<Chip label='Deletable' variant='outlined' onDelete={handleDelete} />
-		</Stack>
+		<Typography
+			variant='body1'
+			component='span'
+			sx={{
+				padding: '10px',
+				borderRadius: '30px',
+				color: 'secondary.main',
+				backgroundColor: 'primary.dark',
+				fontWeight: '600',
+				boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+			}}
+		>
+			{name}
+		</Typography>
 	);
 }
