@@ -1,4 +1,3 @@
-import * as React from 'react';
 import CoronavirusOutlinedIcon from '@mui/icons-material/CoronavirusOutlined';
 import { Typography, Grid } from '@mui/material';
 import GlobalButton from '../../../components/GlobalButton';
@@ -26,7 +25,6 @@ export default function FormProfileWithUserInfo2({
 				<Typography fontSize='1.5rem'>
 					Aquí puedes ver y editar los hábitos que estás trabajando
 				</Typography>
-				;
 			</Grid>
 			<Grid
 				item
