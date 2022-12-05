@@ -76,13 +76,13 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
          
                 <Typography sx={{
                                 display:'flex',
-                                fontSize:'24px',
+                                fontSize:'18px',
                                 fontWeight:400,
-                                lineHeight:'36px',
+                                lineHeight:'1.5em',
                                 margin:'auto 0',
                                 textAlign:'center',
                                 justifyContent:'center',
-                                width:'50px',
+                                width:'50%',
                                 height:'fit-content'
                              
                                 }}>

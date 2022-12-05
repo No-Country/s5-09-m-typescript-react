@@ -18,7 +18,12 @@ import axios from 'axios';
 import { isEmail } from '../../../utilities';
 import { Message, Visibility, VisibilityOff } from '@mui/icons-material';
 import { useState } from 'react';
-import { useAppDispatch } from '../../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
+import {
+	changeErrorPassword,
+	changeForgotPasswordModal,
+} from '../../../redux/slices/setting';
+import { AlertModal } from '../../../components';
 
 type Inputs = {
 	email: string;
@@ -28,6 +33,11 @@ type Inputs = {
 
 export default function InputLogin() {
 	const dispatch = useAppDispatch();
+	const errorPassword = useAppSelector(state => state.setting.errorPassword);
+
+	const closeModal = () => {
+		dispatch(changeErrorPassword());
+	};
 
 	const [showPassword, setshowPassword] = useState(false);
 	const {
@@ -70,13 +80,21 @@ export default function InputLogin() {
 
 	return (
 		<form onSubmit={handleSubmit(data => onLogin(data, dispatch))}>
-			<Grid container spacing={5} p={6}>
+			<Grid
+				container
+				spacing={5}
+				sx={{
+					flexDirection: { xs: 'column', sm: 'row' },
+					padding: { xs: '15px', sm: 6 },
+				}}
+			>
 				<Grid item xs={12}>
 					<Typography
 						variant='h4'
 						component='h4'
 						color='third.main'
 						textAlign='center'
+						sx={{ fontSize: { xs: 26, md: 34 } }}
 					>
 						Iniciar Sesión
 					</Typography>
@@ -123,8 +141,17 @@ export default function InputLogin() {
 						}}
 						type={showPassword ? 'text' : 'password'}
 					/>
+
+					{errorPassword && (
+						<AlertModal
+							title='Contraseña incorrecta'
+							text=''
+							urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669814884/ananda%20marga/home/alerts/FeaturedIconAlert_juurtw.png'
+							close={() => dispatch(changeErrorPassword())}
+						/>
+					)}
 				</Grid>
-				<Grid item xs={6}>
+				<Grid item xs={12} sm={6}>
 					<FormControlLabel
 						control={<Checkbox {...register('isChecked')} color='secondary' />}
 						label='Acuerdate de mi'
@@ -132,20 +159,21 @@ export default function InputLogin() {
 				</Grid>
 				<Grid
 					item
-					xs={6}
+					xs={12}
+					sm={6}
 					sx={{
 						display: 'flex',
 						flexDirection: 'column',
+
 						justifyContent: 'center',
-						alignItems: 'flex-end',
+						alignItems: { sx: 'flex-start', sm: 'flex-end' },
 					}}
 				>
 					<Link
-						component='button'
 						sx={{
 							color: 'secondary.main',
 						}}
-						onClick={() => {}}
+						onClick={() => dispatch(changeForgotPasswordModal())}
 					>
 						¿Olvidaste la contraseña?
 					</Link>
@@ -191,13 +219,22 @@ export default function InputLogin() {
 					xs={12}
 					sx={{
 						display: 'flex',
-
+						gap: 1,
 						justifyContent: 'flex-end',
+						flexDirection: { xs: 'column', sm: 'row' },
 						alignItems: 'center',
 					}}
 				>
-					<Typography>Aún no tienes cuenta?</Typography>{' '}
-					<RouterLink to='/registrate'>Registrarse</RouterLink>
+					<Typography>Aún no tienes cuenta?</Typography>
+					<RouterLink to='/registrate'>
+						<Link
+							sx={{
+								color: 'secondary.main',
+							}}
+						>
+							Registrarse
+						</Link>
+					</RouterLink>
 				</Grid>
 				<Grid item xs={12}>
 					<Button

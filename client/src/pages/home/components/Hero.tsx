@@ -11,7 +11,7 @@ export default function Hero() {
 	return (
 		<Grid
 			container
-			alignItems='center'
+			alignItems='start'
 			justifyContent='space-between'
 			sx={{
 				minHeight: 'calc(100vh - 100px)',
@@ -21,11 +21,18 @@ export default function Hero() {
 				backgroundRepeat: 'no-repeat',
 				backgroundPosition: '50% 90%',
 				backgroundColor: 'primary.main',
-				backgroundSize: '60%',
+				backgroundSize: '50%',
 			}}
 			padding={4}
 		>
-			<Grid item xs={8} gap={2} display='flex' flexDirection='column'>
+			<Grid
+				item
+				xs={8}
+				gap={2}
+				display='flex'
+				flexDirection='column'
+				marginTop='80px'
+			>
 				<Typography variant='h2' component='h2'>
 					Lleva tu{' '}
 					<Typography color='third.main' component='span' variant='h2'>
@@ -61,6 +68,7 @@ export default function Hero() {
 				display='flex'
 				flexDirection='column'
 				gap={2}
+				marginTop='100px'
 			>
 				<Typography
 					color='third.main'

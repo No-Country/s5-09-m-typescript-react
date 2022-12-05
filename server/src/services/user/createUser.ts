@@ -1,8 +1,8 @@
+import bcryptjs from 'bcryptjs'
+
 import { IUser } from '../../interfaces/user'
 import User from '../../models/User'
-import bcryptjs from 'bcryptjs'
-import generateCode from '../../utils/generateCode'
-import { sendWelcomeEmail } from '../../utils/sendWelcomeEmail'
+import { generateCode, sendWelcomeEmail } from '../../utils'
 
 export const createUserService = async (user: IUser) => {
     try {

@@ -1,8 +1,8 @@
 import User from '../../models/User'
 
-export const getUserByEmailService = async (email: string) => {
+export const getUserByIdService = async (id: string) => {
     try {
-        const user = await User.findOne({ email, status: 'Active' })
+        const user = await User.findById({ _id: id, status: 'Active' })
 
         if (user) {
             const response = {

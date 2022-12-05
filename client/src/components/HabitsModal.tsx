@@ -28,12 +28,12 @@ interface SetHabits {
 }
 
 type HabitsModalProps = {
-  closeModal: () => {},
-}
+	closeModal: () => {};
+};
 
-export default function HabitsModal({closeModal} : HabitsModalProps) {
-  const dispatch = useAppDispatch()
-  const user = useAppSelector((state) => state.user)
+export default function HabitsModal({ closeModal }: HabitsModalProps) {
+	const dispatch = useAppDispatch();
+	const user = useAppSelector(state => state.user);
 	const [changeHabits, setChangeHabits] = useState<string[]>([]);
 	const [healthHabits, setHealthHabits] = useState<string[]>([]);
 	const [alimentationHabits, setAlimentationHabits] = useState<string[]>([]);
@@ -42,28 +42,28 @@ export default function HabitsModal({closeModal} : HabitsModalProps) {
 	const handleHabits = async () => {
 		try {
 			const res = (await getHabits()) as Habits; //buscar el id
-      const habits = res.data;
-      console.log("ahbtiso", habits)
-      setHealthHabits(
-        habits.filter((habit: any) => {
-          return habit.category.name === 'Salud';
-        }),
-      );
-      setAlimentationHabits(
-        habits.filter((habit: any) => {
-          return habit.category.name === 'Alimentación';
-        }),
-      );
-      setMeditationHabits(
-        habits.filter((habit: any) => {
-          return habit.category.name === "Espiritualidad";
-        }),
-      );
-      setPhysicalAct(
-        habits.filter((habit: any) => {
-          return habit.category.name === 'Limpieza externa e interna';
-        }),
-      );
+			const habits = res.data;
+			console.log('Lista completa de habitos', habits);
+			setHealthHabits(
+				habits.filter((habit: any) => {
+					return habit.category.name === 'Salud';
+				}),
+			);
+			setAlimentationHabits(
+				habits.filter((habit: any) => {
+					return habit.category.name === 'Alimentación';
+				}),
+			);
+			setMeditationHabits(
+				habits.filter((habit: any) => {
+					return habit.category.name === 'Espiritualidad';
+				}),
+			);
+			setPhysicalAct(
+				habits.filter((habit: any) => {
+					return habit.category.name === 'Limpieza externa e interna';
+				}),
+			);
 		} catch (error) {
 			return error;
 		}
@@ -71,28 +71,24 @@ export default function HabitsModal({closeModal} : HabitsModalProps) {
 
 	const handleHabitChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { name: habitId, value } = event.target;
-    console.log("event",{ habitId, value })  
-		setChangeHabits((prev) => [...prev, habitId]);
+		console.log('Habito seleccionado', { habitId, value });
+		setChangeHabits(prev => [...prev, habitId]);
 	};
 	useEffect(() => {
 		handleHabits();
 	}, []);
 
-  const handleSave = () => {
-    const practiceArray = changeHabits.map((habitId) => ({practice: habitId}))
-    const data = {...user, practices: practiceArray}
-    onRegister(data, dispatch)
-  }
+	const handleSave = () => {
+		const practiceArray = changeHabits.map(habitId => ({ practice: habitId }));
+		const data = { ...user, practices: practiceArray };
+		onRegister(data, dispatch);
+	};
 
 	return (
 		<Grid
 			container
 			spacing={0}
 			sx={{
-				position: 'absolute',
-				top: 0,
-				left: 0,
-				zIndex: 999,
 				display: 'flex',
 				justifyContent: 'center',
 
@@ -279,7 +275,7 @@ export default function HabitsModal({closeModal} : HabitsModalProps) {
 					</Accordion>
 				</Grid>
 				<Grid sx={{ textAlign: 'center', marginBottom: '20px' }}>
-					<GlobalButton text='Guardar' width='370px' action={handleSave} />
+					<GlobalButton text='Registrarse' width='370px' action={handleSave} />
 				</Grid>
 				<Grid sx={{ textAlign: 'center' }}>
 					<GlobalButton

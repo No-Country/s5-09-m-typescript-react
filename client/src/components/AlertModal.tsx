@@ -1,4 +1,4 @@
-import { Button, Grid, Paper, Typography, IconButton } from '@mui/material';
+import { Grid, Paper, Typography, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 interface AlertModal {
@@ -12,23 +12,28 @@ export default function AlertModal({ close, urlImg, title, text }: AlertModal) {
 	return (
 		<Grid
 			sx={{
-				position: 'absolute',
+				position: 'fixed',
 				top: 0,
 				left: 0,
 				zIndex: 999,
 				display: 'flex',
 				justifyContent: 'center',
+				alingItems: 'center',
 				width: '100%',
 				height: '100%',
+				backgroundColor: 'rgba(0,0,0,0.25)',
 			}}
 		>
 			<Paper
 				sx={{
-					marginTop: '150px',
+					position: 'relative',
+					marginTop: '130px',
 					width: '400px',
 					height: '200px',
-					display: 'block',
+					display: 'flex',
 					flexDirection: 'column',
+					justifyContent: 'center',
+					alingItems: 'center',
 					padding: '20px 20px',
 					border: 'solid gray',
 				}}
@@ -37,9 +42,9 @@ export default function AlertModal({ close, urlImg, title, text }: AlertModal) {
 					src={urlImg}
 					alt='alert simbol'
 					style={{
-						display: 'inline-block',
-						position: 'relative',
-						left: '150px',
+						height: '30px',
+						width: '30px',
+						margin: '0 auto',
 					}}
 				/>
 
@@ -49,6 +54,9 @@ export default function AlertModal({ close, urlImg, title, text }: AlertModal) {
 					sx={{
 						float: 'right',
 						display: 'inline-block',
+						position: 'absolute',
+						right: '0',
+						top: '0',
 					}}
 				>
 					<CloseIcon />

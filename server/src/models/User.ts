@@ -51,10 +51,10 @@ const userSchema = new Schema<IUser>({
         type: String,
         default: 'Active',
     },
-    // resetLink: {
-    //     type: String,
-    //     default: '',
-    // },
+    resetLink: {
+        type: String,
+        default: '',
+    },
     code: {
         type: Number,
     },

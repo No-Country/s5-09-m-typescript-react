@@ -2,7 +2,7 @@ import { Dispatch } from '@reduxjs/toolkit';
 import { loginAdapter } from '../../adapters/adapter';
 import { setUser, emailVerification } from '../../redux/slices/user';
 import API_URL from '../API_URL';
-
+import {changeErrorPassword} from '../../redux/slices/setting';
 export const onLogin = async (
 	{
 		email,
@@ -33,13 +33,15 @@ export const onLogin = async (
 		dispatch(setUser(dataUser));
     sessionStorage.removeItem('userData')
 	} catch (err: any) {
-		const data = err.response.data;
-		console.log(data);
+		const data = err.response.data; //este es el err.msg
+		console.log(data); 
 		if (data.msg === 'El email no esta verificado') {
 			dispatch(emailVerification({ code: data.code, id: data.id }));
-		}
-	}
-};
+		}else{
+		if(data.error[0].msg === 'The Password has to contain min 8 chars, 1 lowercase(min), 1 uppercase(min), 1 number(min), 1 symbol(min) '){
+			dispatch(changeErrorPassword());
+		}}}
+	};
 
 type verifyCode = {
   userId?: string,
