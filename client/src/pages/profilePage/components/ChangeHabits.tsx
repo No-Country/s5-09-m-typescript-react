@@ -13,25 +13,20 @@ import {
 } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import React, { useEffect, useState } from 'react';
-import GlobalButton from './GlobalButton';
-import { getHabits } from '../service/habits/habits';
-import { onRegister } from '../service/register';
-import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import GlobalButton from '../../../components/GlobalButton';
+import { getHabits } from '../../../service/habits/habits';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
+import { updatePractices } from '../../../service';
 
 interface Habits {
 	data: Array<string>;
 }
-interface SetHabits {
-	data: {
-		name: string;
-	};
-}
 
 type HabitsModalProps = {
-	closeModal: () => {};
+	closeModal: () => void;
 };
 
-export default function HabitsModal({ closeModal }: HabitsModalProps) {
+export default function ChangeHabits({ closeModal }: HabitsModalProps) {
 	const dispatch = useAppDispatch();
 	const user = useAppSelector(state => state.user);
 	const [changeHabits, setChangeHabits] = useState<string[]>([]);
@@ -43,7 +38,6 @@ export default function HabitsModal({ closeModal }: HabitsModalProps) {
 		try {
 			const res = (await getHabits()) as Habits; //buscar el id
 			const habits = res.data;
-			console.log('Lista completa de habitos', habits);
 			setHealthHabits(
 				habits.filter((habit: any) => {
 					return habit.category.name === 'Salud';
@@ -71,7 +65,6 @@ export default function HabitsModal({ closeModal }: HabitsModalProps) {
 
 	const handleHabitChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { name: habitId, value } = event.target;
-		console.log('Habito seleccionado', { habitId, value });
 		setChangeHabits(prev => [...prev, habitId]);
 	};
 	useEffect(() => {
@@ -80,8 +73,10 @@ export default function HabitsModal({ closeModal }: HabitsModalProps) {
 
 	const handleSave = () => {
 		const practiceArray = changeHabits.map(habitId => ({ practice: habitId }));
-		const data = { ...user, practices: practiceArray };
-		onRegister(data, dispatch);
+		const data = { practices: practiceArray };
+		console.log(data);
+		updatePractices(data, user, dispatch);
+		closeModal();
 	};
 
 	return (
@@ -89,10 +84,14 @@ export default function HabitsModal({ closeModal }: HabitsModalProps) {
 			container
 			spacing={0}
 			sx={{
+				position: 'absolute',
+				top: '0',
+				left: '0',
+				zIndex: '999',
 				display: 'flex',
 				justifyContent: 'center',
-
-				height: '100%',
+				minHeight: '100vh',
+				backgroundColor: 'RGBA(156,81,183,0.49)',
 			}}
 		>
 			<Paper
@@ -319,7 +318,11 @@ export default function HabitsModal({ closeModal }: HabitsModalProps) {
 					</Accordion>
 				</Grid>
 				<Grid sx={{ textAlign: 'center', marginBottom: '20px' }}>
-					<GlobalButton text='Registrarse' width='370px' action={handleSave} />
+					<GlobalButton
+						text='Modificar habitos'
+						width='370px'
+						action={handleSave}
+					/>
 				</Grid>
 				<Grid sx={{ textAlign: 'center' }}>
 					<GlobalButton
