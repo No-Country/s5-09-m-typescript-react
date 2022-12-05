@@ -48,7 +48,7 @@ export default function PracticesCard({ tittle, urlImg, text }: cardContent) {
 						variant='body1'
 						sx={{
 							fontSize: '20px',
-							textAlign: 'justify',
+							textAlign: 'center',
 							fontWeight: '400',
 							lineHeight: '28px',
 							color: 'text.secondary',

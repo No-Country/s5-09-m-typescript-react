@@ -21,7 +21,6 @@ export default function FormProfileWithUserInfo2({
 					<CoronavirusOutlinedIcon sx={{ color: 'secondary.main' }} />
 					Hábitos
 				</Typography>
-				;
 			</Grid>
 			<Grid item xs={9}>
 				<Typography fontSize='1.5rem'>
