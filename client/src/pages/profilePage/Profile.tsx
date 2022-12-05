@@ -30,7 +30,8 @@ export default function Profile() {
 			case 'perfil':
 				return (
 					<>
-						{(showChangeHabitsModal || user.practices.length == 0) && (
+						{(showChangeHabitsModal ||
+							(user.practices.length == 0 && user.emailVerified)) && (
 							<ChangeHabits closeModal={showHabitsModal} />
 						)}
 						<FormProfileWithUserInfo />

@@ -17,6 +17,7 @@ import GlobalButton from './GlobalButton';
 import { getHabits } from '../service/habits/habits';
 import { onRegister } from '../service/register';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { closeSession } from '../redux/slices/user';
 
 interface Habits {
 	data: Array<string>;
@@ -82,6 +83,7 @@ export default function HabitsModal({ closeModal }: HabitsModalProps) {
 		const practiceArray = changeHabits.map(habitId => ({ practice: habitId }));
 		const data = { ...user, practices: practiceArray };
 		onRegister(data, dispatch);
+		dispatch(closeSession());
 	};
 
 	return (
