@@ -2,6 +2,7 @@ import bcrypt from 'bcryptjs'
 
 import User from '../../models/User'
 import { generateJwt } from '../../utils'
+import { mailchimpService } from '../../services'
 
 export const googleLoginService = async (
     name: string,
@@ -33,6 +34,9 @@ export const googleLoginService = async (
             const token = await generateJwt(newUser.id, newUser.admin)
 
             await newUser.save()
+
+            //*Suscribo a Mailchimp
+            mailchimpService(email)
 
             const response = { ok: false, token: token, user: newUser }
             return response
