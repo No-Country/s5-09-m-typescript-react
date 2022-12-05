@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import { GlobalButton } from '../../../components';
 
 export default function MyPractices() {
@@ -11,28 +11,30 @@ export default function MyPractices() {
 				style={{
 					paddingTop: '50px',
 					display: 'flex',
-					flexDirection: 'column',
 					alignItems: 'center',
 					fontFamily: 'Lora',
+					flexWrap: 'wrap',
+					justifyContent: 'center',
 				}}
 			>
-				<Typography
-					variant='h2'
-					color='text.secondary'
-					sx={{ textAlign: 'center', fontSize: 64, fontWeight: 600 }}
-				>
-					Mis Prácticas
-				</Typography>
-
+				<Grid item sm={12} xs={6}>
+					<Typography
+						variant='h2'
+						color='text.secondary'
+						sx={{ textAlign: 'center', fontSize: 64, fontWeight: 600 }}
+					>
+						Mis Prácticas
+					</Typography>
+				</Grid>
 				<div
 					className='containerHabits'
-					style={{ display: 'flex', width: '1442px', marginTop: '56px' }}
+					style={{ display: 'flex', width: '81%', marginTop: '56px' }}
 				>
 					<div
 						className='containerText'
 						style={{
-							width: '785px',
-							height: '368px',
+							width: '70%',
+							height: '50%',
 							marginLeft: '40px',
 							marginRight: '23px',
 							fontWeight: '400',
@@ -50,7 +52,11 @@ export default function MyPractices() {
 						<Typography
 							variant='body1'
 							color={'text.primary'}
-							sx={{ margin: '30px 0px', fontSize: '24px', lineHeight: '32px' }}
+							sx={{
+								margin: '30px 0px',
+								fontSize: '24px',
+								lineHeight: '32px',
+							}}
 						>
 							Los 16 puntos son un sistema de prácticas, que promueven la
 							consolidación de hábitos en el estado físico y mental. Todo esto
@@ -65,12 +71,11 @@ export default function MyPractices() {
 							action={() => console.log('hola')}
 						/>
 					</div>
-
 					<img
 						src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1668435967/ananda%20marga/home/my_practices_nsp7fc.jpg'
 						alt='Sesión de yoga'
 						className='imageMyPractices'
-						style={{ width: '554px', height: '334px', marginRight: '40px' }}
+						style={{ width: '40%', height: '40%', marginRight: '40px' }}
 					/>
 				</div>
 			</Box>
