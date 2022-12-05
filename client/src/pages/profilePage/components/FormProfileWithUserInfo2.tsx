@@ -50,6 +50,7 @@ export default function FormProfileWithUserInfo2({
 					display: 'flex',
 					justifyContent: 'end',
 					alingItems: 'center',
+					marginTop: '50px',
 				}}
 			>
 				<GlobalButton text='Cambia tus habitos' action={closeModal} />

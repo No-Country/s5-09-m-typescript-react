@@ -42,7 +42,13 @@ export default function Progress() {
 				}}
 			>
 				{habits.map((e: any) => {
-					return <ProgressChecks tittle={e.name} urlImg={e.img} />;
+					return (
+						<ProgressChecks
+							key={habits.indexOf(e)}
+							tittle={e.name}
+							urlImg={e.img}
+						/>
+					);
 				})}
 			</Grid>
 		</Grid>
