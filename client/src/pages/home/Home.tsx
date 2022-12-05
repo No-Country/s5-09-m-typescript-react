@@ -1,3 +1,4 @@
+import SimpleForm from '../../service/mailchimp/CustomFormMailChimp';
 import {
 	Hero,
 	MyPractices,
@@ -17,7 +18,7 @@ export default function Home() {
 			<MyPractices />
 			<AboutHabits />
 			<Testimonials />
-			<Newsletter />
+			<SimpleForm />
 		</>
 	);
 }
