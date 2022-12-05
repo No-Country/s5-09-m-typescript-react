@@ -166,7 +166,17 @@ export default function ChangeHabits({ closeModal }: HabitsModalProps) {
 									return (
 										<FormControlLabel
 											key={meditationHabits.indexOf(meditationHabit)}
-											control={<Checkbox onChange={handleHabitChange} />}
+											control={
+												<Checkbox
+													onChange={handleHabitChange}
+													sx={{
+														color: 'secondary.main',
+														'&.Mui-checked': {
+															color: 'secondary.main',
+														},
+													}}
+												/>
+											}
 											label={`${meditationHabit.name}`}
 											name={meditationHabit._id}
 										/>
@@ -199,7 +209,17 @@ export default function ChangeHabits({ closeModal }: HabitsModalProps) {
 									return (
 										<FormControlLabel
 											key={healthHabits.indexOf(healthHabit)}
-											control={<Checkbox onChange={handleHabitChange} />}
+											control={
+												<Checkbox
+													onChange={handleHabitChange}
+													sx={{
+														color: 'secondary.main',
+														'&.Mui-checked': {
+															color: 'secondary.main',
+														},
+													}}
+												/>
+											}
 											label={healthHabit.name}
 											name={healthHabit._id}
 										/>
@@ -233,7 +253,17 @@ export default function ChangeHabits({ closeModal }: HabitsModalProps) {
 									return (
 										<FormControlLabel
 											key={physicalAct.indexOf(act)}
-											control={<Checkbox onChange={handleHabitChange} />}
+											control={
+												<Checkbox
+													onChange={handleHabitChange}
+													sx={{
+														color: 'secondary.main',
+														'&.Mui-checked': {
+															color: 'secondary.main',
+														},
+													}}
+												/>
+											}
 											label={act.name}
 											name={act._id}
 										/>
@@ -267,7 +297,17 @@ export default function ChangeHabits({ closeModal }: HabitsModalProps) {
 									return (
 										<FormControlLabel
 											key={alimentationHabits.indexOf(alimentationHabit)}
-											control={<Checkbox onChange={handleHabitChange} />}
+											control={
+												<Checkbox
+													onChange={handleHabitChange}
+													sx={{
+														color: 'secondary.main',
+														'&.Mui-checked': {
+															color: 'secondary.main',
+														},
+													}}
+												/>
+											}
 											label={alimentationHabit.name}
 											name={alimentationHabit._id}
 										/>
