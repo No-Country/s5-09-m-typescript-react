@@ -12,6 +12,7 @@ const initialState: Partial<User> = {
 	img: '',
 	id: undefined,
 	practices: [],
+	token: '',
 };
 // setUser y closeSesion sin return no andan.
 export const userSlice = createSlice({
@@ -36,16 +37,18 @@ export const userSlice = createSlice({
 		emailVerification: (state, action: PayloadAction<User>) => {
 			state.code = action.payload.code;
 			state.id = action.payload.id;
+			state.email = action.payload.email;
 		},
 		addPractices: (state, action: PayloadAction<User>) => {
 			state.practices.push(action.payload);
 		},
-		removePractices: (state, action: PayloadAction<User>) => {
-			//terminar logica
+		changeCode: (state, action: PayloadAction<User>) => {
+			state.code = action.payload.code;
 		},
 	},
 });
 
-export const { setUser, closeSession, emailVerification } = userSlice.actions;
+export const { setUser, closeSession, emailVerification, changeCode } =
+	userSlice.actions;
 
 export default userSlice.reducer;

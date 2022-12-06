@@ -17,13 +17,14 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { DragAndDrop } from '../../../components/imgDrag';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../../redux/slices/user';
 import { changeShowHabitModal } from '../../../redux/slices/setting';
 import { Theme } from '@mui/system';
 
+import { publicRoute } from '../../../models/routes';
 type FormInput = {
 	fullname: string;
 	email: string;
@@ -41,10 +42,10 @@ const styles = () =>
 	});
 
 export default function SignupForm() {
+	const navigate = useNavigate();
 	const [showPassword, setshowPassword] = useState(false);
 	const [url, setUrl] = useState('');
 	const dispatch = useDispatch();
-
 	const { palette } = useTheme<Theme>();
 
 	const {
@@ -214,16 +215,15 @@ export default function SignupForm() {
 					}}
 				>
 					<Typography>Ya tienes una cuenta?</Typography>
-
-					<RouterLink to='/iniciarSesion'>
-						<Link
-							sx={{
-								color: 'secondary.main',
-							}}
-						>
-							Iniciar sesión
-						</Link>
-					</RouterLink>
+					<Link
+						onClick={() => navigate(publicRoute.login)}
+						sx={{
+							cursor: 'pointer',
+							color: 'secondary.main',
+						}}
+					>
+						Inicia sesión
+					</Link>
 				</Grid>
 			</Stack>
 		</>

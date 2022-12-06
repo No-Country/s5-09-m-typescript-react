@@ -1,17 +1,18 @@
-import * as React from 'react';
 import CoronavirusOutlinedIcon from '@mui/icons-material/CoronavirusOutlined';
 import { Typography, Grid } from '@mui/material';
 import GlobalButton from '../../../components/GlobalButton';
 import DeletableChips from './DeletableChips';
 import { useAppSelector } from '../../../redux/hooks';
 
-export default function FormProfileWithUserInfo2() {
+type HabitsModalProps = {
+	closeModal: () => void;
+};
+export default function FormProfileWithUserInfo2({
+	closeModal,
+}: HabitsModalProps) {
 	const { practices } = useAppSelector(store => store.user);
 	const habits = practices?.map((e: any) => e.practice);
 
-	const navegacion = () => {
-		console.log('probando boton');
-	};
 	return (
 		<Grid container height='30%'>
 			<Grid item xs={3}>
@@ -19,13 +20,11 @@ export default function FormProfileWithUserInfo2() {
 					<CoronavirusOutlinedIcon sx={{ color: 'secondary.main' }} />
 					Hábitos
 				</Typography>
-				;
 			</Grid>
 			<Grid item xs={9}>
 				<Typography fontSize='1.5rem'>
 					Aquí puedes ver y editar los hábitos que estás trabajando
 				</Typography>
-				;
 			</Grid>
 			<Grid
 				item
@@ -48,9 +47,10 @@ export default function FormProfileWithUserInfo2() {
 					display: 'flex',
 					justifyContent: 'end',
 					alingItems: 'center',
+					marginTop: '50px',
 				}}
 			>
-				<GlobalButton text='Cambia tus habitos' action={navegacion} />
+				<GlobalButton text='Cambia tus habitos' action={closeModal} />
 			</Grid>
 		</Grid>
 	);

@@ -9,7 +9,7 @@ import {
 	IconButton,
 	InputAdornment,
 } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useGoogleLogin } from '@react-oauth/google';
 import { onLogin, onLoginGoogle } from '../../../service';
@@ -24,6 +24,7 @@ import {
 	changeForgotPasswordModal,
 } from '../../../redux/slices/setting';
 import { AlertModal } from '../../../components';
+import { publicRoute } from '../../../models/routes';
 
 type Inputs = {
 	email: string;
@@ -32,6 +33,7 @@ type Inputs = {
 };
 
 export default function InputLogin() {
+	const navigate = useNavigate();
 	const dispatch = useAppDispatch();
 	const errorPassword = useAppSelector(state => state.setting.errorPassword);
 
@@ -173,7 +175,7 @@ export default function InputLogin() {
 						sx={{
 							color: 'secondary.main',
 						}}
-						onClick={() => dispatch(changeForgotPasswordModal())}
+						onClick={() => navigate(publicRoute.recoverPassword)}
 					>
 						¿Olvidaste la contraseña?
 					</Link>
@@ -226,15 +228,15 @@ export default function InputLogin() {
 					}}
 				>
 					<Typography>Aún no tienes cuenta?</Typography>
-					<RouterLink to='/registrate'>
-						<Link
-							sx={{
-								color: 'secondary.main',
-							}}
-						>
-							Registrarse
-						</Link>
-					</RouterLink>
+					<Link
+						onClick={() => navigate(publicRoute.register)}
+						sx={{
+							cursor: 'pointer',
+							color: 'secondary.main',
+						}}
+					>
+						Registrarse
+					</Link>
 				</Grid>
 				<Grid item xs={12}>
 					<Button
