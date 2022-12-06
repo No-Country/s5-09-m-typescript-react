@@ -1,36 +1,38 @@
-import { Grid, Paper, Typography } from '@mui/material';
+import { Grid, Link, Paper, Typography } from '@mui/material';
 import PracticesCard from './components/PracticesCard';
 
 interface CardHabits {
 	tittle: string;
 	urlImg: string;
 	ext: string;
+	id: string;
 }
 const habitsList = [
-	{ habit: 'Asanas diarias' },
-	{ habit: 'Recetas saludables' },
-	{ habit: 'Ejercicio diario' },
-	{ habit: 'Meditación dos veces al día' },
-	{ habit: 'Higiene personal' },
-	{ habit: 'Limpieza del hogar' },
-	{ habit: 'Lectura espiritual' },
-	{ habit: 'Código de conducta' },
-	{ habit: 'Realizar servicio' },
-	{ habit: 'Reducir consumo de carne' },
-	{ habit: 'Tomar dos litros de agua al día' },
-	{ habit: 'Reducir ocio' },
-	{ habit: 'Pasar tiempo al aire libre' },
-	{ habit: 'Evitar alcohol y tabaco, drogas' },
-	{ habit: 'Ayunar dos veces al mes' },
-	{ habit: 'Despertar al amanecer' },
+	{ habit: 'Asanas', id: 'Asanas' },
+	{ habit: 'Recetas saludables', id: 'Recetas' },
+	{ habit: 'Ejercicio', id: 'ejercicio' },
+	{ habit: 'Meditación', id: 'meditación' },
+	{ habit: 'Higiene personal', id: 'higiene' },
+	{ habit: 'Limpieza del hogar', id: 'limpieza' },
+	{ habit: 'Lectura', id: 'lectura' },
+	{ habit: 'Código de conducta', id: 'conducta' },
+	{ habit: 'Servicio', id: 'servicio' },
+	{ habit: 'Comer vegetales', id: 'vegetales' },
+	{ habit: 'Beber Agua', id: 'beberAgua' },
+	{ habit: 'Reducir ocio', id: 'ReducirOcio' },
+	{ habit: 'Tiempo al aire libre', id: 'aireLibre' },
+	{ habit: 'Evitar intoxicantes', id: 'intoxicantes' },
+	{ habit: 'Ayunos', id: 'ayunos' },
+	{ habit: 'Despertar al amanecer', id: 'despertar' },
 ];
 
 const cardHabits: Array<CardHabits> = [
 	{
-		tittle: 'Asanas Diarias',
+		tittle: 'Asanas',
 		urlImg:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1670252726/dise%C3%B1o%20definitivo/mis%20practicas/asanas_lludn8.svg',
 		ext: 'A través de las asanas (asientos) es posible comprender cómo funciona nuestro cuerpo y cuáles son los estímulos que necesita para equilibrarse y armonizarse, ofreciendo una oportunidad de estiramiento, flexibilidad, comprensión, expansión, movilidad, inmovilidad... etc. Así como de expresión. Las posturas proporcionan equilibrio entre la energía vital y la mental, generando salud tanto física como psíquica. Consisten en una actividad que se realiza de forma suave y consciente.',
+		id: 'Asanas',
 	},
 	{
 		tittle: 'Recetas saludables',
@@ -43,9 +45,10 @@ const cardHabits: Array<CardHabits> = [
 		¿Las batatas son tu perdición? Bueno, eso es bueno, ya que las batatas tienen menos calorías que las patatas y pueden se pueden combinar ​con muchos alimentos. Horneadas, asadas... formarán parte de cualquier dieta yogui, ya que se pueden sazonar con todas las especias que quieras (¡bueno no todas!): batata con cúrcuma, batata con ajo, batata con granada, hay numerosas combinaciones.La comida yóguica no tiene por qué ser aburrida. ¿Quieres preparar unas albóndigas de berenjena que, mezcladas con un poco de ajo, ghee (mantequilla clarificada) y varias especias, serán un verdadero momento gourmet de placer? Un plato saludable y bueno para la salud.
 		
 		Otro plato que suele resultar muy sencillo a la hora de cocinarlo es la mezcla de legumbres y verduras, que te permitirá combinar absolutamente todo aquello que quieras en un solo plato. Sencillo y rápido de preparar, simplemente mezcle, por ejemplo, lentejas de coral y calabacín, todo sazonado con cuidado, et voilà.`,
+		id: 'Recetas',
 	},
 	{
-		tittle: 'Ejercicio diario',
+		tittle: 'Ejercicio',
 		urlImg:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1670260237/dise%C3%B1o%20definitivo/mis%20practicas/ejercisio_nakyhp.svg',
 		ext: `
@@ -54,18 +57,21 @@ const cardHabits: Array<CardHabits> = [
 		¿Cuánto ejercicio es suficiente?
 		El nivel saludable recomendado de actividad física es de 30 minutos de ejercicio moderado durante al menos cinco días a la semana. Moderado se refiere a que sea suficiente para estimular el corazón y los pulmones para que esté más fuerte. Es decir, que tiene que respirar más rápido, con una frecuencia cardíaca más elevada y que también sentirá calor.
 		`,
+		id: 'ejercicio',
 	},
 	{
-		tittle: 'Meditar 2 veces al día',
+		tittle: 'Meditar',
 		urlImg:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1670260016/dise%C3%B1o%20definitivo/mis%20practicas/meditacion_vdipon.svg',
 		ext: `Puedes escuchar distintos consejos en relación al tiempo de meditación recomendable. Cada maestro tiene su propia percepción, finalmente serás tú quien decida y adapte el tiempo disponible para cultivar la atención plena. 10 minutos, una hora, dos veces al día. A medida que vayas construyendo una base y practicando la meditación e integrándola en tu día a día parece que media hora es una duración adecuada al objetivo perseguido en cada caso. Ahora bien, cuanto más practiques, más rápido serás capaz de relajarte y cultivar la conciencia plena, y podrás entrenarte para alcanzar algún grado de iluminación. Sentarte durante media hora te ayudará a construir una rutina y generar como un gran contenedor para una práctica de enraizamiento. Si no tienes media hora, practica todo el tiempo que puedas, si sólo son diez minutos será muy beneficioso para tu práctica.`,
+		id: 'meditación',
 	},
 	{
 		tittle: 'Higiene personal',
 		urlImg:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1670260688/dise%C3%B1o%20definitivo/mis%20practicas/higiene_xtvgsk.svg',
 		ext: `La higiene personal se trata de mantener el cuerpo limpio y sano. Una buena higiene personal puede hacer que sea menos propenso a las enfermedades. También puede ayudarlo a verse y sentirse lo mejor posible.`,
+		id: 'higiene',
 	},
 	{
 		tittle: 'Limpieza del hogar',
@@ -83,9 +89,10 @@ const cardHabits: Array<CardHabits> = [
 
 		Suelos (10 min). Pasa el aspirador, es más rápido que barrer y no levanta polvo. Para terminar, pasa la mopa con limpiamuebles si son de madera. Si no, friégalos.
 		`,
+		id: 'limpieza',
 	},
 	{
-		tittle: 'Lectura espiritual',
+		tittle: 'Lectura',
 		urlImg:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1670261341/dise%C3%B1o%20definitivo/mis%20practicas/leer_rmbbv2.svg',
 		ext: `Relajarse o practicar el mindfulness está muy bien. O dormir y comer bien. Pero leer es una de las actividades que no acostumbramos a relacionar con el bienestar físico y mental y, sin embargo, es muy eficaz para favorecerlo.
@@ -94,6 +101,7 @@ const cardHabits: Array<CardHabits> = [
 		
 		Por cierto, leer es tener un libro entre las manos, no saltar de artículo en artículo por internet.
 		`,
+		id: 'lectura',
 	},
 	{
 		tittle: 'Código de conducta',
@@ -105,9 +113,10 @@ const cardHabits: Array<CardHabits> = [
 		Transparencia: consiste en comunicar y rendir cuentas de forma proactiva a los diferentes grupos de interés que han participado de alguna forma en la organización y a la sociedad en general sobre lo qué se hace, cómo se hace y los resultados obtenidos, durante un período de tiempo determinado. 
 		
 		`,
+		id: 'conducta',
 	},
 	{
-		tittle: 'Realizar servicio',
+		tittle: 'Servicio',
 		urlImg:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1670262214/dise%C3%B1o%20definitivo/mis%20practicas/Realizar_servicio_zmtojl.svg',
 		ext: `como ocurre al realizar cualquier acto altruista, el servicio social nos ayuda a sentirnos realizados como seres humanos y le da más sentido a nuestra vida;
@@ -115,18 +124,20 @@ const cardHabits: Array<CardHabits> = [
 		el servicio social sirve también para generar conciencia en la comunidad acerca de algunos valores que parecen perderse con el tiempo, como ser el compromiso y la solidaridad;
 		
 		`,
+		id: 'servicio',
 	},
 	{
-		tittle: 'Reducir el consumo de carne',
+		tittle: 'Comer vegetales',
 		urlImg:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1670262678/dise%C3%B1o%20definitivo/mis%20practicas/vegetariano_dtmrxy.svg',
 		ext: `
 		Existe un mito muy extendido de que la carne es imprescindible para mantener la salud del organismo. Esto es falso ya que disponemos de una amplia variedad de alimentos que nos proporcionan los nutrientes necesarios para mantener las necesidades cubiertas. Un ejemplo es el pescado.
 		Además, tal y como menciona una investigación publicada por la Revista de Nutrición Hospitalaria, un elevado consumo de carne roja y carne procesada estarían detrás del aumento del índice de obesidad.	
 		`,
+		id: 'vegetales',
 	},
 	{
-		tittle: 'Beber 2 litros de agua al día',
+		tittle: 'Beber agua',
 		urlImg:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1670263595/dise%C3%B1o%20definitivo/mis%20practicas/beber_agua_sxb9th.svg',
 		ext: `
@@ -134,6 +145,7 @@ const cardHabits: Array<CardHabits> = [
 		Si bien es importante beber agua en función de la sed a lo largo del día, también hay que estar conscientes de que no hay que conformarse con beber uno o dos vasos al día, y “complementar” el resto con otras bebidas, como un jugo de frutas, un vaso de alcohol, o varios vasos de refresco de cola. Ninguna bebida puede sustituir el aporte del agua.
 	
 		`,
+		id: 'beberAgua',
 	},
 	{
 		tittle: 'Reducir ocio',
@@ -142,31 +154,35 @@ const cardHabits: Array<CardHabits> = [
 		ext: `
 		El aburrimiento puede ser la puerta de entrada a una oportunidad de crecimiento. Y cuando hablo de invertir nuestro tiempo en ser productivos, también me gusta pensar en el hecho de darnos un merecido descanso ante tanto bombardeo informativo que recibimos a diario, desde todos los costados.
 		`,
+		id: 'ReducirOcio',
 	},
 	{
-		tittle: 'Pasar tiempo al aire libre',
+		tittle: 'Tiempo al aire libre',
 		urlImg:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1670264048/dise%C3%B1o%20definitivo/mis%20practicas/tiempoAlAireLibre_ga7qma.svg',
 		ext: `
 		Salir y estar en contacto con la naturaleza aporta más beneficios de los que podrías imaginar. Si bien ya se sabía que los espacios verdes se relacionan con un mejor descanso, así como con efectos positivos en la salud mental y visual, un nuevo estudio ha revelado que estar al aire libre tiene un fuerte impacto en el bienestar a largo plazo.
 		`,
+		id: 'aireLibre',
 	},
 	{
-		tittle: 'Evitar consumir alcohol, tabaco y drogas',
+		tittle: 'Evitar intoxicantes',
 		urlImg:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1670264248/dise%C3%B1o%20definitivo/mis%20practicas/noDrugs_ubxaek.svg',
 		ext: `
 		La relación entre consumo de tabaco y alcohol está poco estudiada y poco tenida en cuenta por los profesionales. Tanto el alcohol como la nicotina son drogas psicoactivas que se potencian mutuamente, y comparten la tendencia a “ no ser vistas» por  los profesionales sanitarios,  es decir, la poca disposición a ver el problema y a intervenir.
 		`,
+		id: 'intoxicantes',
 	},
 	{
-		tittle: 'Ayunar dos veces al mes',
+		tittle: 'Ayunos',
 		urlImg:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1670264379/dise%C3%B1o%20definitivo/mis%20practicas/Ayunar_efh8ei.svg',
 		ext: `
 		El ayuno es una práctica que se ha llevado a cabo desde tiempos inmemoriales en casi todas las culturas. En un principio se realizaba por motivos básicamente sagrados. Se ayunaba colectivamente, en ciertas épocas, con la finalidad de hacer un homenaje a Dios o para que fuera concedida alguna gracia.
 		De hecho, hoy en día se mantiene ese espíritu en prácticas como la Cuaresma católica o el Ramadán de los musulmanes. Y, con el tiempo, se ha descubierto que el ayuno puede traer grandes beneficios tanto al cuerpo como a la mente.
 		`,
+		id: 'ayunos',
 	},
 	{
 		tittle: 'Despertar al amanecer',
@@ -178,6 +194,7 @@ const cardHabits: Array<CardHabits> = [
 		Buena salud: lo pensarás más de dos salir de fiesta hasta tarde y tomar de más para no dejar de levantarte temprano y alterar tu rutina.
 
 		`,
+		id: 'despertar',
 	},
 ];
 
@@ -207,13 +224,16 @@ export default function Practices() {
 					}}
 				>
 					{habitsList.map(i => (
-						<Typography
+						<Link
+							href={`#${i.id}`}
 							variant='body1'
 							color='third.main'
 							key={habitsList.indexOf(i)}
 							sx={{
+								display: 'block',
 								fontWeight: '400',
 								lineHeight: '36px',
+								textDecoration: 'none',
 							}}
 						>
 							Hábito {habitsList.indexOf(i) + 1}:{' '}
@@ -224,7 +244,7 @@ export default function Practices() {
 							>
 								{i.habit}
 							</Typography>
-						</Typography>
+						</Link>
 					))}
 				</Paper>
 			</Grid>
@@ -234,6 +254,7 @@ export default function Practices() {
 					{cardHabits.map((e: CardHabits) => {
 						return (
 							<PracticesCard
+								id={e.id}
 								key={cardHabits.indexOf(e)}
 								tittle={e.tittle}
 								urlImg={e.urlImg}
