@@ -12,6 +12,7 @@ export default function DeletableChips({ name }: any) {
 				backgroundColor: 'primary.dark',
 				fontWeight: '600',
 				boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+				fontSize: '1rem'
 			}}
 		>
 			{name}

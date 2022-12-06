@@ -12,37 +12,48 @@ export default function FormProfileWithUserInfo2({
 }: HabitsModalProps) {
 	const { practices } = useAppSelector(store => store.user);
 	const habits = practices?.map((e: any) => e.practice);
-
+	const font = { xs: '1rem', md: '1.5rem' }
 	return (
-		<Grid container height='30%'>
-			<Grid item xs={3}>
-				<Typography fontSize='1.5rem'>
-					<CoronavirusOutlinedIcon sx={{ color: 'secondary.main' }} />
+		<Grid container 
+				height={{ xs:'680px', md:'300px'}}
+				display={{xs:'block',md:'inline-flex'}}
+				margin={{ xs:'25px', md:'50px 125px'}}
+			>
+			<Grid item xs={3} md={2} display={'inline'} >
+				<Typography fontSize={{xs: '1.3rem', md: '1.7rem'}}>
+					<CoronavirusOutlinedIcon sx={{ marginRight:'10px', color: 'third.main' }} />
 					Hábitos
 				</Typography>
+				
 			</Grid>
-			<Grid item xs={9}>
-				<Typography fontSize='1.5rem'>
+			<Grid item xs={10} md={8}>
+				<Typography fontSize={font} margin={{xs:'10px 20px', md:'0'}}>
 					Aquí puedes ver y editar los hábitos que estás trabajando
 				</Typography>
 			</Grid>
 			<Grid
 				item
-				xs={12}
+				xs={8}
 				sx={{
-					display: 'flex',
-					justifyContent: 'center',
+					display: 'block',
 					alingItems: 'center',
-					gap: '10px',
 				}}
-			>
-				{habits?.map((e: any) => {
-					return <DeletableChips key={e._id} name={e.name} />;
-				})}
+			> 	<Grid container sx={{
+									display: 'flex',
+									flexWrap: 'wrap',
+									rowGap: '10px',
+									columnGap: '0.5em',
+									}}
+				>
+					{habits?.map((e: any) => {
+						return <DeletableChips key={e._id} name={e.name} />;
+					})}
+				</Grid>
 			</Grid>
 			<Grid
 				item
-				xs={11}
+				xs={10} 
+				md={8}
 				sx={{
 					display: 'flex',
 					justifyContent: 'end',
