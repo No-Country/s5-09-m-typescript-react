@@ -1,8 +1,38 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Stack, styled, Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import LinearProgress, { LinearProgressProps, linearProgressClasses } from '@mui/material/LinearProgress';
+import { useState } from 'react';
 import { useAppSelector } from '../../../redux/hooks';
 import ProgressChecks from './ProgressChecks';
 
+const BorderLinearProgress = styled(LinearProgress)(() => ({
+  height: 15,
+  borderRadius: 35,
+  [`&.${linearProgressClasses.colorPrimary}`]: {
+    backgroundColor: "#E2E8F0",
+  },
+  [`& .${linearProgressClasses.bar}`]: {
+    borderRadius: 35,
+    backgroundColor: "#EF4444",
+  },
+}));
+
+function LinearProgressWithLabel(props: LinearProgressProps & { value: number }) {
+  return (
+    <Stack direction={'column'}>
+      <Box sx={{ minWidth: 35 }}>
+        <Typography variant="body2" color="text.secondary">
+          {`Mira lo que has logrado ${Math.round(props.value)}%`}</Typography>
+      </Box>
+      <Box sx={{ width: '100%', mr: 1 }}>
+        <BorderLinearProgress  variant="determinate" {...props} />
+      </Box>
+    </Stack>
+  );
+}
+
 export default function Progress() {
+  const [progress, setProgress] = useState(50);
 	const { practices } = useAppSelector(store => store.user);
 	const habits = practices.map((e: any) => e.practice);
 	return (
@@ -33,6 +63,21 @@ export default function Progress() {
 				>
 					Registra tu tarea
 				</Typography>
+			</Grid>
+      <Grid
+				item
+				xs={12}
+				sx={{
+					margin: '0px auto',
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					maxWidth: '200px',
+				}}
+			>
+        <Box sx={{ width: '100%' }}>
+          <LinearProgressWithLabel value={progress}/>
+        </Box>
 			</Grid>
 
 			<Grid
