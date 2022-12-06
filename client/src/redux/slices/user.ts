@@ -32,9 +32,10 @@ export const userSlice = createSlice({
 				id: undefined,
 				password: '',
 				practices: [],
+				login: false,
 			});
 		},
-		emailVerification: (state, action: PayloadAction<User>) => {
+		emailVerification: (state, action: PayloadAction<Partial<User>>) => {
 			state.code = action.payload.code;
 			state.id = action.payload.id;
 			state.email = action.payload.email;

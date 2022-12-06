@@ -14,13 +14,6 @@ export const onLogin = async (
 	dispatch: Dispatch,
 ) => {
 	try {
-		sessionStorage.setItem(
-			'userData',
-			JSON.stringify({
-				email: email,
-				password: password,
-			}),
-		);
 		const { data } = await API_URL.post('/login', {
 			email,
 			password,
@@ -31,7 +24,7 @@ export const onLogin = async (
 				token: `${data.token}`,
 			},
 		});
-		const dataUser = loginAdapter(getUser, false, data.token);
+		const dataUser = loginAdapter(getUser, true, false, data.token);
 		console.log(dataUser);
 		dispatch(setUser(dataUser));
 		sessionStorage.removeItem('userData');
@@ -53,22 +46,11 @@ export const onLogin = async (
 	}
 };
 
-type verifyCode = {
-	userId?: string;
-};
-
-export const verifyCode = async (
-	{ userId }: verifyCode,
-	dispatch: Dispatch,
-) => {
+export const verifyCode = async (id: string) => {
 	try {
-		const response = await API_URL.put(`/user/update/${userId}`, {
+		await API_URL.put(`/user/update/${id}`, {
 			email_verified: true,
 		});
-
-		//una vez que se cambio el "email_verified" a true, es necesario obtener el token de nuevo
-		const userData = JSON.parse(sessionStorage.getItem('userData') || '');
-		onLogin(userData, dispatch);
 	} catch (err: any) {
 		console.log(err);
 	}

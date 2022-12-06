@@ -1,10 +1,12 @@
 import { ForgotPasswordModal, LayoutForms } from '../../components';
 import { useAppSelector } from '../../redux/hooks';
+import EmailVerification from './components/EmailVerification';
 import InputLogin from './components/InputLogin';
 export default function Login() {
 	const showModal = useAppSelector(
 		store => store.setting.showForgotPasswordModal,
 	);
+	const user = useAppSelector(store => store.user);
 	return (
 		<LayoutForms
 			tittle='Bienvenido'
@@ -13,6 +15,7 @@ export default function Login() {
 		>
 			<InputLogin />
 			{showModal && <ForgotPasswordModal />}
+			{user.code && <EmailVerification />}
 		</LayoutForms>
 	);
 }

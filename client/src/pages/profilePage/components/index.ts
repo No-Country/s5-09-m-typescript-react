@@ -1,7 +1,7 @@
 export { default as Calendar } from './Calendar';
 export { default as ChangeHabits } from './ChangeHabits';
 export { default as DeletableChips } from './DeletableChips';
-export { default as EmailVerification } from './EmailVerification';
+export { default as EmailVerification } from '../../login/components/EmailVerification';
 export { default as Form } from './Form';
 export { default as FormProfileWithUserInfo } from './FormProfileWithUserInfo';
 export { default as FormProfileWithUserInfo2 } from './FormProfileWithUserInfo2';
