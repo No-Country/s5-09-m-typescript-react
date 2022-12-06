@@ -140,8 +140,7 @@ export default function HabitsModal({ closeModal }: HabitsModalProps) {
 							lineHeight: '28px',
 						}}
 					>
-						Empieza con pocos hábitos y vas aumentado progresivamente tus
-						prácticas
+						Selecciona los hábitos con los que quieres empezar
 					</Typography>
 				</Grid>
 				<Grid>
@@ -154,7 +153,7 @@ export default function HabitsModal({ closeModal }: HabitsModalProps) {
 							}}
 						>
 							<Typography variant='body1' color='initial'>
-								Meditación
+								Espiritualidad
 							</Typography>
 						</AccordionSummary>
 						<AccordionDetails
@@ -241,7 +240,7 @@ export default function HabitsModal({ closeModal }: HabitsModalProps) {
 							}}
 						>
 							<Typography variant='body1' color='initial'>
-								Actividad Fisica
+								Limpieza externa e interna
 							</Typography>
 						</AccordionSummary>
 						<AccordionDetails
