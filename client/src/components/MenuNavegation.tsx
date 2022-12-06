@@ -51,7 +51,9 @@ export default function MenuNavegation() {
 			>
 				<Button
 					id='basic-button'
-					color='secondary'
+					color='third'
+					disableRipple
+					sx={{ textTransform: 'none', fontSize: '2rem' }}
 					onClick={() => navigate('/')}
 				>
 					<img
@@ -65,17 +67,41 @@ export default function MenuNavegation() {
 					<>
 						<Button
 							id='basic-button'
+							disableRipple
 							sx={{
 								color: 'text.secondary',
+								textTransform: 'none',
+								fontSize: '1rem',
+								fontWeight: 'bold',
+								':hover': {
+									borderRadius: '0',
+									borderBottom: 'solid #9C51B7 ',
+								},
+								':focus': {
+									borderRadius: '0',
+									borderBottom: 'solid #9C51B7 ',
+								},
 							}}
 							onClick={() => navigate('/misPracticas')}
 						>
-							Mis practicas
+							Mis prácticas
 						</Button>
 						<Button
 							id='basic-button'
+							disableRipple
 							sx={{
 								color: 'text.secondary',
+								textTransform: 'none',
+								fontSize: '1rem',
+								fontWeight: 'bold',
+								':hover': {
+									borderRadius: '0',
+									borderBottom: 'solid #9C51B7 ',
+								},
+								':focus': {
+									borderRadius: '0',
+									borderBottom: 'solid #9C51B7 ',
+								},
 							}}
 							onClick={() => navigate('/contacto')}
 						>
@@ -83,8 +109,20 @@ export default function MenuNavegation() {
 						</Button>
 						<Button
 							id='basic-button'
+							disableRipple
 							sx={{
 								color: 'text.secondary',
+								textTransform: 'none',
+								fontSize: '1rem',
+								fontWeight: 'bold',
+								':hover': {
+									borderRadius: '0',
+									borderBottom: 'solid #9C51B7 ',
+								},
+								':focus': {
+									borderRadius: '0',
+									borderBottom: 'solid #9C51B7 ',
+								},
 							}}
 							onClick={() => navigate('/nosotros')}
 						>
@@ -98,9 +136,24 @@ export default function MenuNavegation() {
 						id='basic-button'
 						color='secondary'
 						variant='outlined'
+						disableRipple
+						sx={{
+							textTransform: 'none',
+							fontSize: '1rem',
+							fontWeight: 'bold',
+							border: 'none',
+							':hover': {
+								borderRadius: '0',
+								borderBottom: 'solid #9C51B7 ',
+							},
+							':focus': {
+								borderRadius: '0',
+								borderBottom: 'solid #9C51B7 ',
+							},
+						}}
 						onClick={() => navigate('/iniciarSesion')}
 					>
-						inicia sesion
+						Inicia Sesión
 					</Button>
 				) : (
 					<div>
