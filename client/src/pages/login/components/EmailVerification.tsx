@@ -23,7 +23,8 @@ export default function EmailVerification() {
 
 	const onSubmit = (value: Inputs) => {
 		if (user.code === value.verificationCode) {
-			verifyCode({ userId: user.id }, dispatch);
+			verifyCode(user.id!);
+			dispatch(closeSession());
 		}
 	};
 	return (
@@ -37,7 +38,8 @@ export default function EmailVerification() {
 				background: 'rgba(0,0,0,0.3)',
 				position: 'fixed',
 				top: '0',
-				zIndex: '10',
+				left: '0',
+				zIndex: '100',
 			}}
 		>
 			<Grid
@@ -118,7 +120,7 @@ export default function EmailVerification() {
 						<Link
 							variant='body1'
 							color='secondary.main'
-							onClick={() => resendCodeVerificado()}
+							onClick={() => console.log('hola') /* resendCodeVerificado() */}
 						>
 							reenviar.
 						</Link>

@@ -19,7 +19,7 @@ export const userSlice = createSlice({
 	name: 'user',
 	initialState,
 	reducers: {
-		setUser: (state, action: PayloadAction<User>) => {
+		setUser: (state, action: PayloadAction<Partial<User>>) => {
 			return action.payload;
 		},
 		closeSession: state => {
@@ -32,9 +32,10 @@ export const userSlice = createSlice({
 				id: undefined,
 				password: '',
 				practices: [],
+				login: false,
 			});
 		},
-		emailVerification: (state, action: PayloadAction<User>) => {
+		emailVerification: (state, action: PayloadAction<Partial<User>>) => {
 			state.code = action.payload.code;
 			state.id = action.payload.id;
 			state.email = action.payload.email;

@@ -7,7 +7,6 @@ import Form from './components/Form';
 import { ChangeHabits, TopBarProfile } from './components';
 import { useState } from 'react';
 import PanelCardList from './components/PanelCardList';
-import { EmailVerification } from './components';
 import { useAppSelector } from '../../redux/hooks';
 import Progress from './components/Progress';
 import { Divider, Hidden } from '@mui/material';
@@ -36,13 +35,14 @@ export default function Profile() {
 							<ChangeHabits closeModal={showHabitsModal} />
 						)}
 						<FormProfileWithUserInfo />
-						<Divider variant='middle' 
-								sx={{
-									borderBottomWidth:'2px',
-									width:{xs:'350px',md:'820px'},
-									marginLeft:{xs:'30px',md:'100px'},
-									marginTop:{xs:'30px'}
-									}}
+						<Divider
+							variant='middle'
+							sx={{
+								borderBottomWidth: '2px',
+								width: { xs: '350px', md: '820px' },
+								marginLeft: { xs: '30px', md: '100px' },
+								marginTop: { xs: '30px' },
+							}}
 						/>
 						<FormProfileWithUserInfo2 closeModal={showHabitsModal} />
 					</>
@@ -59,7 +59,6 @@ export default function Profile() {
 	};
 	return (
 		<>
-			{!user.emailVerified && <EmailVerification />}
 			<Grid
 				container
 				spacing={2}
@@ -67,15 +66,18 @@ export default function Profile() {
 					minHeight: 'calc(100vh - 85px)',
 				}}
 			>
-			  	<Hidden smDown>
+				<Hidden smDown>
 					<Grid item xs={2} display={'flex'}>
 						<PerfilSidebar setModals={setModals} />
 					</Grid>
 				</Hidden>
-				<Grid item xs={12} md={10}
-						sx={{
-							margin: {xs:'30px auto'},
-						}}
+				<Grid
+					item
+					xs={12}
+					md={10}
+					sx={{
+						margin: { xs: '30px auto' },
+					}}
 				>
 					{renderModal(modal)}
 				</Grid>

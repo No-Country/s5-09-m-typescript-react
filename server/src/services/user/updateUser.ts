@@ -1,6 +1,5 @@
 import { IUser } from '../../interfaces/user'
 import User from '../../models/User'
-import bcryptjs from 'bcryptjs'
 
 export const updateUserService = async (id: string, user: IUser) => {
     try {
@@ -16,11 +15,6 @@ export const updateUserService = async (id: string, user: IUser) => {
                 user: { fullname, email, _id, practices },
                 ok: true,
             }
-
-            const salt = bcryptjs.genSaltSync()
-            userUpdated.password = bcryptjs.hashSync(user.password, salt)
-
-            await userUpdated.save()
 
             return response
         }
