@@ -7,7 +7,6 @@ import {
 	Typography,
 } from '@mui/material';
 import { useState } from 'react';
-import image from '../../../assets/Rectangle4.png';
 import { GlobalButton } from '../../../components';
 export default function BoletinInformativo({
 	onSubmitted,
@@ -97,13 +96,14 @@ export default function BoletinInformativo({
 						>
 							Boletín Informativo
 						</Typography>
-						<Grid item xs={4} sm={6}>
+						<Grid item sm={6} xs={4}>
 							<Typography
 								component='p'
 								width='350px'
 								fontSize={20}
 								color='text'
-								borderLeft='2px solid #FC802C'
+								borderLeft='2px solid'
+								borderColor='secondary.main'
 								paddingLeft='10px'
 								marginLeft='7px'
 								marginBottom='30px'
@@ -123,11 +123,11 @@ export default function BoletinInformativo({
 								onChange={event => setEmail(event.target.value)}
 								sx={{
 									width: '300px',
-									marginRight: '15px',
+									marginRight: '5px',
 									marginBottom: '15px',
 								}}
 							/>
-							<GlobalButton text='Suscribete' type='submit' />
+							<GlobalButton text='Suscribete' type='submit' height='59px' />
 							<Grid item xs={12}>
 								{mensaje ? (
 									<Stack marginTop={1}>

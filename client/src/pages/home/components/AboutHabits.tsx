@@ -8,19 +8,19 @@ const itemList = [
 		about: 'Uso del Agua',
 		image:
 			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1669744904/dise%C3%B1o%20definitivo/agua_t7u982.svg',
-		url: `${publicRoute.practices}#beberAgua`,
+		url: `${publicRoute.practices}`,
 	},
 	{
 		about: 'Alimentación',
 		image:
-			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1669750013/dise%C3%B1o%20definitivo/alimentos_yqhbto.jpg',
-		url: `${publicRoute.practices}#Recetas`,
+			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1670294257/dise%C3%B1o%20definitivo/Rectangle_3333_ybl7lk.svg',
+		url: `${publicRoute.practices}`,
 	},
 	{
 		about: 'Lectura',
 		image:
-			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1669750157/dise%C3%B1o%20definitivo/8609147_5836_g4nuni.jpg',
-		url: `${publicRoute.practices}#lectura`,
+			'https://res.cloudinary.com/dlxlitkl6/image/upload/v1670294325/dise%C3%B1o%20definitivo/lecturaaa_ypls8i.svg',
+		url: `${publicRoute.practices}`,
 	},
 ];
 
