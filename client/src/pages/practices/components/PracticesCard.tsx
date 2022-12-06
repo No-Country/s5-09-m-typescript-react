@@ -2,9 +2,15 @@ import { Grid, Paper, Typography } from '@mui/material';
 import { margin } from '@mui/system';
 import { cardContent } from '../types/interfaces';
 
-export default function PracticesCard({ tittle, urlImg, text }: cardContent) {
+export default function PracticesCard({
+	tittle,
+	urlImg,
+	text,
+	id,
+}: cardContent) {
 	return (
 		<Paper
+			id={id}
 			sx={{
 				margin: '10px auto',
 				paddingBottom: '50px',
@@ -48,7 +54,7 @@ export default function PracticesCard({ tittle, urlImg, text }: cardContent) {
 						variant='body1'
 						sx={{
 							fontSize: '20px',
-							textAlign: 'justify',
+							textAlign: 'center',
 							fontWeight: '400',
 							lineHeight: '28px',
 							color: 'text.secondary',

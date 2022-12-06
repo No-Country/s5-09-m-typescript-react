@@ -1,5 +1,6 @@
-export interface cardContent{
+export interface cardContent {
 	tittle: string;
-    urlImg: string;
+	urlImg: string;
 	text: string;
+	id: string;
 }
