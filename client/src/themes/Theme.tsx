@@ -54,11 +54,11 @@ const Theme: FC<Props> = ({ children }) => {
 					},
 				},
 
-				// typography: {
-				// 	htmlFontSize: 10,
-				// 	fontSize: 10,
-				// 	fontFamily: ['Roboto', 'Merriweather'].join(','),
-				// },
+				typography: {
+					htmlFontSize: 10,
+					fontSize: 10,
+					fontFamily: ['Ubuntu', 'Roboto'].join(','),
+				},
 			}),
 		[mode],
 	);
