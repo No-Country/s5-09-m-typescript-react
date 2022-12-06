@@ -9,11 +9,15 @@ import {
 import { useState } from 'react';
 import image from '../../../assets/Rectangle4.png';
 import { GlobalButton } from '../../../components';
-export default function BoletinInformativo({ onSubmitted, status, message }) {
+export default function BoletinInformativo({
+	onSubmitted,
+	status,
+	message,
+}: any) {
 	const [email, setEmail] = useState('');
 	const [mensaje, setMensaje] = useState(true);
 
-	const handleSubmit = e => {
+	const handleSubmit = (e: any) => {
 		e.preventDefault();
 		setEmail('');
 		onSubmitted({ EMAIL: email });
