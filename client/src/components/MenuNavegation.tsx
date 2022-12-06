@@ -38,7 +38,7 @@ export default function MenuNavegation() {
           display: 'flex',
           width: '100%',
           height: { sm: '70px', md: '100px' },
-          justifyContent: 'space-between',
+          justifyContent: 'space-evenly',
           alignItems: 'center',
         }}
       >
@@ -141,16 +141,6 @@ export default function MenuNavegation() {
               alignItems: 'center',
             }}
           >
-            <Button
-              id='basic-button'
-              sx={{
-                color: 'text.secondary',
-                textTransform: "capitalize",
-              }}
-              onClick={() => navigate('/')}
-            >
-              Inicio
-            </Button>
             <Button
               id='basic-button'
               sx={{

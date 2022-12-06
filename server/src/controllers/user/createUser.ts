@@ -1,8 +1,7 @@
 import { Response, Request } from 'express'
 import { IResponse } from '../../interfaces'
 import { createUserService } from '../../services/user/createUser'
-/* import * as userService from '../../services/users'
- */
+
 export const createUser = async (req: Request, res: Response) => {
     const user = req.body
     console.log(user)
