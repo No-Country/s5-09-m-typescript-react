@@ -15,7 +15,7 @@ export default function FormProfileWithUserInfo2({
 	const font = { xs: '1rem', md: '1.5rem' }
 	return (
 		<Grid container 
-				height={{ xs:'250px', md:'300px'}}
+				height={{ xs:'680px', md:'300px'}}
 				display={{xs:'block',md:'inline-flex'}}
 				margin={{ xs:'25px', md:'50px 125px'}}
 			>
@@ -26,7 +26,7 @@ export default function FormProfileWithUserInfo2({
 				</Typography>
 				
 			</Grid>
-			<Grid item xs={9}>
+			<Grid item xs={10} md={8}>
 				<Typography fontSize={font} margin={{xs:'10px 20px', md:'0'}}>
 					Aquí puedes ver y editar los hábitos que estás trabajando
 				</Typography>
@@ -36,13 +36,15 @@ export default function FormProfileWithUserInfo2({
 				xs={8}
 				sx={{
 					display: 'block',
-					justifyContent: 'space-around',
 					alingItems: 'center',
-					
 				}}
 			> 	<Grid container sx={{
-				display: 'flex',
-				justifyContent: 'space-around',}}>
+									display: 'flex',
+									flexWrap: 'wrap',
+									rowGap: '10px',
+									columnGap: '0.5em',
+									}}
+				>
 					{habits?.map((e: any) => {
 						return <DeletableChips key={e._id} name={e.name} />;
 					})}
@@ -50,7 +52,8 @@ export default function FormProfileWithUserInfo2({
 			</Grid>
 			<Grid
 				item
-				xs={11}
+				xs={10} 
+				md={8}
 				sx={{
 					display: 'flex',
 					justifyContent: 'end',
