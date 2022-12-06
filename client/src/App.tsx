@@ -17,11 +17,7 @@ import { publicRoute } from './models/routes';
 
 function App() {
 	return (
-		<GoogleOAuthProvider
-			clientId={
-				'460211922745-6t4k8cs9kk2a48a6c33r20g6mjel9tfu.apps.googleusercontent.com'
-			}
-		>
+		<GoogleOAuthProvider clientId={import.meta.env.VITE_APP_GOOGLE_ID}>
 			<BrowserRouter>
 				<LayoutNavegation>
 					<Routes>
@@ -38,7 +34,7 @@ function App() {
 								element={<EmailForgotPassword />}
 							/>
 							<Route
-								path={'/forgot-password/:token'}
+								path={publicRoute.forgotPassword}
 								element={<ForgotPassword />}
 							/>
 						</Route>
