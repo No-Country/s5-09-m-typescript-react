@@ -139,10 +139,12 @@ export default function MenuNavegation() {
 							fontWeight: 'bold',
 							border: 'none',
 							':hover': {
+								border: 'none',
 								borderRadius: '0',
 								borderBottom: 'solid #9C51B7 ',
 							},
 							':focus': {
+								border: 'none',
 								borderRadius: '0',
 								borderBottom: 'solid #9C51B7 ',
 							},
@@ -196,13 +198,25 @@ export default function MenuNavegation() {
 						height: { sm: '70px', md: '100px' },
 						justifyContent: 'space-evenly',
 						alignItems: 'center',
+						paddingBottom: '1rem',
 					}}
 				>
 					<Button
 						id='basic-button'
+						disableRipple
 						sx={{
 							color: 'text.secondary',
-							textTransform: 'capitalize',
+							textTransform: 'none',
+							fontSize: '1rem',
+							fontWeight: 'bold',
+							':hover': {
+								borderRadius: '0',
+								borderBottom: 'solid #9C51B7 ',
+							},
+							':focus': {
+								borderRadius: '0',
+								borderBottom: 'solid #9C51B7 ',
+							},
 						}}
 						onClick={() => navigate('/misPracticas')}
 					>
@@ -210,9 +224,20 @@ export default function MenuNavegation() {
 					</Button>
 					<Button
 						id='basic-button'
+						disableRipple
 						sx={{
 							color: 'text.secondary',
-							textTransform: 'capitalize',
+							textTransform: 'none',
+							fontSize: '1rem',
+							fontWeight: 'bold',
+							':hover': {
+								borderRadius: '0',
+								borderBottom: 'solid #9C51B7 ',
+							},
+							':focus': {
+								borderRadius: '0',
+								borderBottom: 'solid #9C51B7 ',
+							},
 						}}
 						onClick={() => navigate('/contacto')}
 					>
@@ -220,9 +245,20 @@ export default function MenuNavegation() {
 					</Button>
 					<Button
 						id='basic-button'
+						disableRipple
 						sx={{
 							color: 'text.secondary',
-							textTransform: 'capitalize',
+							textTransform: 'none',
+							fontSize: '1rem',
+							fontWeight: 'bold',
+							':hover': {
+								borderRadius: '0',
+								borderBottom: 'solid #9C51B7 ',
+							},
+							':focus': {
+								borderRadius: '0',
+								borderBottom: 'solid #9C51B7 ',
+							},
 						}}
 						onClick={() => navigate('/nosotros')}
 					>
