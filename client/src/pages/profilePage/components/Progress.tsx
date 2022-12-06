@@ -19,8 +19,8 @@ const BorderLinearProgress = styled(LinearProgress)(() => ({
 
 function LinearProgressWithLabel(props: LinearProgressProps & { value: number }) {
   return (
-    <Stack direction={'column'}>
-      <Box sx={{ minWidth: 35 }}>
+    <Stack direction={'column'} sx={{ marginY: "20px" }}>
+      <Box sx={{ minWidth: 35, marginY: "5px" }}>
         <Typography variant="body2" color="text.secondary">
           {`Mira lo que has logrado ${Math.round(props.value)}%`}</Typography>
       </Box>
@@ -32,9 +32,13 @@ function LinearProgressWithLabel(props: LinearProgressProps & { value: number })
 }
 
 export default function Progress() {
-  const [progress, setProgress] = useState(50);
 	const { practices } = useAppSelector(store => store.user);
 	const habits = practices.map((e: any) => e.practice);
+  const [progress, setProgress] = useState(0);
+  const checkHabit = (checked : boolean) => {
+    const increment = checked ? 1 : -1
+    setProgress((progress) => progress + increment)
+  }
 	return (
 		<Grid
 			container
@@ -76,7 +80,7 @@ export default function Progress() {
 				}}
 			>
         <Box sx={{ width: '100%' }}>
-          <LinearProgressWithLabel value={progress}/>
+          <LinearProgressWithLabel value={ (progress / habits.length) * 100 }/>
         </Box>
 			</Grid>
 
@@ -92,6 +96,7 @@ export default function Progress() {
 							key={habits.indexOf(e)}
 							tittle={e.name}
 							urlImg={e.img}
+              checkHabit={checkHabit}
 						/>
 					);
 				})}

@@ -13,12 +13,14 @@ import {
 interface checksContent {
 	tittle: string;
 	urlImg: string;
+  checkHabit: (checked : boolean) => void;
 }
 
-export default function ProgressChecks({ tittle, urlImg }: checksContent) {
+export default function ProgressChecks({ tittle, urlImg, checkHabit }: checksContent) {
 	const [checked, setChecked] = React.useState(false);
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    checkHabit(event.target.checked);
 		setChecked(event.target.checked);
 		console.log(event.target.checked);
 	};
