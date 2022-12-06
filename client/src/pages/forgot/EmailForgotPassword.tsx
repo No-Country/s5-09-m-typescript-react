@@ -22,6 +22,7 @@ export default function EmailForgotPassword() {
 		<LayoutForms
 			tittle={'Cambiar contraseña'}
 			text={'Se te olvido la contraseña? Renuevala aquí'}
+			imgUrl='https://res.cloudinary.com/dlxlitkl6/image/upload/v1670295417/dise%C3%B1o%20definitivo/formularios/img-recuperar-contrase%C3%B1a_kts8ma.svg'
 		>
 			<ForgotPasswordModal />
 			{verifyLog == 'Email Enviado' ? (

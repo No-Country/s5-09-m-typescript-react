@@ -10,6 +10,7 @@ import {
 	Home,
 	Profile,
 	EmailForgotPassword,
+	ForgotPassword,
 } from './pages';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { publicRoute } from './models/routes';
@@ -24,6 +25,7 @@ function App() {
 			<BrowserRouter>
 				<LayoutNavegation>
 					<Routes>
+						<Route path='/*' element={<Home />} />
 						<Route path='/' element={<Home />} />
 						<Route path={publicRoute.practices} element={<Practices />} />
 						<Route path={publicRoute.contact} element={<Contact />} />
@@ -36,8 +38,8 @@ function App() {
 								element={<EmailForgotPassword />}
 							/>
 							<Route
-								path={publicRoute.forgotPassword}
-								element={<EmailForgotPassword />}
+								path={'/forgot-password/:token'}
+								element={<ForgotPassword />}
 							/>
 						</Route>
 						<Route element={<PrivateRoute />}>
