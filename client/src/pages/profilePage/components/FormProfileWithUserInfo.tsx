@@ -11,10 +11,10 @@ export default function FormProfileWithUserInfo() {
 	const navegacion = () => {
 		console.log('probando boton');
 	};
-	const font = { xs: '1rem', md: '1.5rem' }
+	const font = { xs: '1rem', md: '1.5rem' };
 	return (
 		<>
-			<Grid container height={{ xs:'230px', md:'250px'}}>
+			<Grid container height={{ xs: '230px', md: '250px' }}>
 				<Grid
 					item
 					xs={12}
@@ -23,7 +23,7 @@ export default function FormProfileWithUserInfo() {
 						justifyContent: 'start',
 						alignItems: 'center',
 					}}
-				>	
+				>
 					<Box
 						sx={{
 							display: 'flex',
@@ -31,27 +31,29 @@ export default function FormProfileWithUserInfo() {
 							justifyContent: 'center',
 							alignItems: 'start',
 							gap: '30px',
-							marginLeft:{ xs: '30px', md:'130px' }
+							marginLeft: { xs: '30px', md: '130px' },
 						}}
-					>	
-						<Typography margin={{xs:'auto', md:'0px'}} fontSize={{xs: '1.5rem', md: '1.9rem'}}>
-							<AccountCircleOutlinedIcon sx={{ marginRight:'10px', color: 'third.main' }} />
-							Perfil
-						</Typography>
-						<Typography fontSize={font} >
-							<AccountCircleOutlinedIcon sx={{ marginRight:'10px', color: 'third.main' }} />
-							Nombre Completo: <span style={{color:'#112734B2'}}>{user.name}</span>
+					>
+						<Typography fontSize={font}>
+							<AccountCircleOutlinedIcon
+								sx={{ marginRight: '10px', color: 'third.main' }}
+							/>
+							Nombre Completo:{' '}
+							<span style={{ color: '#112734B2' }}>{user.name}</span>
 						</Typography>
 						<Typography fontSize={font}>
-							<VisibilityOffOutlinedIcon sx={{ marginRight:'10px', color: 'third.main' }} />
-							Contraseña: <span style={{color:'#112734B2'}}>**********</span>
+							<VisibilityOffOutlinedIcon
+								sx={{ marginRight: '10px', color: 'third.main' }}
+							/>
+							Contraseña: <span style={{ color: '#112734B2' }}>**********</span>
 						</Typography>
 						<Typography fontSize={font}>
-							<MailOutlineOutlinedIcon sx={{ marginRight:'10px', color: 'third.main' }} />
-							Correo: <span style={{color:'#112734B2'}}>{user.email}</span>
+							<MailOutlineOutlinedIcon
+								sx={{ marginRight: '10px', color: 'third.main' }}
+							/>
+							Correo: <span style={{ color: '#112734B2' }}>{user.email}</span>
 						</Typography>
 					</Box>
-					
 				</Grid>
 			</Grid>
 		</>
