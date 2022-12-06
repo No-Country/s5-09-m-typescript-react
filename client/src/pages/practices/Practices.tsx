@@ -211,7 +211,6 @@ export default function Practices() {
 			<Grid item lg={4}>
 				<Paper
 					sx={{
-						top: '0',
 						margin: '10px ',
 						width: '400px',
 						height: '600px',
@@ -221,6 +220,7 @@ export default function Practices() {
 						borderColor: 'third.main',
 						padding: '20px',
 						position: 'sticky',
+						top: '110px',
 					}}
 				>
 					{habitsList.map(i => (
