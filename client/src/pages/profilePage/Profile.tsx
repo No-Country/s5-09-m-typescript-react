@@ -10,6 +10,7 @@ import PanelCardList from './components/PanelCardList';
 import { EmailVerification } from './components';
 import { useAppSelector } from '../../redux/hooks';
 import Progress from './components/Progress';
+import { Hidden } from '@mui/material';
 
 export default function Profile() {
 	const user = useAppSelector(store => store.user);
@@ -58,11 +59,16 @@ export default function Profile() {
 					minHeight: 'calc(100vh - 85px)',
 				}}
 			>
-				<Grid item xs={2}>
-					<PerfilSidebar setModals={setModals} />
-				</Grid>
-
-				<Grid item xs={10}>
+			  	<Hidden smDown>
+					<Grid item xs={2}>
+						<PerfilSidebar setModals={setModals} />
+					</Grid>
+				</Hidden>
+				<Grid item xs={12} md={10}
+						sx={{
+							margin: {xs:'50px auto'},
+						}}
+				>
 					{renderModal(modal)}
 				</Grid>
 			</Grid>

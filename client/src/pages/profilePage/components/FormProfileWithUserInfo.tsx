@@ -11,9 +11,10 @@ export default function FormProfileWithUserInfo() {
 	const navegacion = () => {
 		console.log('probando boton');
 	};
+	const font = { xs: '1rem', md: '1.5rem' }
 	return (
 		<>
-			<Grid container height='40%'>
+			<Grid container height={{ xs:'230px', md:'200px'}}>
 				<Grid
 					item
 					xs={12}
@@ -21,6 +22,7 @@ export default function FormProfileWithUserInfo() {
 						display: 'flex',
 						justifyContent: 'start',
 						alignItems: 'center',
+						margin:{xs:'20px', md:'0'}
 					}}
 				>
 					<Box
@@ -30,49 +32,23 @@ export default function FormProfileWithUserInfo() {
 							justifyContent: 'center',
 							alignItems: 'start',
 							gap: '30px',
+							marginLeft:{ xs: '10px', md:'160px' }
 						}}
 					>
-						<Typography fontSize='1.5rem'>
+						<Typography fontSize={font} >
 							<AccountCircleOutlinedIcon sx={{ color: 'secondary.main' }} />
-							Nombre Completo
+							Nombre Completo: {user.name}
 						</Typography>
-						<Typography fontSize='1.5rem'>
+						<Typography fontSize={font}>
 							<VisibilityOffOutlinedIcon sx={{ color: 'secondary.main' }} />
-							Contraseña
+							Contraseña: **********
 						</Typography>
-						<Typography fontSize='1.5rem'>
+						<Typography fontSize={font}>
 							<MailOutlineOutlinedIcon sx={{ color: 'secondary.main' }} />
-							Correo
+							Correo: {user.email}
 						</Typography>
 					</Box>
-					<Box
-						sx={{
-							display: 'flex',
-							flexDirection: 'column',
-							justifyContent: 'center',
-							width: '300px',
-							alignItems: 'start',
-							gap: '30px',
-							marginLeft: '100px',
-						}}
-					>
-						<TextField
-							aria-readonly
-							value={user.name}
-							variant='standard'
-							fullWidth
-						></TextField>
-						<TextField
-							value='**********'
-							variant='standard'
-							fullWidth
-						></TextField>
-						<TextField
-							value={user.email}
-							variant='standard'
-							fullWidth
-						></TextField>
-					</Box>
+					
 				</Grid>
 			</Grid>
 		</>

@@ -13,25 +13,29 @@ export default function FormProfileWithUserInfo2({
 }: HabitsModalProps) {
 	const { practices } = useAppSelector(store => store.user);
 	const habits = practices?.map((e: any) => e.practice);
-
+	const font = { xs: '1rem', md: '1.5rem' }
 	return (
-		<Grid container height='30%'>
-			<Grid item xs={3}>
+		<Grid container 
+				height={{ xs:'250px', md:'300px'}}
+				display={'block'}
+				margin={{ xs:'25px', md:'50px 160px'}}
+			>
+			<Grid item xs={3} display={'inline'} >
 				<Typography fontSize='1.5rem'>
 					<CoronavirusOutlinedIcon sx={{ color: 'secondary.main' }} />
 					Hábitos
 				</Typography>
-				;
+				
 			</Grid>
 			<Grid item xs={9}>
-				<Typography fontSize='1.5rem'>
+				<Typography fontSize={font} margin={'10px 0'}>
 					Aquí puedes ver y editar los hábitos que estás trabajando
 				</Typography>
-				;
+				
 			</Grid>
 			<Grid
 				item
-				xs={12}
+				xs={8}
 				sx={{
 					display: 'flex',
 					justifyContent: 'center',

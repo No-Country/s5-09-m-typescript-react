@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Button, Menu, MenuItem, useMediaQuery, useTheme } from '@mui/material';
+import { Button, Hidden, Menu, MenuItem, useMediaQuery, useTheme } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { closeSession } from '../redux/slices/user';
 import { privateRoute } from '../models/routes';
 import { Box } from '@mui/system';
+import { PerfilSidebar } from '.';
 
 export default function MenuNavegation() {
   const theme = useTheme()
@@ -21,6 +22,12 @@ export default function MenuNavegation() {
 		dispatch(closeSession());
 		setAnchorEl(null);
 	};
+
+  const [modal, setModal] = useState<string>('perfil');
+  const setModals = (nameModal: string) => {
+		setModal(nameModal);
+	};
+
 	const navegation = () => {
 		navigate(privateRoute.dashboard);
 		setAnchorEl(null);
@@ -123,8 +130,13 @@ export default function MenuNavegation() {
               MenuListProps={{
                 'aria-labelledby': 'basic-button',
               }}
-            >
-              <MenuItem onClick={navegation}>Profile</MenuItem>
+            > 
+              <Hidden smUp>
+                <PerfilSidebar setModals={setModals} />
+              </Hidden>
+              <Hidden smDown>
+                <MenuItem onClick={navegation}>Profile</MenuItem>
+              </Hidden>
               <MenuItem onClick={logout}>Logout</MenuItem>
             </Menu>
           </div>

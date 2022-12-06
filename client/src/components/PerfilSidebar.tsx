@@ -5,7 +5,7 @@ import {
 	EventAvailableOutlined,
 	SelfImprovementOutlined,
 } from '@mui/icons-material';
-import { Box, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar';
 import { useAppSelector } from '../redux/hooks';
 interface sidebar {
@@ -19,7 +19,7 @@ export default function ProSidebar({ setModals }: sidebar) {
 				<Menu>
 					<Box
 						sx={{
-							display: 'flex',
+							display:'flex',
 							justifyContent: 'center',
 							height: '150px',
 						}}

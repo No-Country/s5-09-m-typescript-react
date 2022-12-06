@@ -9,36 +9,36 @@ export default function Progress() {
 		<Grid
 			container
 			sx={{
-				padding: '50px',
+				padding:{xs:'30px 40px', md:'50px auto'},
+			
 			}}
-		>
-			<Grid
-				item
-				xs={12}
-				borderBottom={'2px solid #E7E8EA'}
+		>	
+		<Typography
 				sx={{
-					margin: '0px auto',
+					margin: {xs:'auto', md:'0px auto'},
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
 					maxWidth: '200px',
+					fontSize: '24px',
+					fontWeight: 600,
+					lineHeight: '30px',
 				}}
 			>
-				<Typography
-					sx={{
-						fontSize: '24px',
-						fontWeight: 600,
-						lineHeight: '30px',
-					}}
-				>
-					Registra tu tarea
-				</Typography>
-			</Grid>
-
+				Registra tu tarea
+		</Typography>
 			<Grid
 				item
+				xs={12}
+				borderBottom={'2px solid #E7E8EA'}
+			>	
+			</Grid>
+			
+			<Grid
+				item xs={12}
 				sx={{
 					display: 'contents',
+					margin:'auto'
 				}}
 			>
 				{habits.map((e: any) => {
