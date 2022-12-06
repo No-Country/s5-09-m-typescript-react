@@ -21,7 +21,9 @@ export const login = async (req: Request, res: Response) => {
 
         //*Comprobar que este verificado el usuario
         if (!ok && msg === 'El email no esta verificado') {
-            return res.status(status).json({ ok: false, msg: msg, code, id })
+            return res
+                .status(status)
+                .json({ ok: false, msg: msg, code, id, email })
         }
 
         //* Comprobar que las contraseñas coincidan
