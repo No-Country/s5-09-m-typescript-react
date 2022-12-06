@@ -19,3 +19,4 @@ export { default as FormProfileWithUserInfo2 } from './profilePage/components/Fo
 export { default as TopBarProfile } from './profilePage/components/TopBarProfile';
 export { default as Signup } from './signup/Signup';
 export { default as SignupForm } from './signup/components/SignupForm';
+export { default as EmailForgotPassword } from './forgot/EmailForgotPassword';

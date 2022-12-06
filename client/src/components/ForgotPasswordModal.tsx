@@ -6,12 +6,14 @@ import {
 	TextField,
 	Box,
 } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
+
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import GlobalButton from './GlobalButton';
 import { useAppDispatch } from '../redux/hooks';
 import { changeForgotPasswordModal } from '../redux/slices/setting';
+import axios from 'axios';
+import { postForgetPassword } from '../service';
 
 type FormData = {
 	email: string;
@@ -26,36 +28,24 @@ export default function ForgotPasswordModal() {
 
 	//Para probar si funcionan los formularios
 	const formSubmitHandler: SubmitHandler<FormData> = data => {
-		console.log('email ', data);
-		() => close();
+		console.log(postForgetPassword(data, dispatch));
 	};
 	return (
-		<Grid
-			sx={{
-				position: 'fixed',
-				top: 0,
-				left: 0,
-				zIndex: 999,
-				display: 'flex',
-				justifyContent: 'center',
-				width: '100%',
-				height: '100%',
-				backgroundColor: 'rgba(0,0,0,0.25)',
-			}}
-		>
+		<Grid sx={{ width: '100%', padding: 5 }}>
 			<Paper
 				sx={{
-					marginTop: '100px',
-					width: '400px',
-					height: '390px',
-					display: 'block',
+					minHeight: '700px',
 					flexDirection: 'column',
-					padding: '20px 20px',
-					border: 'solid gray',
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					width: '100%',
 				}}
+				elevation={0}
 			>
 				<Box
 					sx={{
+						width: '100%',
 						display: 'flex',
 						justifyContent: 'center',
 						alignItems: 'center',
@@ -76,7 +66,7 @@ export default function ForgotPasswordModal() {
 						aria-label='close'
 						onClick={() => dispatch(changeForgotPasswordModal())}
 					>
-						<CloseIcon />
+						{/* <CloseIcon /> */}
 					</IconButton>
 				</Box>
 				<Typography
@@ -107,7 +97,7 @@ export default function ForgotPasswordModal() {
 					correo electrónico vinculada con tu cuenta.
 				</Typography>
 
-				<Grid item xs={12} sx={{ margin: '30px 0' }}>
+				<Grid item sx={{ margin: '30px 0', width: '100%' }}>
 					<TextField
 						{...register('email', {
 							required: 'Este campo es requerido',

@@ -1,7 +1,12 @@
 import { Grid, Paper } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { forms } from '../types/interfaces';
-export default function Contact({ children, tittle, text }: forms) {
+export default function Contact({
+	children,
+	tittle,
+	text,
+	imgUrl = '',
+}: forms) {
 	return (
 		<Grid
 			container
@@ -50,6 +55,22 @@ export default function Contact({ children, tittle, text }: forms) {
 							{text}
 						</Typography>
 					</Grid>
+
+					{imgUrl.length > 0 && (
+						<Grid xs={12} sx={{ display: { xs: 'none', lg: 'block' } }}>
+							<img
+								src={imgUrl}
+								alt='form img'
+								style={{
+									width: '100%',
+									position: 'relative',
+									top: '5%',
+									left: '15%',
+									zIndex: '1',
+								}}
+							/>
+						</Grid>
+					)}
 				</Grid>
 			</Grid>
 			<Grid
@@ -70,6 +91,7 @@ export default function Contact({ children, tittle, text }: forms) {
 						border: { xs: 'none', sm: '1px solid' },
 						borderColor: 'third.main',
 						boxShadow: { xs: 'none', sm: '0px 4px 6px rgba(0, 0, 0, 0.25)' },
+						zIndex: 3,
 					}}
 				>
 					{children}

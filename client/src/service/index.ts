@@ -6,3 +6,4 @@ export * from './login/login';
 export * from './login/onLoginGoogle';
 export * from './register';
 export * from './updateUser/updatePractices';
+export * from './forget/forgetPassword';
