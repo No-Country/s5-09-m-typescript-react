@@ -1,25 +1,31 @@
-import { Grid, TextField, Typography } from '@mui/material';
+import { Grid, Link, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { GlobalButton } from '../../../components';
 import { useForm } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
 import { verifyCode } from '../../../service';
+import { resendCode } from '../../../service/login/resendCode';
+import { closeSession } from '../../../redux/slices/user';
 
 type Inputs = {
 	verificationCode: number;
 };
 
 export default function EmailVerification() {
-  const { register, handleSubmit } = useForm<Inputs>()
-  const user = useAppSelector((state) => state.user)
-  const dispatch = useAppDispatch();
+	const { register, handleSubmit } = useForm<Inputs>();
+	const user = useAppSelector(state => state.user);
+	const dispatch = useAppDispatch();
+	const resendCodeVerificado = () => {
+		resendCode(dispatch, user.email!);
+		dispatch(closeSession());
+	};
 
-  const onSubmit = (value : Inputs) => {
-    if (user.code === value.verificationCode) {
-      verifyCode( {userId: user.id}, dispatch )
-    }    
-  }
+	const onSubmit = (value: Inputs) => {
+		if (user.code === value.verificationCode) {
+			verifyCode({ userId: user.id }, dispatch);
+		}
+	};
 	return (
 		<Box
 			sx={{
@@ -35,8 +41,8 @@ export default function EmailVerification() {
 			}}
 		>
 			<Grid
-        component="form"
-        onSubmit={handleSubmit(onSubmit)}
+				component='form'
+				onSubmit={handleSubmit(onSubmit)}
 				container
 				sx={{
 					width: '400px',
@@ -70,7 +76,7 @@ export default function EmailVerification() {
 						Introduce el codigo de validación
 					</Typography>
 					<Typography variant='body1'>
-						Confirma tu cuenta. olivia@gmail.com
+						Confirma tu cuenta. {user.email}
 					</Typography>
 				</Grid>
 				<Grid
@@ -84,9 +90,9 @@ export default function EmailVerification() {
 					}}
 				>
 					<TextField
-            {...register("verificationCode",{
-              valueAsNumber: true,
-            })}
+						{...register('verificationCode', {
+							valueAsNumber: true,
+						})}
 						type='number'
 						variant='outlined'
 						color='secondary'
@@ -103,12 +109,19 @@ export default function EmailVerification() {
 					xs={12}
 					sx={{
 						display: 'flex',
-						justifyContent: 'start',
+						justifyContent: 'center',
 						alignItems: 'center',
 					}}
 				>
 					<Typography variant='body1'>
-						¿No recibiste un código? Haga clic para reenviar.
+						¿No recibiste un código? Haga clic para{' '}
+						<Link
+							variant='body1'
+							color='secondary.main'
+							onClick={() => resendCodeVerificado()}
+						>
+							reenviar.
+						</Link>
 					</Typography>
 				</Grid>
 				<Grid
@@ -120,7 +133,7 @@ export default function EmailVerification() {
 						alignItems: 'center',
 					}}
 				>
-					<GlobalButton type="submit" text='enviar'/>
+					<GlobalButton type='submit' text='enviar' />
 				</Grid>
 			</Grid>
 		</Box>

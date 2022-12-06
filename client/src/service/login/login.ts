@@ -39,7 +39,9 @@ export const onLogin = async (
 		const data = err.response.data; //este es el err.msg
 		console.log(data);
 		if (data.msg === 'El email no esta verificado') {
-			dispatch(emailVerification({ code: data.code, id: data.id }));
+			dispatch(
+				emailVerification({ code: data.code, id: data.id, email: data.email }),
+			);
 		} else {
 			if (
 				data.error[0].msg ===
