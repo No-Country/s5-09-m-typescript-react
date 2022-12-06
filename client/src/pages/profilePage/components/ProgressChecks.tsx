@@ -13,12 +13,14 @@ import {
 interface checksContent {
 	tittle: string;
 	urlImg: string;
+  checkHabit: (checked : boolean) => void;
 }
 
-export default function ProgressChecks({ tittle, urlImg }: checksContent) {
+export default function ProgressChecks({ tittle, urlImg, checkHabit }: checksContent) {
 	const [checked, setChecked] = React.useState(false);
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    checkHabit(event.target.checked);
 		setChecked(event.target.checked);
 		console.log(event.target.checked);
 	};
@@ -26,9 +28,9 @@ export default function ProgressChecks({ tittle, urlImg }: checksContent) {
 		<Card
 			sx={[
 				{
-					height: '130px',
-					width: '240px',
-					margin: '20px',
+					height:{xs:'170px', md:'130px'},
+					width:{xs:'150px' , md:'240px'},
+					margin: {xs:'7px' , md:'20px'},
 					border: '1px solid #DCDCDC',
 					boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
 					borderRadius: '8px',
@@ -36,6 +38,7 @@ export default function ProgressChecks({ tittle, urlImg }: checksContent) {
 					flexDirection: 'column',
 					position: 'relative',
 					alignItems: 'flex-start',
+					padding:{xs:'20px'},
 				},
 				checked && {
 					backgroundColor: 'rgb(40,158,134,0.2)',
@@ -45,11 +48,11 @@ export default function ProgressChecks({ tittle, urlImg }: checksContent) {
 			<Grid
 				container
 				sx={{
-					borderBottom: '1px solid rgba(151, 151, 151, 0.2)',
+					borderBottom:{xs:'none', md:'1px solid rgba(151, 151, 151, 0.2)'},
 					height: '110px',
 					width: '220px',
 					margin: 'auto',
-					display: 'flex',
+					display: {xs:'block', md:'flex'},
 					flexDirection: 'column',
 					alignItems: 'flex-start',
 				}}
