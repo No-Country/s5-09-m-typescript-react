@@ -14,7 +14,7 @@ export default function FormProfileWithUserInfo() {
 	const font = { xs: '1rem', md: '1.5rem' }
 	return (
 		<>
-			<Grid container height={{ xs:'230px', md:'200px'}}>
+			<Grid container height={{ xs:'230px', md:'250px'}}>
 				<Grid
 					item
 					xs={12}
@@ -22,9 +22,8 @@ export default function FormProfileWithUserInfo() {
 						display: 'flex',
 						justifyContent: 'start',
 						alignItems: 'center',
-						margin:{xs:'20px', md:'0'}
 					}}
-				>
+				>	
 					<Box
 						sx={{
 							display: 'flex',
@@ -32,20 +31,24 @@ export default function FormProfileWithUserInfo() {
 							justifyContent: 'center',
 							alignItems: 'start',
 							gap: '30px',
-							marginLeft:{ xs: '10px', md:'160px' }
+							marginLeft:{ xs: '30px', md:'130px' }
 						}}
-					>
+					>	
+						<Typography margin={{xs:'auto', md:'0px'}} fontSize={{xs: '1.5rem', md: '1.9rem'}}>
+							<AccountCircleOutlinedIcon sx={{ marginRight:'10px', color: 'third.main' }} />
+							Perfil
+						</Typography>
 						<Typography fontSize={font} >
-							<AccountCircleOutlinedIcon sx={{ color: 'secondary.main' }} />
-							Nombre Completo: {user.name}
+							<AccountCircleOutlinedIcon sx={{ marginRight:'10px', color: 'third.main' }} />
+							Nombre Completo: <span style={{color:'#112734B2'}}>{user.name}</span>
 						</Typography>
 						<Typography fontSize={font}>
-							<VisibilityOffOutlinedIcon sx={{ color: 'secondary.main' }} />
-							Contraseña: **********
+							<VisibilityOffOutlinedIcon sx={{ marginRight:'10px', color: 'third.main' }} />
+							Contraseña: <span style={{color:'#112734B2'}}>**********</span>
 						</Typography>
 						<Typography fontSize={font}>
-							<MailOutlineOutlinedIcon sx={{ color: 'secondary.main' }} />
-							Correo: {user.email}
+							<MailOutlineOutlinedIcon sx={{ marginRight:'10px', color: 'third.main' }} />
+							Correo: <span style={{color:'#112734B2'}}>{user.email}</span>
 						</Typography>
 					</Box>
 					

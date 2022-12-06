@@ -1,4 +1,3 @@
-import * as React from 'react';
 import CoronavirusOutlinedIcon from '@mui/icons-material/CoronavirusOutlined';
 import { Typography, Grid } from '@mui/material';
 import GlobalButton from '../../../components/GlobalButton';
@@ -17,35 +16,37 @@ export default function FormProfileWithUserInfo2({
 	return (
 		<Grid container 
 				height={{ xs:'250px', md:'300px'}}
-				display={'block'}
-				margin={{ xs:'25px', md:'50px 160px'}}
+				display={{xs:'block',md:'inline-flex'}}
+				margin={{ xs:'25px', md:'50px 125px'}}
 			>
-			<Grid item xs={3} display={'inline'} >
-				<Typography fontSize='1.5rem'>
-					<CoronavirusOutlinedIcon sx={{ color: 'secondary.main' }} />
+			<Grid item xs={3} md={2} display={'inline'} >
+				<Typography fontSize={{xs: '1.3rem', md: '1.7rem'}}>
+					<CoronavirusOutlinedIcon sx={{ marginRight:'10px', color: 'third.main' }} />
 					Hábitos
 				</Typography>
 				
 			</Grid>
 			<Grid item xs={9}>
-				<Typography fontSize={font} margin={'10px 0'}>
+				<Typography fontSize={font} margin={{xs:'10px 20px', md:'0'}}>
 					Aquí puedes ver y editar los hábitos que estás trabajando
 				</Typography>
-				
 			</Grid>
 			<Grid
 				item
 				xs={8}
 				sx={{
-					display: 'flex',
-					justifyContent: 'center',
+					display: 'block',
+					justifyContent: 'space-around',
 					alingItems: 'center',
-					gap: '10px',
+					
 				}}
-			>
-				{habits?.map((e: any) => {
-					return <DeletableChips key={e._id} name={e.name} />;
-				})}
+			> 	<Grid container sx={{
+				display: 'flex',
+				justifyContent: 'space-around',}}>
+					{habits?.map((e: any) => {
+						return <DeletableChips key={e._id} name={e.name} />;
+					})}
+				</Grid>
 			</Grid>
 			<Grid
 				item
