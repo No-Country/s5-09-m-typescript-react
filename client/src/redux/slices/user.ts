@@ -37,13 +37,18 @@ export const userSlice = createSlice({
 		emailVerification: (state, action: PayloadAction<User>) => {
 			state.code = action.payload.code;
 			state.id = action.payload.id;
+			state.email = action.payload.email;
 		},
 		addPractices: (state, action: PayloadAction<User>) => {
 			state.practices.push(action.payload);
 		},
+		changeCode: (state, action: PayloadAction<User>) => {
+			state.code = action.payload.code;
+		},
 	},
 });
 
-export const { setUser, closeSession, emailVerification } = userSlice.actions;
+export const { setUser, closeSession, emailVerification, changeCode } =
+	userSlice.actions;
 
 export default userSlice.reducer;
