@@ -21,6 +21,7 @@ export default function Signup() {
 		<LayoutForms
 			tittle='Bienvenido'
 			text='Crea tu cuenta  y disfruta de todo lo que tenemos para ti.'
+			imgUrl='https://res.cloudinary.com/dlxlitkl6/image/upload/v1670295369/dise%C3%B1o%20definitivo/formularios/img-Crear-cuenta_v8qzg4.svg'
 		>
 			{!showModal ? (
 				<SignupForm />

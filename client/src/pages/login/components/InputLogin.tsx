@@ -175,7 +175,7 @@ export default function InputLogin() {
 						sx={{
 							color: 'secondary.main',
 						}}
-						onClick={() => dispatch(changeForgotPasswordModal())}
+						onClick={() => navigate(publicRoute.recoverPassword)}
 					>
 						¿Olvidaste la contraseña?
 					</Link>
