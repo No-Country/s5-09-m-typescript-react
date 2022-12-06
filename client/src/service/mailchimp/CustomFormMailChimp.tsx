@@ -7,12 +7,12 @@ const SimpleForm = () => {
 	return (
 		<MailchimpSubscribe
 			url={url}
-			render={props => {
+			render={(props: any) => {
 				const { subscribe, status, message } = props || {};
 
 				return (
 					<BoletinInformativo
-						onSubmitted={formData => subscribe(formData)}
+						onSubmitted={(formData: any) => subscribe(formData)}
 						status={status}
 						message={message}
 					/>
