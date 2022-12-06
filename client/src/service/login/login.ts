@@ -27,7 +27,6 @@ export const onLogin = async (
 		const dataUser = loginAdapter(getUser, true, false, data.token);
 		console.log(dataUser);
 		dispatch(setUser(dataUser));
-		sessionStorage.removeItem('userData');
 	} catch (err: any) {
 		const data = err.response.data; //este es el err.msg
 		console.log(data);
