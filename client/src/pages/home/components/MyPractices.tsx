@@ -1,39 +1,35 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 
 export default function MyPractices() {
 	return (
 		<section>
-			<Box
-				style={{
+			<Grid
+				container
+				sx={{
 					paddingTop: '50px',
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
-					fontFamily: 'Lora',
 				}}
 			>
 				<Typography
 					variant='h2'
 					color='text.primary'
-					sx={{ textAlign: 'center', fontSize: 64 }}
+					sx={{ display: 'block', textAlign: 'center', fontSize: 64 }}
 				>
 					Mis Prácticas
 				</Typography>
-
-				<div
-					className='containerHabits'
-					style={{ display: 'flex', width: '1442px', marginTop: '56px' }}
-				>
-					<div
-						className='containerText'
-						style={{
-							width: '785px',
-							height: '368px',
-							marginLeft: '40px',
-							marginRight: '23px',
-							fontWeight: '400',
-							letterSpacing: '-0,015em',
-							textAlign: 'left',
+				<Grid container sx={{ display: 'flex' }}>
+					<Grid
+						item
+						lg={7}
+						xs={12}
+						sx={{
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							alingItem: 'start',
+							padding: '0 50px',
 						}}
 					>
 						<Typography
@@ -55,16 +51,28 @@ export default function MyPractices() {
 							cuerpo, la mente y el espíritu, entendiendo la salud como un todo
 							y mejorando nuestra calidad de vida.
 						</Typography>
-					</div>
-
-					<img
-						src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669855664/dise%C3%B1o%20definitivo/practicas_dnmqno.svg'
-						alt='Sesión de yoga'
-						className='imageMyPractices'
-						style={{ marginRight: '40px' }}
-					/>
-				</div>
-			</Box>
+					</Grid>
+					<Grid
+						item
+						lg={4}
+						xs={12}
+						sx={{
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'end',
+							alingItem: 'center',
+							marginRight: { lg: '40px', xs: '0' },
+						}}
+					>
+						<img
+							src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669855664/dise%C3%B1o%20definitivo/practicas_dnmqno.svg'
+							alt='Sesión de yoga'
+							className='imageMyPractices'
+							style={{ width: '100%' }}
+						/>
+					</Grid>
+				</Grid>
+			</Grid>
 		</section>
 	);
 }

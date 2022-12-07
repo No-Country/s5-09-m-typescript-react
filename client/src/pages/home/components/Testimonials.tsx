@@ -14,7 +14,7 @@ export default function Testimonials() {
 						Testimonios
 					</Typography>
 				</Grid>
-				<Grid item xs={5}>
+				<Grid item xs={8} lg={5}>
 					<Paper
 						sx={{
 							height: 350,
@@ -61,7 +61,7 @@ export default function Testimonials() {
 						</Grid>
 					</Paper>
 				</Grid>
-				<Grid item xs={5}>
+				<Grid item xs={8} lg={5}>
 					<Paper
 						sx={{
 							height: 350,

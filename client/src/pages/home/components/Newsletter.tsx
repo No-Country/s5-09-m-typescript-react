@@ -28,7 +28,7 @@ export default function BoletinInformativo({
 
 	return (
 		<Grid container spacing={1} padding='150px 0 150px 0'>
-			<Grid item md={6} xs='auto'>
+			<Grid item xs={12} lg={6}>
 				<Grid
 					item
 					sx={{
@@ -36,7 +36,7 @@ export default function BoletinInformativo({
 						height: '100%',
 						width: '100%',
 						borderRadius: '20px',
-						justifyContent: 'end',
+						justifyContent: { lg: 'end', xs: 'center' },
 						alignItems: 'center',
 					}}
 				>
@@ -71,17 +71,17 @@ export default function BoletinInformativo({
 					</div>
 				</Grid>
 			</Grid>
-			<Grid item xs={6}>
+			<Grid item xs={12} lg={6}>
 				<Grid
 					container
 					sx={{
 						display: 'flex',
-						justifyContent: 'start',
+						justifyContent: { lg: 'start', xs: 'center' },
 						width: '100%',
-						paddingLeft: '30px',
+						paddingLeft: { lg: '30px', xs: '0' },
 					}}
 				>
-					<Grid item sm={10} xs={4}>
+					<Grid item xs={8} lg={12}>
 						<Typography
 							variant='h2'
 							color='third.main'
@@ -89,14 +89,13 @@ export default function BoletinInformativo({
 							marginBottom='10px'
 							fontWeight={600}
 							fontSize='48px'
-							fontFamily='crimson'
 							lineHeight='100%'
 							fontStyle='semibold'
 							letterSpacing='1px'
 						>
 							Boletín Informativo
 						</Typography>
-						<Grid item sm={6} xs={4}>
+						<Grid item xs={8}>
 							<Typography
 								component='p'
 								width='350px'
