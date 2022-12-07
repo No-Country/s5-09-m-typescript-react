@@ -11,8 +11,6 @@ export default function Hero() {
 	return (
 		<Grid
 			container
-			alignItems='start'
-			justifyContent='space-between'
 			sx={{
 				minHeight: 'calc(100vh - 100px)',
 				backgroundImage:
@@ -27,11 +25,14 @@ export default function Hero() {
 		>
 			<Grid
 				item
-				xs={8}
+				lg={8}
+				md={12}
 				gap={2}
-				display='flex'
-				flexDirection='column'
-				marginTop='80px'
+				sx={{
+					display: 'flex',
+					marginTop: '80px',
+					flexDirection: 'column',
+				}}
 			>
 				<Typography variant='h2' component='h2'>
 					Lleva tu{' '}
@@ -49,8 +50,9 @@ export default function Hero() {
 					sx={{
 						borderLeft: '3px solid',
 						borderColor: 'secondary.main',
-						width: '50%',
+						width: { lg: '50%', md: '80%' },
 						color: 'text.secondary',
+						fontSize: '1.5rem',
 					}}
 				>
 					¿Necesitas ayuda con tu práctica diaria de atención plena? Comienza
@@ -62,20 +64,19 @@ export default function Hero() {
 
 			<Grid
 				item
-				xs={4}
-				alignItems='center'
-				justifyContent='center'
-				display='flex'
-				flexDirection='column'
+				lg={4}
+				md={12}
 				gap={2}
-				marginTop='100px'
+				sx={{
+					display: { lg: 'flex', xs: 'none' },
+					flexDirection: 'column',
+					alignItems: { lg: 'center', md: 'end' },
+					justifyContent: 'center',
+					marginTop: { lg: '100px', md: '0px' },
+					width: '100%',
+				}}
 			>
-				<Typography
-					color='third.main'
-					variant='h3'
-					component='h2'
-					textAlign='end'
-				>
+				<Typography color='third.main' variant='h3' component='h2'>
 					Registra Aquí
 				</Typography>
 				<Button
