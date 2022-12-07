@@ -13,12 +13,9 @@ import { Divider, Hidden } from '@mui/material';
 
 export default function Profile() {
 	const user = useAppSelector(store => store.user);
+	const route = useAppSelector(store => store.navegation.route);
 	const [showChangeHabitsModal, setShowChangeHabitsModal] =
 		useState<Boolean>(false);
-	const [modal, setModal] = useState<string>('perfil');
-	const setModals = (nameModal: string) => {
-		setModal(nameModal);
-	};
 	const showHabitsModal = () => {
 		user.practices.length == 0
 			? setShowChangeHabitsModal(false)
@@ -67,7 +64,7 @@ export default function Profile() {
 			>
 				<Hidden lgDown>
 					<Grid item xs={2} display={'flex'}>
-						<PerfilSidebar setModals={setModals} />
+						<PerfilSidebar />
 					</Grid>
 				</Hidden>
 				<Grid
@@ -78,7 +75,7 @@ export default function Profile() {
 						margin: { xs: '30px auto' },
 					}}
 				>
-					{renderModal(modal)}
+					{renderModal(route)}
 				</Grid>
 			</Grid>
 		</>

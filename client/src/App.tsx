@@ -10,6 +10,7 @@ import {
 	Home,
 	Profile,
 	EmailForgotPassword,
+	ForgotPassword,
 } from './pages';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { publicRoute } from './models/routes';
@@ -25,14 +26,11 @@ function App() {
 	);
 
 	return (
-		<GoogleOAuthProvider
-			clientId={
-				'460211922745-6t4k8cs9kk2a48a6c33r20g6mjel9tfu.apps.googleusercontent.com'
-			}
-		>
+		<GoogleOAuthProvider clientId={import.meta.env.VITE_APP_GOOGLE_ID}>
 			<BrowserRouter>
 				<LayoutNavegation>
 					<Routes>
+						<Route path='/*' element={<Home />} />
 						<Route path='/' element={<Home />} />
 						<Route path={publicRoute.practices} element={<Practices />} />
 						<Route path={publicRoute.contact} element={<Contact />} />
@@ -46,7 +44,7 @@ function App() {
 							/>
 							<Route
 								path={publicRoute.forgotPassword}
-								element={<EmailForgotPassword />}
+								element={<ForgotPassword />}
 							/>
 						</Route>
 						<Route element={<PrivateRoute />}>
