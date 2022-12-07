@@ -1,4 +1,4 @@
-import { Box, Typography, CardContent, Card, Link } from '@mui/material';
+import { Box, Typography, CardContent, Card, Link, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { GlobalButton } from '../../../components';
 import { publicRoute } from '../../../models/routes';
@@ -30,91 +30,82 @@ export default function AboutHabits() {
 		navegation(publicRoute.practices);
 	};
 	return (
-		<Box
+		<Grid
+			container
 			sx={{
 				backgroundColor: 'primary.dark',
 				display: 'flex',
-				flexDirection: 'column',
 				alignItems: 'center',
 			}}
 		>
-			<Box
-				style={{
-					padding: '0 49px 0 86px',
-					display: 'flex',
-					width: '1442px',
-					height: '301px',
-				}}
-			>
-				<div className='cardsContainer' style={{ display: 'flex' }}>
-					{itemList.map(item => (
-						<Card
-							key={itemList.indexOf(item)}
-							sx={{
-								borderRadius: '12px',
-								margin: '28px 20px',
-								width: 200,
-								height: 245,
-							}}
-						>
-							<CardContent>
-								<div
+			<Grid item xs={7} sx={{ display: 'flex' }}>
+				{itemList.map(item => (
+					<Card
+						key={itemList.indexOf(item)}
+						sx={{
+							borderRadius: '12px',
+							margin: '28px 20px',
+							width: 200,
+							height: 245,
+						}}
+					>
+						<CardContent>
+							<div
+								style={{
+									margin: 'auto',
+									height: '150px',
+									width: '150px',
+								}}
+							>
+								<img
+									src={item.image}
 									style={{
-										margin: 'auto',
-										height: '150px',
 										width: '150px',
+										height: '150px',
+										objectFit: 'contain',
 									}}
-								>
-									<img
-										src={item.image}
-										style={{
-											width: '150px',
-											height: '150px',
-											objectFit: 'contain',
-										}}
-									/>
-								</div>
-								<Typography
-									variant='h3'
-									component='div'
-									sx={{ textAlign: 'center', fontSize: 20, fontWeight: 600 }}
-								>
-									{item.about}
-								</Typography>
-								<Link
-									onClick={() => navegation(item.url)}
-									sx={{
-										fontSize: 16,
-										fontWeight: 400,
-										margin: '0 0 0 60%',
-										color: 'third.main',
-									}}
-								>
-									Ver más
-								</Link>
-							</CardContent>
-						</Card>
-					))}
-				</div>
-				<div className='textHabits' style={{ padding: '28px 30px' }}>
-					<Typography
-						variant='h2'
-						color='text.primary'
-						sx={{ fontSize: 40, fontWeight: 600 }}
-					>
-						Conoce los 16 Hábitos
-					</Typography>
-					<Typography
-						variant='body1'
-						color='text.secondary'
-						sx={{ margin: '20px auto', fontSize: 24, fontWeight: 400 }}
-					>
-						Siéntete mejor en todos los aspectos de tu vida incorporando nuevas
-						rutinas.
-					</Typography>
-					<GlobalButton text='Conoce Más' action={redirection} />
-				</div>
-			</Box>
-		</Box>
+								/>
+							</div>
+							<Typography
+								variant='h3'
+								component='div'
+								sx={{ textAlign: 'center', fontSize: 20, fontWeight: 600 }}
+							>
+								{item.about}
+							</Typography>
+							<Link
+								onClick={() => navegation(item.url)}
+								sx={{
+									fontSize: 16,
+									fontWeight: 400,
+									margin: '0 0 0 60%',
+									color: 'third.main',
+								}}
+							>
+								Ver más
+							</Link>
+						</CardContent>
+					</Card>
+				))}
+			</Grid>
+			<Grid item xs={5}>
+				<Typography
+					variant='h2'
+					color='text.primary'
+					sx={{ fontSize: 40, fontWeight: 600 }}
+				>
+					Conoce los 16 Hábitos
+				</Typography>
+				<Typography
+					variant='body1'
+					color='text.secondary'
+					sx={{ fontSize: 24, fontWeight: 400 }}
+				>
+					Siéntete mejor en todos los aspectos de tu vida incorporando nuevas
+					rutinas.
+				</Typography>
+				<GlobalButton text='Conoce Más' action={redirection} />
+			</Grid>
+		</Grid>
 	);
 }
