@@ -13,8 +13,14 @@ import {
 } from './pages';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { publicRoute } from './models/routes';
+import { useEffect } from 'react';
+import { useAppDispatch } from './redux/hooks';
+import { setUser } from './redux/slices/user';
 
 function App() {
+	const dispatch = useAppDispatch();
+	dispatch(setUser(JSON.parse(localStorage.getItem('User')!)));
+
 	return (
 		<GoogleOAuthProvider
 			clientId={
