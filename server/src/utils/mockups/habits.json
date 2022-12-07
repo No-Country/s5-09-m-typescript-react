@@ -1,56 +1,56 @@
 [
     {
         "_id": "637cdb2bb0d39b6840ae9953",
-        "name": "Meditar",
-        "img": "https://res.cloudinary.com/dlxlitkl6/image/upload/v1669903237/Practicas/meditar_idgqsv.png",
+        "name": "Meditar 2 veces diaramente",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdb78b0d39b6840ae9973"
     },
     {
         "_id": "637cdb31b0d39b6840ae9955",
-        "name": "Lectura",
-        "img": "https://res.cloudinary.com/dlxlitkl6/image/upload/v1669903962/Practicas/lectura_szku8t.png",
+        "name": "Lectura espiritual",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdb78b0d39b6840ae9973"
     },
     {
         "_id": "637cdb35b0d39b6840ae9957",
-        "name": "Servicio",
-        "img": "https://res.cloudinary.com/dlxlitkl6/image/upload/v1669904249/Practicas/servicio_plqld5.png",
+        "name": "Realizar servicio",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdb78b0d39b6840ae9973"
     },
     {
         "_id": "637cdb40b0d39b6840ae9959",
-        "name": "Código de conducta",
+        "name": "Seguir código de conducta",
         "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdb78b0d39b6840ae9973"
     },
     {
         "_id": "637cdb46b0d39b6840ae995b",
-        "name": "Asanas",
-        "img": "https://res.cloudinary.com/dlxlitkl6/image/upload/v1669903885/Practicas/asana_xmmfgs.png",
+        "name": "Realizar asanas",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdbb5b0d39b6840ae9975"
     },
     {
         "_id": "637cdb49b0d39b6840ae995d",
-        "name": "Ejercicio",
-        "img": "https://res.cloudinary.com/dlxlitkl6/image/upload/v1669904059/Practicas/ejercicio_eik07x.png",
+        "name": "Realizar ejercicio",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdbb5b0d39b6840ae9975"
     },
     {
         "_id": "637cdb4cb0d39b6840ae995f",
-        "name": "Tiempo al aire libre",
+        "name": "Pasar tiempo al aire libre",
         "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdbb5b0d39b6840ae9975"
     },
     {
         "_id": "637cdb4fb0d39b6840ae9961",
-        "name": "Evitar intoxicantes",
+        "name": "Evitar intoxicantes (drogas, alcohol, etc)",
         "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdbb5b0d39b6840ae9975"
@@ -64,49 +64,49 @@
     },
     {
         "_id": "637cdb54b0d39b6840ae9965",
-        "name": "Ayunos",
-        "img": "https://res.cloudinary.com/dlxlitkl6/image/upload/v1669904337/Practicas/ayuno_ad5ivh.png",
+        "name": "Ayunas 2 veces al mes",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdbcab0d39b6840ae9977"
     },
     {
         "_id": "637cdb57b0d39b6840ae9967",
-        "name": "Beber agua",
-        "img": "https://res.cloudinary.com/dlxlitkl6/image/upload/v1669905762/Practicas/agua2_uudxrv.png",
+        "name": "Tomar 2 litros de agua al dia",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdbcab0d39b6840ae9977"
     },
     {
         "_id": "637cdb59b0d39b6840ae9969",
-        "name": "Comer vegetales",
-        "img": "https://res.cloudinary.com/dlxlitkl6/image/upload/v1669906550/Practicas/vegetales_1_xiljsm.png",
+        "name": "Aumentar ingesta de vegetales",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdbcab0d39b6840ae9977"
     },
     {
         "_id": "637cdb5cb0d39b6840ae996b",
         "name": "Bañarse diaramente",
-        "img": "https://res.cloudinary.com/dlxlitkl6/image/upload/v1669909717/Practicas/ba%C3%B1arse_qpltbp.png",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdbd5b0d39b6840ae9979"
     },
     {
         "_id": "637cdb5eb0d39b6840ae996d",
-        "name": "Limpieza",
-        "img": "https://res.cloudinary.com/dlxlitkl6/image/upload/v1669909394/Practicas/limpieza_fxa2f2.png",
+        "name": "Limpieza del hogar y ambiente",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdbd5b0d39b6840ae9979"
     },
     {
         "_id": "637cdb62b0d39b6840ae996f",
-        "name": "Pensar positivamente",
-        "img": "https://res.cloudinary.com/dlxlitkl6/image/upload/v1669910211/Practicas/positivismo_ujlokl.png",
+        "name": "Desechar pensamientos negativos",
+        "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdbd5b0d39b6840ae9979"
     },
     {
         "_id": "637cdb65b0d39b6840ae9971",
-        "name": "Cuidar la mente",
+        "name": "Consumo psíquico adecuado",
         "img": "https://img.freepik.com/vector-gratis/ilustracion-concepto-habito-saludable_114360-1132.jpg",
         "description": "loren",
         "category": "637cdbd5b0d39b6840ae9979"

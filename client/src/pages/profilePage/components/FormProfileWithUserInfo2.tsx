@@ -1,5 +1,5 @@
 import CoronavirusOutlinedIcon from '@mui/icons-material/CoronavirusOutlined';
-import { Typography, Grid } from '@mui/material';
+import { Typography, Grid, Button } from '@mui/material';
 import GlobalButton from '../../../components/GlobalButton';
 import DeletableChips from './DeletableChips';
 import { useAppSelector } from '../../../redux/hooks';
@@ -17,10 +17,11 @@ export default function FormProfileWithUserInfo2({
 		<Grid
 			container
 			height={{ xs: '680px', md: '300px' }}
+			width={'80%'}
 			display={{ xs: 'block', md: 'inline-flex' }}
-			margin={{ xs: '25px', md: '50px 125px' }}
+			margin={{ xs: '25px', md: '50px 0px 0px 125px' }}
 		>
-			<Grid item xs={3} md={2} display={'inline'}>
+			<Grid item xs={3} md={3} display={'inline'}>
 				<Typography fontSize={{ xs: '1.3rem', md: '1.7rem' }}>
 					<CoronavirusOutlinedIcon
 						sx={{ marginRight: '10px', color: 'third.main' }}
@@ -28,7 +29,7 @@ export default function FormProfileWithUserInfo2({
 					Hábitos
 				</Typography>
 			</Grid>
-			<Grid item xs={10} md={8}>
+			<Grid item xs={10} md={9}>
 				<Typography
 					fontSize={font}
 					margin={{ xs: '10px 20px', md: '0' }}

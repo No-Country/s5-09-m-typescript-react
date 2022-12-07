@@ -42,6 +42,7 @@ export default function ProSidebar({ setModals }: sidebar) {
 								borderRadius: '50%',
 								border: '2px solid',
 								borderColor: '#9C51B7',
+								margin:'8%'
 							}}
 						/>
 					</Box>
