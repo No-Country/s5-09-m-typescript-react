@@ -39,6 +39,7 @@ export const userSlice = createSlice({
 			state.code = action.payload.code;
 			state.id = action.payload.id;
 			state.email = action.payload.email;
+			state.password = action.payload.password;
 		},
 		addPractices: (state, action: PayloadAction<User>) => {
 			state.practices.push(action.payload);
