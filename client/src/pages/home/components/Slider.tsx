@@ -52,10 +52,13 @@ export default function Slider() {
 				margin: '80px 0 0 0',
 			}}
 		>
-			<Typography variant='h2' sx={{ fontSize: 64, fontWeight: 400 }}>
+			<Typography
+				variant='h2'
+				sx={{ fontSize: { lg: 64, md: 50, xs: 40 }, fontWeight: 400 }}
+			>
 				¿Cómo usar Nuestra Web?
 			</Typography>
-			<div style={{ width: 700, padding: 50 }}>
+			<Box style={{ width: 600, padding: 50 }}>
 				<Carousel
 					navButtonsAlwaysVisible
 					fullHeightHover={false}
@@ -82,8 +85,8 @@ export default function Slider() {
 									flexDirection: 'column',
 									justifyContent: 'center',
 									alingItems: 'center',
-									width: 360,
-									height: 430,
+									width: { lg: '360px', xs: '300px' },
+									height: { lg: '500px', xs: '500px' },
 									gap: '10px',
 									borderRadius: '20px',
 									background:
@@ -105,9 +108,8 @@ export default function Slider() {
 								<img
 									src={item.image}
 									style={{
-										width: 'auto',
-										maxWidth: '100%',
-										height: '242.42px',
+										margin: '0 auto',
+										width: '70%',
 										objectFit: 'contain',
 									}}
 								/>
@@ -136,7 +138,7 @@ export default function Slider() {
 						</Box>
 					))}
 				</Carousel>
-			</div>
+			</Box>
 		</div>
 	);
 }

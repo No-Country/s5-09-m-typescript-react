@@ -20,7 +20,7 @@ export default function Hero() {
 				backgroundPosition: '50% 90%',
 				backgroundColor: 'primary.main',
 				backgroundSize: '50%',
-				padding: '0 50px',
+				padding: { lg: '0 50px', xs: '0 50px 200px 50px' },
 			}}
 		>
 			<Grid
