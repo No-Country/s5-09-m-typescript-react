@@ -6,6 +6,7 @@ export const publicRoute = {
 	contact: '/contacto',
 	practices: '/misPracticas',
 	AboutUs: '/nosotros',
+  Legal: '/legal',
 };
 export const privateRoute = {
 	dashboard: '/perfil',

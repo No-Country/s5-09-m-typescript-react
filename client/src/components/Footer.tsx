@@ -1,15 +1,20 @@
-import { Divider, Typography } from '@mui/material';
+import { Divider, Link, Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 
 export default function Footer() {
-  const font = { xs: '12px', md: '22px' }
+	const font = { xs: '12px', md: '22px' };
 	return (
 		<Stack
 			component='footer'
 			direction='column'
 			spacing={5}
 			divider={
-				<Divider sx={{ width: { xs: 408, md: 888 }, borderColor: 'rgba(217, 217, 217, 1)' }} />
+				<Divider
+					sx={{
+						width: { xs: 408, md: 888 },
+						borderColor: 'rgba(217, 217, 217, 1)',
+					}}
+				/>
 			}
 			justifyContent='center'
 			alignItems='center'
@@ -26,7 +31,7 @@ export default function Footer() {
 						color: 'primary.main',
 					}}
 				>
-					Contacto
+					<Link href={'/contacto'}>Contacto</Link>
 				</Typography>
 				<Typography
 					variant='h6'
@@ -38,7 +43,7 @@ export default function Footer() {
 						color: 'primary.main',
 					}}
 				>
-					Mis prácticas
+					<Link href={'/misPracticas'}>Mis prácticas</Link>
 				</Typography>
 				<Stack spacing={1}>
 					<Typography
@@ -51,7 +56,7 @@ export default function Footer() {
 							color: 'primary.main',
 						}}
 					>
-						Terminos Legales
+						<Link href={'/legal'}>Terminos Legales</Link>
 					</Typography>
 					<Typography
 						variant='body1'
@@ -62,7 +67,9 @@ export default function Footer() {
 							color: 'primary.main',
 						}}
 					>
-						Politica de privacidad
+						<Link href={'/legal#politica_privacidad'}>
+							Politica de privacidad
+						</Link>
 					</Typography>
 					<Typography
 						variant='body1'
@@ -73,7 +80,7 @@ export default function Footer() {
 							color: 'primary.main',
 						}}
 					>
-						Politica de cookis
+						<Link href={'/legal#politica_cookies'}>Politica de cookies</Link>
 					</Typography>
 					<Typography
 						variant='body1'
@@ -84,11 +91,11 @@ export default function Footer() {
 							color: 'primary.main',
 						}}
 					>
-						Aviso legal
+						<Link href={'/legal#aviso_legal'}>Aviso legal</Link>
 					</Typography>
 				</Stack>
 			</Stack>
-      <Typography
+			<Typography
 				sx={{
 					fontWeight: 500,
 					fontSize: font,
@@ -96,7 +103,7 @@ export default function Footer() {
 					color: 'primary.main',
 				}}
 			>
-				Copyright  2022. All Rights reserved By Nocountry
+				Copyright 2022. All Rights reserved By Nocountry
 			</Typography>
 		</Stack>
 	);
