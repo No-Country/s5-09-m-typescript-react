@@ -52,7 +52,7 @@ const AboutInfoList : AboutCardItem[] = [
 
 export default function AboutGrid() {
 	return (
-		<Grid container columnSpacing={8} rowSpacing={5}>
+		<Grid container columnSpacing={{ xs: 0, sm: 8 }} rowSpacing={{ xs: 3, sm: 5 }} >
       {
         AboutInfoList.map((item, index) => (
           <Grid item xs={12} md={6} key={index}>

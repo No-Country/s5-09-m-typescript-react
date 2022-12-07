@@ -20,7 +20,7 @@ export default function AboutCard({ item }: AboutCardProps) {
           {item.name}
         </Typography>
       </Stack>
-      <Stack direction="row" spacing={3} divider={<Divider orientation="vertical" flexItem />}>
+      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3} divider={<Divider orientation="vertical" flexItem />}>
         <Typography>
           {item.rol}
         </Typography>
