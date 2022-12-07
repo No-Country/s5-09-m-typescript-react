@@ -187,7 +187,9 @@ export default function InputLogin() {
 				>
 					<Link
 						sx={{
-							color: 'third.main',
+							color: 'secondary.main',
+							cursor: 'pointer',
+
 							fontWeight: 'bold',
 						}}
 						onClick={() => navigate(publicRoute.recoverPassword)}

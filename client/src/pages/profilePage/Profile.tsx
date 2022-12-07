@@ -13,12 +13,9 @@ import { Divider, Hidden } from '@mui/material';
 
 export default function Profile() {
 	const user = useAppSelector(store => store.user);
+	const route = useAppSelector(store => store.navegation.route);
 	const [showChangeHabitsModal, setShowChangeHabitsModal] =
 		useState<Boolean>(false);
-	const [modal, setModal] = useState<string>('perfil');
-	const setModals = (nameModal: string) => {
-		setModal(nameModal);
-	};
 	const showHabitsModal = () => {
 		user.practices.length == 0
 			? setShowChangeHabitsModal(false)
@@ -39,9 +36,8 @@ export default function Profile() {
 							variant='middle'
 							sx={{
 								borderBottomWidth: '2px',
-								width: { xs: '350px', md: '820px' },
-								marginLeft: { xs: '30px', md: '100px' },
-								marginTop: { xs: '30px' },
+								width: '85%',
+								margin: 'auto',
 							}}
 						/>
 						<FormProfileWithUserInfo2 closeModal={showHabitsModal} />
@@ -66,9 +62,9 @@ export default function Profile() {
 					minHeight: 'calc(100vh - 85px)',
 				}}
 			>
-				<Hidden smDown>
+				<Hidden lgDown>
 					<Grid item xs={2} display={'flex'}>
-						<PerfilSidebar setModals={setModals} />
+						<PerfilSidebar />
 					</Grid>
 				</Hidden>
 				<Grid
@@ -79,7 +75,7 @@ export default function Profile() {
 						margin: { xs: '30px auto' },
 					}}
 				>
-					{renderModal(modal)}
+					{renderModal(route)}
 				</Grid>
 			</Grid>
 		</>

@@ -19,6 +19,7 @@ import {
 	EventAvailableOutlined,
 	LogoutOutlined,
 } from '@mui/icons-material';
+import { changeRoute } from '../redux/slices/perfilNavigate';
 
 export default function MenuNavegation() {
 	const theme = useTheme();
@@ -33,7 +34,7 @@ export default function MenuNavegation() {
 	};
 	const logout = () => {
 		dispatch(closeSession());
-		localStorage.clear();
+		dispatch(changeRoute('perfil'));
 		setAnchorEl(null);
 	};
 
@@ -210,19 +211,19 @@ export default function MenuNavegation() {
 								'aria-labelledby': 'basic-button',
 							}}
 						>
-							<MenuItem onClick={navegation}>
+							<MenuItem onClick={() => dispatch(changeRoute('perfil'))}>
 								<AccountCircleOutlined
 									sx={{ color: 'third.main', marginRight: '8px' }}
 								/>
 								Profile
 							</MenuItem>
-							<MenuItem onClick={navegation}>
+							<MenuItem onClick={() => dispatch(changeRoute('progreso'))}>
 								<EventAvailableOutlined
 									sx={{ color: 'third.main', marginRight: '8px' }}
 								/>
 								Habitos
 							</MenuItem>
-							<MenuItem onClick={navegation}>
+							<MenuItem onClick={() => dispatch(changeRoute('calendario'))}>
 								<CalendarMonthOutlined
 									sx={{ color: 'third.main', marginRight: '8px' }}
 								/>

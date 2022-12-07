@@ -1,10 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { userSliceReducer, settingSliceReducer } from './slices';
+import {
+	userSliceReducer,
+	settingSliceReducer,
+	navegationSliceReducer,
+} from './slices';
 
 export const store = configureStore({
 	reducer: {
 		user: userSliceReducer,
 		setting: settingSliceReducer,
+		navegation: navegationSliceReducer,
 	},
 });
 

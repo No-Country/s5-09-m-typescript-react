@@ -3,7 +3,6 @@ import bcryptjs from 'bcryptjs'
 import { IUser } from '../../interfaces/user'
 import User from '../../models/User'
 import { generateCode, sendWelcomeEmail } from '../../utils'
-import { mailchimpService } from '../../services'
 
 export const createUserService = async (user: IUser) => {
     try {
@@ -28,11 +27,7 @@ export const createUserService = async (user: IUser) => {
                 code,
             }
 
-            //*Mando email de bienvenida
             sendWelcomeEmail(fullname, code, email)
-
-            //*Suscribo a Mailchimp
-            mailchimpService(email)
 
             return response
         }

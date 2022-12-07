@@ -44,7 +44,9 @@ const styles = () =>
 export default function SignupForm() {
 	const navigate = useNavigate();
 	const [showPassword, setshowPassword] = useState(false);
-	const [url, setUrl] = useState('');
+	const [url, setUrl] = useState(
+		'https://www.softzone.es/app/uploads-softzone.es/2018/04/guest.png',
+	);
 	const dispatch = useDispatch();
 	const { palette } = useTheme<Theme>();
 
