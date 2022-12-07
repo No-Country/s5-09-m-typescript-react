@@ -39,9 +39,9 @@ export default function Profile() {
 							variant='middle'
 							sx={{
 								borderBottomWidth: '2px',
-								width: { xs: '350px', md: '820px' },
-								marginLeft: { xs: '30px', md: '100px' },
-								marginTop: { xs: '30px' },
+								width: '85%' ,
+								margin: 'auto' ,
+								
 							}}
 						/>
 						<FormProfileWithUserInfo2 closeModal={showHabitsModal} />
@@ -66,7 +66,7 @@ export default function Profile() {
 					minHeight: 'calc(100vh - 85px)',
 				}}
 			>
-				<Hidden smDown>
+				<Hidden lgDown>
 					<Grid item xs={2} display={'flex'}>
 						<PerfilSidebar setModals={setModals} />
 					</Grid>
