@@ -18,8 +18,7 @@ export const onLoginGoogle = async (
 			sub,
 			email,
 		});
-		console.log(res);
-		localStorage.setItem('toke', JSON.stringify(res.data.token));
+		localStorage.setItem('token', JSON.stringify(res.data.token));
 		const { data: getUser } = await API_URL.get(
 			`/user/findOne/${res.data.id}`,
 			{
@@ -29,7 +28,12 @@ export const onLoginGoogle = async (
 			},
 		);
 		console.log(getUser);
-		const dataUser = loginAdapter(getUser, res.data.google, res.data.token);
+		const dataUser = loginAdapter(
+			getUser,
+			true,
+			res.data.google,
+			res.data.token,
+		);
 		dispatch(setUser(dataUser));
 	} catch (error) {
 		console.log(error);

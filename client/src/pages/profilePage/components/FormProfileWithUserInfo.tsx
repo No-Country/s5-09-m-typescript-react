@@ -11,9 +11,10 @@ export default function FormProfileWithUserInfo() {
 	const navegacion = () => {
 		console.log('probando boton');
 	};
+	const font = { xs: '1rem', md: '1.5rem' };
 	return (
 		<>
-			<Grid container height='40%'>
+			<Grid container height={{ xs: '230px', md: '250px' }}>
 				<Grid
 					item
 					xs={12}
@@ -30,48 +31,28 @@ export default function FormProfileWithUserInfo() {
 							justifyContent: 'center',
 							alignItems: 'start',
 							gap: '30px',
+							marginLeft: { xs: '30px', md: '130px' },
 						}}
 					>
-						<Typography fontSize='1.5rem'>
-							<AccountCircleOutlinedIcon sx={{ color: 'secondary.main' }} />
-							Nombre Completo
+						<Typography fontSize={font}>
+							<AccountCircleOutlinedIcon
+								sx={{ marginRight: '10px', color: 'third.main' }}
+							/>
+							Nombre Completo:{' '}
+							<span style={{ color: '#112734B2' }}>{user.name}</span>
 						</Typography>
-						<Typography fontSize='1.5rem'>
-							<VisibilityOffOutlinedIcon sx={{ color: 'secondary.main' }} />
-							Contraseña
+						<Typography fontSize={font}>
+							<VisibilityOffOutlinedIcon
+								sx={{ marginRight: '10px', color: 'third.main' }}
+							/>
+							Contraseña: <span style={{ color: '#112734B2' }}>**********</span>
 						</Typography>
-						<Typography fontSize='1.5rem'>
-							<MailOutlineOutlinedIcon sx={{ color: 'secondary.main' }} />
-							Correo
+						<Typography fontSize={font}>
+							<MailOutlineOutlinedIcon
+								sx={{ marginRight: '10px', color: 'third.main' }}
+							/>
+							Correo: <span style={{ color: '#112734B2' }}>{user.email}</span>
 						</Typography>
-					</Box>
-					<Box
-						sx={{
-							display: 'flex',
-							flexDirection: 'column',
-							justifyContent: 'center',
-							width: '300px',
-							alignItems: 'start',
-							gap: '30px',
-							marginLeft: '100px',
-						}}
-					>
-						<TextField
-							aria-readonly
-							value={user.name}
-							variant='standard'
-							fullWidth
-						></TextField>
-						<TextField
-							value='**********'
-							variant='standard'
-							fullWidth
-						></TextField>
-						<TextField
-							value={user.email}
-							variant='standard'
-							fullWidth
-						></TextField>
 					</Box>
 				</Grid>
 			</Grid>

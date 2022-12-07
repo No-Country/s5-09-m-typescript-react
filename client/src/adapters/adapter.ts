@@ -24,6 +24,7 @@ import { User } from '../types';
 } */
 export function loginAdapter(
 	data: any,
+	login: boolean,
 	google?: boolean,
 	token?: string,
 ): User {
@@ -38,5 +39,6 @@ export function loginAdapter(
 		practices: user.practices,
 		google: google,
 		token: token,
+		login: login,
 	};
 }

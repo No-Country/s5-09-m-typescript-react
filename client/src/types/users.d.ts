@@ -9,6 +9,7 @@ export interface User {
 	id: string | undefined;
 	google?: boolean;
 	token?: string;
+	login: boolean;
 }
 export interface EmailVerified {
 	code: string | undefined;

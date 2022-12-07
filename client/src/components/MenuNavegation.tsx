@@ -1,10 +1,24 @@
 import { useState } from 'react';
-import { Button, Menu, MenuItem, useMediaQuery, useTheme } from '@mui/material';
+import {
+	Button,
+	Hidden,
+	Menu,
+	MenuItem,
+	useMediaQuery,
+	useTheme,
+} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { closeSession } from '../redux/slices/user';
 import { privateRoute } from '../models/routes';
 import { Box } from '@mui/system';
+import { PerfilSidebar } from '.';
+import {
+	AccountCircleOutlined,
+	CalendarMonthOutlined,
+	EventAvailableOutlined,
+	LogoutOutlined,
+} from '@mui/icons-material';
 
 export default function MenuNavegation() {
 	const theme = useTheme();
@@ -19,8 +33,15 @@ export default function MenuNavegation() {
 	};
 	const logout = () => {
 		dispatch(closeSession());
+		localStorage.clear();
 		setAnchorEl(null);
 	};
+
+	const [modal, setModal] = useState<string>('perfil');
+	const setModals = (nameModal: string) => {
+		setModal(nameModal);
+	};
+
 	const navegation = () => {
 		navigate(privateRoute.dashboard);
 		setAnchorEl(null);
@@ -45,8 +66,9 @@ export default function MenuNavegation() {
 					display: 'flex',
 					width: '100%',
 					height: { sm: '70px', md: '100px' },
-					justifyContent: 'space-evenly',
+					justifyContent: 'space-between',
 					alignItems: 'center',
+					padding: '0 45px',
 				}}
 			>
 				<Button
@@ -131,7 +153,7 @@ export default function MenuNavegation() {
 					</>
 				)}
 
-				{!user.id ? (
+				{!user.login ? (
 					<Button
 						id='basic-button'
 						color='secondary'
@@ -188,8 +210,30 @@ export default function MenuNavegation() {
 								'aria-labelledby': 'basic-button',
 							}}
 						>
-							<MenuItem onClick={navegation}>Profile</MenuItem>
-							<MenuItem onClick={logout}>Logout</MenuItem>
+							<MenuItem onClick={navegation}>
+								<AccountCircleOutlined
+									sx={{ color: 'third.main', marginRight: '8px' }}
+								/>
+								Profile
+							</MenuItem>
+							<MenuItem onClick={navegation}>
+								<EventAvailableOutlined
+									sx={{ color: 'third.main', marginRight: '8px' }}
+								/>
+								Habitos
+							</MenuItem>
+							<MenuItem onClick={navegation}>
+								<CalendarMonthOutlined
+									sx={{ color: 'third.main', marginRight: '8px' }}
+								/>
+								Calendario
+							</MenuItem>
+							<MenuItem onClick={logout}>
+								<LogoutOutlined
+									sx={{ color: 'third.main', marginRight: '8px' }}
+								/>
+								Logout
+							</MenuItem>
 						</Menu>
 					</div>
 				)}

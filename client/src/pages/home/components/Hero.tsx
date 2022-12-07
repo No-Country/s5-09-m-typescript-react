@@ -11,8 +11,6 @@ export default function Hero() {
 	return (
 		<Grid
 			container
-			alignItems='start'
-			justifyContent='space-between'
 			sx={{
 				minHeight: 'calc(100vh - 100px)',
 				backgroundImage:
@@ -22,16 +20,19 @@ export default function Hero() {
 				backgroundPosition: '50% 90%',
 				backgroundColor: 'primary.main',
 				backgroundSize: '50%',
+				padding: { lg: '0 50px', xs: '0 50px 200px 50px' },
 			}}
-			padding={4}
 		>
 			<Grid
 				item
-				xs={8}
+				lg={8}
+				md={12}
 				gap={2}
-				display='flex'
-				flexDirection='column'
-				marginTop='80px'
+				sx={{
+					display: 'flex',
+					marginTop: '80px',
+					flexDirection: 'column',
+				}}
 			>
 				<Typography variant='h2' component='h2'>
 					Lleva tu{' '}
@@ -49,8 +50,9 @@ export default function Hero() {
 					sx={{
 						borderLeft: '3px solid',
 						borderColor: 'secondary.main',
-						width: '50%',
+						width: { lg: '50%', md: '80%' },
 						color: 'text.secondary',
+						fontSize: '1.5rem',
 					}}
 				>
 					¿Necesitas ayuda con tu práctica diaria de atención plena? Comienza
@@ -62,20 +64,19 @@ export default function Hero() {
 
 			<Grid
 				item
-				xs={4}
-				alignItems='center'
-				justifyContent='center'
-				display='flex'
-				flexDirection='column'
+				lg={4}
+				md={12}
 				gap={2}
-				marginTop='100px'
+				sx={{
+					display: { lg: 'flex', xs: 'none' },
+					flexDirection: 'column',
+					alignItems: { lg: 'center', md: 'end' },
+					justifyContent: { lg: 'start', md: 'end' },
+					marginTop: { lg: '100px', md: '0px' },
+					width: '100%',
+				}}
 			>
-				<Typography
-					color='third.main'
-					variant='h3'
-					component='h2'
-					textAlign='end'
-				>
+				<Typography color='third.main' variant='h3' component='h2'>
 					Registra Aquí
 				</Typography>
 				<Button
@@ -95,10 +96,10 @@ export default function Hero() {
 						filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.35))',
 					}}
 				>
-					<Typography variant='h2' component='h4' color='third.main'>
+					<Typography variant='h3' component='h4' color='third.main'>
 						16
 					</Typography>
-					<Typography variant='h4' component='span' color='third.main'>
+					<Typography variant='h5' component='span' color='third.main'>
 						Hábitos
 					</Typography>
 				</Button>

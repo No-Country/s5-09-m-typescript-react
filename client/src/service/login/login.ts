@@ -3,6 +3,7 @@ import { loginAdapter } from '../../adapters/adapter';
 import { setUser, emailVerification } from '../../redux/slices/user';
 import API_URL from '../API_URL';
 import { changeErrorPassword } from '../../redux/slices/setting';
+import { User } from '../../types';
 export const onLogin = async (
 	{
 		email,
@@ -14,13 +15,6 @@ export const onLogin = async (
 	dispatch: Dispatch,
 ) => {
 	try {
-		sessionStorage.setItem(
-			'userData',
-			JSON.stringify({
-				email: email,
-				password: password,
-			}),
-		);
 		const { data } = await API_URL.post('/login', {
 			email,
 			password,
@@ -31,16 +25,19 @@ export const onLogin = async (
 				token: `${data.token}`,
 			},
 		});
-		const dataUser = loginAdapter(getUser, false, data.token);
-		console.log(dataUser);
+		const dataUser = loginAdapter(getUser, true, false, data.token);
+		localStorage.setItem('User', JSON.stringify(dataUser));
 		dispatch(setUser(dataUser));
-		sessionStorage.removeItem('userData');
 	} catch (err: any) {
 		const data = err.response.data; //este es el err.msg
-		console.log(data);
 		if (data.msg === 'El email no esta verificado') {
 			dispatch(
-				emailVerification({ code: data.code, id: data.id, email: data.email }),
+				emailVerification({
+					code: data.code,
+					id: data.id,
+					email: data.email,
+					password,
+				}),
 			);
 		} else {
 			if (
@@ -53,22 +50,26 @@ export const onLogin = async (
 	}
 };
 
-type verifyCode = {
-	userId?: string;
-};
-
-export const verifyCode = async (
-	{ userId }: verifyCode,
-	dispatch: Dispatch,
-) => {
+export const verifyCode = async (user: Partial<User>, dispatch: Dispatch) => {
 	try {
-		const response = await API_URL.put(`/user/update/${userId}`, {
+		const res = await API_URL.put(`/user/update/${user.id}`, {
 			email_verified: true,
 		});
-
-		//una vez que se cambio el "email_verified" a true, es necesario obtener el token de nuevo
-		const userData = JSON.parse(sessionStorage.getItem('userData') || '');
-		onLogin(userData, dispatch);
+		if (res.data.userRetrieved.ok) {
+			const { data } = await API_URL.post('/login', {
+				email: user.email,
+				password: user.password,
+			});
+			localStorage.setItem('token', JSON.stringify(data.token));
+			const { data: getUser } = await API_URL.get(`/user/findOne/${data.id}`, {
+				headers: {
+					token: `${data.token}`,
+				},
+			});
+			const dataUser = loginAdapter(getUser, true, false, data.token);
+			localStorage.setItem('User', JSON.stringify(dataUser));
+			dispatch(setUser(dataUser));
+		}
 	} catch (err: any) {
 		console.log(err);
 	}

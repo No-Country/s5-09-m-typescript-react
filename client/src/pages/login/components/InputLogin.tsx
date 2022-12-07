@@ -8,6 +8,7 @@ import {
 	FormControlLabel,
 	IconButton,
 	InputAdornment,
+	Divider,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -153,6 +154,19 @@ export default function InputLogin() {
 						/>
 					)}
 				</Grid>
+				<Grid item xs={12}>
+					<Button
+						type='submit'
+						color='secondary'
+						variant='contained'
+						className='circular-btn'
+						size='large'
+						fullWidth
+					>
+						Ingresar
+					</Button>
+				</Grid>
+
 				<Grid item xs={12} sm={6}>
 					<FormControlLabel
 						control={<Checkbox {...register('isChecked')} color='secondary' />}
@@ -175,10 +189,12 @@ export default function InputLogin() {
 						sx={{
 							color: 'secondary.main',
 							cursor: 'pointer',
+
+							fontWeight: 'bold',
 						}}
 						onClick={() => navigate(publicRoute.recoverPassword)}
 					>
-						¿Olvidaste la contraseña?
+						Olvidé mi contraseña
 					</Link>
 				</Grid>
 				<Grid
@@ -191,9 +207,11 @@ export default function InputLogin() {
 						alignItems: 'center',
 					}}
 				>
-					<Typography component='p' variant='subtitle1'>
-						Inicia sesión con
-					</Typography>
+					<Divider flexItem>
+						<Typography color='text.secondary' fontSize='1rem'>
+							O INICIA SESION
+						</Typography>
+					</Divider>
 				</Grid>
 				<Grid
 					item
@@ -228,28 +246,19 @@ export default function InputLogin() {
 						alignItems: 'center',
 					}}
 				>
-					<Typography>Aún no tienes cuenta?</Typography>
+					<Typography sx={{ fontWeight: 'bold', color: 'text.secondary' }}>
+						Aún no tienes cuenta?
+					</Typography>
 					<Link
 						onClick={() => navigate(publicRoute.register)}
 						sx={{
 							cursor: 'pointer',
-							color: 'secondary.main',
+							color: 'third.main',
+							fontWeight: 'bold',
 						}}
 					>
-						Registrarse
+						Registrate
 					</Link>
-				</Grid>
-				<Grid item xs={12}>
-					<Button
-						type='submit'
-						color='secondary'
-						variant='contained'
-						className='circular-btn'
-						size='large'
-						fullWidth
-					>
-						Ingresar
-					</Button>
 				</Grid>
 			</Grid>
 		</form>

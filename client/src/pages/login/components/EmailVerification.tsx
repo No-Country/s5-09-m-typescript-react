@@ -4,7 +4,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { GlobalButton } from '../../../components';
 import { useForm } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
-import { verifyCode } from '../../../service';
+import { onLogin, verifyCode } from '../../../service';
 import { resendCode } from '../../../service/login/resendCode';
 import { closeSession } from '../../../redux/slices/user';
 
@@ -23,7 +23,8 @@ export default function EmailVerification() {
 
 	const onSubmit = (value: Inputs) => {
 		if (user.code === value.verificationCode) {
-			verifyCode({ userId: user.id }, dispatch);
+			verifyCode(user, dispatch);
+			dispatch(closeSession());
 		}
 	};
 	return (
@@ -37,7 +38,8 @@ export default function EmailVerification() {
 				background: 'rgba(0,0,0,0.3)',
 				position: 'fixed',
 				top: '0',
-				zIndex: '10',
+				left: '0',
+				zIndex: '100',
 			}}
 		>
 			<Grid
