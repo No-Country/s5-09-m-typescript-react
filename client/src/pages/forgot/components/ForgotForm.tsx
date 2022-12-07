@@ -38,10 +38,9 @@ export default function ForgotForm() {
 		formState: { errors },
 	} = useForm<FormData>(formOptions);
 
-	const onSubmit = (data: FormData) => {
+	const onSubmit = (data: FormData): void => {
 		const modifiedData = {
-			token:
-				'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOGU1YjgxNWU0ZGNhNTE5N2E0MjVkMiIsImFkbWluIjpmYWxzZSwiaWF0IjoxNjcwMzUwNTAyLCJleHAiOjE2NzAzNTE0MDJ9.otfjsdGt_fu-PBdWkmy5kgV9p9zDPfbJ2YxBOYgUOr4',
+			token,
 			password: data.password,
 		};
 		resetPassword(modifiedData, dispatch);

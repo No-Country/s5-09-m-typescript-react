@@ -15,7 +15,7 @@ export const resetPassword = async (data: Data, dispatch: Dispatch) => {
 				password: data.password,
 			},
 			{
-				headers: { Authorization: `Bearer ${data.token}` },
+				headers: { token: data.token },
 			},
 		);
 
