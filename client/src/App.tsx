@@ -13,13 +13,16 @@ import {
 } from './pages';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { publicRoute } from './models/routes';
-import { useEffect } from 'react';
 import { useAppDispatch } from './redux/hooks';
-import { setUser } from './redux/slices/user';
+import { initialState, setUser } from './redux/slices/user';
 
 function App() {
 	const dispatch = useAppDispatch();
-	dispatch(setUser(JSON.parse(localStorage.getItem('User')!)));
+	dispatch(
+		setUser(
+			JSON.parse(localStorage.getItem('User') || JSON.stringify(initialState)),
+		),
+	);
 
 	return (
 		<GoogleOAuthProvider
