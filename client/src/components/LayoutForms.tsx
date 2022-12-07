@@ -57,7 +57,7 @@ export default function Contact({
 					</Grid>
 
 					{imgUrl.length > 0 && (
-						<Grid xs={12} sx={{ display: { xs: 'none', lg: 'block' } }}>
+						<Grid item xs={12} sx={{ display: { xs: 'none', lg: 'block' } }}>
 							<img
 								src={imgUrl}
 								alt='form img'
