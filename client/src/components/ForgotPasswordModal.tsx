@@ -28,7 +28,7 @@ export default function ForgotPasswordModal() {
 
 	//Para probar si funcionan los formularios
 	const formSubmitHandler: SubmitHandler<FormData> = data => {
-		console.log(postForgetPassword(data, dispatch));
+		postForgetPassword(data, dispatch);
 	};
 	return (
 		<Grid sx={{ width: '100%', padding: 5 }}>
