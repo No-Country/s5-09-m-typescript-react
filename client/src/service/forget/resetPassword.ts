@@ -19,8 +19,6 @@ export const resetPassword = async (data: Data, dispatch: Dispatch) => {
 			},
 		);
 
-		console.log(data.token);
-
 		resp.data.ok && dispatch(changeVerifyLog('Contraseña cambiada'));
 	} catch (error) {
 		console.log(error);
