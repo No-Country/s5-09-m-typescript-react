@@ -71,7 +71,7 @@ export default function Hero() {
 					display: { lg: 'flex', xs: 'none' },
 					flexDirection: 'column',
 					alignItems: { lg: 'center', md: 'end' },
-					justifyContent: 'center',
+					justifyContent: { lg: 'start', md: 'end' },
 					marginTop: { lg: '100px', md: '0px' },
 					width: '100%',
 				}}
@@ -96,10 +96,10 @@ export default function Hero() {
 						filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.35))',
 					}}
 				>
-					<Typography variant='h2' component='h4' color='third.main'>
+					<Typography variant='h3' component='h4' color='third.main'>
 						16
 					</Typography>
-					<Typography variant='h4' component='span' color='third.main'>
+					<Typography variant='h5' component='span' color='third.main'>
 						Hábitos
 					</Typography>
 				</Button>

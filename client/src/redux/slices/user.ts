@@ -4,7 +4,7 @@ import { User } from '../../types';
 // Define a type for the slice state
 
 // Define the initial state using that type
-const initialState: Partial<User> = {
+export const initialState: Partial<User> = {
 	code: undefined,
 	email: '',
 	emailVerified: false,

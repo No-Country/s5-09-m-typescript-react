@@ -58,7 +58,9 @@ export default function Slider() {
 			>
 				¿Cómo usar Nuestra Web?
 			</Typography>
-			<div style={{ padding: '50px 0', width: '100%' }}>
+			<Box
+				sx={{ padding: '50px 0', width: { lg: '50%', md: '50%', xs: '90%' } }}
+			>
 				<Carousel
 					navButtonsAlwaysVisible
 					fullHeightHover={false}
@@ -138,7 +140,7 @@ export default function Slider() {
 						</Box>
 					))}
 				</Carousel>
-			</div>
+			</Box>
 		</div>
 	);
 }

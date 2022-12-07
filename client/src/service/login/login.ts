@@ -26,10 +26,10 @@ export const onLogin = async (
 			},
 		});
 		const dataUser = loginAdapter(getUser, true, false, data.token);
+		localStorage.setItem('User', JSON.stringify(dataUser));
 		dispatch(setUser(dataUser));
 	} catch (err: any) {
 		const data = err.response.data; //este es el err.msg
-		console.log(data);
 		if (data.msg === 'El email no esta verificado') {
 			dispatch(
 				emailVerification({
@@ -52,22 +52,24 @@ export const onLogin = async (
 
 export const verifyCode = async (user: Partial<User>, dispatch: Dispatch) => {
 	try {
-		await API_URL.put(`/user/update/${user.id}`, {
+		const res = await API_URL.put(`/user/update/${user.id}`, {
 			email_verified: true,
 		});
-
-		const { data } = await API_URL.post('/login', {
-			email: user.email,
-			password: user.password,
-		});
-		localStorage.setItem('token', JSON.stringify(data.token));
-		const { data: getUser } = await API_URL.get(`/user/findOne/${data.id}`, {
-			headers: {
-				token: `${data.token}`,
-			},
-		});
-		const dataUser = loginAdapter(getUser, true, false, data.token);
-		dispatch(setUser(dataUser));
+		if (res.data.userRetrieved.ok) {
+			const { data } = await API_URL.post('/login', {
+				email: user.email,
+				password: user.password,
+			});
+			localStorage.setItem('token', JSON.stringify(data.token));
+			const { data: getUser } = await API_URL.get(`/user/findOne/${data.id}`, {
+				headers: {
+					token: `${data.token}`,
+				},
+			});
+			const dataUser = loginAdapter(getUser, true, false, data.token);
+			localStorage.setItem('User', JSON.stringify(dataUser));
+			dispatch(setUser(dataUser));
+		}
 	} catch (err: any) {
 		console.log(err);
 	}
