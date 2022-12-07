@@ -22,7 +22,8 @@ export default function MyPractices() {
 				<Grid container sx={{ display: 'flex' }}>
 					<Grid
 						item
-						xs={7}
+						lg={7}
+						xs={12}
 						sx={{
 							display: 'flex',
 							flexDirection: 'column',
@@ -53,19 +54,21 @@ export default function MyPractices() {
 					</Grid>
 					<Grid
 						item
-						xs={5}
+						lg={5}
+						xs={12}
 						sx={{
 							display: 'flex',
 							flexDirection: 'column',
 							justifyContent: 'end',
 							alingItem: 'center',
+							marginRight: { lg: '40px', xs: '0' },
 						}}
 					>
 						<img
 							src='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669855664/dise%C3%B1o%20definitivo/practicas_dnmqno.svg'
 							alt='Sesión de yoga'
 							className='imageMyPractices'
-							style={{ marginRight: '40px', width: '100%' }}
+							style={{ width: '100%' }}
 						/>
 					</Grid>
 				</Grid>
