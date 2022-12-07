@@ -16,6 +16,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import { publicRoute } from './models/routes';
 import { useAppDispatch } from './redux/hooks';
 import { initialState, setUser } from './redux/slices/user';
+import TerminosLegales from './pages/legals/legals';
 
 function App() {
 	const dispatch = useAppDispatch();
@@ -32,6 +33,7 @@ function App() {
 					<Routes>
 						<Route path='/*' element={<Home />} />
 						<Route path='/' element={<Home />} />
+            <Route path={publicRoute.Legal} element={<TerminosLegales />} />
 						<Route path={publicRoute.practices} element={<Practices />} />
 						<Route path={publicRoute.contact} element={<Contact />} />
 						<Route path={publicRoute.AboutUs} element={<AboutUs />} />

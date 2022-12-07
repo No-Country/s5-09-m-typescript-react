@@ -38,14 +38,9 @@ export default function MenuNavegation() {
 		setAnchorEl(null);
 	};
 
-	const [modal, setModal] = useState<string>('perfil');
-	const setModals = (nameModal: string) => {
-		setModal(nameModal);
-	};
-
-	const navegation = () => {
+	const navegation = (section: string) => {
 		navigate(privateRoute.dashboard);
-		setAnchorEl(null);
+		dispatch(changeRoute(section));
 	};
 	const handleClose = () => {
 		setAnchorEl(null);
@@ -211,19 +206,19 @@ export default function MenuNavegation() {
 								'aria-labelledby': 'basic-button',
 							}}
 						>
-							<MenuItem onClick={() => dispatch(changeRoute('perfil'))}>
+							<MenuItem onClick={() => navegation('perfil')}>
 								<AccountCircleOutlined
 									sx={{ color: 'third.main', marginRight: '8px' }}
 								/>
 								Profile
 							</MenuItem>
-							<MenuItem onClick={() => dispatch(changeRoute('progreso'))}>
+							<MenuItem onClick={() => navegation('progreso')}>
 								<EventAvailableOutlined
 									sx={{ color: 'third.main', marginRight: '8px' }}
 								/>
 								Habitos
 							</MenuItem>
-							<MenuItem onClick={() => dispatch(changeRoute('calendario'))}>
+							<MenuItem onClick={() => navegation('calendario')}>
 								<CalendarMonthOutlined
 									sx={{ color: 'third.main', marginRight: '8px' }}
 								/>
