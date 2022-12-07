@@ -20,6 +20,7 @@ export default function ProSidebar() {
 
 	const logout = () => {
 		dispatch(closeSession());
+		localStorage.clear();
 		dispatch(changeRoute('perfil'));
 		setAnchorEl(null);
 	};
