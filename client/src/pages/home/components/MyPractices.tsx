@@ -54,7 +54,7 @@ export default function MyPractices() {
 					</Grid>
 					<Grid
 						item
-						lg={5}
+						lg={4}
 						xs={12}
 						sx={{
 							display: 'flex',

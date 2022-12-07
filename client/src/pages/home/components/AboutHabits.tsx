@@ -35,18 +35,30 @@ export default function AboutHabits() {
 			sx={{
 				backgroundColor: 'primary.dark',
 				display: 'flex',
+				justifyContent: 'center',
 				alignItems: 'center',
+				padding: { xs: '0 0 50px 0', lg: '0' },
 			}}
 		>
-			<Grid item xs={7} sx={{ display: 'flex' }}>
+			<Grid
+				item
+				lg={7}
+				xs={12}
+				sx={{
+					display: 'flex',
+					flexDirection: { lg: 'row', xs: 'column' },
+					justifyContent: 'center',
+					alingItem: 'center',
+				}}
+			>
 				{itemList.map(item => (
 					<Card
 						key={itemList.indexOf(item)}
 						sx={{
 							borderRadius: '12px',
-							margin: '28px 20px',
-							width: 200,
-							height: 245,
+							margin: { lg: '28px 20px', xs: '15px auto' },
+							width: { lg: '200px', xs: '300px' },
+							height: { lg: '245px', xs: '300px' },
 						}}
 					>
 						<CardContent>
@@ -88,11 +100,14 @@ export default function AboutHabits() {
 					</Card>
 				))}
 			</Grid>
-			<Grid item xs={5}>
+			<Grid item lg={5} xs={8}>
 				<Typography
 					variant='h2'
 					color='text.primary'
-					sx={{ fontSize: 40, fontWeight: 600 }}
+					sx={{
+						fontSize: 40,
+						fontWeight: 600,
+					}}
 				>
 					Conoce los 16 Hábitos
 				</Typography>
