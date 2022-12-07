@@ -26,7 +26,9 @@ export default function Footer() {
 						color: 'primary.main',
 					}}
 				>
-					Contacto
+          <a href={"/contacto"}>
+            Contacto
+          </a>
 				</Typography>
 				<Typography
 					variant='h6'
@@ -38,7 +40,9 @@ export default function Footer() {
 						color: 'primary.main',
 					}}
 				>
-					Mis prácticas
+          <a href={"/misPracticas"}>
+					  Mis prácticas
+          </a>
 				</Typography>
 				<Stack spacing={1}>
 					<Typography
@@ -51,7 +55,9 @@ export default function Footer() {
 							color: 'primary.main',
 						}}
 					>
-						Terminos Legales
+            <a href={"/legal"}>
+						  Terminos Legales
+            </a>
 					</Typography>
 					<Typography
 						variant='body1'
@@ -62,7 +68,9 @@ export default function Footer() {
 							color: 'primary.main',
 						}}
 					>
-						Politica de privacidad
+            <a href={"/legal#politica_privacidad"}>
+						  Politica de privacidad
+            </a>
 					</Typography>
 					<Typography
 						variant='body1'
@@ -73,7 +81,9 @@ export default function Footer() {
 							color: 'primary.main',
 						}}
 					>
-						Politica de cookis
+            <a href={"/legal#politica_cookies"}>
+						  Politica de cookies
+            </a>
 					</Typography>
 					<Typography
 						variant='body1'
@@ -84,7 +94,9 @@ export default function Footer() {
 							color: 'primary.main',
 						}}
 					>
-						Aviso legal
+            <a href={"/legal#aviso_legal"}>
+						  Aviso legal
+            </a>
 					</Typography>
 				</Stack>
 			</Stack>
