@@ -152,7 +152,7 @@ export default function MenuNavegation() {
 					</>
 				)}
 
-				{!user.id ? (
+				{!user.login ? (
 					<Button
 						id='basic-button'
 						color='secondary'
