@@ -33,7 +33,6 @@ export default function MenuNavegation() {
 	};
 	const logout = () => {
 		dispatch(closeSession());
-		localStorage.clear();
 		setAnchorEl(null);
 	};
 

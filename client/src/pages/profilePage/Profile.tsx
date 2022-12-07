@@ -39,9 +39,8 @@ export default function Profile() {
 							variant='middle'
 							sx={{
 								borderBottomWidth: '2px',
-								width: '85%' ,
-								margin: 'auto' ,
-								
+								width: '85%',
+								margin: 'auto',
 							}}
 						/>
 						<FormProfileWithUserInfo2 closeModal={showHabitsModal} />
