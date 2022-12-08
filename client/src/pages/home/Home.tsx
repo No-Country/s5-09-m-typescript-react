@@ -1,10 +1,5 @@
-import {
-	Hero,
-	MyPractices,
-	Slider,
-	Testimonials,
-	Newsletter,
-} from './components';
+import { SimpleForm } from '../../service/mailChip/mailchip';
+import { Hero, MyPractices, Slider, Testimonials } from './components';
 import AboutHabits from './components/AboutHabits';
 //import ProfilePage from '../profilePage/ProfilePage';
 //import ProfileWithUserInfo from '../profilePage/Profile';
@@ -17,7 +12,7 @@ export default function Home() {
 			<MyPractices />
 			<AboutHabits />
 			<Testimonials />
-			<Newsletter />
+			<SimpleForm />
 		</>
 	);
 }

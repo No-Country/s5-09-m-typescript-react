@@ -21,6 +21,7 @@ import { Message, Visibility, VisibilityOff } from '@mui/icons-material';
 import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
 import {
+	changeErrorEmail,
 	changeErrorPassword,
 	changeForgotPasswordModal,
 } from '../../../redux/slices/setting';
@@ -37,10 +38,9 @@ export default function InputLogin() {
 	const navigate = useNavigate();
 	const dispatch = useAppDispatch();
 	const errorPassword = useAppSelector(state => state.setting.errorPassword);
+	const errorEmail = useAppSelector (state => state.setting.errorEmail);
 
-	const closeModal = () => {
-		dispatch(changeErrorPassword());
-	};
+	
 
 	const [showPassword, setshowPassword] = useState(false);
 	const {
@@ -151,6 +151,15 @@ export default function InputLogin() {
 							text=''
 							urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669814884/ananda%20marga/home/alerts/FeaturedIconAlert_juurtw.png'
 							close={() => dispatch(changeErrorPassword())}
+						/>
+					)}
+
+					{errorEmail && (
+						<AlertModal
+							title='El Email no esta registrado'
+							text=''
+							urlImg='https://res.cloudinary.com/dlxlitkl6/image/upload/v1669814884/ananda%20marga/home/alerts/FeaturedIconAlert_juurtw.png'
+							close={() => dispatch(changeErrorEmail())}
 						/>
 					)}
 				</Grid>
