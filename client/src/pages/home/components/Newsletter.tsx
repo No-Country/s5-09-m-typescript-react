@@ -9,7 +9,7 @@ import {
 import { useState } from 'react';
 import { GlobalButton } from '../../../components';
 export default function BoletinInformativo({
-	onSubmitted,
+	onSubmit,
 	status,
 	message,
 }: any) {
@@ -19,7 +19,7 @@ export default function BoletinInformativo({
 	const handleSubmit = (e: any) => {
 		e.preventDefault();
 		setEmail('');
-		onSubmitted({ EMAIL: email });
+		onSubmit({ EMAIL: email });
 		setTimeout(() => {
 			setMensaje(false);
 		}, 3500);

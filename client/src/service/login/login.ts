@@ -2,7 +2,7 @@ import { Dispatch } from '@reduxjs/toolkit';
 import { loginAdapter } from '../../adapters/adapter';
 import { setUser, emailVerification } from '../../redux/slices/user';
 import API_URL from '../API_URL';
-import { changeErrorPassword } from '../../redux/slices/setting';
+import { changeErrorEmail, changeErrorPassword } from '../../redux/slices/setting';
 import { User } from '../../types';
 export const onLogin = async (
 	{
@@ -40,12 +40,21 @@ export const onLogin = async (
 				}),
 			);
 		} else {
-			if (
-				data.error[0].msg ===
-				'La contraseña debe contener min 8 carácteres, 1 minúscula(min), 1 mayúscula(min), 1 numero(min), 1 simbolo(min) '
-			) {
-				dispatch(changeErrorPassword());
-			}
+			if(
+				data.msg === 'El email no esta registrado'
+				){
+					dispatch(changeErrorEmail());
+				}
+			
+			else {
+				if (
+					data.error[0].msg ===
+					'La contraseña debe contener min 8 carácteres, 1 minúscula(min), 1 mayúscula(min), 1 numero(min), 1 simbolo(min) '
+				) {
+					dispatch(changeErrorPassword());
+				} 
+				
+			} 
 		}
 	}
 };
