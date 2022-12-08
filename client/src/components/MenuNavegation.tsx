@@ -229,7 +229,7 @@ export default function MenuNavegation() {
 								<LogoutOutlined
 									sx={{ color: 'third.main', marginRight: '8px' }}
 								/>
-								Logout
+								Cerrar sesión
 							</MenuItem>
 						</Menu>
 					</div>
