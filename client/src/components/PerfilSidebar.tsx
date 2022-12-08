@@ -86,7 +86,7 @@ export default function ProSidebar() {
 						onClick={logout}
 						icon={<LogoutOutlined sx={{ color: 'third.main' }} />}
 					>
-						Salir de la cuenta
+						Cerrar sesión
 					</MenuItem>
 				</Menu>
 			</Sidebar>
