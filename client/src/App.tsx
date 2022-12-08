@@ -33,7 +33,7 @@ function App() {
 					<Routes>
 						<Route path='/*' element={<Home />} />
 						<Route path='/' element={<Home />} />
-            <Route path={publicRoute.Legal} element={<TerminosLegales />} />
+						<Route path={publicRoute.Legal} element={<TerminosLegales />} />
 						<Route path={publicRoute.practices} element={<Practices />} />
 						<Route path={publicRoute.contact} element={<Contact />} />
 						<Route path={publicRoute.AboutUs} element={<AboutUs />} />

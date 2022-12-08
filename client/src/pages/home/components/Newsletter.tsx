@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 import { GlobalButton } from '../../../components';
+
 export default function BoletinInformativo({
 	onSubmit,
 	status,
