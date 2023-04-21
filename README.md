@@ -12,7 +12,7 @@ Link: https://mindfulness-yoga.vercel.app/
 
 🟢Back-End: Yamila Gisele Paez / Maximiliano Miño / Ezequiel Astrada
 
-🟢Front-End: Emanuel Palacio / Federico Di Cillo / Anderson Cifuentes / Francisco Garcia Mendez / Joaquin Ramos
+🟢Front-End: Federico Di Cillo / Anderson Cifuentes / Francisco Garcia Mendez / Joaquin Ramos / Emanuel Palacio
 
 🟢QA Tester: Romina Bello
 
